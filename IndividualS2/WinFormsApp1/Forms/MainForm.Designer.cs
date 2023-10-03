@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tCMain = new TabControl();
             tpMovieManager = new TabPage();
             label7 = new Label();
@@ -48,6 +49,7 @@
             btnUpdateTvSeries = new Button();
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
+            dataGridViewReview = new DataGridView();
             label5 = new Label();
             label4 = new Label();
             lbMediaCollection = new ListBox();
@@ -57,11 +59,16 @@
             btnViewAllReview = new Button();
             btnUpdateReview = new Button();
             btnAddReview = new Button();
-            lbReviewCollection = new ListBox();
+            reviewBindingSource = new BindingSource(components);
+            Title = new DataGridViewTextBoxColumn();
+            Score = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             tpTvSeriesManager.SuspendLayout();
             tpReviewManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReview).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)reviewBindingSource).BeginInit();
             SuspendLayout();
             // 
             // tCMain
@@ -257,10 +264,10 @@
             // 
             // tpReviewManager
             // 
+            tpReviewManager.Controls.Add(dataGridViewReview);
             tpReviewManager.Controls.Add(label5);
             tpReviewManager.Controls.Add(label4);
             tpReviewManager.Controls.Add(lbMediaCollection);
-            tpReviewManager.Controls.Add(lbReviewCollection);
             tpReviewManager.Controls.Add(label3);
             tpReviewManager.Controls.Add(tbSearchReviewTitle);
             tpReviewManager.Controls.Add(btnSearchReview);
@@ -274,7 +281,17 @@
             tpReviewManager.TabIndex = 2;
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
-            tpReviewManager.Click += MainForm_Load;
+            // 
+            // dataGridViewReview
+            // 
+            dataGridViewReview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewReview.Columns.AddRange(new DataGridViewColumn[] { Title, Score, Description });
+            dataGridViewReview.Location = new Point(260, 221);
+            dataGridViewReview.Name = "dataGridViewReview";
+            dataGridViewReview.RowHeadersWidth = 51;
+            dataGridViewReview.RowTemplate.Height = 29;
+            dataGridViewReview.Size = new Size(582, 144);
+            dataGridViewReview.TabIndex = 24;
             // 
             // label5
             // 
@@ -357,14 +374,30 @@
             btnAddReview.UseVisualStyleBackColor = true;
             btnAddReview.Click += btnAddReview_Click;
             // 
-            // lbReviewCollection
+            // reviewBindingSource
             // 
-            lbReviewCollection.FormattingEnabled = true;
-            lbReviewCollection.ItemHeight = 20;
-            lbReviewCollection.Location = new Point(378, 232);
-            lbReviewCollection.Name = "lbReviewCollection";
-            lbReviewCollection.Size = new Size(445, 164);
-            lbReviewCollection.TabIndex = 20;
+            reviewBindingSource.DataSource = typeof(LogicLayerClassLibrary.Classes.Review);
+            // 
+            // Title
+            // 
+            Title.HeaderText = "Title";
+            Title.MinimumWidth = 6;
+            Title.Name = "Title";
+            Title.Width = 125;
+            // 
+            // Score
+            // 
+            Score.HeaderText = "Score";
+            Score.MinimumWidth = 6;
+            Score.Name = "Score";
+            Score.Width = 125;
+            // 
+            // Description
+            // 
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            Description.Width = 275;
             // 
             // MainForm
             // 
@@ -381,6 +414,8 @@
             tpTvSeriesManager.PerformLayout();
             tpReviewManager.ResumeLayout(false);
             tpReviewManager.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewReview).EndInit();
+            ((System.ComponentModel.ISupportInitialize)reviewBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -415,6 +450,10 @@
         private ListBox lbMediaCollection;
         private Label label7;
         private Label label6;
-        private ListBox lbReviewCollection;
+        private DataGridView dataGridViewReview;
+        private BindingSource reviewBindingSource;
+        private DataGridViewTextBoxColumn Title;
+        private DataGridViewTextBoxColumn Score;
+        private DataGridViewTextBoxColumn Description;
     }
 }

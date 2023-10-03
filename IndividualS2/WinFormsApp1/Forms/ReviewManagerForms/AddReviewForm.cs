@@ -28,19 +28,17 @@ namespace Desktop_App.Forms.ReviewManagerForms
                 List<Review> reviews = new List<Review>();
                 reviews.Add(newReview);
 
-                ReviewManager reviewManager = new ReviewManager();
-                reviewManager.AddReview(newReview);
+                
+                
 
-
-
-                MessageBox.Show("Review created successfully!");
-
-
-                tbTitle.Clear();
-                tbScore.Clear();
-                rtbDescription.Clear();
-                MainForm MainForm = new MainForm(reviews);
+                // Create an instance of  and pass the list of reviews
+                MainForm reviewListForm = new MainForm(reviews);
+                MessageBox.Show("review was added succesful");
+                reviewListForm.Show();
                 this.Close();
+
+
+
             }
             else
             {

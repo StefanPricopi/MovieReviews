@@ -18,24 +18,32 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             reviewToShow = Reviews;
+            InitializeDataGridView();
 
             Debug.WriteLine($"Number of reviews received: {reviewToShow.Count}");
         }
 
-
-
-        private void MainForm_Load(object sender, EventArgs e)
+        private void InitializeDataGridView()
         {
-            lbReviewCollection.DataSource = reviewToShow;
-            lbReviewCollection.Refresh();
+
+
+            // Populate the DataGridView with reviews
+            foreach (var review in reviewToShow)
+            {
+                dataGridViewReview.Rows.Add(review.Title, review.Score, review.Description);
+            }
         }
+
+
 
 
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
             using (AddMovieForm f3 = new AddMovieForm())
             {
+
                 var result = f3.ShowDialog();
+
             }
         }
 
@@ -67,7 +75,9 @@ namespace WinFormsApp1
         {
             using (AddReviewForm f3 = new AddReviewForm())
             {
+
                 var result = f3.ShowDialog();
+
             }
         }
 
