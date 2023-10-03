@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\WinFormsApp1.csproj": {}
+    "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\WinFormsApp1.csproj": {
+    "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\WinFormsApp1.csproj",
-        "projectName": "WinFormsApp1",
-        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
+        "projectName": "Desktop App",
+        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\obj\\",
         "projectStyle": "PackageReference",

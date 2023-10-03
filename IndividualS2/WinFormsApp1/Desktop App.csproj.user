@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Forms\MovieManagerForms\AddMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MovieManagerForms\EditMovieForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ReviewManagerForms\AddReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ReviewManagerForms\EditReviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\TvSeriesManagerForms\AddTvSeriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\TvSeriesManagerForms\EditTvSeriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
