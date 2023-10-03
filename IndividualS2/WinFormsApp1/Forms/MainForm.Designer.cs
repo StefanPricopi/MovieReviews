@@ -30,6 +30,7 @@
         {
             tCMain = new TabControl();
             tpMovieManager = new TabPage();
+            label7 = new Label();
             lbMovieColletion = new ListBox();
             label1 = new Label();
             tbSearchMovieTitle = new TextBox();
@@ -38,6 +39,7 @@
             btnUpdateMovie = new Button();
             btnAddMovie = new Button();
             tpTvSeriesManager = new TabPage();
+            label6 = new Label();
             lbTvSeriesCollection = new ListBox();
             label2 = new Label();
             tbSearchTvSeriesTitle = new TextBox();
@@ -49,15 +51,13 @@
             label5 = new Label();
             label4 = new Label();
             lbMediaCollection = new ListBox();
-            lbReviewCollection = new ListBox();
             label3 = new Label();
             tbSearchReviewTitle = new TextBox();
             btnSearchReview = new Button();
             btnViewAllReview = new Button();
             btnUpdateReview = new Button();
             btnAddReview = new Button();
-            label6 = new Label();
-            label7 = new Label();
+            lbReviewCollection = new ListBox();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             tpTvSeriesManager.SuspendLayout();
@@ -92,6 +92,15 @@
             tpMovieManager.TabIndex = 0;
             tpMovieManager.Text = "MovieManager";
             tpMovieManager.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(379, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(121, 20);
+            label7.TabIndex = 7;
+            label7.Text = "Movie Collection";
             // 
             // lbMovieColletion
             // 
@@ -173,6 +182,15 @@
             tpTvSeriesManager.TabIndex = 1;
             tpTvSeriesManager.Text = "TvSeriesManager";
             tpTvSeriesManager.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(373, 16);
+            label6.Name = "label6";
+            label6.Size = new Size(133, 20);
+            label6.TabIndex = 14;
+            label6.Text = "TvSeries Collection";
             // 
             // lbTvSeriesCollection
             // 
@@ -256,6 +274,7 @@
             tpReviewManager.TabIndex = 2;
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
+            tpReviewManager.Click += MainForm_Load;
             // 
             // label5
             // 
@@ -283,15 +302,6 @@
             lbMediaCollection.Name = "lbMediaCollection";
             lbMediaCollection.Size = new Size(445, 164);
             lbMediaCollection.TabIndex = 21;
-            // 
-            // lbReviewCollection
-            // 
-            lbReviewCollection.FormattingEnabled = true;
-            lbReviewCollection.ItemHeight = 20;
-            lbReviewCollection.Location = new Point(378, 232);
-            lbReviewCollection.Name = "lbReviewCollection";
-            lbReviewCollection.Size = new Size(445, 164);
-            lbReviewCollection.TabIndex = 20;
             // 
             // label3
             // 
@@ -347,23 +357,14 @@
             btnAddReview.UseVisualStyleBackColor = true;
             btnAddReview.Click += btnAddReview_Click;
             // 
-            // label6
+            // lbReviewCollection
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(373, 16);
-            label6.Name = "label6";
-            label6.Size = new Size(133, 20);
-            label6.TabIndex = 14;
-            label6.Text = "TvSeries Collection";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(379, 12);
-            label7.Name = "label7";
-            label7.Size = new Size(121, 20);
-            label7.TabIndex = 7;
-            label7.Text = "Movie Collection";
+            lbReviewCollection.FormattingEnabled = true;
+            lbReviewCollection.ItemHeight = 20;
+            lbReviewCollection.Location = new Point(378, 232);
+            lbReviewCollection.Name = "lbReviewCollection";
+            lbReviewCollection.Size = new Size(445, 164);
+            lbReviewCollection.TabIndex = 20;
             // 
             // MainForm
             // 
@@ -403,7 +404,6 @@
         private Button btnViewAllTvSeries;
         private Button btnUpdateTvSeries;
         private Button btnAddTvSeries;
-        private ListBox lbReviewCollection;
         private Label label3;
         private TextBox tbSearchReviewTitle;
         private Button btnSearchReview;
@@ -415,5 +415,6 @@
         private ListBox lbMediaCollection;
         private Label label7;
         private Label label6;
+        private ListBox lbReviewCollection;
     }
 }

@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "Desktop App/1.0.0": {
-        "dependencies": {
-          "LogicLayerClassLibrary": "1.0.0"
-        },
-        "runtime": {
-          "Desktop App.dll": {}
-        }
-      },
       "LogicLayerClassLibrary/1.0.0": {
         "runtime": {
           "LogicLayerClassLibrary.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "Desktop App/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "LogicLayerClassLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,

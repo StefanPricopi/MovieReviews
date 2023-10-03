@@ -31,9 +31,9 @@
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            richTextBox1 = new RichTextBox();
+            tbTitle = new TextBox();
+            tbScore = new TextBox();
+            rtbDescription = new RichTextBox();
             btnAddReview = new Button();
             SuspendLayout();
             // 
@@ -64,27 +64,27 @@
             label4.TabIndex = 3;
             label4.Text = "Review Description";
             // 
-            // textBox1
+            // tbTitle
             // 
-            textBox1.Location = new Point(90, 80);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 4;
+            tbTitle.Location = new Point(90, 80);
+            tbTitle.Name = "tbTitle";
+            tbTitle.Size = new Size(125, 27);
+            tbTitle.TabIndex = 4;
             // 
-            // textBox3
+            // tbScore
             // 
-            textBox3.Location = new Point(90, 133);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 6;
+            tbScore.Location = new Point(90, 133);
+            tbScore.Name = "tbScore";
+            tbScore.Size = new Size(125, 27);
+            tbScore.TabIndex = 6;
             // 
-            // richTextBox1
+            // rtbDescription
             // 
-            richTextBox1.Location = new Point(90, 186);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(498, 177);
-            richTextBox1.TabIndex = 7;
-            richTextBox1.Text = "";
+            rtbDescription.Location = new Point(90, 186);
+            rtbDescription.Name = "rtbDescription";
+            rtbDescription.Size = new Size(498, 177);
+            rtbDescription.TabIndex = 7;
+            rtbDescription.Text = "";
             // 
             // btnAddReview
             // 
@@ -94,6 +94,7 @@
             btnAddReview.TabIndex = 8;
             btnAddReview.Text = "Add Review";
             btnAddReview.UseVisualStyleBackColor = true;
+            btnAddReview.Click += btnAddReview_Click;
             // 
             // AddReviewForm
             // 
@@ -101,14 +102,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnAddReview);
-            Controls.Add(richTextBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
+            Controls.Add(rtbDescription);
+            Controls.Add(tbScore);
+            Controls.Add(tbTitle);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
             Name = "AddReviewForm";
-            Text = "AddReviewForm";
+            Text = "AddReviewForm";            
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,9 +119,9 @@
         private Label label1;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private RichTextBox richTextBox1;
+        private TextBox tbTitle;
+        private TextBox tbScore;
+        private RichTextBox rtbDescription;
         private Button btnAddReview;
     }
 }

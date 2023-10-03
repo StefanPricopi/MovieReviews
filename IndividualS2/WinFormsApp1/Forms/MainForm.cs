@@ -2,16 +2,33 @@ using Desktop_App.Forms;
 using Desktop_App.Forms.MovieManagerForms;
 using Desktop_App.Forms.ReviewManagerForms;
 using Desktop_App.Forms.TvSeriesManagerForms;
+using LogicLayerClassLibrary.Classes;
+using System.Diagnostics;
 
 namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
+        private List<Review> reviewToShow = new List<Review>();
         public MainForm()
         {
             InitializeComponent();
         }
+        public MainForm(List<Review> Reviews)
+        {
+            InitializeComponent();
+            reviewToShow = Reviews;
 
+            Debug.WriteLine($"Number of reviews received: {reviewToShow.Count}");
+        }
+
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lbReviewCollection.DataSource = reviewToShow;
+            lbReviewCollection.Refresh();
+        }
 
 
         private void btnAddMovie_Click_1(object sender, EventArgs e)

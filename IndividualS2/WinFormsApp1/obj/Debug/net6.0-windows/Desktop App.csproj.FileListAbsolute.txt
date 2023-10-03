@@ -1,22 +1,26 @@
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.exe
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.deps.json
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.runtimeconfig.json
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.dll
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.pdb
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.csproj.AssemblyReference.cache
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.MainForm.resources
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.csproj.GenerateResource.cache
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.AssemblyInfoInputs.cache
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.AssemblyInfo.cs
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.csproj.CoreCompileInputs.cache
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.dll
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\refint\Desktop App.dll
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.pdb
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.genruntimeconfig.cache
-C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\ref\Desktop App.dll
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop_App.Forms.AddMovieForm.resources
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop_App.Forms.MovieManagerForms.EditMovieForm.resources
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop_App.Forms.ReviewManagerForms.AddReviewForm.resources
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop_App.Forms.ReviewManagerForms.EditReviewForm.resources
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop_App.Forms.TvSeriesManagerForms.AddTvSeriesForm.resources
 C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop_App.Forms.TvSeriesManagerForms.EditTvSeriesForm.resources
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.csproj.GenerateResource.cache
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.AssemblyInfoInputs.cache
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.AssemblyInfo.cs
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.csproj.CoreCompileInputs.cache
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.exe
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.deps.json
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.runtimeconfig.json
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.dll
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\Desktop App.pdb
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\LogicLayerClassLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows\LogicLayerClassLibrary.pdb
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.csproj.CopyComplete
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.dll
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\refint\Desktop App.dll
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.pdb
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\Desktop App.genruntimeconfig.cache
+C:\Users\alin1\OneDrive\Desktop\code\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows\ref\Desktop App.dll
