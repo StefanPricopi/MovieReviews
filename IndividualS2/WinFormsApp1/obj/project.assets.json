@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows7.0": {
+      "LogicLayerClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/LogicLayerClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LogicLayerClassLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "LogicLayerClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj",
+      "msbuildProject": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows7.0": [
+      "LogicLayerClassLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\alin1\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\code\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
