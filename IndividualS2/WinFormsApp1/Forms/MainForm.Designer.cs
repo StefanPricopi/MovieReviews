@@ -50,6 +50,9 @@
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
             dataGridViewReview = new DataGridView();
+            Title = new DataGridViewTextBoxColumn();
+            Score = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             label5 = new Label();
             label4 = new Label();
             lbMediaCollection = new ListBox();
@@ -60,9 +63,6 @@
             btnUpdateReview = new Button();
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
-            Title = new DataGridViewTextBoxColumn();
-            Score = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             tpTvSeriesManager.SuspendLayout();
@@ -293,6 +293,27 @@
             dataGridViewReview.Size = new Size(582, 144);
             dataGridViewReview.TabIndex = 24;
             // 
+            // Title
+            // 
+            Title.HeaderText = "Title";
+            Title.MinimumWidth = 6;
+            Title.Name = "Title";
+            Title.Width = 125;
+            // 
+            // Score
+            // 
+            Score.HeaderText = "Score";
+            Score.MinimumWidth = 6;
+            Score.Name = "Score";
+            Score.Width = 125;
+            // 
+            // Description
+            // 
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            Description.Width = 275;
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -353,6 +374,7 @@
             btnViewAllReview.TabIndex = 16;
             btnViewAllReview.Text = "View All Review";
             btnViewAllReview.UseVisualStyleBackColor = true;
+            btnViewAllReview.Click += btnViewAllReview_Click;
             // 
             // btnUpdateReview
             // 
@@ -377,27 +399,6 @@
             // reviewBindingSource
             // 
             reviewBindingSource.DataSource = typeof(LogicLayerClassLibrary.Classes.Review);
-            // 
-            // Title
-            // 
-            Title.HeaderText = "Title";
-            Title.MinimumWidth = 6;
-            Title.Name = "Title";
-            Title.Width = 125;
-            // 
-            // Score
-            // 
-            Score.HeaderText = "Score";
-            Score.MinimumWidth = 6;
-            Score.Name = "Score";
-            Score.Width = 125;
-            // 
-            // Description
-            // 
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 6;
-            Description.Name = "Description";
-            Description.Width = 275;
             // 
             // MainForm
             // 

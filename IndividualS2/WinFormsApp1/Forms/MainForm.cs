@@ -3,6 +3,7 @@ using Desktop_App.Forms.MovieManagerForms;
 using Desktop_App.Forms.ReviewManagerForms;
 using Desktop_App.Forms.TvSeriesManagerForms;
 using LogicLayerClassLibrary.Classes;
+using LogicLayerClassLibrary.ManagerClasses;
 using System.Diagnostics;
 
 namespace WinFormsApp1
@@ -10,6 +11,7 @@ namespace WinFormsApp1
     public partial class MainForm : Form
     {
         private List<Review> reviewToShow = new List<Review>();
+        private ReviewManager reviewManager;
         public MainForm()
         {
             InitializeComponent();
@@ -17,8 +19,8 @@ namespace WinFormsApp1
         public MainForm(List<Review> Reviews)
         {
             InitializeComponent();
-            reviewToShow = Reviews;
-            InitializeDataGridView();
+            this.reviewToShow = Reviews;
+
 
             Debug.WriteLine($"Number of reviews received: {reviewToShow.Count}");
         }
@@ -87,6 +89,12 @@ namespace WinFormsApp1
             {
                 var result = f3.ShowDialog();
             }
+        }
+
+        private void btnViewAllReview_Click(object sender, EventArgs e)
+        {
+            InitializeDataGridView();
+            reviewManager.GetAllReview();
         }
     }
 }

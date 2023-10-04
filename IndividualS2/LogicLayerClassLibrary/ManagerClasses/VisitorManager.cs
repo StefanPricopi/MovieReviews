@@ -1,6 +1,5 @@
 ﻿using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
-using LogicLayerClassLibrary.ManagerClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,28 +8,29 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-        public class ReviewManager : IReviewManager<Review>
+    internal class VisitorManager :IVisitorManager
     {
-        private List<Review> reviewList = new List<Review>();
-        
-
-        public void AddReview(Review r)
+        public VisitorManager()
         {
-          
-          reviewList.Add(r);
+
         }
 
-        public List<Review> GetAllReview()
+        public bool AddVisitor(Visitor v)
         {
             throw new NotImplementedException();
         }
 
-        public Review GetReviewById(int id)
+        public List<Visitor> GetAllVisitor()
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateReview(Review r)
+        public Visitor GetVisitorById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool UpdateVisitor(Visitor v)
         {
             throw new NotImplementedException();
         }
