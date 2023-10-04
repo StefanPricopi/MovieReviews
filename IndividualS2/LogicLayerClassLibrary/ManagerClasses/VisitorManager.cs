@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    internal class VisitorManager :IVisitorManager
+    internal class VisitorManager : IVisitorManager
     {
         public VisitorManager()
         {

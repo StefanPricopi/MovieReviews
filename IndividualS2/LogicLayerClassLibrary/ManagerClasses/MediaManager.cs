@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    internal class MediaManager:IMediaManager
+    internal class MediaManager : IMediaManager
     {
+
         private IMediaManager movieManager;
         private List<Media> MediaCollection = new List<Media>();
         public MediaManager()
@@ -22,8 +23,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             MediaCollection.Add(m);
             return true;
-            
-            
+
         }
         public bool UpdateMedia(Media m)
         {
@@ -40,6 +40,6 @@ namespace LogicLayerClassLibrary.ManagerClasses
             throw new NotImplementedException();
         }
 
-        
+
     }
 }

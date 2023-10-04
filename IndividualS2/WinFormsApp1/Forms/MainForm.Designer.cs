@@ -50,6 +50,9 @@
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
             dataGridViewReview = new DataGridView();
+            Title = new DataGridViewTextBoxColumn();
+            Score = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             label5 = new Label();
             label4 = new Label();
             lbMediaCollection = new ListBox();
@@ -60,9 +63,7 @@
             btnUpdateReview = new Button();
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
-            Title = new DataGridViewTextBoxColumn();
-            Score = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
+            button1 = new Button();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             tpTvSeriesManager.SuspendLayout();
@@ -279,6 +280,7 @@
             // 
             // tpReviewManager
             // 
+            tpReviewManager.Controls.Add(button1);
             tpReviewManager.Controls.Add(dataGridViewReview);
             tpReviewManager.Controls.Add(label5);
             tpReviewManager.Controls.Add(label4);
@@ -307,6 +309,21 @@
             dataGridViewReview.RowTemplate.Height = 25;
             dataGridViewReview.Size = new Size(391, 127);
             dataGridViewReview.TabIndex = 24;
+            // 
+            // Title
+            // 
+            Title.HeaderText = "Title";
+            Title.Name = "Title";
+            // 
+            // Score
+            // 
+            Score.HeaderText = "Score";
+            Score.Name = "Score";
+            // 
+            // Description
+            // 
+            Description.HeaderText = "Description";
+            Description.Name = "Description";
             // 
             // label5
             // 
@@ -355,7 +372,7 @@
             // 
             // btnSearchReview
             // 
-            btnSearchReview.Location = new Point(57, 189);
+            btnSearchReview.Location = new Point(57, 166);
             btnSearchReview.Margin = new Padding(3, 2, 3, 2);
             btnSearchReview.Name = "btnSearchReview";
             btnSearchReview.Size = new Size(130, 22);
@@ -366,7 +383,7 @@
             // 
             // btnViewAllReview
             // 
-            btnViewAllReview.Location = new Point(57, 139);
+            btnViewAllReview.Location = new Point(57, 125);
             btnViewAllReview.Margin = new Padding(3, 2, 3, 2);
             btnViewAllReview.Name = "btnViewAllReview";
             btnViewAllReview.Size = new Size(130, 22);
@@ -401,20 +418,14 @@
             // 
             reviewBindingSource.DataSource = typeof(LogicLayerClassLibrary.Classes.Review);
             // 
-            // Title
+            // button1
             // 
-            Title.HeaderText = "Title";
-            Title.Name = "Title";
-            // 
-            // Score
-            // 
-            Score.HeaderText = "Score";
-            Score.Name = "Score";
-            // 
-            // Description
-            // 
-            Description.HeaderText = "Description";
-            Description.Name = "Description";
+            button1.Location = new Point(57, 210);
+            button1.Name = "button1";
+            button1.Size = new Size(130, 23);
+            button1.TabIndex = 25;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -473,5 +484,6 @@
         private DataGridViewTextBoxColumn Title;
         private DataGridViewTextBoxColumn Score;
         private DataGridViewTextBoxColumn Description;
+        private Button button1;
     }
 }

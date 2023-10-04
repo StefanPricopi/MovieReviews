@@ -46,6 +46,7 @@
             btnEditReview.TabIndex = 15;
             btnEditReview.Text = "Edit Review";
             btnEditReview.UseVisualStyleBackColor = true;
+            btnEditReview.Click += btnEditReview_Click;
             // 
             // rtbDescription
             // 

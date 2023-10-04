@@ -5,43 +5,61 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-        public static class ReviewManager 
+    public static class ReviewManager
     {
-        public static List<Review> reviewList = new List<Review>();
-        
+        public static List<Review> reviewList = new List<Review>()
+            {
+                new Review(0,"abc",10,"abccccccccccc"),
+                new Review(1,"abcafraf",7,"abcccccwdadcccccc"),
+                new Review(2,"abcadaw",9,"abccccccdwadawccccc"),
+                new Review(3,"abcddd",5,"abcccccccadaaaacccc"),
 
-        public static void AddReview(Review r)
+            };
+        public static int Id = 4;
+
+        public static void AddReview(string title, decimal score, string description)
         {
-          
-          reviewList.Add(r);
+            Review r = new Review(Id, title, score, description);
+            Id++;
+            reviewList.Add(r);
         }
 
         public static List<Review> GetAllReview()
         {
-                            
-           return reviewList;
+
+            return reviewList;
 
         }
 
         public static Review GetReviewById(int id)
         {
-            foreach(Review r in reviewList) 
-            {  
-                if(r.Id == id) 
-                  return r;
+            foreach (Review r in reviewList)
+            {
+                if (r.Id == id)
+                    return r;
             }
-           return null;
-            
+            return null;
+
         }
 
-        public static void UpdateReview(Review r)
+        public static void UpdateReview(int id, string title, decimal score, string description)
         {
-            throw new NotImplementedException();
+
+            foreach (Review r in reviewList)
+            {
+                if (r.Id == id)
+                {
+                    r.Title = title;
+                    r.Score = score;
+                    r.Description = description;
+                }
+            }
         }
     }
 }

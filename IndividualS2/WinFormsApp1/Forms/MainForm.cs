@@ -12,30 +12,18 @@ namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
-
-
         public MainForm()
         {
             InitializeComponent();
+            ViewAllReviews();
+            dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
-        public MainForm(List<Review> Reviews)
-        {
-            InitializeComponent();
-
-        }
-
-        
-
-
-
 
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
             using (AddMovieForm f3 = new AddMovieForm())
             {
-
                 var result = f3.ShowDialog();
-
             }
         }
 
@@ -67,44 +55,46 @@ namespace WinFormsApp1
         {
             using (AddReviewForm f3 = new AddReviewForm())
             {
-
                 var result = f3.ShowDialog();
-
             }
         }
-
         private void btnUpdateReview_Click(object sender, EventArgs e)
         {
-            if(dataGridViewReview.SelectedRows.Count>0)
+            if (dataGridViewReview.SelectedRows.Count > 0)
             {
-                int i = dataGridViewReview.SelectedCells[0].RowIndex-1;
-
-                Review r =ReviewManager.GetReviewById(i);
+                int i = dataGridViewReview.SelectedRows[0].Index;
+                Review r = ReviewManager.GetReviewById(i);
 
                 using (EditReviewForm f3 = new EditReviewForm(r))
                 {
                     var result = f3.ShowDialog();
-
                 }
             }
-            
+
         }
 
         private void btnViewAllReview_Click(object sender, EventArgs e)
         {
-            dataGridViewReview.Rows.Clear();
-            foreach (Review r in ReviewManager.reviewList)
-            {
-                dataGridViewReview.Rows.Add(r.Title, r.Score, r.Description);
-            }
-
-
+            ViewAllReviews();
         }
 
         private void btnSearchReview_Click(object sender, EventArgs e)
         {
-            ReviewManager.GetReviewById(Convert.ToInt32(tbSearchMovieTitle));
 
+            dataGridViewReview.Rows.Clear();
+            AddRowDataGrid(ReviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
+        }
+        private void ViewAllReviews()
+        {
+            dataGridViewReview.Rows.Clear();
+            foreach (Review r in ReviewManager.reviewList)
+            {
+                AddRowDataGrid(r);
+            }
+        }
+        private void AddRowDataGrid(Review r)
+        {
+            dataGridViewReview.Rows.Add(r.Title, r.Score, r.Description);
         }
     }
 }
