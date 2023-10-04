@@ -6,6 +6,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
 {
     public partial class AddReviewForm : Form
     {
+        
 
         public AddReviewForm()
         {
@@ -25,18 +26,9 @@ namespace Desktop_App.Forms.ReviewManagerForms
 
                 Review newReview = new Review(title, rating, description);
 
-                List<Review> reviews = new List<Review>();
-                reviews.Add(newReview);
-
-                
-                
-
-                // Create an instance of  and pass the list of reviews
-                MainForm reviewListForm = new MainForm(reviews);
-                MessageBox.Show("review was added succesful");
-                reviewListForm.Show();
+                ReviewManager.AddReview(newReview);
+                MessageBox.Show("success");
                 this.Close();
-
 
 
             }

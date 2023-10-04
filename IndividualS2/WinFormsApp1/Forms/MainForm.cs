@@ -5,13 +5,15 @@ using Desktop_App.Forms.TvSeriesManagerForms;
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
 using System.Diagnostics;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
-        private List<Review> reviewToShow = new List<Review>();
-        private ReviewManager reviewManager;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -19,22 +21,10 @@ namespace WinFormsApp1
         public MainForm(List<Review> Reviews)
         {
             InitializeComponent();
-            this.reviewToShow = Reviews;
 
-
-            Debug.WriteLine($"Number of reviews received: {reviewToShow.Count}");
         }
 
-        private void InitializeDataGridView()
-        {
-
-
-            // Populate the DataGridView with reviews
-            foreach (var review in reviewToShow)
-            {
-                dataGridViewReview.Rows.Add(review.Title, review.Score, review.Description);
-            }
-        }
+        
 
 
 
@@ -85,16 +75,36 @@ namespace WinFormsApp1
 
         private void btnUpdateReview_Click(object sender, EventArgs e)
         {
-            using (EditReviewForm f3 = new EditReviewForm())
+            if(dataGridViewReview.SelectedRows.Count>0)
             {
-                var result = f3.ShowDialog();
+                int i = dataGridViewReview.SelectedCells[0].RowIndex-1;
+
+                Review r =ReviewManager.GetReviewById(i);
+
+                using (EditReviewForm f3 = new EditReviewForm(r))
+                {
+                    var result = f3.ShowDialog();
+
+                }
             }
+            
         }
 
         private void btnViewAllReview_Click(object sender, EventArgs e)
         {
-            InitializeDataGridView();
-            reviewManager.GetAllReview();
+            dataGridViewReview.Rows.Clear();
+            foreach (Review r in ReviewManager.reviewList)
+            {
+                dataGridViewReview.Rows.Add(r.Title, r.Score, r.Description);
+            }
+
+
+        }
+
+        private void btnSearchReview_Click(object sender, EventArgs e)
+        {
+            ReviewManager.GetReviewById(Convert.ToInt32(tbSearchMovieTitle));
+
         }
     }
 }

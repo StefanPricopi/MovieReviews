@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicLayerClassLibrary;
+using LogicLayerClassLibrary.Classes;
 
 namespace Desktop_App.Forms.ReviewManagerForms
 {
@@ -16,6 +17,13 @@ namespace Desktop_App.Forms.ReviewManagerForms
         public EditReviewForm()
         {
             InitializeComponent();
+        }
+        public EditReviewForm(Review review)
+        {
+            InitializeComponent();
+            tbTitle.Text = review.Title;
+            tbScore.Text = review.Score.ToString();
+            rtbDescription.Text = review.Description;
         }
     }
 }

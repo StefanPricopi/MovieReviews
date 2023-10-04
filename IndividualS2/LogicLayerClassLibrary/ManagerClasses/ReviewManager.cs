@@ -3,34 +3,43 @@ using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-        public class ReviewManager : IReviewManager<Review>
+        public static class ReviewManager 
     {
-        private List<Review> reviewList = new List<Review>();
+        public static List<Review> reviewList = new List<Review>();
         
 
-        public void AddReview(Review r)
+        public static void AddReview(Review r)
         {
           
           reviewList.Add(r);
         }
 
-        public List<Review> GetAllReview()
+        public static List<Review> GetAllReview()
         {
-            throw new NotImplementedException();
+                            
+           return reviewList;
+
         }
 
-        public Review GetReviewById(int id)
+        public static Review GetReviewById(int id)
         {
-            throw new NotImplementedException();
+            foreach(Review r in reviewList) 
+            {  
+                if(r.Id == id) 
+                  return r;
+            }
+           return null;
+            
         }
 
-        public void UpdateReview(Review r)
+        public static void UpdateReview(Review r)
         {
             throw new NotImplementedException();
         }

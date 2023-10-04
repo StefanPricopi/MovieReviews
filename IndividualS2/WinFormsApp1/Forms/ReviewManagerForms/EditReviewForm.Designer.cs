@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             btnEditReview = new Button();
-            richTextBox1 = new RichTextBox();
-            textBox3 = new TextBox();
-            textBox1 = new TextBox();
+            rtbDescription = new RichTextBox();
+            tbScore = new TextBox();
+            tbTitle = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
@@ -39,74 +39,79 @@
             // 
             // btnEditReview
             // 
-            btnEditReview.Location = new Point(575, 367);
+            btnEditReview.Location = new Point(503, 275);
+            btnEditReview.Margin = new Padding(3, 2, 3, 2);
             btnEditReview.Name = "btnEditReview";
-            btnEditReview.Size = new Size(137, 49);
+            btnEditReview.Size = new Size(120, 37);
             btnEditReview.TabIndex = 15;
             btnEditReview.Text = "Edit Review";
             btnEditReview.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // rtbDescription
             // 
-            richTextBox1.Location = new Point(92, 164);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(498, 177);
-            richTextBox1.TabIndex = 14;
-            richTextBox1.Text = "";
+            rtbDescription.Location = new Point(80, 123);
+            rtbDescription.Margin = new Padding(3, 2, 3, 2);
+            rtbDescription.Name = "rtbDescription";
+            rtbDescription.Size = new Size(436, 134);
+            rtbDescription.TabIndex = 14;
+            rtbDescription.Text = "";
             // 
-            // textBox3
+            // tbScore
             // 
-            textBox3.Location = new Point(92, 111);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 13;
+            tbScore.Location = new Point(80, 83);
+            tbScore.Margin = new Padding(3, 2, 3, 2);
+            tbScore.Name = "tbScore";
+            tbScore.Size = new Size(110, 23);
+            tbScore.TabIndex = 13;
             // 
-            // textBox1
+            // tbTitle
             // 
-            textBox1.Location = new Point(92, 58);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 12;
+            tbTitle.Location = new Point(80, 44);
+            tbTitle.Margin = new Padding(3, 2, 3, 2);
+            tbTitle.Name = "tbTitle";
+            tbTitle.Size = new Size(110, 23);
+            tbTitle.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(92, 141);
+            label4.Location = new Point(80, 106);
             label4.Name = "label4";
-            label4.Size = new Size(136, 20);
+            label4.Size = new Size(107, 15);
             label4.TabIndex = 11;
             label4.Text = "Review Description";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(92, 88);
+            label3.Location = new Point(80, 66);
             label3.Name = "label3";
-            label3.Size = new Size(46, 20);
+            label3.Size = new Size(36, 15);
             label3.TabIndex = 10;
             label3.Text = "Score";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(89, 34);
+            label1.Location = new Point(78, 26);
             label1.Name = "label1";
-            label1.Size = new Size(128, 20);
+            label1.Size = new Size(100, 15);
             label1.TabIndex = 9;
             label1.Text = "Title of the review";
             // 
             // EditReviewForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnEditReview);
-            Controls.Add(richTextBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
+            Controls.Add(rtbDescription);
+            Controls.Add(tbScore);
+            Controls.Add(tbTitle);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EditReviewForm";
             Text = "EditReviewForm";
             ResumeLayout(false);
@@ -116,9 +121,9 @@
         #endregion
 
         private Button btnEditReview;
-        private RichTextBox richTextBox1;
-        private TextBox textBox3;
-        private TextBox textBox1;
+        private RichTextBox rtbDescription;
+        private TextBox tbScore;
+        private TextBox tbTitle;
         private Label label4;
         private Label label3;
         private Label label1;
