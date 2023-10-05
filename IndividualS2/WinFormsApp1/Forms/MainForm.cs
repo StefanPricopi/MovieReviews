@@ -16,24 +16,14 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             ViewAllReviews();
+            ViewAllMovies();
             dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMovieCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        private void btnAddMovie_Click_1(object sender, EventArgs e)
-        {
-            using (AddMovieForm f3 = new AddMovieForm())
-            {
-                var result = f3.ShowDialog();
-            }
-        }
+        
 
-        private void btnUpdateMovie_Click(object sender, EventArgs e)
-        {
-            using (EditMovieForm f3 = new EditMovieForm())
-            {
-                var result = f3.ShowDialog();
-            }
-        }
+       
 
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
@@ -84,6 +74,29 @@ namespace WinFormsApp1
             dataGridViewReview.Rows.Clear();
             AddRowDataGrid(ReviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
         }
+        private void btnAddMovie_Click_1(object sender, EventArgs e)
+        {
+            using (AddMovieForm f3 = new AddMovieForm())
+            {
+                var result = f3.ShowDialog();
+            }
+        }
+        private void btnUpdateMovie_Click(object sender, EventArgs e)
+        {
+            using (EditMovieForm f3 = new EditMovieForm())
+            {
+                var result = f3.ShowDialog();
+            }
+        }
+        private void btnViewAllMovies_Click(object sender, EventArgs e)
+        {
+            ViewAllMovies();
+        }
+        private void btnSearchMovie_Click(object sender, EventArgs e)
+        {
+            dataGridViewReview.Rows.Clear();
+            AddRowMovieGrid((Movie)MediaManager.GetMediaById(Convert.ToInt32(tbSearchMovieTitle.Text)));
+        }
         private void ViewAllReviews()
         {
             dataGridViewReview.Rows.Clear();
@@ -92,9 +105,26 @@ namespace WinFormsApp1
                 AddRowDataGrid(r);
             }
         }
+        private void ViewAllMovies()
+        {
+            dgvMovieCollection.Rows.Clear();
+            foreach (Media m in MediaManager.MediaCollection)
+            {
+                if (m.GetType() == typeof(Movie))
+                {
+                    AddRowMovieGrid((Movie)m);
+                }
+            }
+        }
         private void AddRowDataGrid(Review r)
         {
             dataGridViewReview.Rows.Add(r.Title, r.Score, r.Description);
         }
+        private void AddRowMovieGrid(Movie m)
+        {
+            dataGridViewReview.Rows.Add(m.Title, m.Director, m.Actor, m.Description, m.Duration, m.Date, m.Genre);
+        }
+
+        
     }
 }

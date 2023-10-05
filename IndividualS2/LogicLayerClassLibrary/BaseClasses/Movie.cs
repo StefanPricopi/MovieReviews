@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.Classes
 {
-    internal class Movie : Media
+    public class Movie : Media
     {
 
-        private decimal Duration {  get; set; } 
-        private DateFormat Date {  get; set; }
+        public decimal Duration {  get; set; } 
+        public DateFormat Date {  get; set; }
 
-        Movie(int id, string title, string director, string actor, string description, Genre genre,decimal duration,DateFormat date) :base(id, title, director, actor, description,genre)
+        public Movie(int id, string title, string director, string actor, string description, Genre genre,decimal duration,DateFormat date) :base(id, title, director, actor, description,genre)
         {
             Duration = duration;
             Date = date;

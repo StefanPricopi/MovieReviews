@@ -21,12 +21,12 @@ namespace LogicLayerClassLibrary.ManagerClasses
                 new Review(3,"abcddd",5,"abcccccccadaaaacccc"),
 
             };
-        public static int Id = 4;
+        public static int ReviewId = 4;
 
         public static void AddReview(string title, decimal score, string description)
         {
-            Review r = new Review(Id, title, score, description);
-            Id++;
+            Review r = new Review(ReviewId, title, score, description);
+            ReviewId++;
             reviewList.Add(r);
         }
 

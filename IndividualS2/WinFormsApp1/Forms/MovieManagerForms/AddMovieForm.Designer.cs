@@ -160,6 +160,7 @@
             btnAddMovie.TabIndex = 28;
             btnAddMovie.Text = "AddMovie";
             btnAddMovie.UseVisualStyleBackColor = true;
+            btnAddMovie.Click += btnAddMovie_Click;
             // 
             // rtbDescription
             // 

@@ -31,8 +31,15 @@
             components = new System.ComponentModel.Container();
             tCMain = new TabControl();
             tpMovieManager = new TabPage();
+            dgvMovieCollection = new DataGridView();
+            mTitle = new DataGridViewTextBoxColumn();
+            mDirector = new DataGridViewTextBoxColumn();
+            mActor = new DataGridViewTextBoxColumn();
+            mDescription = new DataGridViewTextBoxColumn();
+            mDuration = new DataGridViewTextBoxColumn();
+            mDate = new DataGridViewTextBoxColumn();
+            mGenre = new DataGridViewTextBoxColumn();
             label7 = new Label();
-            lbMovieColletion = new ListBox();
             label1 = new Label();
             tbSearchMovieTitle = new TextBox();
             btnSearchMovie = new Button();
@@ -63,9 +70,9 @@
             btnUpdateReview = new Button();
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
-            button1 = new Button();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
             tpTvSeriesManager.SuspendLayout();
             tpReviewManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReview).BeginInit();
@@ -77,94 +84,140 @@
             tCMain.Controls.Add(tpMovieManager);
             tCMain.Controls.Add(tpTvSeriesManager);
             tCMain.Controls.Add(tpReviewManager);
-            tCMain.Location = new Point(10, 2);
-            tCMain.Margin = new Padding(3, 2, 3, 2);
+            tCMain.Location = new Point(11, 3);
             tCMain.Name = "tCMain";
             tCMain.SelectedIndex = 0;
-            tCMain.Size = new Size(749, 326);
+            tCMain.Size = new Size(856, 435);
             tCMain.TabIndex = 0;
             // 
             // tpMovieManager
             // 
+            tpMovieManager.Controls.Add(dgvMovieCollection);
             tpMovieManager.Controls.Add(label7);
-            tpMovieManager.Controls.Add(lbMovieColletion);
             tpMovieManager.Controls.Add(label1);
             tpMovieManager.Controls.Add(tbSearchMovieTitle);
             tpMovieManager.Controls.Add(btnSearchMovie);
             tpMovieManager.Controls.Add(btnViewAllMovies);
             tpMovieManager.Controls.Add(btnUpdateMovie);
             tpMovieManager.Controls.Add(btnAddMovie);
-            tpMovieManager.Location = new Point(4, 24);
-            tpMovieManager.Margin = new Padding(3, 2, 3, 2);
+            tpMovieManager.Location = new Point(4, 29);
             tpMovieManager.Name = "tpMovieManager";
-            tpMovieManager.Padding = new Padding(3, 2, 3, 2);
-            tpMovieManager.Size = new Size(741, 298);
+            tpMovieManager.Padding = new Padding(3);
+            tpMovieManager.Size = new Size(848, 402);
             tpMovieManager.TabIndex = 0;
             tpMovieManager.Text = "MovieManager";
             tpMovieManager.UseVisualStyleBackColor = true;
             // 
+            // dgvMovieCollection
+            // 
+            dgvMovieCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMovieCollection.Columns.AddRange(new DataGridViewColumn[] { mTitle, mDirector, mActor, mDescription, mDuration, mDate, mGenre });
+            dgvMovieCollection.Location = new Point(226, 45);
+            dgvMovieCollection.Name = "dgvMovieCollection";
+            dgvMovieCollection.RowHeadersWidth = 51;
+            dgvMovieCollection.RowTemplate.Height = 29;
+            dgvMovieCollection.Size = new Size(598, 316);
+            dgvMovieCollection.TabIndex = 8;
+            // 
+            // mTitle
+            // 
+            mTitle.HeaderText = "Title";
+            mTitle.MinimumWidth = 6;
+            mTitle.Name = "mTitle";
+            mTitle.Width = 125;
+            // 
+            // mDirector
+            // 
+            mDirector.HeaderText = "Director";
+            mDirector.MinimumWidth = 6;
+            mDirector.Name = "mDirector";
+            mDirector.Width = 125;
+            // 
+            // mActor
+            // 
+            mActor.HeaderText = "Actor";
+            mActor.MinimumWidth = 6;
+            mActor.Name = "mActor";
+            mActor.Width = 125;
+            // 
+            // mDescription
+            // 
+            mDescription.HeaderText = "Description";
+            mDescription.MinimumWidth = 6;
+            mDescription.Name = "mDescription";
+            mDescription.Width = 125;
+            // 
+            // mDuration
+            // 
+            mDuration.HeaderText = "Duration";
+            mDuration.MinimumWidth = 6;
+            mDuration.Name = "mDuration";
+            mDuration.Width = 125;
+            // 
+            // mDate
+            // 
+            mDate.HeaderText = "ReleaseDate";
+            mDate.MinimumWidth = 6;
+            mDate.Name = "mDate";
+            mDate.Width = 125;
+            // 
+            // mGenre
+            // 
+            mGenre.HeaderText = "Genre";
+            mGenre.MinimumWidth = 6;
+            mGenre.Name = "mGenre";
+            mGenre.Width = 125;
+            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(332, 9);
+            label7.Location = new Point(379, 12);
             label7.Name = "label7";
-            label7.Size = new Size(97, 15);
+            label7.Size = new Size(121, 20);
             label7.TabIndex = 7;
             label7.Text = "Movie Collection";
-            // 
-            // lbMovieColletion
-            // 
-            lbMovieColletion.FormattingEnabled = true;
-            lbMovieColletion.ItemHeight = 15;
-            lbMovieColletion.Location = new Point(332, 26);
-            lbMovieColletion.Margin = new Padding(3, 2, 3, 2);
-            lbMovieColletion.Name = "lbMovieColletion";
-            lbMovieColletion.Size = new Size(390, 259);
-            lbMovieColletion.TabIndex = 6;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(111, 233);
+            label1.Location = new Point(113, 311);
             label1.Name = "label1";
-            label1.Size = new Size(29, 15);
+            label1.Size = new Size(38, 20);
             label1.TabIndex = 5;
             label1.Text = "Title";
             // 
             // tbSearchMovieTitle
             // 
-            tbSearchMovieTitle.Location = new Point(32, 250);
-            tbSearchMovieTitle.Margin = new Padding(3, 2, 3, 2);
+            tbSearchMovieTitle.Location = new Point(104, 334);
             tbSearchMovieTitle.Name = "tbSearchMovieTitle";
-            tbSearchMovieTitle.Size = new Size(189, 23);
+            tbSearchMovieTitle.Size = new Size(61, 27);
             tbSearchMovieTitle.TabIndex = 4;
             // 
             // btnSearchMovie
             // 
-            btnSearchMovie.Location = new Point(62, 186);
-            btnSearchMovie.Margin = new Padding(3, 2, 3, 2);
+            btnSearchMovie.Location = new Point(71, 248);
             btnSearchMovie.Name = "btnSearchMovie";
-            btnSearchMovie.Size = new Size(130, 22);
+            btnSearchMovie.Size = new Size(149, 29);
             btnSearchMovie.TabIndex = 3;
             btnSearchMovie.Text = "Search Movie";
             btnSearchMovie.UseVisualStyleBackColor = true;
+            btnSearchMovie.Click += btnSearchMovie_Click;
             // 
             // btnViewAllMovies
             // 
-            btnViewAllMovies.Location = new Point(62, 136);
-            btnViewAllMovies.Margin = new Padding(3, 2, 3, 2);
+            btnViewAllMovies.Location = new Point(71, 181);
             btnViewAllMovies.Name = "btnViewAllMovies";
-            btnViewAllMovies.Size = new Size(130, 22);
+            btnViewAllMovies.Size = new Size(149, 29);
             btnViewAllMovies.TabIndex = 2;
             btnViewAllMovies.Text = "View All Movies";
             btnViewAllMovies.UseVisualStyleBackColor = true;
+            btnViewAllMovies.Click += btnViewAllMovies_Click;
             // 
             // btnUpdateMovie
             // 
-            btnUpdateMovie.Location = new Point(62, 82);
-            btnUpdateMovie.Margin = new Padding(3, 2, 3, 2);
+            btnUpdateMovie.Location = new Point(71, 109);
             btnUpdateMovie.Name = "btnUpdateMovie";
-            btnUpdateMovie.Size = new Size(130, 22);
+            btnUpdateMovie.Size = new Size(149, 29);
             btnUpdateMovie.TabIndex = 1;
             btnUpdateMovie.Text = "Update Movie";
             btnUpdateMovie.UseVisualStyleBackColor = true;
@@ -172,10 +225,9 @@
             // 
             // btnAddMovie
             // 
-            btnAddMovie.Location = new Point(62, 34);
-            btnAddMovie.Margin = new Padding(3, 2, 3, 2);
+            btnAddMovie.Location = new Point(71, 45);
             btnAddMovie.Name = "btnAddMovie";
-            btnAddMovie.Size = new Size(130, 22);
+            btnAddMovie.Size = new Size(149, 29);
             btnAddMovie.TabIndex = 0;
             btnAddMovie.Text = "Add Movie";
             btnAddMovie.UseVisualStyleBackColor = true;
@@ -191,11 +243,10 @@
             tpTvSeriesManager.Controls.Add(btnViewAllTvSeries);
             tpTvSeriesManager.Controls.Add(btnUpdateTvSeries);
             tpTvSeriesManager.Controls.Add(btnAddTvSeries);
-            tpTvSeriesManager.Location = new Point(4, 24);
-            tpTvSeriesManager.Margin = new Padding(3, 2, 3, 2);
+            tpTvSeriesManager.Location = new Point(4, 29);
             tpTvSeriesManager.Name = "tpTvSeriesManager";
-            tpTvSeriesManager.Padding = new Padding(3, 2, 3, 2);
-            tpTvSeriesManager.Size = new Size(741, 298);
+            tpTvSeriesManager.Padding = new Padding(3);
+            tpTvSeriesManager.Size = new Size(848, 402);
             tpTvSeriesManager.TabIndex = 1;
             tpTvSeriesManager.Text = "TvSeriesManager";
             tpTvSeriesManager.UseVisualStyleBackColor = true;
@@ -203,65 +254,60 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(326, 12);
+            label6.Location = new Point(373, 16);
             label6.Name = "label6";
-            label6.Size = new Size(105, 15);
+            label6.Size = new Size(133, 20);
             label6.TabIndex = 14;
             label6.Text = "TvSeries Collection";
             // 
             // lbTvSeriesCollection
             // 
             lbTvSeriesCollection.FormattingEnabled = true;
-            lbTvSeriesCollection.ItemHeight = 15;
-            lbTvSeriesCollection.Location = new Point(326, 29);
-            lbTvSeriesCollection.Margin = new Padding(3, 2, 3, 2);
+            lbTvSeriesCollection.ItemHeight = 20;
+            lbTvSeriesCollection.Location = new Point(373, 39);
             lbTvSeriesCollection.Name = "lbTvSeriesCollection";
-            lbTvSeriesCollection.Size = new Size(390, 259);
+            lbTvSeriesCollection.Size = new Size(445, 344);
             lbTvSeriesCollection.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(106, 236);
+            label2.Location = new Point(121, 315);
             label2.Name = "label2";
-            label2.Size = new Size(29, 15);
+            label2.Size = new Size(38, 20);
             label2.TabIndex = 12;
             label2.Text = "Title";
             // 
             // tbSearchTvSeriesTitle
             // 
-            tbSearchTvSeriesTitle.Location = new Point(26, 254);
-            tbSearchTvSeriesTitle.Margin = new Padding(3, 2, 3, 2);
+            tbSearchTvSeriesTitle.Location = new Point(30, 339);
             tbSearchTvSeriesTitle.Name = "tbSearchTvSeriesTitle";
-            tbSearchTvSeriesTitle.Size = new Size(189, 23);
+            tbSearchTvSeriesTitle.Size = new Size(215, 27);
             tbSearchTvSeriesTitle.TabIndex = 11;
             // 
             // btnSearchTvSeries
             // 
-            btnSearchTvSeries.Location = new Point(57, 189);
-            btnSearchTvSeries.Margin = new Padding(3, 2, 3, 2);
+            btnSearchTvSeries.Location = new Point(65, 252);
             btnSearchTvSeries.Name = "btnSearchTvSeries";
-            btnSearchTvSeries.Size = new Size(130, 22);
+            btnSearchTvSeries.Size = new Size(149, 29);
             btnSearchTvSeries.TabIndex = 10;
             btnSearchTvSeries.Text = "Search TvSeries";
             btnSearchTvSeries.UseVisualStyleBackColor = true;
             // 
             // btnViewAllTvSeries
             // 
-            btnViewAllTvSeries.Location = new Point(57, 139);
-            btnViewAllTvSeries.Margin = new Padding(3, 2, 3, 2);
+            btnViewAllTvSeries.Location = new Point(65, 185);
             btnViewAllTvSeries.Name = "btnViewAllTvSeries";
-            btnViewAllTvSeries.Size = new Size(130, 22);
+            btnViewAllTvSeries.Size = new Size(149, 29);
             btnViewAllTvSeries.TabIndex = 9;
             btnViewAllTvSeries.Text = "View All TvSeries";
             btnViewAllTvSeries.UseVisualStyleBackColor = true;
             // 
             // btnUpdateTvSeries
             // 
-            btnUpdateTvSeries.Location = new Point(57, 86);
-            btnUpdateTvSeries.Margin = new Padding(3, 2, 3, 2);
+            btnUpdateTvSeries.Location = new Point(65, 115);
             btnUpdateTvSeries.Name = "btnUpdateTvSeries";
-            btnUpdateTvSeries.Size = new Size(130, 22);
+            btnUpdateTvSeries.Size = new Size(149, 29);
             btnUpdateTvSeries.TabIndex = 8;
             btnUpdateTvSeries.Text = "Update TvSeries";
             btnUpdateTvSeries.UseVisualStyleBackColor = true;
@@ -269,10 +315,9 @@
             // 
             // btnAddTvSeries
             // 
-            btnAddTvSeries.Location = new Point(57, 37);
-            btnAddTvSeries.Margin = new Padding(3, 2, 3, 2);
+            btnAddTvSeries.Location = new Point(65, 49);
             btnAddTvSeries.Name = "btnAddTvSeries";
-            btnAddTvSeries.Size = new Size(130, 22);
+            btnAddTvSeries.Size = new Size(149, 29);
             btnAddTvSeries.TabIndex = 7;
             btnAddTvSeries.Text = "Add TvSeries";
             btnAddTvSeries.UseVisualStyleBackColor = true;
@@ -280,7 +325,6 @@
             // 
             // tpReviewManager
             // 
-            tpReviewManager.Controls.Add(button1);
             tpReviewManager.Controls.Add(dataGridViewReview);
             tpReviewManager.Controls.Add(label5);
             tpReviewManager.Controls.Add(label4);
@@ -291,11 +335,10 @@
             tpReviewManager.Controls.Add(btnViewAllReview);
             tpReviewManager.Controls.Add(btnUpdateReview);
             tpReviewManager.Controls.Add(btnAddReview);
-            tpReviewManager.Location = new Point(4, 24);
-            tpReviewManager.Margin = new Padding(3, 2, 3, 2);
+            tpReviewManager.Location = new Point(4, 29);
             tpReviewManager.Name = "tpReviewManager";
-            tpReviewManager.Padding = new Padding(3, 2, 3, 2);
-            tpReviewManager.Size = new Size(741, 298);
+            tpReviewManager.Padding = new Padding(3);
+            tpReviewManager.Size = new Size(848, 402);
             tpReviewManager.TabIndex = 2;
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
@@ -304,78 +347,83 @@
             // 
             dataGridViewReview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewReview.Columns.AddRange(new DataGridViewColumn[] { Title, Score, Description });
-            dataGridViewReview.Location = new Point(226, 166);
+            dataGridViewReview.Location = new Point(258, 221);
+            dataGridViewReview.Margin = new Padding(3, 4, 3, 4);
             dataGridViewReview.Name = "dataGridViewReview";
+            dataGridViewReview.RowHeadersWidth = 51;
             dataGridViewReview.RowTemplate.Height = 25;
-            dataGridViewReview.Size = new Size(391, 127);
+            dataGridViewReview.Size = new Size(447, 169);
             dataGridViewReview.TabIndex = 24;
             // 
             // Title
             // 
             Title.HeaderText = "Title";
+            Title.MinimumWidth = 6;
             Title.Name = "Title";
+            Title.Width = 125;
             // 
             // Score
             // 
             Score.HeaderText = "Score";
+            Score.MinimumWidth = 6;
             Score.Name = "Score";
+            Score.Width = 125;
             // 
             // Description
             // 
             Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
             Description.Name = "Description";
+            Description.Width = 125;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(332, 148);
+            label5.Location = new Point(379, 197);
             label5.Name = "label5";
-            label5.Size = new Size(101, 15);
+            label5.Size = new Size(127, 20);
             label5.TabIndex = 23;
             label5.Text = "Review Collection";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(332, 3);
+            label4.Location = new Point(379, 4);
             label4.Name = "label4";
-            label4.Size = new Size(97, 15);
+            label4.Size = new Size(122, 20);
             label4.TabIndex = 22;
             label4.Text = "Media Collection";
             // 
             // lbMediaCollection
             // 
             lbMediaCollection.FormattingEnabled = true;
-            lbMediaCollection.ItemHeight = 15;
-            lbMediaCollection.Location = new Point(228, 23);
-            lbMediaCollection.Margin = new Padding(3, 2, 3, 2);
+            lbMediaCollection.ItemHeight = 20;
+            lbMediaCollection.Location = new Point(261, 31);
             lbMediaCollection.Name = "lbMediaCollection";
-            lbMediaCollection.Size = new Size(493, 124);
+            lbMediaCollection.Size = new Size(563, 164);
             lbMediaCollection.TabIndex = 21;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(106, 236);
+            label3.Location = new Point(121, 315);
             label3.Name = "label3";
-            label3.Size = new Size(18, 15);
+            label3.Size = new Size(24, 20);
             label3.TabIndex = 19;
             label3.Text = "ID";
             // 
             // tbSearchReviewTitle
             // 
-            tbSearchReviewTitle.Location = new Point(26, 254);
-            tbSearchReviewTitle.Margin = new Padding(3, 2, 3, 2);
+            tbSearchReviewTitle.Location = new Point(30, 339);
             tbSearchReviewTitle.Name = "tbSearchReviewTitle";
-            tbSearchReviewTitle.Size = new Size(189, 23);
+            tbSearchReviewTitle.Size = new Size(215, 27);
             tbSearchReviewTitle.TabIndex = 18;
             // 
             // btnSearchReview
             // 
-            btnSearchReview.Location = new Point(57, 166);
-            btnSearchReview.Margin = new Padding(3, 2, 3, 2);
+            btnSearchReview.Location = new Point(65, 221);
             btnSearchReview.Name = "btnSearchReview";
-            btnSearchReview.Size = new Size(130, 22);
+            btnSearchReview.Size = new Size(149, 29);
             btnSearchReview.TabIndex = 17;
             btnSearchReview.Text = "Search Review";
             btnSearchReview.UseVisualStyleBackColor = true;
@@ -383,10 +431,9 @@
             // 
             // btnViewAllReview
             // 
-            btnViewAllReview.Location = new Point(57, 125);
-            btnViewAllReview.Margin = new Padding(3, 2, 3, 2);
+            btnViewAllReview.Location = new Point(65, 167);
             btnViewAllReview.Name = "btnViewAllReview";
-            btnViewAllReview.Size = new Size(130, 22);
+            btnViewAllReview.Size = new Size(149, 29);
             btnViewAllReview.TabIndex = 16;
             btnViewAllReview.Text = "View All Review";
             btnViewAllReview.UseVisualStyleBackColor = true;
@@ -394,10 +441,9 @@
             // 
             // btnUpdateReview
             // 
-            btnUpdateReview.Location = new Point(57, 86);
-            btnUpdateReview.Margin = new Padding(3, 2, 3, 2);
+            btnUpdateReview.Location = new Point(65, 115);
             btnUpdateReview.Name = "btnUpdateReview";
-            btnUpdateReview.Size = new Size(130, 22);
+            btnUpdateReview.Size = new Size(149, 29);
             btnUpdateReview.TabIndex = 15;
             btnUpdateReview.Text = "Update Review";
             btnUpdateReview.UseVisualStyleBackColor = true;
@@ -405,10 +451,9 @@
             // 
             // btnAddReview
             // 
-            btnAddReview.Location = new Point(57, 37);
-            btnAddReview.Margin = new Padding(3, 2, 3, 2);
+            btnAddReview.Location = new Point(65, 49);
             btnAddReview.Name = "btnAddReview";
-            btnAddReview.Size = new Size(130, 22);
+            btnAddReview.Size = new Size(149, 29);
             btnAddReview.TabIndex = 14;
             btnAddReview.Text = "Add Review";
             btnAddReview.UseVisualStyleBackColor = true;
@@ -418,27 +463,18 @@
             // 
             reviewBindingSource.DataSource = typeof(LogicLayerClassLibrary.Classes.Review);
             // 
-            // button1
-            // 
-            button1.Location = new Point(57, 210);
-            button1.Name = "button1";
-            button1.Size = new Size(130, 23);
-            button1.TabIndex = 25;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(780, 338);
+            ClientSize = new Size(891, 451);
             Controls.Add(tCMain);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
             Text = "Form1";
             tCMain.ResumeLayout(false);
             tpMovieManager.ResumeLayout(false);
             tpMovieManager.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).EndInit();
             tpTvSeriesManager.ResumeLayout(false);
             tpTvSeriesManager.PerformLayout();
             tpReviewManager.ResumeLayout(false);
@@ -455,7 +491,6 @@
         private TabPage tpTvSeriesManager;
         private TabPage tpReviewManager;
         private Button btnAddMovie;
-        private ListBox lbMovieColletion;
         private Label label1;
         private TextBox tbSearchMovieTitle;
         private Button btnSearchMovie;
@@ -484,6 +519,13 @@
         private DataGridViewTextBoxColumn Title;
         private DataGridViewTextBoxColumn Score;
         private DataGridViewTextBoxColumn Description;
-        private Button button1;
+        private DataGridView dgvMovieCollection;
+        private DataGridViewTextBoxColumn mTitle;
+        private DataGridViewTextBoxColumn mDirector;
+        private DataGridViewTextBoxColumn mActor;
+        private DataGridViewTextBoxColumn mDescription;
+        private DataGridViewTextBoxColumn mDuration;
+        private DataGridViewTextBoxColumn mDate;
+        private DataGridViewTextBoxColumn mGenre;
     }
 }

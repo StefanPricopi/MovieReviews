@@ -4,14 +4,14 @@ namespace LogicLayerClassLibrary.Classes
 {
     public class Media
     {
+
+        public int Id { get; private set; }
+        public string Title { get; set; }
+        public string Director{ get; set; }
+        public string Actor { get; set; }
+        public string Description {  get; set; }
         
-        private int Id { get; }
-        private string Title { get; set; }
-        private string Director{ get; set; }
-        private string Actor { get; set; }
-        private string Description {  get; set; }
-        
-        private Genre Genre {  get; set; }
+        public Genre Genre {  get; set; }
 
         public Media(int id,string title,string director,string actor,string description,Genre genre)
         {
