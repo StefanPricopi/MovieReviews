@@ -17,35 +17,33 @@ namespace LogicLayerClassLibrary.ManagerClasses
 
 
         public static List<Media> MediaCollection = new List<Media>()
-        {
-            new Media( 0,"Breaking bad","Vince Gilligan","Aaron paul","Teacher goes rouge",Enums.Genre.Drama),
-            new Media( 0,"Better call saul","Vince Gilligan","Bob Odenkirk","Lawyer enters the crime world",Enums.Genre.Drama),
-            
+        {     
         };
         
-        public static int MediaId = 2;
-        public static void AddMovie(string title,string director,string actor,string description,Genre genre,decimal duration,DateFormat date)
+        public static int MediaId = 0;
+        public static void AddMovie(string title,string director,string actor,string description,Genre genre,decimal duration,DateTime date)
         {
             Media m = new Movie(MediaId, title, director, actor, description, genre,duration,date);
             MediaId++;
             MediaCollection.Add(m);
 
         }
-        public static void UpdateMovie(int id,string title, string director, string actor, string description, Genre genre, decimal duration, DateFormat date)
+        public static void UpdateMovie(string oldtitle,string newtitle, string director, string actor, string description, Genre genre, decimal duration, DateTime date)
         {
             foreach (Media m in MediaCollection)
-                if (m.GetType() == typeof (Movie) && m.Id == id)
-            
-                
+            {
+                if (m.Title == oldtitle)
                 {
-                    m.Title=title;
-                    m.Director=director;
-                    m.Actor=actor;
-                    m.Description=description;
-                    m.Genre=genre;
-                    
+                    Movie movie = m as Movie;
+                    m.Title = newtitle;
+                    m.Director = director;
+                    m.Actor = actor;
+                    m.Description = description;
+                    m.Genre = genre;
+                    movie.Date = date;
+                    movie.Duration = duration;
                 }
-            
+            }
         }
 
         public static List<Media> GetAllMedia()
@@ -53,11 +51,11 @@ namespace LogicLayerClassLibrary.ManagerClasses
             return MediaCollection;
         }
 
-        public static Media GetMediaById(int id)
+        public static Media GetMediaByTitle(string title)
         {
             foreach (Media m in MediaCollection)
             {
-                if (m.Id == id)
+                if (m.Title == title)
                     return m;
             }
             return null;

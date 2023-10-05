@@ -21,9 +21,9 @@ namespace WinFormsApp1
             dgvMovieCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        
 
-       
+
+
 
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
@@ -83,10 +83,17 @@ namespace WinFormsApp1
         }
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
-            using (EditMovieForm f3 = new EditMovieForm())
+            if (dgvMovieCollection.SelectedRows.Count > 0)
             {
-                var result = f3.ShowDialog();
+                string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
+                Movie r = (Movie)MediaManager.GetMediaByTitle(i);
+                using (EditMovieForm f3 = new EditMovieForm(r))
+                {
+                    var result = f3.ShowDialog();
+                }
+
             }
+
         }
         private void btnViewAllMovies_Click(object sender, EventArgs e)
         {
@@ -94,8 +101,8 @@ namespace WinFormsApp1
         }
         private void btnSearchMovie_Click(object sender, EventArgs e)
         {
-            dataGridViewReview.Rows.Clear();
-            AddRowMovieGrid((Movie)MediaManager.GetMediaById(Convert.ToInt32(tbSearchMovieTitle.Text)));
+            dgvMovieCollection.Rows.Clear();
+            AddRowMovieGrid((Movie)MediaManager.GetMediaByTitle(tbSearchMovieTitle.Text));
         }
         private void ViewAllReviews()
         {
@@ -107,6 +114,7 @@ namespace WinFormsApp1
         }
         private void ViewAllMovies()
         {
+
             dgvMovieCollection.Rows.Clear();
             foreach (Media m in MediaManager.MediaCollection)
             {
@@ -122,9 +130,7 @@ namespace WinFormsApp1
         }
         private void AddRowMovieGrid(Movie m)
         {
-            dataGridViewReview.Rows.Add(m.Title, m.Director, m.Actor, m.Description, m.Duration, m.Date, m.Genre);
+            dgvMovieCollection.Rows.Add(m.Title, m.Director, m.Actor, m.Description, m.Duration, m.Date, m.Genre);
         }
-
-        
     }
 }

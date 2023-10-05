@@ -47,116 +47,123 @@
             // 
             // tbDuration
             // 
-            tbDuration.Location = new Point(84, 394);
+            tbDuration.Location = new Point(74, 296);
+            tbDuration.Margin = new Padding(3, 2, 3, 2);
             tbDuration.Name = "tbDuration";
-            tbDuration.Size = new Size(125, 27);
+            tbDuration.Size = new Size(110, 23);
             tbDuration.TabIndex = 27;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(84, 371);
+            label7.Location = new Point(74, 278);
             label7.Name = "label7";
-            label7.Size = new Size(67, 20);
+            label7.Size = new Size(53, 15);
             label7.TabIndex = 26;
             label7.Text = "Duration";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(305, 123);
+            label6.Location = new Point(267, 92);
             label6.Name = "label6";
-            label6.Size = new Size(94, 20);
+            label6.Size = new Size(72, 15);
             label6.TabIndex = 25;
             label6.Text = "Release date";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(305, 59);
+            label5.Location = new Point(267, 44);
             label5.Name = "label5";
-            label5.Size = new Size(85, 20);
+            label5.Size = new Size(68, 15);
             label5.TabIndex = 24;
             label5.Text = "Main Genre";
             // 
             // dtpReleaseDate
             // 
-            dtpReleaseDate.Location = new Point(305, 146);
+            dtpReleaseDate.Location = new Point(267, 110);
+            dtpReleaseDate.Margin = new Padding(3, 2, 3, 2);
             dtpReleaseDate.Name = "dtpReleaseDate";
-            dtpReleaseDate.Size = new Size(250, 27);
+            dtpReleaseDate.Size = new Size(219, 23);
             dtpReleaseDate.TabIndex = 23;
             // 
             // cbGenre
             // 
             cbGenre.FormattingEnabled = true;
-            cbGenre.Items.AddRange(new object[] { "Action", "Comedy", "Drama", "Science Fiction" });
-            cbGenre.Location = new Point(305, 82);
+            cbGenre.Items.AddRange(new object[] { "Action", "Comedy", "Drama", "SF" });
+            cbGenre.Location = new Point(267, 62);
+            cbGenre.Margin = new Padding(3, 2, 3, 2);
             cbGenre.Name = "cbGenre";
-            cbGenre.Size = new Size(151, 28);
+            cbGenre.Size = new Size(133, 23);
             cbGenre.TabIndex = 22;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(79, 245);
+            label4.Location = new Point(69, 184);
             label4.Name = "label4";
-            label4.Size = new Size(85, 20);
+            label4.Size = new Size(67, 15);
             label4.TabIndex = 20;
             label4.Text = "Description";
             // 
             // tbActors
             // 
-            tbActors.Location = new Point(84, 213);
+            tbActors.Location = new Point(74, 160);
+            tbActors.Margin = new Padding(3, 2, 3, 2);
             tbActors.Name = "tbActors";
-            tbActors.Size = new Size(125, 27);
+            tbActors.Size = new Size(110, 23);
             tbActors.TabIndex = 19;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(84, 190);
+            label3.Location = new Point(74, 142);
             label3.Name = "label3";
-            label3.Size = new Size(51, 20);
+            label3.Size = new Size(41, 15);
             label3.TabIndex = 18;
             label3.Text = "Actors";
             // 
             // tbDirector
             // 
-            tbDirector.Location = new Point(84, 146);
+            tbDirector.Location = new Point(74, 110);
+            tbDirector.Margin = new Padding(3, 2, 3, 2);
             tbDirector.Name = "tbDirector";
-            tbDirector.Size = new Size(125, 27);
+            tbDirector.Size = new Size(110, 23);
             tbDirector.TabIndex = 17;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(79, 121);
+            label2.Location = new Point(69, 91);
             label2.Name = "label2";
-            label2.Size = new Size(63, 20);
+            label2.Size = new Size(49, 15);
             label2.TabIndex = 16;
             label2.Text = "Director";
             // 
             // tbTitle
             // 
-            tbTitle.Location = new Point(84, 82);
+            tbTitle.Location = new Point(74, 62);
+            tbTitle.Margin = new Padding(3, 2, 3, 2);
             tbTitle.Name = "tbTitle";
-            tbTitle.Size = new Size(125, 27);
+            tbTitle.Size = new Size(110, 23);
             tbTitle.TabIndex = 15;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(79, 57);
+            label1.Location = new Point(69, 43);
             label1.Name = "label1";
-            label1.Size = new Size(38, 20);
+            label1.Size = new Size(29, 15);
             label1.TabIndex = 14;
             label1.Text = "Title";
             // 
             // btnAddMovie
             // 
-            btnAddMovie.Location = new Point(599, 382);
+            btnAddMovie.Location = new Point(524, 286);
+            btnAddMovie.Margin = new Padding(3, 2, 3, 2);
             btnAddMovie.Name = "btnAddMovie";
-            btnAddMovie.Size = new Size(133, 50);
+            btnAddMovie.Size = new Size(116, 38);
             btnAddMovie.TabIndex = 28;
             btnAddMovie.Text = "AddMovie";
             btnAddMovie.UseVisualStyleBackColor = true;
@@ -164,17 +171,18 @@
             // 
             // rtbDescription
             // 
-            rtbDescription.Location = new Point(85, 274);
+            rtbDescription.Location = new Point(74, 206);
+            rtbDescription.Margin = new Padding(3, 2, 3, 2);
             rtbDescription.Name = "rtbDescription";
-            rtbDescription.Size = new Size(450, 88);
+            rtbDescription.Size = new Size(394, 67);
             rtbDescription.TabIndex = 29;
             rtbDescription.Text = "";
             // 
             // AddMovieForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(rtbDescription);
             Controls.Add(btnAddMovie);
             Controls.Add(tbDuration);
@@ -190,6 +198,7 @@
             Controls.Add(label2);
             Controls.Add(tbTitle);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AddMovieForm";
             Text = "AddMovie";
             ResumeLayout(false);

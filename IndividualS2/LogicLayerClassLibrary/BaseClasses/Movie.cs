@@ -14,9 +14,9 @@ namespace LogicLayerClassLibrary.Classes
     {
 
         public decimal Duration {  get; set; } 
-        public DateFormat Date {  get; set; }
+        public DateTime Date {  get; set; }
 
-        public Movie(int id, string title, string director, string actor, string description, Genre genre,decimal duration,DateFormat date) :base(id, title, director, actor, description,genre)
+        public Movie(int id, string title, string director, string actor, string description, Genre genre,decimal duration,DateTime date) :base(id, title, director, actor, description,genre)
         {
             Duration = duration;
             Date = date;

@@ -28,13 +28,14 @@ namespace Desktop_App.Forms
             string director = tbDirector.Text;
             string actor = tbActors.Text;
             string description = rtbDescription.Text;
-            Genre genre =(Genre)cbGenre.SelectedItem;
-            DateFormat date = (DateFormat)dtpReleaseDate.Format;
+            Genre genre = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+
+            DateTime date = dtpReleaseDate.Value;
 
             if (decimal.TryParse(tbDuration.Text, out decimal duration))
             {
-                MediaManager.AddMovie(title, director,actor,description,genre,duration,date);
-                
+                MediaManager.AddMovie(title, director, actor, description, genre, duration, date);
+
                 MessageBox.Show("success");
                 this.Close();
             }
