@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
+      "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
       "projectName": "Desktop App",
-      "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
+      "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
       "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\WinFormsApp1\\obj\\",
+      "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
-              "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
             }
           }
         }

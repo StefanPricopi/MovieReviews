@@ -12,19 +12,27 @@ namespace Desktop_App.Forms.ReviewManagerForms
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {
-            string title = tbTitle.Text;
-
-            if (decimal.TryParse(tbScore.Text, out decimal rating))
+            try
             {
+                string title = tbTitle.Text;
                 string description = rtbDescription.Text;
-                ReviewManager.AddReview(title, rating, description);
-                MessageBox.Show("success");
-                this.Close();
+
+                if (decimal.TryParse(tbScore.Text, out decimal rating)&&title!=""&&description!=""&& rating > 0 && rating < 11)
+                {
+                    ReviewManager.AddReview(title, rating, description);
+                    MessageBox.Show("success");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input keep in mind rating is between 0 and 10. Please check your input.");
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Invalid rating input. Please enter a valid decimal value.");
+                MessageBox.Show("Invalid input. Please check your input.");
             }
+
 
         }
     }

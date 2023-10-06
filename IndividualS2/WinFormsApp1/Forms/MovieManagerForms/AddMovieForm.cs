@@ -24,25 +24,34 @@ namespace Desktop_App.Forms
 
         private void btnAddMovie_Click(object sender, EventArgs e)
         {
-            string title = tbTitle.Text;
-            string director = tbDirector.Text;
-            string actor = tbActors.Text;
-            string description = rtbDescription.Text;
-            Genre genre = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-
-            DateTime date = dtpReleaseDate.Value;
-
-            if (decimal.TryParse(tbDuration.Text, out decimal duration))
+            try
             {
-                MediaManager.AddMovie(title, director, actor, description, genre, duration, date);
+                string title = tbTitle.Text;
+                string director = tbDirector.Text;
+                string actor = tbActors.Text;
+                string description = rtbDescription.Text;
+                Genre genre = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
 
-                MessageBox.Show("success");
-                this.Close();
+                DateTime date = dtpReleaseDate.Value;
+
+                if (decimal.TryParse(tbDuration.Text, out decimal duration))
+                {
+                    MediaManager.AddMovie(title, director, actor, description, genre, duration, date);
+
+                    MessageBox.Show("success");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid rating input. Please enter a valid decimal value.");
+                }
             }
-            else
+            
+            catch (Exception ) 
             {
-                MessageBox.Show("Invalid rating input. Please enter a valid decimal value.");
+                MessageBox.Show("Invalid input. Please add values ");
             }
+            
         }
     }
 }

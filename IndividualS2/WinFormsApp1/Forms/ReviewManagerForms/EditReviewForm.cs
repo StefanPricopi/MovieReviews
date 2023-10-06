@@ -28,10 +28,25 @@ namespace Desktop_App.Forms.ReviewManagerForms
 
         private void btnEditReview_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if(decimal.TryParse(tbScore.Text, out decimal rating) && tbTitle.Text != "" && rtbDescription.Text != "" && rating > 0 && rating < 11) 
+                {
+                    ReviewManager.UpdateReview(id, tbTitle.Text, Convert.ToDecimal(tbScore.Text), rtbDescription.Text);
+                    MessageBox.Show("edit was succesful");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("edit was unsuccesful keep in mind score should be beetwin 1 and 10 , please check your input");
+                }
 
-            ReviewManager.UpdateReview(id, tbTitle.Text, Convert.ToDecimal(tbScore.Text), rtbDescription.Text);
-            MessageBox.Show("edit was succesful");
-            this.Close();
+            }
+            catch (Exception)
+            {
+                
+            }
+
         }
     }
 }

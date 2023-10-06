@@ -83,15 +83,21 @@ namespace WinFormsApp1
         }
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
-            if (dgvMovieCollection.SelectedRows.Count > 0)
+            try
             {
-                string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
-                Movie r = (Movie)MediaManager.GetMediaByTitle(i);
-                using (EditMovieForm f3 = new EditMovieForm(r))
+                if (dgvMovieCollection.SelectedRows.Count > 0)
                 {
-                    var result = f3.ShowDialog();
+                 string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
+                 Movie r = (Movie)MediaManager.GetMediaByTitle(i);
+                 using (EditMovieForm f3 = new EditMovieForm(r))
+                     {
+                            var result = f3.ShowDialog();
+                     }
                 }
-
+            }
+            catch(Exception )
+            {
+                MessageBox.Show("Invalid input. Please check your selected rows ");
             }
 
         }

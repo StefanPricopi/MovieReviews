@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
       "projectName": "LogicLayerClassLibrary",
-      "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+      "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
       "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alin1\\Desktop\\individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\",
+      "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

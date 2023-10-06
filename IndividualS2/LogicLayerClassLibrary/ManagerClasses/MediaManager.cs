@@ -58,7 +58,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
                 if (m.Title == title)
                     return m;
             }
-            return null;
+            throw new Exception("please input values");
         }
 
 

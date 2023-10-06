@@ -27,14 +27,26 @@ namespace Desktop_App.Forms.MovieManagerForms
             cbGenre.SelectedIndex = cbGenre.FindString(m.Genre.ToString());
             rtbDescription.Text = m.Description;
             dtpReleaseDate.Value = m.Date;
+            
         }
 
         private void btnEditMovie_Click(object sender, EventArgs e)
         {
-            var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-            MediaManager.UpdateMovie( title,tbTitle.Text, tbDirector.Text, tbActors.Text, rtbDescription.Text, ele, Convert.ToDecimal(tbDuration.Text), dtpReleaseDate.Value);
-            MessageBox.Show("edit was succesful");
-            this.Close();
+            try 
+            {  if(tbDirector.Text == ""||tbTitle.Text==""||tbActors.Text==""||rtbDescription.Text=="")
+                {
+                    throw new Exception();
+                }
+                var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+                MediaManager.UpdateMovie(title, tbTitle.Text, tbDirector.Text, tbActors.Text, rtbDescription.Text, ele, Convert.ToDecimal(tbDuration.Text), dtpReleaseDate.Value);
+                MessageBox.Show("edit was succesful");
+                this.Close();
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("edit was unsuccesful, check your input");
+            }
         }
     }
 }
