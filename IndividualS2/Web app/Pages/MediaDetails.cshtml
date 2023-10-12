@@ -2,13 +2,15 @@
 @model Web_app.Pages.MediaDetailsModel
 @{
 }
-<b>Media details:</b>{
+
 <div>
-    Media details:
-    <span>Id: @Model.media.Id</span>
-    <span>Title: @Model.media.Title</span>
-    <span>Actor: @Model.media.Actor</span>
-    <span>Description: @Model.media.Description</span>
-    <span>Director: @Model.media.Director</span>
+    <h1>Title:@Model.media.Title</h1>
+    <h2 class="Genre">Genre: @Model.media.Genre Star:@Model.media.Actor,Director: @Model.media.Director</h2>
+
+</div>
+<div class="details-container">
+
+    <img src="/img/mockdetails.jpg" alt="mock-image">
+    <p> Description: @Model.media.Description</p>
     
 </div>

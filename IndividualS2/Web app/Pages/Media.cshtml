@@ -3,14 +3,16 @@
 @{
 }
 <b>Media:</b>
-@foreach (var media in Model.media)
-{
-    <div>
-        Media:
-        <span>Title: @media.Title</span>
-        <span>Director: @media.Director</span>
-        <span>Genre: @media.Genre</span>
+<div class="cards-grid">
+        @foreach (var media in Model.media)
+        {
 
-        <span><a href="/MediaDetails?id=@media.Id">More...</a></span>
-    </div>
-}
+        <a href="/MediaDetails?id=@media.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
+            <h1>Title: @media.Title</h1>
+            <p>Actor: @media.Actor</p>
+            <p>Director: @media.Director</p>
+        </a>
+         
+        }
+   
+</div>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eXMtpxW37E8io0S3x9L6vqQjiVsvxBDywZY8HtbPxO4YphAHDaQ9/0eHsmoulQyJme2zu4mX2RDC/L5VYfupmA==",
+  "dgSpecHash": "LnjN35ykGFYyvkYsz9EAUDzMRiWA2FAEi7WzP2LG7G4/t0RHx8Qq1anTU88Vc355bWte69Y+VJ6r5F0+8DyyFw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
+  "projectFilePath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alin1\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.29\\microsoft.windows.sdk.net.ref.10.0.19041.29.nupkg.sha512"
   ],
