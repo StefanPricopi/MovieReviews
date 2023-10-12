@@ -1,0 +1,16 @@
+﻿@page
+@model Web_app.Pages.MediaModel
+@{
+}
+<b>Media:</b>
+@foreach (var media in Model.media)
+{
+    <div>
+        Media:
+        <span>Title: @media.Title</span>
+        <span>Director: @media.Director</span>
+        <span>Genre: @media.Genre</span>
+
+        <span><a href="/MediaDetails?id=@media.Id">More...</a></span>
+    </div>
+}

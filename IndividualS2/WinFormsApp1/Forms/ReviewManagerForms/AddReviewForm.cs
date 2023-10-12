@@ -1,4 +1,5 @@
 ﻿using LogicLayerClassLibrary.Classes;
+using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using WinFormsApp1;
 
@@ -6,6 +7,8 @@ namespace Desktop_App.Forms.ReviewManagerForms
 {
     public partial class AddReviewForm : Form
     {
+        private IReviewManagerDAL rev;
+        private ReviewManager reviewManager;
         public AddReviewForm()
         {
             InitializeComponent();
@@ -19,7 +22,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
 
                 if (decimal.TryParse(tbScore.Text, out decimal rating)&&title!=""&&description!=""&& rating > 0 && rating < 11)
                 {
-                    ReviewManager.AddReview(title, rating, description);
+                    reviewManager.AddReview(title, rating, description);
                     MessageBox.Show("success");
                     this.Close();
                 }

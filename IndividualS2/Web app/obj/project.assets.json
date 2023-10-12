@@ -2,23 +2,59 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "DALClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        }
+      },
       "LogicLayerClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DALClassLibrary": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/LogicLayerClassLibrary.dll": {}
         },
         "runtime": {
           "bin/placeholder/LogicLayerClassLibrary.dll": {}
         }
+      },
+      "ModelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ModelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLibrary.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "DALClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DALClassLibrary/DALClassLibrary.csproj",
+      "msbuildProject": "../DALClassLibrary/DALClassLibrary.csproj"
+    },
     "LogicLayerClassLibrary/1.0.0": {
       "type": "project",
       "path": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj",
       "msbuildProject": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj"
+    },
+    "ModelLibrary/1.0.0": {
+      "type": "project",
+      "path": "../ModelLibrary/ModelLibrary.csproj",
+      "msbuildProject": "../ModelLibrary/ModelLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {

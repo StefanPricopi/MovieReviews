@@ -1,0 +1,95 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Desktop App/1.0.0": {
+        "dependencies": {
+          "DALClassLibrary": "1.0.0",
+          "LogicLayerClassLibrary": "1.0.0",
+          "ModelLibrary": "1.0.0",
+          "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.29"
+        },
+        "runtime": {
+          "Desktop App.dll": {}
+        }
+      },
+      "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.19041.29": {
+        "runtime": {
+          "Microsoft.Windows.SDK.NET.dll": {
+            "assemblyVersion": "10.0.19041.24",
+            "fileVersion": "10.0.19041.29"
+          },
+          "WinRT.Runtime.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.3.42921"
+          }
+        }
+      },
+      "DALClassLibrary/1.0.0": {
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "runtime": {
+          "DALClassLibrary.dll": {}
+        }
+      },
+      "LogicLayerClassLibrary/1.0.0": {
+        "dependencies": {
+          "DALClassLibrary": "1.0.0"
+        },
+        "runtime": {
+          "LogicLayerClassLibrary.dll": {}
+        }
+      },
+      "ModelLibrary/1.0.0": {
+        "runtime": {
+          "ModelLibrary.dll": {}
+        }
+      },
+      "Web app/1.0.0": {
+        "dependencies": {
+          "LogicLayerClassLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Web app.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Desktop App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "runtimepack.Microsoft.Windows.SDK.NET.Ref/10.0.19041.29": {
+      "type": "runtimepack",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DALClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LogicLayerClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModelLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Web app/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

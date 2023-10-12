@@ -1,29 +1,89 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {
+    "net6.0-windows10.0.19041": {
+      "DALClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        }
+      },
       "LogicLayerClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DALClassLibrary": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/LogicLayerClassLibrary.dll": {}
         },
         "runtime": {
           "bin/placeholder/LogicLayerClassLibrary.dll": {}
         }
+      },
+      "ModelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ModelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLibrary.dll": {}
+        }
+      },
+      "Web app/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LogicLayerClassLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Web app.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Web app.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
   "libraries": {
+    "DALClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DALClassLibrary/DALClassLibrary.csproj",
+      "msbuildProject": "../DALClassLibrary/DALClassLibrary.csproj"
+    },
     "LogicLayerClassLibrary/1.0.0": {
       "type": "project",
       "path": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj",
       "msbuildProject": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj"
+    },
+    "ModelLibrary/1.0.0": {
+      "type": "project",
+      "path": "../ModelLibrary/ModelLibrary.csproj",
+      "msbuildProject": "../ModelLibrary/ModelLibrary.csproj"
+    },
+    "Web app/1.0.0": {
+      "type": "project",
+      "path": "../Web app/Web app.csproj",
+      "msbuildProject": "../Web app/Web app.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": [
-      "LogicLayerClassLibrary >= 1.0.0"
+    "net6.0-windows10.0.19041": [
+      "DALClassLibrary >= 1.0.0",
+      "LogicLayerClassLibrary >= 1.0.0",
+      "ModelLibrary >= 1.0.0",
+      "Web app >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -48,18 +108,27 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows10.0.19041.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net6.0-windows10.0.19041": {
+          "targetAlias": "net6.0-windows10.0.19041.0",
           "projectReferences": {
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj"
+            },
             "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
               "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+            },
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+            },
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj"
             }
           }
         }
@@ -71,8 +140,8 @@
       }
     },
     "frameworks": {
-      "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
+      "net6.0-windows10.0.19041": {
+        "targetAlias": "net6.0-windows10.0.19041.0",
         "imports": [
           "net461",
           "net462",
@@ -84,8 +153,17 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.19041.29, 10.0.19041.29]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
             "privateAssets": "all"
           },
           "Microsoft.WindowsDesktop.App.WindowsForms": {

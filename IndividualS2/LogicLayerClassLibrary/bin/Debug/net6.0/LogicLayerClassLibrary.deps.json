@@ -7,14 +7,40 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "LogicLayerClassLibrary/1.0.0": {
+        "dependencies": {
+          "DALClassLibrary": "1.0.0"
+        },
         "runtime": {
           "LogicLayerClassLibrary.dll": {}
+        }
+      },
+      "DALClassLibrary/1.0.0": {
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "runtime": {
+          "DALClassLibrary.dll": {}
+        }
+      },
+      "ModelLibrary/1.0.0": {
+        "runtime": {
+          "ModelLibrary.dll": {}
         }
       }
     }
   },
   "libraries": {
     "LogicLayerClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DALClassLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ModelLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

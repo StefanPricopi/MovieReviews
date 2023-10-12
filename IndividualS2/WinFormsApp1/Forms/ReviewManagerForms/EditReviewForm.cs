@@ -16,7 +16,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
     public partial class EditReviewForm : Form
     {
         private int id;
-
+        ReviewManager reviewManager;
         public EditReviewForm(Review review)
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
             {
                 if(decimal.TryParse(tbScore.Text, out decimal rating) && tbTitle.Text != "" && rtbDescription.Text != "" && rating > 0 && rating < 11) 
                 {
-                    ReviewManager.UpdateReview(id, tbTitle.Text, Convert.ToDecimal(tbScore.Text), rtbDescription.Text);
+                    reviewManager.UpdateReview(id, tbTitle.Text, Convert.ToDecimal(tbScore.Text), rtbDescription.Text);
                     MessageBox.Show("edit was succesful");
                     this.Close();
                 }

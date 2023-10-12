@@ -7,11 +7,16 @@ using LogicLayerClassLibrary.ManagerClasses;
 using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
+using DALClassLibrary.DALs;
 
 namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
+        private ReviewManager reviewManager;
+        private ReviewDAL reviewDAL;
+        private MediaManager mediaManager;
+        private MediaDAL mediaDAL;
         public MainForm()
         {
             InitializeComponent();
@@ -53,7 +58,7 @@ namespace WinFormsApp1
             if (dataGridViewReview.SelectedRows.Count > 0)
             {
                 int i = dataGridViewReview.SelectedRows[0].Index;
-                Review r = ReviewManager.GetReviewById(i);
+                Review r = reviewManager.GetReviewById(i);
 
                 using (EditReviewForm f3 = new EditReviewForm(r))
                 {
@@ -72,7 +77,7 @@ namespace WinFormsApp1
         {
 
             dataGridViewReview.Rows.Clear();
-            AddRowDataGrid(ReviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
+            AddRowDataGrid(reviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
@@ -88,7 +93,7 @@ namespace WinFormsApp1
                 if (dgvMovieCollection.SelectedRows.Count > 0)
                 {
                  string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
-                 Movie r = (Movie)MediaManager.GetMediaByTitle(i);
+                 Movie r = (Movie)mediaDAL.GetMediaByTitle(i);
                  using (EditMovieForm f3 = new EditMovieForm(r))
                      {
                             var result = f3.ShowDialog();
@@ -108,12 +113,12 @@ namespace WinFormsApp1
         private void btnSearchMovie_Click(object sender, EventArgs e)
         {
             dgvMovieCollection.Rows.Clear();
-            AddRowMovieGrid((Movie)MediaManager.GetMediaByTitle(tbSearchMovieTitle.Text));
+            AddRowMovieGrid((Movie)mediaDAL.GetMediaByTitle(tbSearchMovieTitle.Text));
         }
         private void ViewAllReviews()
         {
             dataGridViewReview.Rows.Clear();
-            foreach (Review r in ReviewManager.reviewList)
+            foreach (Review r in ReviewDAL.reviewList)
             {
                 AddRowDataGrid(r);
             }
@@ -122,7 +127,7 @@ namespace WinFormsApp1
         {
 
             dgvMovieCollection.Rows.Clear();
-            foreach (Media m in MediaManager.MediaCollection)
+            foreach (Media m in MediaDAL.MediaCollection)
             {
                 if (m.GetType() == typeof(Movie))
                 {

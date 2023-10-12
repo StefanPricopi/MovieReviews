@@ -17,6 +17,7 @@ namespace Desktop_App.Forms
 {
     public partial class AddMovieForm : Form
     {
+        private MediaManager mediaManager;
         public AddMovieForm()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Desktop_App.Forms
 
                 if (decimal.TryParse(tbDuration.Text, out decimal duration))
                 {
-                    MediaManager.AddMovie(title, director, actor, description, genre, duration, date);
+                    mediaManager.AddMovie(title, director, actor, description, genre, duration, date);
 
                     MessageBox.Show("success");
                     this.Close();

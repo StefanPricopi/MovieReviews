@@ -1,0 +1,19 @@
+﻿@page
+@model Web_app.Pages.ReviewModel
+@{
+}
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p>@Model.Message</p>
+}
+<b>Reviews:</b>
+@foreach (var review in Model.reviews)
+{
+    <div>
+        Review:
+        <span>Title: @review.Title</span>
+        <span>Score: @review.Score</span>
+        
+        <span><a href="/ReviewDetails?id=@review.Id">More...</a></span>
+    </div>
+}

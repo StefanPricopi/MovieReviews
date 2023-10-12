@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "DALClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        }
+      },
+      "ModelLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ModelLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ModelLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DALClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DALClassLibrary/DALClassLibrary.csproj",
+      "msbuildProject": "../DALClassLibrary/DALClassLibrary.csproj"
+    },
+    "ModelLibrary/1.0.0": {
+      "type": "project",
+      "path": "../ModelLibrary/ModelLibrary.csproj",
+      "msbuildProject": "../ModelLibrary/ModelLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "DALClassLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\alin1\\.nuget\\packages\\": {},
@@ -38,7 +75,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
