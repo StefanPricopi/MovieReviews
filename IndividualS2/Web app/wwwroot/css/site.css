@@ -111,26 +111,26 @@ footer {
 }
 .details-container {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Two columns: one for the image and one for the text */
-    grid-gap: 20px; /* Adjust the gap between elements */
-    align-items: center; /* Vertically align items to the middle */
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px; 
+    align-items: center; 
 }
 
-/* Style the title */
+
 .score {
-    grid-column: span 2; /* Span two columns to center it */
-    text-align: center; /* Center the title text */
+    grid-column: span 2;
+    text-align: center; 
 }
 
-/* Style the image */
+
 mock-image {
     max-width: 50%;
     height: auto;
 }
 
-/* Style the text */
+
 .Description {
-    text-align: left; /* Align text to the left within its column */
+    text-align: left; 
 }
 
 
