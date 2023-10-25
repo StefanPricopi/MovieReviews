@@ -92,15 +92,15 @@ namespace WinFormsApp1
             {
                 if (dgvMovieCollection.SelectedRows.Count > 0)
                 {
-                 string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
-                 Movie r = (Movie)mediaDAL.GetMediaByTitle(i);
-                 using (EditMovieForm f3 = new EditMovieForm(r))
-                     {
-                            var result = f3.ShowDialog();
-                     }
+                    string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
+                    Movie r = (Movie)mediaDAL.GetMediaByTitle(i);
+                    using (EditMovieForm f3 = new EditMovieForm(r))
+                    {
+                        var result = f3.ShowDialog();
+                    }
                 }
             }
-            catch(Exception )
+            catch (Exception)
             {
                 MessageBox.Show("Invalid input. Please check your selected rows ");
             }
