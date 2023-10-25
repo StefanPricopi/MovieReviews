@@ -2,12 +2,15 @@
 @model Web_app.Pages.ReviewDetailsModel
 @{
 }
-<b>Review details:</b>{
+
 <div>
-    Review:
-    <span>Id: @Model.review.Id</span>
-    <span>Title: @Model.review.Title</span>
-    <span>Score: @Model.review.Score</span>
-    <span>Description: @Model.review.Description</span>
+    <h1>Title:@Model.review.Title</h1>
+    <h2 class="Score">Score: @Model.review.Score</h2>
 
 </div>
+<div class="details-container">
+    
+    <img src="/img/mockdetails.jpg" alt="mock-image">
+    <p class="Description">@Model.review.Description</p>
+</div>
+

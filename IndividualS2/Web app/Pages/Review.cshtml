@@ -7,13 +7,22 @@
     <p>@Model.Message</p>
 }
 <b>Reviews:</b>
-@foreach (var review in Model.reviews)
-{
-    <div>
-        Review:
-        <span>Title: @review.Title</span>
-        <span>Score: @review.Score</span>
-        
-        <span><a href="/ReviewDetails?id=@review.Id">More...</a></span>
-    </div>
-}
+
+    
+        <div class="cards-grid">
+        @foreach (var review in Model.reviews)
+        {
+
+        <a href="/ReviewDetails?id=@review.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
+                    <h1>Title: @review.Title</h1>
+            <p>Score: @review.Score</p>
+        </a>
+         
+        }
+   
+        </div>
+    
+
+
+
+
