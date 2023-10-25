@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "Hash": "KnGMqpj3bp9RdbnYbnN91SfUmY1trCJ0yBzkzmnxzo4=",
+=======
   "Hash": "eKHr9vPYLqzcKzIwn7J8JfkE3moNPmkwKNbulWyC0ek=",
+>>>>>>> 78356cb45ad28741b1ea35927ab0e38a7437a598
   "Source": "Web app",
   "BasePath": "_content/Web app",
   "Mode": "Default",
@@ -85,7 +89,28 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\wwwroot\\img\\Logo.png",
+      "SourceId": "Web app",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\wwwroot\\",
+      "BasePath": "_content/Web app",
+      "RelativePath": "img/Logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\wwwroot\\js\\site.js",
+=======
       "Identity": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\Web app\\wwwroot\\img\\0.jpg",
+>>>>>>> 78356cb45ad28741b1ea35927ab0e38a7437a598
       "SourceId": "Web app",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\Web app\\wwwroot\\",
