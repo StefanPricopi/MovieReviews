@@ -25,6 +25,7 @@ namespace DALClassLibrary.DALs
             Review r = new Review(ReviewId, title, score, description);
             ReviewId++;
             reviewList.Add(r);
+
         }
 
         public  List<Review> GetAllReview()
