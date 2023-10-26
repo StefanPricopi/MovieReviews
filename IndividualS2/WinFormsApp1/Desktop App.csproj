@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DALClassLibrary\DALClassLibrary.csproj" />
     <ProjectReference Include="..\LogicLayerClassLibrary\LogicLayerClassLibrary.csproj" />
     <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
