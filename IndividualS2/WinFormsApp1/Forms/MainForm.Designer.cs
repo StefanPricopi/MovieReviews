@@ -57,12 +57,7 @@
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
             dataGridViewReview = new DataGridView();
-            Title = new DataGridViewTextBoxColumn();
-            Score = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
             label5 = new Label();
-            label4 = new Label();
-            lbMediaCollection = new ListBox();
             label3 = new Label();
             tbSearchReviewTitle = new TextBox();
             btnSearchReview = new Button();
@@ -70,6 +65,9 @@
             btnUpdateReview = new Button();
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
+            Title = new DataGridViewTextBoxColumn();
+            Score = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
@@ -88,7 +86,7 @@
             tCMain.Margin = new Padding(3, 2, 3, 2);
             tCMain.Name = "tCMain";
             tCMain.SelectedIndex = 0;
-            tCMain.Size = new Size(749, 326);
+            tCMain.Size = new Size(1311, 548);
             tCMain.TabIndex = 0;
             // 
             // tpMovieManager
@@ -105,7 +103,7 @@
             tpMovieManager.Margin = new Padding(3, 2, 3, 2);
             tpMovieManager.Name = "tpMovieManager";
             tpMovieManager.Padding = new Padding(3, 2, 3, 2);
-            tpMovieManager.Size = new Size(741, 298);
+            tpMovieManager.Size = new Size(1303, 520);
             tpMovieManager.TabIndex = 0;
             tpMovieManager.Text = "MovieManager";
             tpMovieManager.UseVisualStyleBackColor = true;
@@ -255,7 +253,7 @@
             tpTvSeriesManager.Margin = new Padding(3, 2, 3, 2);
             tpTvSeriesManager.Name = "tpTvSeriesManager";
             tpTvSeriesManager.Padding = new Padding(3, 2, 3, 2);
-            tpTvSeriesManager.Size = new Size(741, 298);
+            tpTvSeriesManager.Size = new Size(1303, 520);
             tpTvSeriesManager.TabIndex = 1;
             tpTvSeriesManager.Text = "TvSeriesManager";
             tpTvSeriesManager.UseVisualStyleBackColor = true;
@@ -342,8 +340,6 @@
             // 
             tpReviewManager.Controls.Add(dataGridViewReview);
             tpReviewManager.Controls.Add(label5);
-            tpReviewManager.Controls.Add(label4);
-            tpReviewManager.Controls.Add(lbMediaCollection);
             tpReviewManager.Controls.Add(label3);
             tpReviewManager.Controls.Add(tbSearchReviewTitle);
             tpReviewManager.Controls.Add(btnSearchReview);
@@ -354,7 +350,7 @@
             tpReviewManager.Margin = new Padding(3, 2, 3, 2);
             tpReviewManager.Name = "tpReviewManager";
             tpReviewManager.Padding = new Padding(3, 2, 3, 2);
-            tpReviewManager.Size = new Size(741, 298);
+            tpReviewManager.Size = new Size(1303, 520);
             tpReviewManager.TabIndex = 2;
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
@@ -363,61 +359,21 @@
             // 
             dataGridViewReview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewReview.Columns.AddRange(new DataGridViewColumn[] { Title, Score, Description });
-            dataGridViewReview.Location = new Point(226, 166);
+            dataGridViewReview.Location = new Point(226, 55);
             dataGridViewReview.Name = "dataGridViewReview";
             dataGridViewReview.RowHeadersWidth = 51;
             dataGridViewReview.RowTemplate.Height = 25;
-            dataGridViewReview.Size = new Size(391, 127);
+            dataGridViewReview.Size = new Size(1007, 443);
             dataGridViewReview.TabIndex = 24;
-            // 
-            // Title
-            // 
-            Title.HeaderText = "Title";
-            Title.MinimumWidth = 6;
-            Title.Name = "Title";
-            Title.Width = 125;
-            // 
-            // Score
-            // 
-            Score.HeaderText = "Score";
-            Score.MinimumWidth = 6;
-            Score.Name = "Score";
-            Score.Width = 125;
-            // 
-            // Description
-            // 
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 6;
-            Description.Name = "Description";
-            Description.Width = 125;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(332, 148);
+            label5.Location = new Point(327, 37);
             label5.Name = "label5";
             label5.Size = new Size(101, 15);
             label5.TabIndex = 23;
             label5.Text = "Review Collection";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(332, 3);
-            label4.Name = "label4";
-            label4.Size = new Size(97, 15);
-            label4.TabIndex = 22;
-            label4.Text = "Media Collection";
-            // 
-            // lbMediaCollection
-            // 
-            lbMediaCollection.FormattingEnabled = true;
-            lbMediaCollection.ItemHeight = 15;
-            lbMediaCollection.Location = new Point(228, 23);
-            lbMediaCollection.Margin = new Padding(3, 2, 3, 2);
-            lbMediaCollection.Name = "lbMediaCollection";
-            lbMediaCollection.Size = new Size(493, 124);
-            lbMediaCollection.TabIndex = 21;
             // 
             // label3
             // 
@@ -430,10 +386,10 @@
             // 
             // tbSearchReviewTitle
             // 
-            tbSearchReviewTitle.Location = new Point(26, 254);
+            tbSearchReviewTitle.Location = new Point(57, 254);
             tbSearchReviewTitle.Margin = new Padding(3, 2, 3, 2);
             tbSearchReviewTitle.Name = "tbSearchReviewTitle";
-            tbSearchReviewTitle.Size = new Size(189, 23);
+            tbSearchReviewTitle.Size = new Size(104, 23);
             tbSearchReviewTitle.TabIndex = 18;
             // 
             // btnSearchReview
@@ -484,11 +440,32 @@
             // 
             reviewBindingSource.DataSource = typeof(LogicLayerClassLibrary.Classes.Review);
             // 
+            // Title
+            // 
+            Title.HeaderText = "Title";
+            Title.MinimumWidth = 6;
+            Title.Name = "Title";
+            Title.Width = 125;
+            // 
+            // Score
+            // 
+            Score.HeaderText = "Score";
+            Score.MinimumWidth = 6;
+            Score.Name = "Score";
+            Score.Width = 125;
+            // 
+            // Description
+            // 
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            Description.Width = 700;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(780, 338);
+            ClientSize = new Size(1333, 572);
             Controls.Add(tCMain);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MainForm";
@@ -532,15 +509,10 @@
         private Button btnUpdateReview;
         private Button btnAddReview;
         private Label label5;
-        private Label label4;
-        private ListBox lbMediaCollection;
         private Label label7;
         private Label label6;
         private BindingSource reviewBindingSource;
         private DataGridView dataGridViewReview;
-        private DataGridViewTextBoxColumn Title;
-        private DataGridViewTextBoxColumn Score;
-        private DataGridViewTextBoxColumn Description;
         private DataGridView dgvMovieCollection;
         private DataGridViewTextBoxColumn mTitle;
         private DataGridViewTextBoxColumn mDirector;
@@ -549,5 +521,8 @@
         private DataGridViewTextBoxColumn mDuration;
         private DataGridViewTextBoxColumn mDate;
         private DataGridViewTextBoxColumn mGenre;
+        private DataGridViewTextBoxColumn Title;
+        private DataGridViewTextBoxColumn Score;
+        private DataGridViewTextBoxColumn Description;
     }
 }
