@@ -16,7 +16,6 @@
     <ProjectReference Include="..\DALClassLibrary\DALClassLibrary.csproj" />
     <ProjectReference Include="..\LogicLayerClassLibrary\LogicLayerClassLibrary.csproj" />
     <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
-    <ProjectReference Include="..\Web app\Web app.csproj" />
   </ItemGroup>
 
 </Project>

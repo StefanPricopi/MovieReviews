@@ -1,5 +1,7 @@
-﻿using LogicLayerClassLibrary.Classes;
+﻿using DALClassLibrary.DALs;
+using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Enums;
+using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ namespace Desktop_App.Forms.MovieManagerForms
     public partial class EditMovieForm : Form
     {
         private string title;
+        private IMediaManagerDAL mediaManagerDAL;
         MediaManager mediaManager;
         public EditMovieForm(Movie m)
         {
@@ -28,7 +31,8 @@ namespace Desktop_App.Forms.MovieManagerForms
             cbGenre.SelectedIndex = cbGenre.FindString(m.Genre.ToString());
             rtbDescription.Text = m.Description;
             dtpReleaseDate.Value = m.Date;
-            
+            mediaManager = new MediaManager(new MediaDAL());
+
         }
 
         private void btnEditMovie_Click(object sender, EventArgs e)

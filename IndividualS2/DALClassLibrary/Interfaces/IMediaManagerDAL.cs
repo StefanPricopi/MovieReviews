@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.Interfaces
 {
-    public interface IMediaManagerDAL
+    public  interface IMediaManagerDAL
     {
         public void AddMovie(string title, string director, string actor, string description, Genre genre, decimal duration, DateTime date);
         public void UpdateMovie(string oldtitle, string newtitle, string director, string actor, string description, Genre genre, decimal duration, DateTime date);

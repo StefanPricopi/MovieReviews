@@ -11,12 +11,6 @@ C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsAp
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.AssemblyInfoInputs.cache
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.AssemblyInfo.cs
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.csproj.CoreCompileInputs.cache
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Web app.deps.json
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Web app.runtimeconfig.json
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\appsettings.Development.json
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\appsettings.json
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Web app.staticwebassets.runtime.json
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Web app.exe
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.exe
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.deps.json
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.runtimeconfig.json
@@ -27,11 +21,9 @@ C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsAp
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\DALClassLibrary.dll
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\LogicLayerClassLibrary.dll
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\ModelLibrary.dll
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Web app.dll
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\DALClassLibrary.pdb
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\LogicLayerClassLibrary.pdb
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\ModelLibrary.pdb
-C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Web app.pdb
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.csproj.CopyComplete
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.dll
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\refint\Desktop App.dll
@@ -78,3 +70,33 @@ C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\WinFormsApp1\o
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.genruntimeconfig.cache
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\ref\Desktop App.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Azure.Core.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Azure.Identity.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Identity.Client.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.SqlServer.Server.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Configuration.ConfigurationManager.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Memory.Data.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Runtime.Caching.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll

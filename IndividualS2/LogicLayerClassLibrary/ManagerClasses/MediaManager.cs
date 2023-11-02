@@ -19,6 +19,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
         public MediaManager(IMediaManagerDAL mediaManagerDAL)
         {
             this.mediaManagerDAL = mediaManagerDAL;
+
         }
 
         public void AddMovie(string title, string director, string actor, string description, Genre genre, decimal duration, DateTime date)

@@ -16,7 +16,7 @@ namespace WinFormsApp1
         private ReviewManager reviewManager;
         private ReviewDAL reviewDAL;
         private MediaManager mediaManager;
-        private MediaDAL mediaDAL;
+        private MediaDAL mediaDAL = new MediaDAL();
         public MainForm()
         {
             InitializeComponent();

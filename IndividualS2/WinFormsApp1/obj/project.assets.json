@@ -798,23 +798,6 @@
         "runtime": {
           "bin/placeholder/ModelLibrary.dll": {}
         }
-      },
-      "Web app/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LogicLayerClassLibrary": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.1.1"
-        },
-        "compile": {
-          "bin/placeholder/Web app.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Web app.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -2159,11 +2142,6 @@
       "type": "project",
       "path": "../ModelLibrary/ModelLibrary.csproj",
       "msbuildProject": "../ModelLibrary/ModelLibrary.csproj"
-    },
-    "Web app/1.0.0": {
-      "type": "project",
-      "path": "../Web app/Web app.csproj",
-      "msbuildProject": "../Web app/Web app.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2171,8 +2149,7 @@
       "DALClassLibrary >= 1.0.0",
       "LogicLayerClassLibrary >= 1.0.0",
       "Microsoft.Data.SqlClient >= 5.1.1",
-      "ModelLibrary >= 1.0.0",
-      "Web app >= 1.0.0"
+      "ModelLibrary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2215,9 +2192,6 @@
             },
             "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
               "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
-            },
-            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj": {
-              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj"
             }
           }
         }

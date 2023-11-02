@@ -2,7 +2,7 @@
 namespace LogicLayerClassLibrary.Classes
 
 {
-    public class Media
+    public abstract class Media
     {
 
         public int Id { get; private set; }

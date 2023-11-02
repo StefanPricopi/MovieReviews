@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
+using DALClassLibrary.DALs;
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -19,9 +20,12 @@ namespace Desktop_App.Forms
     public partial class AddMovieForm : Form
     {
         private MediaManager mediaManager;
+        
         public AddMovieForm()
         {
             InitializeComponent();
+            mediaManager = new MediaManager(new MediaDAL());
+            
         }
 
         private void btnAddMovie_Click(object sender, EventArgs e)

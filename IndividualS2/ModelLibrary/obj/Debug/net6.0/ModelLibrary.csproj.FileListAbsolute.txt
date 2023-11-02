@@ -20,3 +20,4 @@ C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\o
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Debug\net6.0\refint\ModelLibrary.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Debug\net6.0\ModelLibrary.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Debug\net6.0\ref\ModelLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Debug\net6.0\ModelLibrary.csproj.AssemblyReference.cache

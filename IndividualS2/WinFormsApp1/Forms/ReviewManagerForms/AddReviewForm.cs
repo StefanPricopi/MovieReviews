@@ -1,4 +1,5 @@
-﻿using LogicLayerClassLibrary.Classes;
+﻿using DALClassLibrary.DALs;
+using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using WinFormsApp1;
@@ -12,6 +13,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
         public AddReviewForm()
         {
             InitializeComponent();
+            reviewManager = new ReviewManager(new ReviewDAL());
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {

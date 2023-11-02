@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DALClassLibrary.DALs;
 using LogicLayerClassLibrary;
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
@@ -24,6 +25,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
             tbTitle.Text = review.Title;
             tbScore.Text = review.Score.ToString();
             rtbDescription.Text = review.Description;
+            reviewManager = new ReviewManager(new ReviewDAL());
         }
 
         private void btnEditReview_Click(object sender, EventArgs e)
