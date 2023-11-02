@@ -16,7 +16,7 @@ namespace WinFormsApp1
         private ReviewManager reviewManager;
         private ReviewDAL reviewDAL;
         private MediaManager mediaManager;
-        private MediaDAL mediaDAL = new MediaDAL();
+        private TESTMediaDAL mediaDAL = new TESTMediaDAL();
         public MainForm()
         {
             InitializeComponent();
@@ -127,7 +127,7 @@ namespace WinFormsApp1
         {
 
             dgvMovieCollection.Rows.Clear();
-            foreach (Media m in MediaDAL.MediaCollection)
+            foreach (Media m in TESTMediaDAL.MediaCollection)
             {
                 if (m.GetType() == typeof(Movie))
                 {

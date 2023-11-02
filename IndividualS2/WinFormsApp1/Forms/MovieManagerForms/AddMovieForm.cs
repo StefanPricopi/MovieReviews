@@ -24,7 +24,7 @@ namespace Desktop_App.Forms
         public AddMovieForm()
         {
             InitializeComponent();
-            mediaManager = new MediaManager(new MediaDAL());
+            mediaManager = new MediaManager(new TESTMediaDAL());
             
         }
 

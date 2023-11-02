@@ -31,7 +31,7 @@ namespace Desktop_App.Forms.MovieManagerForms
             cbGenre.SelectedIndex = cbGenre.FindString(m.Genre.ToString());
             rtbDescription.Text = m.Description;
             dtpReleaseDate.Value = m.Date;
-            mediaManager = new MediaManager(new MediaDAL());
+            mediaManager = new MediaManager(new TESTMediaDAL());
 
         }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModelLibrary.DTO
 {
-    internal class MediaDTO
+    public class MediaDTO
     {
         public int Id { get; private set; }
         public string Title { get; set; }
@@ -17,14 +17,9 @@ namespace ModelLibrary.DTO
 
         public Genre Genre { get; set; }
 
-        public MediaDTO(int id, string title, string director, string actor, string description, Genre genre)
+        public MediaDTO( )
         {
-            Id = id;
-            Title = title;
-            Director = director;
-            Actor = actor;
-            Description = description;
-            Genre = genre;
+            
 
         }
     }
