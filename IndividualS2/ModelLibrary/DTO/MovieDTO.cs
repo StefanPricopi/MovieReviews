@@ -12,7 +12,7 @@ namespace ModelLibrary.DTO
         public decimal Duration { get; set; }
         public DateTime Date { get; set; }
 
-        public MovieDTO(int id, string title, string director, string actor, string description, Genre genre, decimal duration, DateTime date) : base(id, title, director, actor, description, genre)
+        public MovieDTO(int id, string title, string director, string actor, string description, Genre genre, decimal duration, DateTime date) 
         {
             Duration = duration;
             Date = date;

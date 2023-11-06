@@ -8,7 +8,7 @@ namespace LogicLayerClassLibrary.Classes
     public abstract class Media
     {
 
-        public int Id { get; private set; }
+        public int Id { get;  set; }
         public string Title { get; set; }
         public string Director { get; set; }
         public string Actor { get; set; }
@@ -30,7 +30,7 @@ namespace LogicLayerClassLibrary.Classes
         {
             return new MediaDTO()
             {
-
+                Id=this.Id,
                 Title = this.Title,
                 Director = this.Director,
                 Actor = this.Actor,

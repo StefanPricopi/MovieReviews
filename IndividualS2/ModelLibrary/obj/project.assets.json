@@ -2009,11 +2009,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
       "projectName": "ModelLibrary",
-      "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
+      "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
       "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\obj\\",
+      "outputPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -9,7 +9,7 @@ namespace ModelLibrary.DTO
 {
     public class MediaDTO
     {
-        public int Id { get; private set; }
+        public int Id { get;  set; }
         public string Title { get; set; }
         public string Director { get; set; }
         public string Actor { get; set; }
@@ -20,7 +20,8 @@ namespace ModelLibrary.DTO
         public MediaDTO( )
         {
             
-
         }
+
+        
     }
 }
