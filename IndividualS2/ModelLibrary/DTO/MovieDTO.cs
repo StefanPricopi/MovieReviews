@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ModelLibrary.DTO
 {
+<<<<<<< HEAD
     internal class MovieDTO : MediaDTO
     {
         public decimal Duration { get; set; }
@@ -18,4 +19,7 @@ namespace ModelLibrary.DTO
             Date = date;
         }
     }
+=======
+    
+>>>>>>> refs/remotes/origin/main
 }

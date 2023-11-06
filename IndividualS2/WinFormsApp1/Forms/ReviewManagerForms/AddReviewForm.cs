@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
+using ModelLibrary.DTO;
 using WinFormsApp1;
 
 namespace Desktop_App.Forms.ReviewManagerForms
@@ -22,9 +23,13 @@ namespace Desktop_App.Forms.ReviewManagerForms
                 string title = tbTitle.Text;
                 string description = rtbDescription.Text;
 
-                if (decimal.TryParse(tbScore.Text, out decimal rating)&&title!=""&&description!=""&& rating > 0 && rating < 11)
+                if (decimal.TryParse(tbScore.Text, out decimal rating) && title != "" && description != "" && rating > 0 && rating < 11)
                 {
-                    reviewManager.AddReview(title, rating, description);
+                    ReviewDTO r = new ReviewDTO();
+                    r.Title= title;
+                    r.Description= description;
+                    r.Score= rating;
+                    reviewManager.AddReview(r);
                     MessageBox.Show("success");
                     this.Close();
                 }

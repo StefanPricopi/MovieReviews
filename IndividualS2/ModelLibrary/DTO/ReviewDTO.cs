@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace ModelLibrary.DTO
 {
-    internal class ReviewDTO
+    public class ReviewDTO
     {
-        public int Id { get; private set; }
+        public int Id { get;  set; }
         public string Title { get; set; }
         public decimal Score { get; set; }
         public string Description { get; set; }
 
 
-        public ReviewDTO(int id, string title, decimal score, string description)
+        public ReviewDTO()
         {
-            Id = id;
-            Title = title;
-            Score = score;
-            Description = description;
 
+        }
+        public ReviewDTO(ReviewDTO r)
+        {
+           
         }
     }
 }
