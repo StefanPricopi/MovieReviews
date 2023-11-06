@@ -12,7 +12,7 @@ namespace Web_app.Pages
         public string Message;
         public void OnGet(string? message)
         {
-            ReviewManager reviewManager = new ReviewManager(new ReviewDAL());
+            ReviewManager reviewManager = new ReviewManager(new TESTReviewDAL());
             reviews = reviewManager.GetAllReview();
             if (message != null)
             {

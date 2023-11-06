@@ -2,10 +2,11 @@
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
-
+using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -23,15 +24,15 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             reviewManagerDAL = reviewManager;
         }
-        public void AddReview(string title, decimal score, string description)
+        public bool AddReview(ReviewDTO reviewDTO)
         {
-            reviewManagerDAL.AddReview(title, score, description);
+           return reviewManagerDAL.AddReview(reviewDTO);
         }
-        public void UpdateReview(int id, string title, decimal score, string description)
+        public void UpdateReview(ReviewDTO reviewDTO)
         {
-             reviewManagerDAL.UpdateReview(id, title, score, description);
+             reviewManagerDAL.UpdateReview(reviewDTO);
         }
-        public List<Review> GetAllReview()
+        public DataTable GetAllReview()
         {
             return reviewManagerDAL.GetAllReview();
         }

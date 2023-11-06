@@ -35,6 +35,8 @@
             tbScore = new TextBox();
             rtbDescription = new RichTextBox();
             btnAddReview = new Button();
+            cbMediaTitle = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -96,11 +98,30 @@
             btnAddReview.UseVisualStyleBackColor = true;
             btnAddReview.Click += btnAddReview_Click;
             // 
+            // cbMediaTitle
+            // 
+            cbMediaTitle.FormattingEnabled = true;
+            cbMediaTitle.Location = new Point(446, 66);
+            cbMediaTitle.Name = "cbMediaTitle";
+            cbMediaTitle.Size = new Size(151, 28);
+            cbMediaTitle.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(445, 32);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Media Title";
+            // 
             // AddReviewForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label2);
+            Controls.Add(cbMediaTitle);
             Controls.Add(btnAddReview);
             Controls.Add(rtbDescription);
             Controls.Add(tbScore);
@@ -109,7 +130,7 @@
             Controls.Add(label3);
             Controls.Add(label1);
             Name = "AddReviewForm";
-            Text = "AddReviewForm";            
+            Text = "AddReviewForm";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -123,5 +144,7 @@
         private TextBox tbScore;
         private RichTextBox rtbDescription;
         private Button btnAddReview;
+        private ComboBox cbMediaTitle;
+        private Label label2;
     }
 }

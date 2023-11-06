@@ -8,18 +8,20 @@ using System.Diagnostics;
 using System.Linq;
 using System.Collections.Generic;
 using DALClassLibrary.DALs;
+using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
         private ReviewManager reviewManager;
-        private ReviewDAL reviewDAL;
+        private TESTReviewDAL reviewDAL;
         private MediaManager mediaManager;
         private TESTMediaDAL mediaDAL = new TESTMediaDAL();
         public MainForm()
         {
             InitializeComponent();
+            reviewManager = new ReviewManager(new ReviewDAL());
             ViewAllReviews();
             ViewAllMovies();
             dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -76,7 +78,7 @@ namespace WinFormsApp1
         private void btnSearchReview_Click(object sender, EventArgs e)
         {
 
-            dataGridViewReview.Rows.Clear();
+            
             AddRowDataGrid(reviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
@@ -117,11 +119,11 @@ namespace WinFormsApp1
         }
         private void ViewAllReviews()
         {
-            dataGridViewReview.Rows.Clear();
-            foreach (Review r in ReviewDAL.reviewList)
-            {
-                AddRowDataGrid(r);
-            }
+            var reviewTable = reviewManager.GetAllReview();
+
+            dataGridViewReview.DataSource = reviewTable;
+            
+
         }
         private void ViewAllMovies()
         {

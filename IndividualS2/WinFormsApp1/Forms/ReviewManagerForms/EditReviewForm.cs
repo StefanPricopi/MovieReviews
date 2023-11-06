@@ -11,6 +11,7 @@ using DALClassLibrary.DALs;
 using LogicLayerClassLibrary;
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
+using ModelLibrary.DTO;
 
 namespace Desktop_App.Forms.ReviewManagerForms
 {
@@ -34,7 +35,11 @@ namespace Desktop_App.Forms.ReviewManagerForms
             {
                 if(decimal.TryParse(tbScore.Text, out decimal rating) && tbTitle.Text != "" && rtbDescription.Text != "" && rating > 0 && rating < 11) 
                 {
-                    reviewManager.UpdateReview(id, tbTitle.Text, Convert.ToDecimal(tbScore.Text), rtbDescription.Text);
+                    ReviewDTO r = new ReviewDTO();
+                    r.Title = tbTitle.Text;
+                    r.Description=rtbDescription.Text;
+                    r.Score = rating;
+                    reviewManager.UpdateReview(r);
                     MessageBox.Show("edit was succesful");
                     this.Close();
                 }
