@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DALClassLibrary.DALs
 {
-    public class TESTMediaDAL : IMediaManagerDAL
+    public class TESTMediaDAL 
     {
         public static List<Media> MediaCollection = new List<Media>()
         {

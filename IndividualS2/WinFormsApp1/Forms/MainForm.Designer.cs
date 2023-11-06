@@ -32,13 +32,6 @@
             tCMain = new TabControl();
             tpMovieManager = new TabPage();
             dgvMovieCollection = new DataGridView();
-            mTitle = new DataGridViewTextBoxColumn();
-            mDirector = new DataGridViewTextBoxColumn();
-            mActor = new DataGridViewTextBoxColumn();
-            mDescription = new DataGridViewTextBoxColumn();
-            mDuration = new DataGridViewTextBoxColumn();
-            mDate = new DataGridViewTextBoxColumn();
-            mGenre = new DataGridViewTextBoxColumn();
             label7 = new Label();
             label1 = new Label();
             tbSearchMovieTitle = new TextBox();
@@ -65,9 +58,6 @@
             btnUpdateReview = new Button();
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
-            Title = new DataGridViewTextBoxColumn();
-            Score = new DataGridViewTextBoxColumn();
-            Description = new DataGridViewTextBoxColumn();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
@@ -111,63 +101,13 @@
             // dgvMovieCollection
             // 
             dgvMovieCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMovieCollection.Columns.AddRange(new DataGridViewColumn[] { mTitle, mDirector, mActor, mDescription, mDuration, mDate, mGenre });
-            dgvMovieCollection.Location = new Point(198, 34);
+            dgvMovieCollection.Location = new Point(216, 34);
             dgvMovieCollection.Margin = new Padding(3, 2, 3, 2);
             dgvMovieCollection.Name = "dgvMovieCollection";
             dgvMovieCollection.RowHeadersWidth = 51;
             dgvMovieCollection.RowTemplate.Height = 29;
-            dgvMovieCollection.Size = new Size(523, 237);
+            dgvMovieCollection.Size = new Size(850, 448);
             dgvMovieCollection.TabIndex = 8;
-            // 
-            // mTitle
-            // 
-            mTitle.HeaderText = "Title";
-            mTitle.MinimumWidth = 6;
-            mTitle.Name = "mTitle";
-            mTitle.Width = 125;
-            // 
-            // mDirector
-            // 
-            mDirector.HeaderText = "Director";
-            mDirector.MinimumWidth = 6;
-            mDirector.Name = "mDirector";
-            mDirector.Width = 125;
-            // 
-            // mActor
-            // 
-            mActor.HeaderText = "Actor";
-            mActor.MinimumWidth = 6;
-            mActor.Name = "mActor";
-            mActor.Width = 125;
-            // 
-            // mDescription
-            // 
-            mDescription.HeaderText = "Description";
-            mDescription.MinimumWidth = 6;
-            mDescription.Name = "mDescription";
-            mDescription.Width = 125;
-            // 
-            // mDuration
-            // 
-            mDuration.HeaderText = "Duration";
-            mDuration.MinimumWidth = 6;
-            mDuration.Name = "mDuration";
-            mDuration.Width = 125;
-            // 
-            // mDate
-            // 
-            mDate.HeaderText = "ReleaseDate";
-            mDate.MinimumWidth = 6;
-            mDate.Name = "mDate";
-            mDate.Width = 125;
-            // 
-            // mGenre
-            // 
-            mGenre.HeaderText = "Genre";
-            mGenre.MinimumWidth = 6;
-            mGenre.Name = "mGenre";
-            mGenre.Width = 125;
             // 
             // label7
             // 
@@ -358,7 +298,6 @@
             // dataGridViewReview
             // 
             dataGridViewReview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewReview.Columns.AddRange(new DataGridViewColumn[] { Title, Score, Description });
             dataGridViewReview.Location = new Point(226, 55);
             dataGridViewReview.Name = "dataGridViewReview";
             dataGridViewReview.RowHeadersWidth = 51;
@@ -440,27 +379,6 @@
             // 
             reviewBindingSource.DataSource = typeof(LogicLayerClassLibrary.Classes.Review);
             // 
-            // Title
-            // 
-            Title.HeaderText = "Title";
-            Title.MinimumWidth = 6;
-            Title.Name = "Title";
-            Title.Width = 125;
-            // 
-            // Score
-            // 
-            Score.HeaderText = "Score";
-            Score.MinimumWidth = 6;
-            Score.Name = "Score";
-            Score.Width = 125;
-            // 
-            // Description
-            // 
-            Description.HeaderText = "Description";
-            Description.MinimumWidth = 6;
-            Description.Name = "Description";
-            Description.Width = 700;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -514,15 +432,5 @@
         private BindingSource reviewBindingSource;
         private DataGridView dataGridViewReview;
         private DataGridView dgvMovieCollection;
-        private DataGridViewTextBoxColumn mTitle;
-        private DataGridViewTextBoxColumn mDirector;
-        private DataGridViewTextBoxColumn mActor;
-        private DataGridViewTextBoxColumn mDescription;
-        private DataGridViewTextBoxColumn mDuration;
-        private DataGridViewTextBoxColumn mDate;
-        private DataGridViewTextBoxColumn mGenre;
-        private DataGridViewTextBoxColumn Title;
-        private DataGridViewTextBoxColumn Score;
-        private DataGridViewTextBoxColumn Description;
     }
 }

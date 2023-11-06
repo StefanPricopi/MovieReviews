@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ModelLibrary.DTO;
 
 namespace Desktop_App.Forms
 {
@@ -24,7 +25,7 @@ namespace Desktop_App.Forms
         public AddMovieForm()
         {
             InitializeComponent();
-            
+            mediaManager = new MediaManager(new MediaDAL());
             
         }
 
@@ -32,24 +33,34 @@ namespace Desktop_App.Forms
         {
             try
             {
-                string title = tbTitle.Text;
-                string director = tbDirector.Text;
-                string actor = tbActors.Text;
-                string description = rtbDescription.Text;
+                MediaDTO mediaDTO = new MediaDTO();
+                MovieDTO movieDTO = new MovieDTO();
+                mediaDTO.Title = tbTitle.Text;
+                mediaDTO.Director = tbDirector.Text;
+                mediaDTO.Actor = tbActors.Text;
+                mediaDTO.Description = rtbDescription.Text;
                 Genre genre = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+                mediaDTO.Genre = genre;
 
                 DateTime date = dtpReleaseDate.Value;
+                movieDTO.Date = date;
 
                 if (decimal.TryParse(tbDuration.Text, out decimal duration))
                 {
-                    mediaManager.AddMovie(title, director, actor, description, genre, duration, date);
-
-                    MessageBox.Show("success");
-                    this.Close();
+                    movieDTO.Duration = duration;
+                    
                 }
                 else
                 {
                     MessageBox.Show("Invalid rating input. Please enter a valid decimal value.");
+                }
+                if (mediaManager.AddMovie(mediaDTO, movieDTO))
+                {
+                    MessageBox.Show("successful");
+                }
+                else
+                {
+                    MessageBox.Show("failed");
                 }
             }
             

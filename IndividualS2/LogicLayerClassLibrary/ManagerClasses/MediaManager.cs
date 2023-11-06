@@ -2,9 +2,11 @@
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using Microsoft.VisualBasic;
+using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,15 +24,15 @@ namespace LogicLayerClassLibrary.ManagerClasses
 
         }
 
-        public void AddMovie(string title, string director, string actor, string description, Genre genre, decimal duration, DateTime date)
+        public bool AddMovie(MediaDTO mediaDTO, MovieDTO movieDTO)
         {
-            mediaManagerDAL.AddMovie(title, director, actor, description, genre,duration,date);
+           return mediaManagerDAL.AddMovie(mediaDTO,movieDTO);
         }
-        public void UpdateMovie(string oldtitle, string newtitle, string director, string actor, string description, Genre genre, decimal duration, DateTime date)
+        public bool UpdateMovie(MediaDTO mediaDTO, MovieDTO movieDTO)
         {
-            mediaManagerDAL.UpdateMovie(oldtitle, newtitle, director, actor, description,genre,duration,date);
+           return mediaManagerDAL.UpdateMovie(mediaDTO,movieDTO);
         }
-        public List<Media> GetAllMedia()
+        public DataTable GetAllMedia()
         {
             return mediaManagerDAL.GetAllMedia();
         }
