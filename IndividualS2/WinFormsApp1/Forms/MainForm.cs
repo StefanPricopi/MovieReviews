@@ -22,6 +22,7 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             reviewManager = new ReviewManager(new ReviewDAL());
+            mediaManager = new MediaManager(new MediaDAL());
             ViewAllReviews();
             ViewAllMovies();
             dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -78,7 +79,7 @@ namespace WinFormsApp1
         private void btnSearchReview_Click(object sender, EventArgs e)
         {
 
-            
+
             AddRowDataGrid(reviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
@@ -90,23 +91,11 @@ namespace WinFormsApp1
         }
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dgvMovieCollection.SelectedRows.Count > 0)
-                {
-                    string i = dgvMovieCollection.SelectedRows[0].Cells[0].Value.ToString();
-                    Movie r = (Movie)mediaDAL.GetMediaByTitle(i);
-                    using (EditMovieForm f3 = new EditMovieForm(r))
-                    {
-                        var result = f3.ShowDialog();
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Invalid input. Please check your selected rows ");
-            }
 
+            using (EditMovieForm f3 = new EditMovieForm())
+            {
+                var result = f3.ShowDialog();
+            }
         }
         private void btnViewAllMovies_Click(object sender, EventArgs e)
         {
@@ -122,20 +111,16 @@ namespace WinFormsApp1
             var reviewTable = reviewManager.GetAllReview();
 
             dataGridViewReview.DataSource = reviewTable;
-            
+
 
         }
         private void ViewAllMovies()
         {
 
-            dgvMovieCollection.Rows.Clear();
-            foreach (Media m in TESTMediaDAL.MediaCollection)
-            {
-                if (m.GetType() == typeof(Movie))
-                {
-                    AddRowMovieGrid((Movie)m);
-                }
-            }
+            var mediaTable = mediaManager.GetAllMedia();
+
+            dgvMovieCollection.DataSource = mediaTable;
+
         }
         private void AddRowDataGrid(Review r)
         {

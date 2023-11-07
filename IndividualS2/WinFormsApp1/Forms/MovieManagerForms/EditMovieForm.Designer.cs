@@ -43,14 +43,16 @@
             tbTitle = new TextBox();
             label1 = new Label();
             rtbDescription = new RichTextBox();
+            dgvMovieCollection = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
             SuspendLayout();
             // 
             // btnEditMovie
             // 
-            btnEditMovie.Location = new Point(489, 291);
+            btnEditMovie.Location = new Point(114, 576);
             btnEditMovie.Margin = new Padding(3, 2, 3, 2);
             btnEditMovie.Name = "btnEditMovie";
-            btnEditMovie.Size = new Size(135, 38);
+            btnEditMovie.Size = new Size(175, 38);
             btnEditMovie.TabIndex = 43;
             btnEditMovie.Text = "EditMovie";
             btnEditMovie.UseVisualStyleBackColor = true;
@@ -58,7 +60,7 @@
             // 
             // tbDuration
             // 
-            tbDuration.Location = new Point(114, 308);
+            tbDuration.Location = new Point(118, 221);
             tbDuration.Margin = new Padding(3, 2, 3, 2);
             tbDuration.Name = "tbDuration";
             tbDuration.Size = new Size(110, 23);
@@ -67,7 +69,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(114, 291);
+            label7.Location = new Point(118, 204);
             label7.Name = "label7";
             label7.Size = new Size(53, 15);
             label7.TabIndex = 41;
@@ -76,7 +78,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(312, 99);
+            label6.Location = new Point(118, 314);
             label6.Name = "label6";
             label6.Size = new Size(72, 15);
             label6.TabIndex = 40;
@@ -85,7 +87,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(312, 51);
+            label5.Location = new Point(118, 262);
             label5.Name = "label5";
             label5.Size = new Size(68, 15);
             label5.TabIndex = 39;
@@ -93,7 +95,7 @@
             // 
             // dtpReleaseDate
             // 
-            dtpReleaseDate.Location = new Point(312, 116);
+            dtpReleaseDate.Location = new Point(118, 331);
             dtpReleaseDate.Margin = new Padding(3, 2, 3, 2);
             dtpReleaseDate.Name = "dtpReleaseDate";
             dtpReleaseDate.Size = new Size(219, 23);
@@ -103,7 +105,7 @@
             // 
             cbGenre.FormattingEnabled = true;
             cbGenre.Items.AddRange(new object[] { "Action", "Comedy", "Drama", "SF" });
-            cbGenre.Location = new Point(312, 68);
+            cbGenre.Location = new Point(118, 279);
             cbGenre.Margin = new Padding(3, 2, 3, 2);
             cbGenre.Name = "cbGenre";
             cbGenre.Size = new Size(133, 23);
@@ -112,7 +114,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(114, 190);
+            label4.Location = new Point(118, 368);
             label4.Name = "label4";
             label4.Size = new Size(67, 15);
             label4.TabIndex = 35;
@@ -171,18 +173,29 @@
             // 
             // rtbDescription
             // 
-            rtbDescription.Location = new Point(114, 208);
+            rtbDescription.Location = new Point(114, 402);
             rtbDescription.Margin = new Padding(3, 2, 3, 2);
             rtbDescription.Name = "rtbDescription";
-            rtbDescription.Size = new Size(394, 67);
+            rtbDescription.Size = new Size(394, 155);
             rtbDescription.TabIndex = 44;
             rtbDescription.Text = "";
+            // 
+            // dgvMovieCollection
+            // 
+            dgvMovieCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMovieCollection.Location = new Point(526, 65);
+            dgvMovieCollection.Name = "dgvMovieCollection";
+            dgvMovieCollection.RowTemplate.Height = 25;
+            dgvMovieCollection.Size = new Size(895, 527);
+            dgvMovieCollection.TabIndex = 45;
+            dgvMovieCollection.SelectionChanged += dgvMovieCollection_SelectionChanged;
             // 
             // EditMovieForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(1451, 639);
+            Controls.Add(dgvMovieCollection);
             Controls.Add(rtbDescription);
             Controls.Add(btnEditMovie);
             Controls.Add(tbDuration);
@@ -201,6 +214,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "EditMovieForm";
             Text = "EditMovieForm";
+            ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,5 +236,6 @@
         private TextBox tbTitle;
         private Label label1;
         private RichTextBox rtbDescription;
+        private DataGridView dgvMovieCollection;
     }
 }

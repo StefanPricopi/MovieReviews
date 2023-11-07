@@ -3,6 +3,7 @@ using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
+using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,40 +18,63 @@ namespace Desktop_App.Forms.MovieManagerForms
 {
     public partial class EditMovieForm : Form
     {
-        private string title;
-        private IMediaManagerDAL mediaManagerDAL;
         MediaManager mediaManager;
-        public EditMovieForm(Movie m)
+        public EditMovieForm()
         {
             InitializeComponent();
-            title = m.Title;
-            tbActors.Text = m.Actor;
-            tbDirector.Text = m.Director;
-            tbTitle.Text = m.Title;
-            tbDuration.Text = m.Duration.ToString();
-            cbGenre.SelectedIndex = cbGenre.FindString(m.Genre.ToString());
-            rtbDescription.Text = m.Description;
-            dtpReleaseDate.Value = m.Date;
-            mediaManager = new MediaManager(new TESTMediaDAL());
+            mediaManager = new MediaManager(new MediaDAL());
+            var mediaTable = mediaManager.GetAllMedia();
+
+            dgvMovieCollection.DataSource = mediaTable;
 
         }
 
         private void btnEditMovie_Click(object sender, EventArgs e)
         {
-            try 
-            {  if(tbDirector.Text == ""||tbTitle.Text==""||tbActors.Text==""||rtbDescription.Text=="")
-                {
-                    throw new Exception();
-                }
-                var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-                mediaManager.UpdateMovie(title, tbTitle.Text, tbDirector.Text, tbActors.Text, rtbDescription.Text, ele, Convert.ToDecimal(tbDuration.Text), dtpReleaseDate.Value);
-                MessageBox.Show("edit was succesful");
+            if (tbDirector.Text == "" || tbTitle.Text == "" || tbActors.Text == "" || rtbDescription.Text == "")
+            {
+                throw new Exception();
+            }
+            var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+            MediaDTO mediaDTO = new MediaDTO();
+            MovieDTO movieDTO = new MovieDTO();
+            mediaDTO.Title = tbTitle.Text;
+            mediaDTO.Director = tbDirector.Text;
+            mediaDTO.Actor = tbActors.Text;
+            mediaDTO.Description = rtbDescription.Text;
+            mediaDTO.Genre = ele;
+            movieDTO.Duration = Convert.ToDecimal(tbDuration.Text);
+            movieDTO.Date = dtpReleaseDate.Value;
+            if (mediaManager.UpdateMovie(mediaDTO, movieDTO))
+            {
+                MessageBox.Show("Success");
                 this.Close();
             }
-
-            catch (Exception)
+            else
             {
-                MessageBox.Show("edit was unsuccesful, check your input");
+                MessageBox.Show("fail");
+            }
+
+
+
+
+        }
+
+        private void dgvMovieCollection_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvMovieCollection.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvMovieCollection.SelectedRows[0];
+
+                tbTitle.Text = selectedRow.Cells["Title"].Value.ToString();
+
+                tbDirector.Text = selectedRow.Cells["Director"].Value.ToString();
+                dtpReleaseDate.Text = selectedRow.Cells["ReleaseDate"].Value.ToString();
+                tbActors.Text = selectedRow.Cells["Actor"].Value.ToString();
+                tbDuration.Text = selectedRow.Cells["Duration"].Value.ToString();
+                rtbDescription.Text = selectedRow.Cells["Description"].Value.ToString();
+                cbGenre.Text = selectedRow.Cells["Genre"].Value.ToString();
+
             }
         }
     }
