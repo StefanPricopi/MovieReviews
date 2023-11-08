@@ -11,10 +11,16 @@ namespace Desktop_App.Forms.ReviewManagerForms
     {
         private IReviewManagerDAL rev;
         private ReviewManager reviewManager;
+        private MediaManager mediaManager;
         public AddReviewForm()
         {
             InitializeComponent();
             reviewManager = new ReviewManager(new ReviewDAL());
+            mediaManager = new MediaManager( new MediaDAL());
+            cbMediaTitle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbMediaTitle.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbMediaTitle.DataSource = mediaManager.GetAllTitles();
+            cbMediaTitle.DisplayMember = "Title";
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {
@@ -26,9 +32,9 @@ namespace Desktop_App.Forms.ReviewManagerForms
                 if (decimal.TryParse(tbScore.Text, out decimal rating) && title != "" && description != "" && rating > 0 && rating < 11)
                 {
                     ReviewDTO r = new ReviewDTO();
-                    r.Title= title;
-                    r.Description= description;
-                    r.Score= rating;
+                    r.Title = title;
+                    r.Description = description;
+                    r.Score = rating;
                     reviewManager.AddReview(r);
                     MessageBox.Show("success");
                     this.Close();

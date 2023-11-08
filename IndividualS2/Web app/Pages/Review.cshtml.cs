@@ -12,8 +12,8 @@ namespace Web_app.Pages
         public string Message;
         public void OnGet(string? message)
         {
-            ReviewManager reviewManager = new ReviewManager(new TESTReviewDAL());
-            reviews = reviewManager.GetAllReview();
+            ReviewManager reviewManager = new ReviewManager(new ReviewDAL());
+            //reviews = reviewManager.GetAllReview();
             if (message != null)
             {
                 Message = message;

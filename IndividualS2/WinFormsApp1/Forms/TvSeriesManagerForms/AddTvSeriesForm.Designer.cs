@@ -198,6 +198,7 @@
             btnAddTvSeries.TabIndex = 46;
             btnAddTvSeries.Text = "AddTvSeries";
             btnAddTvSeries.UseVisualStyleBackColor = true;
+            btnAddTvSeries.Click += btnAddTvSeries_Click;
             // 
             // rtbDescription
             // 

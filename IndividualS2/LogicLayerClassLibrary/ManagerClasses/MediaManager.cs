@@ -32,13 +32,25 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
            return mediaManagerDAL.UpdateMovie(mediaDTO,movieDTO);
         }
-        public DataTable GetAllMedia()
+        public bool AddTvSeries(MediaDTO mediaDTO,TvSeriesDTO tvSeriesDTO)
         {
-            return mediaManagerDAL.GetAllMedia();
+            return mediaManagerDAL.AddTvSeries(mediaDTO,tvSeriesDTO);
+        }
+        public DataTable GetAllMovies()
+        {
+            return mediaManagerDAL.GetAllMovies();
+        }
+        public DataTable GetAllTvSeries()
+        {
+            return mediaManagerDAL.GetAllTvSeries();
         }
         public Media GetMediaById(int id)
         {
             return mediaManagerDAL.GetMediaById(id);
+        }
+        public List<string> GetAllTitles()
+        {
+            return mediaManagerDAL.GetAllTitles();
         }
 
     }

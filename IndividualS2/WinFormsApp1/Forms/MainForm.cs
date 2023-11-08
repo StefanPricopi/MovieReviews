@@ -25,8 +25,10 @@ namespace WinFormsApp1
             mediaManager = new MediaManager(new MediaDAL());
             ViewAllReviews();
             ViewAllMovies();
+            ViewAllTvSeries();
             dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMovieCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTvSeriesCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
 
@@ -117,9 +119,17 @@ namespace WinFormsApp1
         private void ViewAllMovies()
         {
 
-            var mediaTable = mediaManager.GetAllMedia();
+            var mediaTable = mediaManager.GetAllMovies();
 
             dgvMovieCollection.DataSource = mediaTable;
+
+        }
+        private void ViewAllTvSeries()
+        {
+
+            var mediaTable = mediaManager.GetAllTvSeries();
+
+            dgvTvSeriesCollection.DataSource = mediaTable;
 
         }
         private void AddRowDataGrid(Review r)
