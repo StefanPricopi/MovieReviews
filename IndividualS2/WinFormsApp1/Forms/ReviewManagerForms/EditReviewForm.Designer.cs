@@ -35,14 +35,15 @@
             label4 = new Label();
             label3 = new Label();
             label1 = new Label();
+            dgvReview = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvReview).BeginInit();
             SuspendLayout();
             // 
             // btnEditReview
             // 
-            btnEditReview.Location = new Point(503, 275);
-            btnEditReview.Margin = new Padding(3, 2, 3, 2);
+            btnEditReview.Location = new Point(189, 457);
             btnEditReview.Name = "btnEditReview";
-            btnEditReview.Size = new Size(120, 37);
+            btnEditReview.Size = new Size(137, 49);
             btnEditReview.TabIndex = 15;
             btnEditReview.Text = "Edit Review";
             btnEditReview.UseVisualStyleBackColor = true;
@@ -50,61 +51,70 @@
             // 
             // rtbDescription
             // 
-            rtbDescription.Location = new Point(80, 123);
-            rtbDescription.Margin = new Padding(3, 2, 3, 2);
+            rtbDescription.Location = new Point(67, 164);
             rtbDescription.Name = "rtbDescription";
-            rtbDescription.Size = new Size(436, 134);
+            rtbDescription.Size = new Size(548, 287);
             rtbDescription.TabIndex = 14;
             rtbDescription.Text = "";
             // 
             // tbScore
             // 
-            tbScore.Location = new Point(80, 83);
-            tbScore.Margin = new Padding(3, 2, 3, 2);
+            tbScore.Location = new Point(91, 111);
             tbScore.Name = "tbScore";
-            tbScore.Size = new Size(110, 23);
+            tbScore.Size = new Size(125, 27);
             tbScore.TabIndex = 13;
             // 
             // tbTitle
             // 
-            tbTitle.Location = new Point(80, 44);
-            tbTitle.Margin = new Padding(3, 2, 3, 2);
+            tbTitle.Location = new Point(91, 59);
             tbTitle.Name = "tbTitle";
-            tbTitle.Size = new Size(110, 23);
+            tbTitle.Size = new Size(125, 27);
             tbTitle.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(80, 106);
+            label4.Location = new Point(91, 141);
             label4.Name = "label4";
-            label4.Size = new Size(107, 15);
+            label4.Size = new Size(136, 20);
             label4.TabIndex = 11;
             label4.Text = "Review Description";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(80, 66);
+            label3.Location = new Point(91, 88);
             label3.Name = "label3";
-            label3.Size = new Size(36, 15);
+            label3.Size = new Size(46, 20);
             label3.TabIndex = 10;
             label3.Text = "Score";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(78, 26);
+            label1.Location = new Point(89, 35);
             label1.Name = "label1";
-            label1.Size = new Size(100, 15);
+            label1.Size = new Size(128, 20);
             label1.TabIndex = 9;
             label1.Text = "Title of the review";
             // 
+            // dgvReview
+            // 
+            dgvReview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvReview.Location = new Point(637, 27);
+            dgvReview.Name = "dgvReview";
+            dgvReview.RowHeadersWidth = 51;
+            dgvReview.RowTemplate.Height = 29;
+            dgvReview.Size = new Size(676, 479);
+            dgvReview.TabIndex = 16;
+            dgvReview.SelectionChanged += dgvReview_SelectionChanged;
+            // 
             // EditReviewForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(1325, 606);
+            Controls.Add(dgvReview);
             Controls.Add(btnEditReview);
             Controls.Add(rtbDescription);
             Controls.Add(tbScore);
@@ -112,9 +122,9 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "EditReviewForm";
             Text = "EditReviewForm";
+            ((System.ComponentModel.ISupportInitialize)dgvReview).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,5 +138,6 @@
         private Label label4;
         private Label label3;
         private Label label1;
+        private DataGridView dgvReview;
     }
 }

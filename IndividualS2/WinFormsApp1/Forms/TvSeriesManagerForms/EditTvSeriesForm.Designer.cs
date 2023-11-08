@@ -47,12 +47,14 @@
             label1 = new Label();
             btnEditTvSeries = new Button();
             rtbDescription = new RichTextBox();
+            dgvTvSeriesCollection = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvTvSeriesCollection).BeginInit();
             SuspendLayout();
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(526, 100);
+            label9.Location = new Point(53, 487);
             label9.Name = "label9";
             label9.Size = new Size(126, 20);
             label9.TabIndex = 63;
@@ -60,7 +62,7 @@
             // 
             // dtpLastEpDate
             // 
-            dtpLastEpDate.Location = new Point(526, 123);
+            dtpLastEpDate.Location = new Point(53, 510);
             dtpLastEpDate.Name = "dtpLastEpDate";
             dtpLastEpDate.Size = new Size(250, 27);
             dtpLastEpDate.TabIndex = 62;
@@ -102,7 +104,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(526, 35);
+            label6.Location = new Point(53, 422);
             label6.Name = "label6";
             label6.Size = new Size(73, 20);
             label6.TabIndex = 57;
@@ -119,7 +121,7 @@
             // 
             // dtpPilotDate
             // 
-            dtpPilotDate.Location = new Point(526, 60);
+            dtpPilotDate.Location = new Point(53, 447);
             dtpPilotDate.Name = "dtpPilotDate";
             dtpPilotDate.Size = new Size(250, 27);
             dtpPilotDate.TabIndex = 55;
@@ -192,26 +194,39 @@
             // 
             // btnEditTvSeries
             // 
-            btnEditTvSeries.Location = new Point(556, 378);
+            btnEditTvSeries.Location = new Point(744, 487);
             btnEditTvSeries.Name = "btnEditTvSeries";
-            btnEditTvSeries.Size = new Size(147, 50);
+            btnEditTvSeries.Size = new Size(208, 50);
             btnEditTvSeries.TabIndex = 64;
             btnEditTvSeries.Text = "EditTvSeries";
             btnEditTvSeries.UseVisualStyleBackColor = true;
+            btnEditTvSeries.Click += btnEditTvSeries_Click;
             // 
             // rtbDescription
             // 
             rtbDescription.Location = new Point(53, 254);
             rtbDescription.Name = "rtbDescription";
-            rtbDescription.Size = new Size(450, 88);
+            rtbDescription.Size = new Size(372, 88);
             rtbDescription.TabIndex = 65;
             rtbDescription.Text = "";
+            // 
+            // dgvTvSeriesCollection
+            // 
+            dgvTvSeriesCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTvSeriesCollection.Location = new Point(477, 35);
+            dgvTvSeriesCollection.Name = "dgvTvSeriesCollection";
+            dgvTvSeriesCollection.RowHeadersWidth = 51;
+            dgvTvSeriesCollection.RowTemplate.Height = 29;
+            dgvTvSeriesCollection.Size = new Size(780, 439);
+            dgvTvSeriesCollection.TabIndex = 66;
+            dgvTvSeriesCollection.SelectionChanged += dgvTvSeriesCollection_SelectionChanged;
             // 
             // EditTvSeriesForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1279, 611);
+            Controls.Add(dgvTvSeriesCollection);
             Controls.Add(rtbDescription);
             Controls.Add(btnEditTvSeries);
             Controls.Add(label9);
@@ -233,6 +248,7 @@
             Controls.Add(label1);
             Name = "EditTvSeriesForm";
             Text = "EditTvSeriesForm";
+            ((System.ComponentModel.ISupportInitialize)dgvTvSeriesCollection).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -258,5 +274,6 @@
         private Label label1;
         private Button btnEditTvSeries;
         private RichTextBox rtbDescription;
+        private DataGridView dgvTvSeriesCollection;
     }
 }

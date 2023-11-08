@@ -161,9 +161,30 @@ namespace DALClassLibrary.DALs
             }
         }
 
-        public Media GetMediaById(int id)
+        public int GetMediaByTitle(string title)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+
+
+                    using (SqlCommand command = new SqlCommand("SELECT MediaID FROM DTO_Media WHERE Title = @Title", connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Title", title));
+                        object result = command.ExecuteScalar();
+                        int mediaID = Convert.ToInt32(result);
+                        return mediaID;
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                return -1;
+            }
+            
         }
 
         public bool UpdateMovie(MediaDTO mediaDTO,MovieDTO movieDTO)
@@ -222,6 +243,65 @@ namespace DALClassLibrary.DALs
                 return false;
             }
             return (rowsAffectedMedia > 0) && (rowsAffectedMovie > 0);
+        }
+        public bool UpdateTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvseriesDTO)
+        {
+            int rowsAffectedMedia = 0;
+            int rowsAffectedTvSeries = 0;
+
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    SqlTransaction transaction = connection.BeginTransaction();
+
+                    try
+                    {
+                        string updateQueryMedia = "UPDATE DTO_Media SET Title = @Title, Director = @Director, Actor = @Actor, Description = @Description, Genre = @Genre WHERE MediaID = @MediaID";
+
+                        using (SqlCommand commandMedia = new SqlCommand(updateQueryMedia, connection, transaction))
+                        {
+                            string g = mediaDTO.Genre.ToString();
+                            commandMedia.Parameters.Add(new SqlParameter("@Title", mediaDTO.Title));
+                            commandMedia.Parameters.Add(new SqlParameter("@Director", mediaDTO.Director));
+                            commandMedia.Parameters.Add(new SqlParameter("@Actor", mediaDTO.Actor));
+                            commandMedia.Parameters.Add(new SqlParameter("@Description", mediaDTO.Description));
+                            commandMedia.Parameters.Add(new SqlParameter("@Genre", g));
+                            commandMedia.Parameters.Add(new SqlParameter("@MediaID", mediaDTO.Id));
+
+                            rowsAffectedMedia = commandMedia.ExecuteNonQuery();
+                        }
+
+                        string updateQueryMovie = "UPDATE DTO_TvSeries SET NrOfSeasons = @NrOfSeasons, PilotDate = @PilotDate,EndDate=@EndDate,Status=@Status WHERE MediaID = @MediaID";
+
+                        using (SqlCommand commandMovie = new SqlCommand(updateQueryMovie, connection, transaction))
+                        {
+                            string s =tvseriesDTO.Status.ToString();
+                            commandMovie.Parameters.Add(new SqlParameter("@NrOfSeasons", tvseriesDTO.NrOfSeasons));
+                            commandMovie.Parameters.Add(new SqlParameter("@PilotDate", tvseriesDTO.PilotDate));
+                            commandMovie.Parameters.Add(new SqlParameter("@EndDate", tvseriesDTO.LastEpisodeDate));
+                            commandMovie.Parameters.Add(new SqlParameter("@Status", s));
+                            commandMovie.Parameters.Add(new SqlParameter("@MediaID", mediaDTO.Id));
+
+                            rowsAffectedTvSeries = commandMovie.ExecuteNonQuery();
+                        }
+
+                        // If both updates were successful, commit the transaction.
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return (rowsAffectedMedia > 0) && (rowsAffectedTvSeries > 0);
         }
     }
 }

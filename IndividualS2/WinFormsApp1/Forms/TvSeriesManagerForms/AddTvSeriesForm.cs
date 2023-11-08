@@ -42,8 +42,8 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
                 tvseriesDTO.LastEpisodeDate = Enddate;
                 Status status = (Status)Enum.Parse(typeof(Status), cbStatus.Text);
                 tvseriesDTO.Status = (Status)status;
-                tvseriesDTO.NrOfSeasons =Convert.ToInt32( tbNumberOfSeasons.Text);
-                if (mediaManager.AddTvSeries(mediaDTO,tvseriesDTO))
+                tvseriesDTO.NrOfSeasons = Convert.ToInt32(tbNumberOfSeasons.Text);
+                if (mediaManager.AddTvSeries(mediaDTO, tvseriesDTO))
                 {
                     MessageBox.Show("successful");
                 }

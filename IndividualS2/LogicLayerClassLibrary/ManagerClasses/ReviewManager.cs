@@ -28,9 +28,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
            return reviewManagerDAL.AddReview(reviewDTO);
         }
-        public void UpdateReview(ReviewDTO reviewDTO)
+        public bool UpdateReview(ReviewDTO reviewDTO)
         {
-             reviewManagerDAL.UpdateReview(reviewDTO);
+           return  reviewManagerDAL.UpdateReview(reviewDTO);
         }
         public DataTable GetAllReview()
         {

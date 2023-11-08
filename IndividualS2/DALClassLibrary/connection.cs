@@ -14,6 +14,6 @@ namespace DALClassLibrary
         public SqlConnection InitializeConection()
         {
             return new SqlConnection(conection);
-        }
+           }
     }
 }

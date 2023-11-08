@@ -24,32 +24,20 @@ namespace Desktop_App.Forms.ReviewManagerForms
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {
-            try
+            ReviewDTO reviewDTO = new ReviewDTO();
+            reviewDTO.Title = tbTitle.Text;
+            reviewDTO.Description = rtbDescription.Text;
+            reviewDTO.Score = Convert.ToInt32(tbScore.Text);
+            int id= mediaManager.GetMediaByTitle(cbMediaTitle.Text);
+            reviewDTO.MediaID = id;
+            if (reviewManager.AddReview(reviewDTO))
             {
-                string title = tbTitle.Text;
-                string description = rtbDescription.Text;
-
-                if (decimal.TryParse(tbScore.Text, out decimal rating) && title != "" && description != "" && rating > 0 && rating < 11)
-                {
-                    ReviewDTO r = new ReviewDTO();
-                    r.Title = title;
-                    r.Description = description;
-                    r.Score = rating;
-                    reviewManager.AddReview(r);
-                    MessageBox.Show("success");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input keep in mind rating is between 0 and 10. Please check your input.");
-                }
+                MessageBox.Show("successful");
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Invalid input. Please check your input.");
+                MessageBox.Show("failed");
             }
-
-
         }
     }
 }

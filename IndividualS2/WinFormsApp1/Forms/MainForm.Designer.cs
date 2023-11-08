@@ -40,6 +40,7 @@
             btnUpdateMovie = new Button();
             btnAddMovie = new Button();
             tpTvSeriesManager = new TabPage();
+            dgvTvSeriesCollection = new DataGridView();
             label6 = new Label();
             label2 = new Label();
             tbSearchTvSeriesTitle = new TextBox();
@@ -58,15 +59,14 @@
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            dgvTvSeriesCollection = new DataGridView();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
             tpTvSeriesManager.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTvSeriesCollection).BeginInit();
             tpReviewManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReview).BeginInit();
             ((System.ComponentModel.ISupportInitialize)reviewBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvTvSeriesCollection).BeginInit();
             SuspendLayout();
             // 
             // tCMain
@@ -191,6 +191,16 @@
             tpTvSeriesManager.Text = "TvSeriesManager";
             tpTvSeriesManager.UseVisualStyleBackColor = true;
             // 
+            // dgvTvSeriesCollection
+            // 
+            dgvTvSeriesCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTvSeriesCollection.Location = new Point(316, 73);
+            dgvTvSeriesCollection.Name = "dgvTvSeriesCollection";
+            dgvTvSeriesCollection.RowHeadersWidth = 51;
+            dgvTvSeriesCollection.RowTemplate.Height = 29;
+            dgvTvSeriesCollection.Size = new Size(1104, 547);
+            dgvTvSeriesCollection.TabIndex = 15;
+            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -233,6 +243,7 @@
             btnViewAllTvSeries.TabIndex = 9;
             btnViewAllTvSeries.Text = "View All TvSeries";
             btnViewAllTvSeries.UseVisualStyleBackColor = true;
+            btnViewAllTvSeries.Click += btnViewAllTvSeries_Click;
             // 
             // btnUpdateTvSeries
             // 
@@ -357,16 +368,6 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // dgvTvSeriesCollection
-            // 
-            dgvTvSeriesCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTvSeriesCollection.Location = new Point(316, 73);
-            dgvTvSeriesCollection.Name = "dgvTvSeriesCollection";
-            dgvTvSeriesCollection.RowHeadersWidth = 51;
-            dgvTvSeriesCollection.RowTemplate.Height = 29;
-            dgvTvSeriesCollection.Size = new Size(1104, 547);
-            dgvTvSeriesCollection.TabIndex = 15;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -381,11 +382,11 @@
             ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).EndInit();
             tpTvSeriesManager.ResumeLayout(false);
             tpTvSeriesManager.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTvSeriesCollection).EndInit();
             tpReviewManager.ResumeLayout(false);
             tpReviewManager.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewReview).EndInit();
             ((System.ComponentModel.ISupportInitialize)reviewBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvTvSeriesCollection).EndInit();
             ResumeLayout(false);
         }
 

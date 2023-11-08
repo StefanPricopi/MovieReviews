@@ -60,10 +60,6 @@ namespace Desktop_App.Forms.MovieManagerForms
             {
                 MessageBox.Show("fail");
             }
-
-
-
-
         }
 
         private void dgvMovieCollection_SelectionChanged(object sender, EventArgs e)
