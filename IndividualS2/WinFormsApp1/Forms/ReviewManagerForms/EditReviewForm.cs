@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DALClassLibrary.DALs;
 using LogicLayerClassLibrary;
 using LogicLayerClassLibrary.Classes;
+using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
 
@@ -19,41 +20,52 @@ namespace Desktop_App.Forms.ReviewManagerForms
     {
         private int id;
         ReviewManager reviewManager;
-        public EditReviewForm(Review review)
+        public EditReviewForm()
         {
             InitializeComponent();
-            id = review.Id;
-            tbTitle.Text = review.Title;
-            tbScore.Text = review.Score.ToString();
-            rtbDescription.Text = review.Description;
             reviewManager = new ReviewManager(new ReviewDAL());
+            var reviewTable = reviewManager.GetAllReview();
+            dgvReview.DataSource = reviewTable;
         }
 
         private void btnEditReview_Click(object sender, EventArgs e)
         {
-            try
+            if (tbTitle.Text == "" || tbScore.Text == "" || rtbDescription.Text == "")
             {
-                if(decimal.TryParse(tbScore.Text, out decimal rating) && tbTitle.Text != "" && rtbDescription.Text != "" && rating > 0 && rating < 11) 
-                {
-                    ReviewDTO r = new ReviewDTO();
-                    r.Title = tbTitle.Text;
-                    r.Description=rtbDescription.Text;
-                    r.Score = rating;
-                    reviewManager.UpdateReview(r);
-                    MessageBox.Show("edit was succesful");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("edit was unsuccesful keep in mind score should be beetwin 1 and 10 , please check your input");
-                }
-
+                throw new Exception();
             }
-            catch (Exception)
+            ReviewDTO reviewDTO = new ReviewDTO();
+
+            if (dgvReview.SelectedRows.Count > 0)
             {
+                reviewDTO.Title=tbTitle.Text;
+                reviewDTO.Score =Convert.ToDecimal( tbScore.Text);
+                reviewDTO.Description = rtbDescription.Text;
                 
-            }
+                int selectedID = Convert.ToInt32(dgvReview.SelectedRows[0].Cells[0].Value);
+                reviewDTO.Id = selectedID;
 
+            }
+            if (reviewManager.UpdateReview(reviewDTO))
+            {
+                MessageBox.Show("Success");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("fail");
+            }
+        }
+
+        private void dgvReview_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvReview.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvReview.SelectedRows[0];
+                tbTitle.Text = selectedRow.Cells["Title"].Value.ToString();
+                tbScore.Text = selectedRow.Cells["Score"].Value.ToString();
+                rtbDescription.Text = selectedRow.Cells["Description"].Value.ToString();
+            }
         }
     }
 }

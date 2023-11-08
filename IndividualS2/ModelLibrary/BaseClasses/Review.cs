@@ -12,7 +12,7 @@ namespace LogicLayerClassLibrary.Classes
         public string Title { get; set; }
         public decimal Score { get; set; }
         public string Description { get; set; }
-
+        
 
         public Review(int id, string title, decimal score, string description)
         {

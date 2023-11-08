@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using Microsoft.Data.SqlClient;
+using Microsoft.VisualBasic;
 using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace DALClassLibrary.DALs
 {
@@ -18,8 +20,6 @@ namespace DALClassLibrary.DALs
         {
             try
             {
-
-
                 using (SqlConnection connection = InitializeConection())
                 {
                     connection.Open();
@@ -28,22 +28,22 @@ namespace DALClassLibrary.DALs
                     using (SqlCommand cmdMedia = new SqlCommand("INSERT INTO DTO_Media (Title, Director, Actor, Description,Genre) VALUES (@Title, @Director, @Actor, @Description,@Genre); SELECT SCOPE_IDENTITY();", connection))
                     {
                         
-
-                        cmdMedia.Parameters.AddWithValue("@Title", mediaDTO.Title);
-                        cmdMedia.Parameters.AddWithValue("@Director", mediaDTO.Director);
-                        cmdMedia.Parameters.AddWithValue("@Actor", mediaDTO.Actor);
-                        cmdMedia.Parameters.AddWithValue("@Description", mediaDTO.Description);
-                        cmdMedia.Parameters.AddWithValue("@Genre", mediaDTO.Genre);
+                        string g = mediaDTO.Genre.ToString();
+                        cmdMedia.Parameters.AddWithValue("@Title", mediaDTO.Title.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Director", mediaDTO.Director.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Actor", mediaDTO.Actor.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Description", mediaDTO.Description.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Genre", g);
 
                         int mediaID = Convert.ToInt32(cmdMedia.ExecuteScalar()); // Get the auto-generated MediaID
 
-                        // Insert into movie table with the obtained UserID
+                        
                         using (SqlCommand cmdMovie = new SqlCommand("INSERT INTO DTO_Movie (Duration, ReleaseDate,MediaID) VALUES (@Duration, @ReleaseDate,@MediaID);", connection))
                         {
-                            cmdMovie.Parameters.AddWithValue("@Duration", movieDTO.Duration);
-                            cmdMovie.Parameters.AddWithValue("@ReleaseDate", movieDTO.Date);
-                            cmdMovie.Parameters.AddWithValue("@MediaID", mediaID); // Use the obtained UserID
-                            cmdMovie.ExecuteNonQuery(); // Insert movie record
+                            cmdMovie.Parameters.AddWithValue("@Duration", movieDTO.Duration.ToString().Trim());
+                            cmdMovie.Parameters.AddWithValue("@ReleaseDate", movieDTO.Date.ToString().Trim());
+                            cmdMovie.Parameters.AddWithValue("@MediaID", mediaID); 
+                            cmdMovie.ExecuteNonQuery(); 
                             return true;
                         }
                     }
@@ -53,43 +53,8 @@ namespace DALClassLibrary.DALs
             {
                 return false;
             }
-
         }
-
-       
-
-        public DataTable GetAllMedia()
-        {
-            using (SqlConnection connection = InitializeConection())
-            {
-                connection.Open();
-                
-
-                string selectQuery1 = "SELECT DTO_Media.Title,DTO_Media.Director,DTO_Media.Actor,DTO_Media.Description,DTO_Media.Genre, DTO_Movie.duration, DTO_Movie.ReleaseDate " +
-                                    "FROM DTO_Media " +
-                                    "INNER JOIN DTO_Movie ON DTO_Media.MediaID = DTO_Movie.mediaID";
-                
-
-                
-                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
-                {
-                    using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
-                    {
-                        DataTable combinedDataTable = new DataTable();
-                        adapter1.Fill(combinedDataTable);
-                        
-                        return combinedDataTable;
-                    }              
-                }
-            }
-        }
-
-        public Media GetMediaById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool UpdateMovie(MediaDTO mediaDTO,MovieDTO movieDTO)
+        public bool AddTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvseriesDTO)
         {
             try
             {
@@ -97,37 +62,246 @@ namespace DALClassLibrary.DALs
                 {
                     connection.Open();
 
-                    string updateQuery = "UPDATE DTO_Media (Title, Director, Actor, Description,Genre) VALUES (@Title, @Director, @Actor, @Description,@Genre) WHERE MediaID = @MediaID";
 
-                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                    using (SqlCommand cmdMedia = new SqlCommand("INSERT INTO DTO_Media (Title, Director, Actor, Description,Genre) VALUES (@Title, @Director, @Actor, @Description,@Genre); SELECT SCOPE_IDENTITY();", connection))
                     {
-                        command.Parameters.AddWithValue("@Title", mediaDTO.Title);
-                        command.Parameters.AddWithValue("@Director", mediaDTO.Director);
-                        command.Parameters.AddWithValue("@Actor", mediaDTO.Actor);
-                        command.Parameters.AddWithValue("@Description", mediaDTO.Description);
-                        command.Parameters.AddWithValue("@Genre", mediaDTO.Genre);
-                        command.Parameters.AddWithValue("@MediaID", mediaDTO.Id);
-                        int mediaID = Convert.ToInt32(command.ExecuteScalar()); // Get the auto-generated MediaID
 
-                        using (SqlCommand cmdMovie = new SqlCommand("UPDATE DTO_Movie (Duration, ReleaseDate,MediaID) VALUES (@Duration, @ReleaseDate,@MediaID);", connection))
+                        string g = mediaDTO.Genre.ToString();
+                        cmdMedia.Parameters.AddWithValue("@Title", mediaDTO.Title.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Director", mediaDTO.Director.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Actor", mediaDTO.Actor.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Description", mediaDTO.Description.Trim());
+                        cmdMedia.Parameters.AddWithValue("@Genre", g);
+
+                        int mediaID = Convert.ToInt32(cmdMedia.ExecuteScalar()); // Get the auto-generated MediaID
+
+
+                        using (SqlCommand cmdMovie = new SqlCommand("INSERT INTO DTO_TvSeries (MediaID,NrOfSeasons, PilotDate,EndDate,Status) VALUES (@MediaID,@NrOfSeasons, @PilotDate,@EndDate,@Status);", connection))
                         {
-                            cmdMovie.Parameters.AddWithValue("@Duration", movieDTO.Duration);
-                            cmdMovie.Parameters.AddWithValue("@ReleaseDate", movieDTO.Date);
-                            cmdMovie.Parameters.AddWithValue("@MediaID", mediaDTO.Id); 
-                            cmdMovie.ExecuteNonQuery(); 
-                            
+                            string t =tvseriesDTO.Status.ToString();
+                            cmdMovie.Parameters.AddWithValue("@NrOfSeasons",tvseriesDTO.NrOfSeasons );
+                            cmdMovie.Parameters.AddWithValue("@PilotDate",tvseriesDTO.PilotDate );
+                            cmdMovie.Parameters.AddWithValue("@EndDate", tvseriesDTO.LastEpisodeDate);
+                            cmdMovie.Parameters.AddWithValue("@Status", t);
+                            cmdMovie.Parameters.AddWithValue("@MediaID", mediaID);
+                            cmdMovie.ExecuteNonQuery();
+                            return true;
                         }
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        return rowsAffected > 0; // Return true if at least one row was affected by the update.
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 return false;
             }
+        }
+
+        public List<string> GetAllTitles()
+        {
+            List<string> titles = new List<string>();
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    string query = "SELECT Title FROM DTO_Media";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string title = reader["Title"].ToString().Trim();
+                                titles.Add(title);
+                            }
+                        }
+                    }
+                    return titles;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+       
+
+        public DataTable GetAllMovies()
+        {
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string selectQuery1 = "SELECT DTO_Media.*, DTO_Movie.Duration, DTO_Movie.ReleaseDate\r\nFROM DTO_Media\r\nINNER JOIN DTO_Movie ON DTO_Media.MediaID = DTO_Movie.MediaID;\r\n";   
+                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                {
+                    using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
+                    {
+                        DataTable combinedDataTable = new DataTable();
+                        adapter1.Fill(combinedDataTable); 
+                        return combinedDataTable;
+                    }              
+                }
+            }
+        }
+        public DataTable GetAllTvSeries()
+        {
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string selectQuery1 = "SELECT DTO_Media.*, DTO_TvSeries.NrOfSeasons, DTO_TvSeries.Status,DTO_TvSeries.PilotDate,DTO_TvSeries.EndDate\r\nFROM DTO_Media\r\nINNER JOIN DTO_TvSeries ON DTO_Media.MediaID = DTO_TvSeries.MediaID;\r\n";
+                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                {
+                    using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
+                    {
+                        DataTable combinedDataTable = new DataTable();
+                        adapter1.Fill(combinedDataTable);
+                        return combinedDataTable;
+                    }
+                }
+            }
+        }
+
+        public int GetMediaByTitle(string title)
+        {
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+
+
+                    using (SqlCommand command = new SqlCommand("SELECT MediaID FROM DTO_Media WHERE Title = @Title", connection))
+                    {
+                        command.Parameters.Add(new SqlParameter("@Title", title));
+                        object result = command.ExecuteScalar();
+                        int mediaID = Convert.ToInt32(result);
+                        return mediaID;
+                    }
+
+                }
+            }
+            catch(Exception ex)
+            {
+                return -1;
+            }
+            
+        }
+
+        public bool UpdateMovie(MediaDTO mediaDTO,MovieDTO movieDTO)
+        {
+            int rowsAffectedMedia = 0;
+            int rowsAffectedMovie = 0;
+
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    SqlTransaction transaction = connection.BeginTransaction();
+
+                    try
+                    {
+                        string updateQueryMedia = "UPDATE DTO_Media SET Title = @Title, Director = @Director, Actor = @Actor, Description = @Description, Genre = @Genre WHERE MediaID = @MediaID";
+
+                        using (SqlCommand commandMedia = new SqlCommand(updateQueryMedia, connection, transaction))
+                        {
+                            
+                            commandMedia.Parameters.Add(new SqlParameter("@Title", mediaDTO.Title));
+                            commandMedia.Parameters.Add(new SqlParameter("@Director", mediaDTO.Director));
+                            commandMedia.Parameters.Add(new SqlParameter("@Actor", mediaDTO.Actor));
+                            commandMedia.Parameters.Add(new SqlParameter("@Description", mediaDTO.Description));
+                            commandMedia.Parameters.Add(new SqlParameter("@Genre", mediaDTO.Genre));
+                            commandMedia.Parameters.Add(new SqlParameter("@MediaID", mediaDTO.Id));
+
+                            rowsAffectedMedia = commandMedia.ExecuteNonQuery(); 
+                        }
+
+                        string updateQueryMovie = "UPDATE DTO_Movie SET Duration = @Duration, ReleaseDate = @ReleaseDate WHERE MediaID = @MediaID";
+
+                        using (SqlCommand commandMovie = new SqlCommand(updateQueryMovie, connection, transaction))
+                        {
+                            
+                            commandMovie.Parameters.Add(new SqlParameter("@Duration", movieDTO.Duration.ToString().Trim()));
+                            commandMovie.Parameters.Add(new SqlParameter("@ReleaseDate", movieDTO.Date.ToString().Trim()));
+                            commandMovie.Parameters.Add(new SqlParameter("@MediaID", mediaDTO.Id.ToString().Trim()));
+
+                            rowsAffectedMovie = commandMovie.ExecuteNonQuery();
+                        }
+
+                        // If both updates were successful, commit the transaction.
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return (rowsAffectedMedia > 0) && (rowsAffectedMovie > 0);
+        }
+        public bool UpdateTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvseriesDTO)
+        {
+            int rowsAffectedMedia = 0;
+            int rowsAffectedTvSeries = 0;
+
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    SqlTransaction transaction = connection.BeginTransaction();
+
+                    try
+                    {
+                        string updateQueryMedia = "UPDATE DTO_Media SET Title = @Title, Director = @Director, Actor = @Actor, Description = @Description, Genre = @Genre WHERE MediaID = @MediaID";
+
+                        using (SqlCommand commandMedia = new SqlCommand(updateQueryMedia, connection, transaction))
+                        {
+                            string g = mediaDTO.Genre.ToString();
+                            commandMedia.Parameters.Add(new SqlParameter("@Title", mediaDTO.Title));
+                            commandMedia.Parameters.Add(new SqlParameter("@Director", mediaDTO.Director));
+                            commandMedia.Parameters.Add(new SqlParameter("@Actor", mediaDTO.Actor));
+                            commandMedia.Parameters.Add(new SqlParameter("@Description", mediaDTO.Description));
+                            commandMedia.Parameters.Add(new SqlParameter("@Genre", g));
+                            commandMedia.Parameters.Add(new SqlParameter("@MediaID", mediaDTO.Id));
+
+                            rowsAffectedMedia = commandMedia.ExecuteNonQuery();
+                        }
+
+                        string updateQueryMovie = "UPDATE DTO_TvSeries SET NrOfSeasons = @NrOfSeasons, PilotDate = @PilotDate,EndDate=@EndDate,Status=@Status WHERE MediaID = @MediaID";
+
+                        using (SqlCommand commandMovie = new SqlCommand(updateQueryMovie, connection, transaction))
+                        {
+                            string s =tvseriesDTO.Status.ToString();
+                            commandMovie.Parameters.Add(new SqlParameter("@NrOfSeasons", tvseriesDTO.NrOfSeasons));
+                            commandMovie.Parameters.Add(new SqlParameter("@PilotDate", tvseriesDTO.PilotDate));
+                            commandMovie.Parameters.Add(new SqlParameter("@EndDate", tvseriesDTO.LastEpisodeDate));
+                            commandMovie.Parameters.Add(new SqlParameter("@Status", s));
+                            commandMovie.Parameters.Add(new SqlParameter("@MediaID", mediaDTO.Id));
+
+                            rowsAffectedTvSeries = commandMovie.ExecuteNonQuery();
+                        }
+
+                        // If both updates were successful, commit the transaction.
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return (rowsAffectedMedia > 0) && (rowsAffectedTvSeries > 0);
         }
     }
 }

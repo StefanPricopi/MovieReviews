@@ -84,15 +84,15 @@
             // 
             rtbDescription.Location = new Point(90, 186);
             rtbDescription.Name = "rtbDescription";
-            rtbDescription.Size = new Size(498, 177);
+            rtbDescription.Size = new Size(1119, 413);
             rtbDescription.TabIndex = 7;
             rtbDescription.Text = "";
             // 
             // btnAddReview
             // 
-            btnAddReview.Location = new Point(573, 389);
+            btnAddReview.Location = new Point(515, 629);
             btnAddReview.Name = "btnAddReview";
-            btnAddReview.Size = new Size(137, 49);
+            btnAddReview.Size = new Size(251, 49);
             btnAddReview.TabIndex = 8;
             btnAddReview.Text = "Add Review";
             btnAddReview.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             // cbMediaTitle
             // 
             cbMediaTitle.FormattingEnabled = true;
-            cbMediaTitle.Location = new Point(446, 66);
+            cbMediaTitle.Location = new Point(315, 79);
             cbMediaTitle.Name = "cbMediaTitle";
             cbMediaTitle.Size = new Size(151, 28);
             cbMediaTitle.TabIndex = 9;
@@ -109,7 +109,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(445, 32);
+            label2.Location = new Point(315, 56);
             label2.Name = "label2";
             label2.Size = new Size(84, 20);
             label2.TabIndex = 10;
@@ -119,7 +119,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1272, 703);
             Controls.Add(label2);
             Controls.Add(cbMediaTitle);
             Controls.Add(btnAddReview);

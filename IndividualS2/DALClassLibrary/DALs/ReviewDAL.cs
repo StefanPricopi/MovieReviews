@@ -23,13 +23,15 @@ namespace DALClassLibrary.DALs
                     connection.Open();
 
                     
-                    using (SqlCommand cmdReview = new SqlCommand("INSERT INTO [DTO_Reviews] (Title, Score, Description) VALUES (@Title, @Score, @Description); SELECT SCOPE_IDENTITY();", connection))
+                    using (SqlCommand cmdReview = new SqlCommand("INSERT INTO [DTO_Reviews] (Title, Score, Description,MediaID,UserID) VALUES (@Title, @Score, @Description,@MediaID,@UserID); SELECT SCOPE_IDENTITY();", connection))
                     {
-                        
 
+                        int user = 1;
                         cmdReview.Parameters.AddWithValue("@Title",reviewDTO.Title);
                         cmdReview.Parameters.AddWithValue("@Score", reviewDTO.Score);
                         cmdReview.Parameters.AddWithValue("@Description", reviewDTO.Description);
+                        cmdReview.Parameters.AddWithValue("@MediaID", reviewDTO.MediaID);
+                        cmdReview.Parameters.AddWithValue("@UserID", user);
                         cmdReview.ExecuteNonQuery(); // Insert employee record
                         return true;
 
@@ -54,7 +56,7 @@ namespace DALClassLibrary.DALs
                 {
                     connection.Open();
 
-                    string selectQuery1 = "SELECT Title, Score, Description FROM DTO_Reviews";
+                    string selectQuery1 = "SELECT ReviewID,Title, Score, Description,MediaID FROM DTO_Reviews";
 
                     using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
                     {
@@ -88,10 +90,12 @@ namespace DALClassLibrary.DALs
 
                     using (SqlCommand command = new SqlCommand(updateQuery, connection))
                     {
+                        int user = 1;
                         command.Parameters.AddWithValue("@Title", reviewDTO.Title);
                         command.Parameters.AddWithValue("@Score", reviewDTO.Score);
                         command.Parameters.AddWithValue("@Description", reviewDTO.Description);
                         command.Parameters.AddWithValue("@ReviewID", reviewDTO.Id);
+                        command.Parameters.AddWithValue("@UserID", user);
 
 
                         int rowsAffected = command.ExecuteNonQuery();

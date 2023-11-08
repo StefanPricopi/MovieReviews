@@ -23,7 +23,7 @@ namespace Desktop_App.Forms.MovieManagerForms
         {
             InitializeComponent();
             mediaManager = new MediaManager(new MediaDAL());
-            var mediaTable = mediaManager.GetAllMedia();
+            var mediaTable = mediaManager.GetAllMovies();
 
             dgvMovieCollection.DataSource = mediaTable;
 
@@ -35,16 +35,22 @@ namespace Desktop_App.Forms.MovieManagerForms
             {
                 throw new Exception();
             }
-            var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
             MediaDTO mediaDTO = new MediaDTO();
             MovieDTO movieDTO = new MovieDTO();
-            mediaDTO.Title = tbTitle.Text;
-            mediaDTO.Director = tbDirector.Text;
-            mediaDTO.Actor = tbActors.Text;
-            mediaDTO.Description = rtbDescription.Text;
-            mediaDTO.Genre = ele;
-            movieDTO.Duration = Convert.ToDecimal(tbDuration.Text);
-            movieDTO.Date = dtpReleaseDate.Value;
+
+            if (dgvMovieCollection.SelectedRows.Count > 0)
+            {
+                var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+                mediaDTO.Title = tbTitle.Text;
+                mediaDTO.Director = tbDirector.Text;
+                mediaDTO.Actor = tbActors.Text;
+                mediaDTO.Description = rtbDescription.Text;
+                mediaDTO.Genre = ele;
+                movieDTO.Duration = Convert.ToDecimal(tbDuration.Text);
+                movieDTO.Date = dtpReleaseDate.Value;
+                int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
+                mediaDTO.Id = selectedID;
+            }
             if (mediaManager.UpdateMovie(mediaDTO, movieDTO))
             {
                 MessageBox.Show("Success");
@@ -54,10 +60,6 @@ namespace Desktop_App.Forms.MovieManagerForms
             {
                 MessageBox.Show("fail");
             }
-
-
-
-
         }
 
         private void dgvMovieCollection_SelectionChanged(object sender, EventArgs e)

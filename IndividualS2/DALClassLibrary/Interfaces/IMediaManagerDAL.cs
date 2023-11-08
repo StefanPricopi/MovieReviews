@@ -14,7 +14,11 @@ namespace LogicLayerClassLibrary.Interfaces
     {
         public bool AddMovie(MediaDTO mediaDTO, MovieDTO movieDTO);
         public bool UpdateMovie(MediaDTO mediaDTO,MovieDTO movieDTO);
-        public DataTable GetAllMedia();
-        public Media GetMediaById(int id);
+        public bool AddTvSeries(MediaDTO mediaDTO,TvSeriesDTO tvseriesDTO);
+        public bool UpdateTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvSeriesDTO);
+        public List<string> GetAllTitles();
+        public DataTable GetAllMovies();
+        public DataTable GetAllTvSeries();
+        public int GetMediaByTitle(string title);
     }
 }

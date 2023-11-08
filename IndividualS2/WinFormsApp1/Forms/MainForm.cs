@@ -25,8 +25,10 @@ namespace WinFormsApp1
             mediaManager = new MediaManager(new MediaDAL());
             ViewAllReviews();
             ViewAllMovies();
+            ViewAllTvSeries();
             dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMovieCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvTvSeriesCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
 
@@ -58,15 +60,9 @@ namespace WinFormsApp1
         }
         private void btnUpdateReview_Click(object sender, EventArgs e)
         {
-            if (dataGridViewReview.SelectedRows.Count > 0)
+            using (EditReviewForm f3 = new EditReviewForm())
             {
-                int i = dataGridViewReview.SelectedRows[0].Index;
-                Review r = reviewManager.GetReviewById(i);
-
-                using (EditReviewForm f3 = new EditReviewForm(r))
-                {
-                    var result = f3.ShowDialog();
-                }
+                var result = f3.ShowDialog();
             }
 
         }
@@ -117,9 +113,17 @@ namespace WinFormsApp1
         private void ViewAllMovies()
         {
 
-            var mediaTable = mediaManager.GetAllMedia();
+            var mediaTable = mediaManager.GetAllMovies();
 
             dgvMovieCollection.DataSource = mediaTable;
+
+        }
+        private void ViewAllTvSeries()
+        {
+
+            var mediaTable = mediaManager.GetAllTvSeries();
+
+            dgvTvSeriesCollection.DataSource = mediaTable;
 
         }
         private void AddRowDataGrid(Review r)
@@ -129,6 +133,11 @@ namespace WinFormsApp1
         private void AddRowMovieGrid(Movie m)
         {
             dgvMovieCollection.Rows.Add(m.Title, m.Director, m.Actor, m.Description, m.Duration, m.Date, m.Genre);
+        }
+
+        private void btnViewAllTvSeries_Click(object sender, EventArgs e)
+        {
+            ViewAllTvSeries();
         }
     }
 }
