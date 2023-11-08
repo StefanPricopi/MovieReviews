@@ -141,7 +141,6 @@
             btnSearchMovie.TabIndex = 3;
             btnSearchMovie.Text = "Search Movie";
             btnSearchMovie.UseVisualStyleBackColor = true;
-            btnSearchMovie.Click += btnSearchMovie_Click;
             // 
             // btnViewAllMovies
             // 
