@@ -13,7 +13,7 @@ namespace Web_app.Pages
         {
             try
             {
-                ReviewManager reviewManager = new ReviewManager(new TESTReviewDAL());
+                ReviewManager reviewManager = new ReviewManager(new ReviewDAL());
                 review = reviewManager.GetReviewById(id);
                 return Page();
             }

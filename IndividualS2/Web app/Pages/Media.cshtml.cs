@@ -12,8 +12,8 @@ namespace Web_app.Pages
         public string Message;
         public void OnGet(string? message)
         {
-            MediaManager mediaManager = new MediaManager(new TESTMediaDAL());
-            media = mediaManager.GetAllMedia();
+            MediaManager mediaManager = new MediaManager(new MediaDAL());
+           //media = mediaManager.GetAllMedia();
             if (message != null)
             {
                 Message = message;

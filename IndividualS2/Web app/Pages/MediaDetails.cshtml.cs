@@ -13,7 +13,7 @@ namespace Web_app.Pages
         {
             try
             {
-                MediaManager mediaManager = new MediaManager(new TESTMediaDAL());
+                MediaManager mediaManager = new MediaManager(new MediaDAL());
                 media = mediaManager.GetMediaById(id);
                 return Page();
             }
