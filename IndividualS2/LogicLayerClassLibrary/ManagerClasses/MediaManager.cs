@@ -22,32 +22,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             this.mediaManagerDAL = mediaManagerDAL;
 
-        }
-
-        public bool AddMovie(MediaDTO mediaDTO, MovieDTO movieDTO)
-        {
-           return mediaManagerDAL.AddMovie(mediaDTO,movieDTO);
-        }
-        public bool UpdateMovie(MediaDTO mediaDTO, MovieDTO movieDTO)
-        {
-           return mediaManagerDAL.UpdateMovie(mediaDTO,movieDTO);
-        }
-        public bool AddTvSeries(MediaDTO mediaDTO,TvSeriesDTO tvSeriesDTO)
-        {
-            return mediaManagerDAL.AddTvSeries(mediaDTO,tvSeriesDTO);
-        }
-        public bool UpdateTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvseriesDTO)
-        {
-            return mediaManagerDAL.UpdateTvSeries(mediaDTO, tvseriesDTO);
-        }
-        public DataTable GetAllMovies()
-        {
-            return mediaManagerDAL.GetAllMovies();
-        }
-        public DataTable GetAllTvSeries()
-        {
-            return mediaManagerDAL.GetAllTvSeries();
-        }
+        }  
         public int GetMediaByTitle(string title)
         {
             return mediaManagerDAL.GetMediaByTitle(title);
@@ -56,14 +31,6 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return mediaManagerDAL.GetAllTitles();
         }
-        public DataTable SearchMovies(int id)
-        {
-            return mediaManagerDAL.SearchMovies(id);
-        }
-        public DataTable SearchTvSeries(int id)
-        {
-            return mediaManagerDAL.SearchTvSeries(id);
-        }
-
+       
     }
 }

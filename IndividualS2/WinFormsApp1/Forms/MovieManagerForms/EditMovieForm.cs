@@ -20,11 +20,13 @@ namespace Desktop_App.Forms.MovieManagerForms
     public partial class EditMovieForm : Form
     {
         MediaManager mediaManager;
+        MovieManager movieManager;
         public EditMovieForm()
         {
             InitializeComponent();
             mediaManager = new MediaManager(new MediaDAL());
-            var mediaTable = mediaManager.GetAllMovies();
+            movieManager = new MovieManager(new MovieDAL());
+            var mediaTable = movieManager.GetAllMovies();
             MainForm.TrimDataTableStrings(mediaTable);
 
             dgvMovieCollection.DataSource = mediaTable;
@@ -53,7 +55,7 @@ namespace Desktop_App.Forms.MovieManagerForms
                 int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
                 mediaDTO.Id = selectedID;
             }
-            if (mediaManager.UpdateMovie(mediaDTO, movieDTO))
+            if (movieManager.UpdateMovie(mediaDTO, movieDTO))
             {
                 MessageBox.Show("Success");
                 this.Close();

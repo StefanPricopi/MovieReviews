@@ -17,11 +17,15 @@ namespace WinFormsApp1
     {
         private ReviewManager reviewManager;
         private MediaManager mediaManager;
+        private MovieManager movieManager;
+        private TvSeriesManager tvSeriesManager;
         public MainForm()
         {
             InitializeComponent();
             reviewManager = new ReviewManager(new ReviewDAL());
             mediaManager = new MediaManager(new MediaDAL());
+            tvSeriesManager = new TvSeriesManager(new TvSeriesDAL());
+            movieManager = new MovieManager(new MovieDAL());
             ViewAllReviews();
             ViewAllMovies();
             ViewAllTvSeries();
@@ -34,7 +38,7 @@ namespace WinFormsApp1
             cbMovieTitle.DisplayMember = "Title";
             cbTvSeriesTitle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbTvSeriesTitle.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbTvSeriesTitle.DataSource = mediaManager.GetAllTvSeries();
+            cbTvSeriesTitle.DataSource = tvSeriesManager.GetAllTvSeries();
             cbTvSeriesTitle.DisplayMember = "Title";
             cbTitleReview.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbTitleReview.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -113,13 +117,13 @@ namespace WinFormsApp1
         }
         private void ViewAllMovies()
         {
-            var movieTable = mediaManager.GetAllMovies();
+            var movieTable = movieManager.GetAllMovies();
             TrimDataTableStrings(movieTable);
             dgvMovieCollection.DataSource = movieTable;
         }
         private void ViewAllTvSeries()
         {
-            var mediaTable = mediaManager.GetAllTvSeries();
+            var mediaTable = tvSeriesManager.GetAllTvSeries();
             TrimDataTableStrings(mediaTable);
             dgvTvSeriesCollection.DataSource = mediaTable;
         }
@@ -146,7 +150,7 @@ namespace WinFormsApp1
         {
             int id = mediaManager.GetMediaByTitle(cbMovieTitle.Text);
 
-            var movieTable = mediaManager.SearchMovies(id);
+            var movieTable = movieManager.SearchMovies(id);
             TrimDataTableStrings(movieTable);
             dgvMovieCollection.DataSource = movieTable;
 
@@ -156,7 +160,7 @@ namespace WinFormsApp1
         {
             int id = mediaManager.GetMediaByTitle(cbTvSeriesTitle.Text);
 
-            var movieTable = mediaManager.SearchTvSeries(id);
+            var movieTable = tvSeriesManager.SearchTvSeries(id);
             TrimDataTableStrings(movieTable);
             dgvTvSeriesCollection.DataSource = movieTable;
         }

@@ -16,11 +16,11 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
 {
     public partial class AddTvSeriesForm : Form
     {
-        private MediaManager mediaManager;
+        private TvSeriesManager tvSeriesManager;
         public AddTvSeriesForm()
         {
             InitializeComponent();
-            mediaManager = new MediaManager(new MediaDAL());
+            tvSeriesManager = new TvSeriesManager(new TvSeriesDAL());
         }
 
         private void btnAddTvSeries_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
                 Status status = (Status)Enum.Parse(typeof(Status), cbStatus.Text);
                 tvseriesDTO.Status = (Status)status;
                 tvseriesDTO.NrOfSeasons = Convert.ToInt32(tbNumberOfSeasons.Text);
-                if (mediaManager.AddTvSeries(mediaDTO, tvseriesDTO))
+                if (tvSeriesManager.AddTvSeries(mediaDTO, tvseriesDTO))
                 {
                     MessageBox.Show("successful");
                 }

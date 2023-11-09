@@ -21,12 +21,14 @@ namespace Desktop_App.Forms
     public partial class AddMovieForm : Form
     {
         private MediaManager mediaManager;
-        
+        private MovieManager movieManager;
+
         public AddMovieForm()
         {
             InitializeComponent();
             mediaManager = new MediaManager(new MediaDAL());
-            
+            movieManager = new MovieManager(new MovieDAL());
+
         }
 
         private void btnAddMovie_Click(object sender, EventArgs e)
@@ -54,7 +56,7 @@ namespace Desktop_App.Forms
                 {
                     MessageBox.Show("Invalid rating input. Please enter a valid decimal value.");
                 }
-                if (mediaManager.AddMovie(mediaDTO, movieDTO))
+                if (movieManager.AddMovie(mediaDTO, movieDTO))
                 {
                     MessageBox.Show("successful");
                 }

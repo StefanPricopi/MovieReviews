@@ -17,12 +17,14 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
 {
     public partial class EditTvSeriesForm : Form
     {
+        private TvSeriesManager seriesManager;
         private MediaManager mediaManager;
         public EditTvSeriesForm()
         {
             InitializeComponent();
+            seriesManager = new TvSeriesManager(new TvSeriesDAL());
             mediaManager = new MediaManager(new MediaDAL());
-            var mediaTable = mediaManager.GetAllTvSeries();
+            var mediaTable = seriesManager.GetAllTvSeries();
             MainForm.TrimDataTableStrings(mediaTable);
             dgvTvSeriesCollection.DataSource = mediaTable;
         }
@@ -53,7 +55,7 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
                 int selectedID = Convert.ToInt32(dgvTvSeriesCollection.SelectedRows[0].Cells[0].Value);
                 mediaDTO.Id = selectedID;
             }
-            if (mediaManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
+            if (seriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
             {
                 MessageBox.Show("Success");
                 this.Close();
