@@ -172,5 +172,28 @@ namespace WinFormsApp1
             TrimDataTableStrings(reviewTable);
             dataGridViewReview.DataSource = reviewTable;
         }
+
+        private void btnArchiveReview_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewReview.SelectedCells.Count > 0)
+            {
+                int id = Convert.ToInt32(dataGridViewReview.Rows[dataGridViewReview.SelectedCells[0].RowIndex].Cells[0].Value);
+
+                if (reviewManager.AddArchiveReview(reviewManager.GetActualReviewByMedia(id)))
+                {
+                    reviewManager.DeleteReview(id);
+                    MessageBox.Show("Archive was succesfull");
+                }
+
+            }
+            else MessageBox.Show("wrong input");
+        }
+
+        private void BtnViewArchivedReview_Click(object sender, EventArgs e)
+        {
+            var mediaTable = reviewManager.GetAllArchivedReview();
+            TrimDataTableStrings(mediaTable);
+            dataGridViewReview.DataSource = mediaTable;
+        }
     }
 }

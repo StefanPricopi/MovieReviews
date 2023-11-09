@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace DALClassLibrary.DALs
 {
@@ -71,6 +72,28 @@ namespace DALClassLibrary.DALs
                         }
                     }
                 }
+        }
+        public DataTable GetAllArchivedReview()
+        {
+
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+
+                string selectQuery1 = "SELECT ArchiveReviewID,Title, Score, Description,MediaID FROM DTO_ReviewArchive";
+
+                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                {
+                    using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
+                    {
+                        DataTable reviewDataTable = new DataTable();
+                        adapter1.Fill(reviewDataTable);
+
+
+                        return (reviewDataTable);
+                    }
+                }
+            }
         }
         public DataTable GetReviewById(int id)
         {
@@ -143,6 +166,49 @@ namespace DALClassLibrary.DALs
             }
 
         }
+        public ReviewDTO GetActualReviewByMedia(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    string selectQuery1 = "SELECT ReviewID, Title, Score, Description, MediaID, UserID FROM DTO_Reviews WHERE ReviewID=@ReviewID";
+                    using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                    {
+                        // Add parameter for MediaID
+                        command1.Parameters.AddWithValue("@ReviewID", id);
+
+                        using (SqlDataReader reader = command1.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Create a ReviewDTO object and populate it with data from the result
+                                ReviewDTO r = new ReviewDTO
+                                {
+                                    Id = Convert.ToInt32(reader["ReviewID"]),
+                                    Title = reader["Title"].ToString(),
+                                    Score = Convert.ToDecimal(reader["Score"]),
+                                    Description = reader["Description"].ToString(),
+                                    MediaID = Convert.ToInt32(reader["MediaID"]),
+                                    UserID = Convert.ToInt32(reader["UserID"])
+                                };
+
+                                return r;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            
+            return null;
+        }
+
 
 
         public bool UpdateReview(ReviewDTO reviewDTO)
@@ -203,6 +269,54 @@ namespace DALClassLibrary.DALs
             catch (Exception ex)
             {
                 return null;
+            }
+        }
+        public bool AddArchiveReview(ReviewDTO reviewDTO)
+        {
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    using (SqlCommand cmdReview = new SqlCommand("INSERT INTO [DTO_ReviewArchive] (Title, Score, Description,MediaID,UserID) VALUES (@Title, @Score, @Description,@MediaID,@UserID); SELECT SCOPE_IDENTITY();", connection))
+                    {
+                        int user = 1;
+                        cmdReview.Parameters.AddWithValue("@Title", reviewDTO.Title);
+                        cmdReview.Parameters.AddWithValue("@Score", reviewDTO.Score);
+                        cmdReview.Parameters.AddWithValue("@Description", reviewDTO.Description);
+                        cmdReview.Parameters.AddWithValue("@MediaID", reviewDTO.MediaID);
+                        cmdReview.Parameters.AddWithValue("@UserID", user);
+                        cmdReview.ExecuteNonQuery(); // Insert employee record
+                        return true;
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+        public bool DeleteReview(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    string deleteCommand = "DELETE FROM DTO_Reviews WHERE ReviewID = @ReviewID";
+                    using (SqlCommand command = new SqlCommand(deleteCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@ReviewID", id);
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
     }

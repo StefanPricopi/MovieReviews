@@ -19,5 +19,9 @@ namespace LogicLayerClassLibrary.Interfaces
         public DataTable GetReviewById(int id);
         public List<string> GetAllReviewTitles();
         public DataTable GetReviewByMedia(int id);
+        public bool AddArchiveReview(ReviewDTO reviewDTO);
+        public bool DeleteReview(int id);
+        public ReviewDTO GetActualReviewByMedia(int id);
+        public DataTable GetAllArchivedReview();
     }
 }

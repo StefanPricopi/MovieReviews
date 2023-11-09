@@ -13,6 +13,7 @@ namespace ModelLibrary.DTO
         public decimal Score { get; set; }
         public string Description { get; set; }
         public int MediaID { get; set; }
+        public int UserID {  get; set; }
 
         public ReviewDTO()
         {

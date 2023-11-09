@@ -52,5 +52,21 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return reviewManagerDAL.GetReviewByMedia(id);
         }
+        public bool AddArchiveReview(ReviewDTO reviewDTO)
+        {
+            return reviewManagerDAL.AddArchiveReview(reviewDTO);
+        }
+        public bool DeleteReview(int id)
+        {
+            return reviewManagerDAL.DeleteReview(id);
+        }
+        public ReviewDTO GetActualReviewByMedia(int id)
+        {
+            return reviewManagerDAL.GetActualReviewByMedia(id);
+        }
+        public DataTable GetAllArchivedReview()
+        {
+            return reviewManagerDAL.GetAllArchivedReview();
+        }
     }
 }

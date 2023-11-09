@@ -49,6 +49,7 @@
             btnUpdateTvSeries = new Button();
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
+            btnArchiveReview = new Button();
             btn_SearchReviewForAMedia = new Button();
             MediaTitleReviews = new Label();
             cb_MediaTitleReviews = new ComboBox();
@@ -62,6 +63,7 @@
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            BtnViewArchivedReview = new Button();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
@@ -273,6 +275,8 @@
             // 
             // tpReviewManager
             // 
+            tpReviewManager.Controls.Add(BtnViewArchivedReview);
+            tpReviewManager.Controls.Add(btnArchiveReview);
             tpReviewManager.Controls.Add(btn_SearchReviewForAMedia);
             tpReviewManager.Controls.Add(MediaTitleReviews);
             tpReviewManager.Controls.Add(cb_MediaTitleReviews);
@@ -291,6 +295,16 @@
             tpReviewManager.TabIndex = 2;
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
+            // 
+            // btnArchiveReview
+            // 
+            btnArchiveReview.Location = new Point(70, 552);
+            btnArchiveReview.Name = "btnArchiveReview";
+            btnArchiveReview.Size = new Size(135, 49);
+            btnArchiveReview.TabIndex = 29;
+            btnArchiveReview.Text = "Archive Review";
+            btnArchiveReview.UseVisualStyleBackColor = true;
+            btnArchiveReview.Click += btnArchiveReview_Click;
             // 
             // btn_SearchReviewForAMedia
             // 
@@ -405,6 +419,16 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
+            // BtnViewArchivedReview
+            // 
+            BtnViewArchivedReview.Location = new Point(70, 622);
+            BtnViewArchivedReview.Name = "BtnViewArchivedReview";
+            BtnViewArchivedReview.Size = new Size(135, 42);
+            BtnViewArchivedReview.TabIndex = 30;
+            BtnViewArchivedReview.Text = "View Archived reviews";
+            BtnViewArchivedReview.UseVisualStyleBackColor = true;
+            BtnViewArchivedReview.Click += BtnViewArchivedReview_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -462,5 +486,7 @@
         private Label MediaTitleReviews;
         private ComboBox cb_MediaTitleReviews;
         private ComboBox cbTitleReview;
+        private Button btnArchiveReview;
+        private Button BtnViewArchivedReview;
     }
 }
