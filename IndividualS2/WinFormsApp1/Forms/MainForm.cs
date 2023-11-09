@@ -28,6 +28,22 @@ namespace WinFormsApp1
             dataGridViewReview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvMovieCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvTvSeriesCollection.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            cbMovieTitle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbMovieTitle.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbMovieTitle.DataSource = mediaManager.GetAllTitles();
+            cbMovieTitle.DisplayMember = "Title";
+            cbTvSeriesTitle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbTvSeriesTitle.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbTvSeriesTitle.DataSource = mediaManager.GetAllTvSeries();
+            cbTvSeriesTitle.DisplayMember = "Title";
+            cbTitleReview.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cbTitleReview.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cbTitleReview.DataSource = reviewManager.GetAllReviewTitles();
+            cbTitleReview.DisplayMember = "Title";
+            cb_MediaTitleReviews.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cb_MediaTitleReviews.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cb_MediaTitleReviews.DataSource = mediaManager.GetAllTitles();
+            cb_MediaTitleReviews.DisplayMember = "Title";
         }
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
@@ -65,7 +81,11 @@ namespace WinFormsApp1
 
         private void btnSearchReview_Click(object sender, EventArgs e)
         {
-            AddRowDataGrid(reviewManager.GetReviewById(Convert.ToInt32(tbSearchReviewTitle.Text)));
+
+            int id = reviewManager.GetReviewByTitle(cbTitleReview.Text);
+            var reviewTable = reviewManager.GetReviewByID(id);
+            TrimDataTableStrings(reviewTable);
+            dataGridViewReview.DataSource = reviewTable;
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
@@ -103,10 +123,6 @@ namespace WinFormsApp1
             TrimDataTableStrings(mediaTable);
             dgvTvSeriesCollection.DataSource = mediaTable;
         }
-        private void AddRowDataGrid(Review r)
-        {
-            dataGridViewReview.Rows.Add(r.Title, r.Score, r.Description);
-        }
 
         private void btnViewAllTvSeries_Click(object sender, EventArgs e)
         {
@@ -124,6 +140,33 @@ namespace WinFormsApp1
                     }
                 }
             }
+        }
+
+        private void btnSearchMovie_Click(object sender, EventArgs e)
+        {
+            int id = mediaManager.GetMediaByTitle(cbMovieTitle.Text);
+
+            var movieTable = mediaManager.SearchMovies(id);
+            TrimDataTableStrings(movieTable);
+            dgvMovieCollection.DataSource = movieTable;
+
+        }
+
+        private void btnSearchTvSeries_Click(object sender, EventArgs e)
+        {
+            int id = mediaManager.GetMediaByTitle(cbTvSeriesTitle.Text);
+
+            var movieTable = mediaManager.SearchTvSeries(id);
+            TrimDataTableStrings(movieTable);
+            dgvTvSeriesCollection.DataSource = movieTable;
+        }
+
+        private void btn_SearchReviewForAMedia_Click(object sender, EventArgs e)
+        {
+            int id = mediaManager.GetMediaByTitle(cb_MediaTitleReviews.Text);
+            var reviewTable = reviewManager.GetReviewByMedia(id);
+            TrimDataTableStrings(reviewTable);
+            dataGridViewReview.DataSource = reviewTable;
         }
     }
 }

@@ -144,8 +144,46 @@ namespace DALClassLibrary.DALs
                 }
             }
         }
-        
-        public DataTable GetAllTvSeries()
+        public DataTable SearchMovies(int id)
+        {
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string selectQuery1 = "SELECT DTO_Media.*, DTO_Movie.Duration, DTO_Movie.ReleaseDate\r\nFROM DTO_Media\r\nINNER JOIN DTO_Movie ON DTO_Media.MediaID = DTO_Movie.MediaID \r\n WHERE DTO_Media.MediaID=@MediaID";
+                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                {
+                    using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
+                    {
+                        command1.Parameters.Add(new SqlParameter("@MediaID", id));
+                        DataTable combinedDataTable = new DataTable();
+                        adapter1.Fill(combinedDataTable);
+
+                        return combinedDataTable;
+                    }
+                }
+            }
+        }
+        public DataTable SearchTvSeries(int id)
+        {
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string selectQuery1 = "SELECT DTO_Media.*, DTO_TvSeries.NrOfSeasons, DTO_TvSeries.Status,DTO_TvSeries.PilotDate,DTO_TvSeries.EndDate\r\nFROM DTO_Media\r\nINNER JOIN DTO_TvSeries ON DTO_Media.MediaID = DTO_TvSeries.MediaID \r\n WHERE DTO_TvSeries.MediaID=@MediaID";
+                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                {
+                    using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
+                    {
+                        command1.Parameters.Add(new SqlParameter("@MediaID", id));
+                        DataTable combinedDataTable = new DataTable();
+                        adapter1.Fill(combinedDataTable);
+
+                        return combinedDataTable;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetAllTvSeries() 
         {
             using (SqlConnection connection = InitializeConection())
             {

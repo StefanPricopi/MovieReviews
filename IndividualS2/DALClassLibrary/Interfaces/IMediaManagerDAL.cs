@@ -19,6 +19,9 @@ namespace LogicLayerClassLibrary.Interfaces
         public List<string> GetAllTitles();
         public DataTable GetAllMovies();
         public DataTable GetAllTvSeries();
+        public DataTable SearchMovies(int id);
+        public DataTable SearchTvSeries(int id);
+
         public int GetMediaByTitle(string title);
     }
 }

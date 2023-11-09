@@ -56,6 +56,14 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return mediaManagerDAL.GetAllTitles();
         }
+        public DataTable SearchMovies(int id)
+        {
+            return mediaManagerDAL.SearchMovies(id);
+        }
+        public DataTable SearchTvSeries(int id)
+        {
+            return mediaManagerDAL.SearchTvSeries(id);
+        }
 
     }
 }

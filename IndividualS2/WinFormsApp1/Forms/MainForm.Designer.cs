@@ -31,28 +31,31 @@
             components = new System.ComponentModel.Container();
             tCMain = new TabControl();
             tpMovieManager = new TabPage();
+            cbMovieTitle = new ComboBox();
             dgvMovieCollection = new DataGridView();
             label7 = new Label();
             label1 = new Label();
-            tbSearchMovieTitle = new TextBox();
             btnSearchMovie = new Button();
             btnViewAllMovies = new Button();
             btnUpdateMovie = new Button();
             btnAddMovie = new Button();
             tpTvSeriesManager = new TabPage();
+            cbTvSeriesTitle = new ComboBox();
             dgvTvSeriesCollection = new DataGridView();
             label6 = new Label();
             label2 = new Label();
-            tbSearchTvSeriesTitle = new TextBox();
             btnSearchTvSeries = new Button();
             btnViewAllTvSeries = new Button();
             btnUpdateTvSeries = new Button();
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
+            btn_SearchReviewForAMedia = new Button();
+            MediaTitleReviews = new Label();
+            cb_MediaTitleReviews = new ComboBox();
+            cbTitleReview = new ComboBox();
             dataGridViewReview = new DataGridView();
             label5 = new Label();
             label3 = new Label();
-            tbSearchReviewTitle = new TextBox();
             btnSearchReview = new Button();
             btnViewAllReview = new Button();
             btnUpdateReview = new Button();
@@ -82,10 +85,10 @@
             // 
             // tpMovieManager
             // 
+            tpMovieManager.Controls.Add(cbMovieTitle);
             tpMovieManager.Controls.Add(dgvMovieCollection);
             tpMovieManager.Controls.Add(label7);
             tpMovieManager.Controls.Add(label1);
-            tpMovieManager.Controls.Add(tbSearchMovieTitle);
             tpMovieManager.Controls.Add(btnSearchMovie);
             tpMovieManager.Controls.Add(btnViewAllMovies);
             tpMovieManager.Controls.Add(btnUpdateMovie);
@@ -98,10 +101,18 @@
             tpMovieManager.Text = "MovieManager";
             tpMovieManager.UseVisualStyleBackColor = true;
             // 
+            // cbMovieTitle
+            // 
+            cbMovieTitle.FormattingEnabled = true;
+            cbMovieTitle.Location = new Point(71, 334);
+            cbMovieTitle.Name = "cbMovieTitle";
+            cbMovieTitle.Size = new Size(151, 28);
+            cbMovieTitle.TabIndex = 9;
+            // 
             // dgvMovieCollection
             // 
             dgvMovieCollection.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMovieCollection.Location = new Point(247, 45);
+            dgvMovieCollection.Location = new Point(252, 56);
             dgvMovieCollection.Name = "dgvMovieCollection";
             dgvMovieCollection.RowHeadersWidth = 51;
             dgvMovieCollection.RowTemplate.Height = 29;
@@ -126,13 +137,6 @@
             label1.TabIndex = 5;
             label1.Text = "Title";
             // 
-            // tbSearchMovieTitle
-            // 
-            tbSearchMovieTitle.Location = new Point(104, 333);
-            tbSearchMovieTitle.Name = "tbSearchMovieTitle";
-            tbSearchMovieTitle.Size = new Size(61, 27);
-            tbSearchMovieTitle.TabIndex = 4;
-            // 
             // btnSearchMovie
             // 
             btnSearchMovie.Location = new Point(71, 248);
@@ -141,6 +145,7 @@
             btnSearchMovie.TabIndex = 3;
             btnSearchMovie.Text = "Search Movie";
             btnSearchMovie.UseVisualStyleBackColor = true;
+            btnSearchMovie.Click += btnSearchMovie_Click;
             // 
             // btnViewAllMovies
             // 
@@ -174,10 +179,10 @@
             // 
             // tpTvSeriesManager
             // 
+            tpTvSeriesManager.Controls.Add(cbTvSeriesTitle);
             tpTvSeriesManager.Controls.Add(dgvTvSeriesCollection);
             tpTvSeriesManager.Controls.Add(label6);
             tpTvSeriesManager.Controls.Add(label2);
-            tpTvSeriesManager.Controls.Add(tbSearchTvSeriesTitle);
             tpTvSeriesManager.Controls.Add(btnSearchTvSeries);
             tpTvSeriesManager.Controls.Add(btnViewAllTvSeries);
             tpTvSeriesManager.Controls.Add(btnUpdateTvSeries);
@@ -189,6 +194,14 @@
             tpTvSeriesManager.TabIndex = 1;
             tpTvSeriesManager.Text = "TvSeriesManager";
             tpTvSeriesManager.UseVisualStyleBackColor = true;
+            // 
+            // cbTvSeriesTitle
+            // 
+            cbTvSeriesTitle.FormattingEnabled = true;
+            cbTvSeriesTitle.Location = new Point(65, 338);
+            cbTvSeriesTitle.Name = "cbTvSeriesTitle";
+            cbTvSeriesTitle.Size = new Size(159, 28);
+            cbTvSeriesTitle.TabIndex = 16;
             // 
             // dgvTvSeriesCollection
             // 
@@ -218,13 +231,6 @@
             label2.TabIndex = 12;
             label2.Text = "Title";
             // 
-            // tbSearchTvSeriesTitle
-            // 
-            tbSearchTvSeriesTitle.Location = new Point(30, 339);
-            tbSearchTvSeriesTitle.Name = "tbSearchTvSeriesTitle";
-            tbSearchTvSeriesTitle.Size = new Size(215, 27);
-            tbSearchTvSeriesTitle.TabIndex = 11;
-            // 
             // btnSearchTvSeries
             // 
             btnSearchTvSeries.Location = new Point(65, 252);
@@ -233,6 +239,7 @@
             btnSearchTvSeries.TabIndex = 10;
             btnSearchTvSeries.Text = "Search TvSeries";
             btnSearchTvSeries.UseVisualStyleBackColor = true;
+            btnSearchTvSeries.Click += btnSearchTvSeries_Click;
             // 
             // btnViewAllTvSeries
             // 
@@ -266,10 +273,13 @@
             // 
             // tpReviewManager
             // 
+            tpReviewManager.Controls.Add(btn_SearchReviewForAMedia);
+            tpReviewManager.Controls.Add(MediaTitleReviews);
+            tpReviewManager.Controls.Add(cb_MediaTitleReviews);
+            tpReviewManager.Controls.Add(cbTitleReview);
             tpReviewManager.Controls.Add(dataGridViewReview);
             tpReviewManager.Controls.Add(label5);
             tpReviewManager.Controls.Add(label3);
-            tpReviewManager.Controls.Add(tbSearchReviewTitle);
             tpReviewManager.Controls.Add(btnSearchReview);
             tpReviewManager.Controls.Add(btnViewAllReview);
             tpReviewManager.Controls.Add(btnUpdateReview);
@@ -281,6 +291,41 @@
             tpReviewManager.TabIndex = 2;
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
+            // 
+            // btn_SearchReviewForAMedia
+            // 
+            btn_SearchReviewForAMedia.Location = new Point(29, 462);
+            btn_SearchReviewForAMedia.Name = "btn_SearchReviewForAMedia";
+            btn_SearchReviewForAMedia.Size = new Size(199, 53);
+            btn_SearchReviewForAMedia.TabIndex = 28;
+            btn_SearchReviewForAMedia.Text = "Search all reviews for a specific media";
+            btn_SearchReviewForAMedia.UseVisualStyleBackColor = true;
+            btn_SearchReviewForAMedia.Click += btn_SearchReviewForAMedia_Click;
+            // 
+            // MediaTitleReviews
+            // 
+            MediaTitleReviews.AutoSize = true;
+            MediaTitleReviews.Location = new Point(81, 358);
+            MediaTitleReviews.Name = "MediaTitleReviews";
+            MediaTitleReviews.Size = new Size(84, 20);
+            MediaTitleReviews.TabIndex = 27;
+            MediaTitleReviews.Text = "Media Title";
+            // 
+            // cb_MediaTitleReviews
+            // 
+            cb_MediaTitleReviews.FormattingEnabled = true;
+            cb_MediaTitleReviews.Location = new Point(65, 381);
+            cb_MediaTitleReviews.Name = "cb_MediaTitleReviews";
+            cb_MediaTitleReviews.Size = new Size(151, 28);
+            cb_MediaTitleReviews.TabIndex = 26;
+            // 
+            // cbTitleReview
+            // 
+            cbTitleReview.FormattingEnabled = true;
+            cbTitleReview.Location = new Point(65, 299);
+            cbTitleReview.Name = "cbTitleReview";
+            cbTitleReview.Size = new Size(151, 28);
+            cbTitleReview.TabIndex = 25;
             // 
             // dataGridViewReview
             // 
@@ -305,18 +350,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(121, 315);
+            label3.Location = new Point(77, 276);
             label3.Name = "label3";
-            label3.Size = new Size(24, 20);
+            label3.Size = new Size(128, 20);
             label3.TabIndex = 19;
-            label3.Text = "ID";
-            // 
-            // tbSearchReviewTitle
-            // 
-            tbSearchReviewTitle.Location = new Point(65, 339);
-            tbSearchReviewTitle.Name = "tbSearchReviewTitle";
-            tbSearchReviewTitle.Size = new Size(118, 27);
-            tbSearchReviewTitle.TabIndex = 18;
+            label3.Text = "Title of the review";
             // 
             // btnSearchReview
             // 
@@ -397,18 +435,15 @@
         private TabPage tpReviewManager;
         private Button btnAddMovie;
         private Label label1;
-        private TextBox tbSearchMovieTitle;
         private Button btnSearchMovie;
         private Button btnViewAllMovies;
         private Button btnUpdateMovie;
         private Label label2;
-        private TextBox tbSearchTvSeriesTitle;
         private Button btnSearchTvSeries;
         private Button btnViewAllTvSeries;
         private Button btnUpdateTvSeries;
         private Button btnAddTvSeries;
         private Label label3;
-        private TextBox tbSearchReviewTitle;
         private Button btnSearchReview;
         private Button btnViewAllReview;
         private Button btnUpdateReview;
@@ -421,5 +456,11 @@
         private DataGridView dgvMovieCollection;
         private DataGridView dgvTvSeriesCollection;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private ComboBox cbMovieTitle;
+        private ComboBox cbTvSeriesTitle;
+        private Button btn_SearchReviewForAMedia;
+        private Label MediaTitleReviews;
+        private ComboBox cb_MediaTitleReviews;
+        private ComboBox cbTitleReview;
     }
 }

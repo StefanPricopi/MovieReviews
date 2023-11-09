@@ -36,9 +36,21 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return reviewManagerDAL.GetAllReview();
         }
-        public Review GetReviewById(int id)
+        public int GetReviewByTitle(string title)
+        {
+            return  reviewManagerDAL.GetReviewByTitle(title);
+        }
+        public List<string> GetAllReviewTitles()
+        {
+            return reviewManagerDAL.GetAllReviewTitles();
+        }
+        public DataTable GetReviewByID(int id)
         {
             return reviewManagerDAL.GetReviewById(id);
+        }
+        public DataTable GetReviewByMedia(int id)
+        {
+            return reviewManagerDAL.GetReviewByMedia(id);
         }
     }
 }
