@@ -13,7 +13,7 @@ namespace Web_app.Pages
         public void OnGet(string? message)
         {
             MediaManager mediaManager = new MediaManager(new MediaDAL());
-            //media = mediaManager.GetAllMedia();
+
             if (message != null)
             {
                 Message = message;

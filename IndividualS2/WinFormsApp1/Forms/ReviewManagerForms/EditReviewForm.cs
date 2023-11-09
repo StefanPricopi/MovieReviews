@@ -38,10 +38,10 @@ namespace Desktop_App.Forms.ReviewManagerForms
 
             if (dgvReview.SelectedRows.Count > 0)
             {
-                reviewDTO.Title=tbTitle.Text;
-                reviewDTO.Score =Convert.ToDecimal( tbScore.Text);
+                reviewDTO.Title = tbTitle.Text;
+                reviewDTO.Score = Convert.ToDecimal(tbScore.Text);
                 reviewDTO.Description = rtbDescription.Text;
-                
+                reviewDTO.MediaID = Convert.ToInt32(tbMediaID.Text);
                 int selectedID = Convert.ToInt32(dgvReview.SelectedRows[0].Cells[0].Value);
                 reviewDTO.Id = selectedID;
 
@@ -64,6 +64,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
                 DataGridViewRow selectedRow = dgvReview.SelectedRows[0];
                 tbTitle.Text = selectedRow.Cells["Title"].Value.ToString();
                 tbScore.Text = selectedRow.Cells["Score"].Value.ToString();
+                tbMediaID.Text = selectedRow.Cells["MediaID"].Value.ToString();
                 rtbDescription.Text = selectedRow.Cells["Description"].Value.ToString();
             }
         }

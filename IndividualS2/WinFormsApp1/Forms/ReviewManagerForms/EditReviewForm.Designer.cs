@@ -36,14 +36,17 @@
             label3 = new Label();
             label1 = new Label();
             dgvReview = new DataGridView();
+            label2 = new Label();
+            tbMediaID = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvReview).BeginInit();
             SuspendLayout();
             // 
             // btnEditReview
             // 
-            btnEditReview.Location = new Point(189, 457);
+            btnEditReview.Location = new Point(784, 396);
+            btnEditReview.Margin = new Padding(3, 2, 3, 2);
             btnEditReview.Name = "btnEditReview";
-            btnEditReview.Size = new Size(137, 49);
+            btnEditReview.Size = new Size(186, 37);
             btnEditReview.TabIndex = 15;
             btnEditReview.Text = "Edit Review";
             btnEditReview.UseVisualStyleBackColor = true;
@@ -51,69 +54,91 @@
             // 
             // rtbDescription
             // 
-            rtbDescription.Location = new Point(67, 164);
+            rtbDescription.Location = new Point(26, 217);
+            rtbDescription.Margin = new Padding(3, 2, 3, 2);
             rtbDescription.Name = "rtbDescription";
-            rtbDescription.Size = new Size(548, 287);
+            rtbDescription.Size = new Size(480, 216);
             rtbDescription.TabIndex = 14;
             rtbDescription.Text = "";
             // 
             // tbScore
             // 
-            tbScore.Location = new Point(91, 111);
+            tbScore.Location = new Point(26, 83);
+            tbScore.Margin = new Padding(3, 2, 3, 2);
             tbScore.Name = "tbScore";
-            tbScore.Size = new Size(125, 27);
+            tbScore.Size = new Size(110, 23);
             tbScore.TabIndex = 13;
             // 
             // tbTitle
             // 
-            tbTitle.Location = new Point(91, 59);
+            tbTitle.Location = new Point(26, 44);
+            tbTitle.Margin = new Padding(3, 2, 3, 2);
             tbTitle.Name = "tbTitle";
-            tbTitle.Size = new Size(125, 27);
+            tbTitle.Size = new Size(110, 23);
             tbTitle.TabIndex = 12;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(91, 141);
+            label4.Location = new Point(26, 200);
             label4.Name = "label4";
-            label4.Size = new Size(136, 20);
+            label4.Size = new Size(107, 15);
             label4.TabIndex = 11;
             label4.Text = "Review Description";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(91, 88);
+            label3.Location = new Point(26, 69);
             label3.Name = "label3";
-            label3.Size = new Size(46, 20);
+            label3.Size = new Size(36, 15);
             label3.TabIndex = 10;
             label3.Text = "Score";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(89, 35);
+            label1.Location = new Point(26, 27);
             label1.Name = "label1";
-            label1.Size = new Size(128, 20);
+            label1.Size = new Size(100, 15);
             label1.TabIndex = 9;
             label1.Text = "Title of the review";
             // 
             // dgvReview
             // 
             dgvReview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvReview.Location = new Point(637, 27);
+            dgvReview.Location = new Point(557, 20);
+            dgvReview.Margin = new Padding(3, 2, 3, 2);
             dgvReview.Name = "dgvReview";
             dgvReview.RowHeadersWidth = 51;
             dgvReview.RowTemplate.Height = 29;
-            dgvReview.Size = new Size(676, 479);
+            dgvReview.Size = new Size(592, 359);
             dgvReview.TabIndex = 16;
             dgvReview.SelectionChanged += dgvReview_SelectionChanged;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(27, 127);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 17;
+            label2.Text = "MediaID";
+            // 
+            // tbMediaID
+            // 
+            tbMediaID.Location = new Point(30, 147);
+            tbMediaID.Name = "tbMediaID";
+            tbMediaID.Size = new Size(100, 23);
+            tbMediaID.TabIndex = 18;
+            // 
             // EditReviewForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1325, 606);
+            ClientSize = new Size(1159, 454);
+            Controls.Add(tbMediaID);
+            Controls.Add(label2);
             Controls.Add(dgvReview);
             Controls.Add(btnEditReview);
             Controls.Add(rtbDescription);
@@ -122,6 +147,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "EditReviewForm";
             Text = "EditReviewForm";
             ((System.ComponentModel.ISupportInitialize)dgvReview).EndInit();
@@ -139,5 +165,7 @@
         private Label label3;
         private Label label1;
         private DataGridView dgvReview;
+        private Label label2;
+        private TextBox tbMediaID;
     }
 }

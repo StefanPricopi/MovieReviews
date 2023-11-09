@@ -86,7 +86,7 @@ namespace DALClassLibrary.DALs
                 {
                     connection.Open();
 
-                    string updateQuery = "UPDATE DTO_Reviews SET Title = @Title, Score = @Score, Description = @Description WHERE ReviewID = @ReviewID";
+                    string updateQuery = "UPDATE DTO_Reviews SET Title = @Title, Score = @Score, Description = @Description,MediaID=@MediaID WHERE ReviewID = @ReviewID";
 
                     using (SqlCommand command = new SqlCommand(updateQuery, connection))
                     {
@@ -95,6 +95,7 @@ namespace DALClassLibrary.DALs
                         command.Parameters.AddWithValue("@Score", reviewDTO.Score);
                         command.Parameters.AddWithValue("@Description", reviewDTO.Description);
                         command.Parameters.AddWithValue("@ReviewID", reviewDTO.Id);
+                        command.Parameters.AddWithValue("@MediaID", reviewDTO.MediaID);
                         command.Parameters.AddWithValue("@UserID", user);
 
 
