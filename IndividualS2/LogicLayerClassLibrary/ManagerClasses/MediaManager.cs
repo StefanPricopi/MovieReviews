@@ -17,7 +17,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
     public  class MediaManager
     {
         private IMediaManagerDAL mediaManagerDAL;
-        public static int MediaId = 4;
+        
         public MediaManager(IMediaManagerDAL mediaManagerDAL)
         {
             this.mediaManagerDAL = mediaManagerDAL;
