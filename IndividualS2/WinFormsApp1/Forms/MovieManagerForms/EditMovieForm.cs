@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 
 namespace Desktop_App.Forms.MovieManagerForms
 {
@@ -24,6 +25,7 @@ namespace Desktop_App.Forms.MovieManagerForms
             InitializeComponent();
             mediaManager = new MediaManager(new MediaDAL());
             var mediaTable = mediaManager.GetAllMovies();
+            MainForm.TrimDataTableStrings(mediaTable);
 
             dgvMovieCollection.DataSource = mediaTable;
 

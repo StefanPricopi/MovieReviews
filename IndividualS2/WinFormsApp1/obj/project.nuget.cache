@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nYFV7Eycf2h+zEalWo4xqPGf7X/vO6X7+ht3I9TU31Q/rb9lqujcf5J1RAz5/mNheSXM3yfX6iStkIrTQ0OKIQ==",
+  "dgSpecHash": "7Nz+2fiNkFT8r8fgx/hrMmP7xjUI1s9VRBBipc+LDLT+cPw4vHXXr6ta5GSS2ojyHnH2vxqVAzJWvXE64UYPvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
+  "projectFilePath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alin1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -47,12 +47,5 @@
     "C:\\Users\\alin1\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.29\\microsoft.windows.sdk.net.ref.10.0.19041.29.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

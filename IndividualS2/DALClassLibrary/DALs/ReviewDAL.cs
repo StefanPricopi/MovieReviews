@@ -13,6 +13,7 @@ namespace DALClassLibrary.DALs
 {
     public class ReviewDAL : Connection, IReviewManagerDAL
     {
+        MediaDAL m = new MediaDAL();
         public bool AddReview(ReviewDTO reviewDTO)
         {
 
@@ -64,6 +65,7 @@ namespace DALClassLibrary.DALs
                         {
                             DataTable reviewDataTable = new DataTable();
                             adapter1.Fill(reviewDataTable);
+                            
 
                         return (reviewDataTable);
                         }

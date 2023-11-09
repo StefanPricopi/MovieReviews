@@ -137,12 +137,14 @@ namespace DALClassLibrary.DALs
                     using (SqlDataAdapter adapter1 = new SqlDataAdapter(command1))
                     {
                         DataTable combinedDataTable = new DataTable();
-                        adapter1.Fill(combinedDataTable); 
+                        adapter1.Fill(combinedDataTable);
+                        
                         return combinedDataTable;
                     }              
                 }
             }
         }
+        
         public DataTable GetAllTvSeries()
         {
             using (SqlConnection connection = InitializeConection())

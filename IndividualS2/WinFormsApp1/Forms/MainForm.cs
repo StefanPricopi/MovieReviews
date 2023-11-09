@@ -9,6 +9,7 @@ using System.Linq;
 using System.Collections.Generic;
 using DALClassLibrary.DALs;
 using System.Windows.Forms;
+using System.Data;
 
 namespace WinFormsApp1
 {
@@ -87,16 +88,19 @@ namespace WinFormsApp1
         private void ViewAllReviews()
         {
             var reviewTable = reviewManager.GetAllReview();
+            TrimDataTableStrings(reviewTable);
             dataGridViewReview.DataSource = reviewTable;
         }
         private void ViewAllMovies()
         {
-            var mediaTable = mediaManager.GetAllMovies();
-            dgvMovieCollection.DataSource = mediaTable;
+            var movieTable = mediaManager.GetAllMovies();
+            TrimDataTableStrings(movieTable);
+            dgvMovieCollection.DataSource = movieTable;
         }
         private void ViewAllTvSeries()
         {
             var mediaTable = mediaManager.GetAllTvSeries();
+            TrimDataTableStrings(mediaTable);
             dgvTvSeriesCollection.DataSource = mediaTable;
         }
         private void AddRowDataGrid(Review r)
@@ -107,6 +111,19 @@ namespace WinFormsApp1
         private void btnViewAllTvSeries_Click(object sender, EventArgs e)
         {
             ViewAllTvSeries();
+        }
+        public static void TrimDataTableStrings(DataTable dataTable)
+        {
+            foreach (DataRow row in dataTable.Rows)
+            {
+                foreach (DataColumn column in dataTable.Columns)
+                {
+                    if (row[column] is string stringValue)
+                    {
+                        row[column] = stringValue.Trim();
+                    }
+                }
+            }
         }
     }
 }

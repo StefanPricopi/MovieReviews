@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FwVS/WBaAFIiDRoHX2mFTXxyWzMj3Bv5fi693woZp/G1/pw1xicd1j/9wT7Ja+2oht95TO3tqHLYLd5/Lflbtw==",
+  "dgSpecHash": "zeC2ToET2MmWtwqXN1U97jQH7cA7rueZ/9CMpqh0a3zLWNSq4gvDGtUYsdId85pmGm1AAienusW/KUTqLCSHbA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+  "projectFilePath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alin1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
@@ -45,12 +45,5 @@
     "C:\\Users\\alin1\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

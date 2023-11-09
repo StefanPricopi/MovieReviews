@@ -9,53 +9,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Web_app
 build_property.RootNamespace = Web_app
-build_property.ProjectDir = C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\
+build_property.ProjectDir = C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app
+build_property.MSBuildProjectDirectory = C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Error.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Index.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Media.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Media.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVkaWEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/MediaDetails.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/MediaDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVkaWFEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Privacy.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Review.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Review.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/ReviewDetails.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/ReviewDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3RGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/_ViewImports.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/_ViewStart.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/alin1/Desktop/individual/s2-cb01-individual/IndividualS2/Web app/Pages/Shared/_Layout.cshtml]
+[C:/Users/alin1/OneDrive/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-v8uynv8r6p
