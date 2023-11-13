@@ -15,22 +15,22 @@ namespace LogicLayerClassLibrary.ManagerClasses
 
         }
 
-        public bool AddVisitor(Visitor v)
+        public bool AddVisitor(User v)
         {
             throw new NotImplementedException();
         }
 
-        public List<Visitor> GetAllVisitor()
+        public List<User> GetAllVisitor()
         {
             throw new NotImplementedException();
         }
 
-        public Visitor GetVisitorById(int id)
+        public User GetVisitorById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public bool UpdateVisitor(Visitor v)
+        public bool UpdateVisitor(User v)
         {
             throw new NotImplementedException();
         }

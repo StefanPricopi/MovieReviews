@@ -1,4 +1,5 @@
 ﻿using LogicLayerClassLibrary.Classes;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.Interfaces
 {
-    internal interface IVisitorManagerDAL
+    internal interface IUSERManagerDAL
     {
-        public bool AddVisitor(Visitor v);
-        public bool UpdateVisitor(Visitor v);
-        public List<Visitor> GetAllVisitor();
-        public Visitor GetVisitorById(int id);
+        public bool AddVisitor(User v);
+        public bool UpdateVisitor(User v);
+        public List<User> GetAllVisitor();
+        public User GetVisitorById(int id);
     }
 }
