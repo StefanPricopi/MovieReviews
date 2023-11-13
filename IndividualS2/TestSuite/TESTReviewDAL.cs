@@ -48,7 +48,7 @@ namespace DALClassLibrary.DALs
 
         public DataTable GetAllReview()
         {
-            throw new NotImplementedException();
+           return ConvertToDataTable(reviews);
         }
 
         public List<string> GetAllReviewTitles()
@@ -74,6 +74,22 @@ namespace DALClassLibrary.DALs
         public bool UpdateReview(ReviewDTO reviewDTO)
         {
             throw new NotImplementedException();
+        }
+        static DataTable ConvertToDataTable(Dictionary<int, ReviewDTO> dict)
+        {   
+            DataTable dataTable = new DataTable();
+            DataRow dr ;
+            foreach (var item in dict)
+            {
+               dr = dataTable.NewRow();
+               dr["Id"] = item.Key;
+               dr["Title"] = item.Value;
+               dr["Description"] = item.Value;
+               dr["Score"] = item.Value;
+               dr["UserID"] = item.Value;
+               dr["MediaID"] = item.Value;
+            }
+            return dataTable;
         }
     }
 }
