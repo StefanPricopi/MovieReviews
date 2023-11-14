@@ -313,7 +313,7 @@ namespace TestSuite
             Assert.IsFalse(reviewDAL.reviews.ContainsKey(idToDelete));
         }
         [TestMethod]
-        public void DeleteReviewWithNullId_ShouldNotAffectDictionary()
+        public void DeleteReviewWithNullId()
         {
             // Arrange
             var reviewDictionary = new Dictionary<int, ReviewDTO>
