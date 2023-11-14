@@ -14,7 +14,7 @@ namespace Web_app.Pages
             try
             {
                 ReviewManager reviewManager = new ReviewManager(new ReviewDAL());
-                review = reviewManager.GetReviewById(id);
+                //review = reviewManager.GetReviewById(id);
                 return Page();
             }
             catch (Exception ex)

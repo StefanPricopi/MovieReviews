@@ -1,5 +1,6 @@
 ﻿using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
+using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities;
 using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,38 +13,61 @@ namespace DALClassLibrary.DALs
 {
     public class TESTReviewDAL : IReviewManagerDAL
     {
-        private Dictionary<int, ReviewDTO> reviews;
-        private Dictionary<int, ReviewDTO> archiveReviews;
-        public TESTReviewDAL()
+        public  Dictionary<int, ReviewDTO> reviews;
+        public  Dictionary<int, ReviewDTO> archiveReviews;
+        public TESTReviewDAL(Dictionary<int, ReviewDTO> reviewDictionary)
         {
             reviews = new Dictionary<int, ReviewDTO>();
             archiveReviews = new Dictionary<int, ReviewDTO>();
         }
         public bool AddArchiveReview(ReviewDTO reviewDTO)
         {
-            archiveReviews.Add(reviewDTO.Id, reviewDTO);
-            return true;
+            if (reviewDTO != null && reviewDTO.Id > 0)
+            {
+                if (!archiveReviews.ContainsKey(reviewDTO.Id))
+                {
+                    archiveReviews.Add(reviewDTO.Id, reviewDTO);
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool AddReview(ReviewDTO reviewDTO)
         {
-            reviews.Add(reviewDTO.Id, reviewDTO);
-            return true;
+            if (reviewDTO != null && reviewDTO.Id > 0)
+            {
+                if (!reviews.ContainsKey(reviewDTO.Id))
+                {
+                    reviews.Add(reviewDTO.Id, reviewDTO);
+                    return true;
+                }
+            }
+            return false;
         }
 
         public bool DeleteReview(int id)
         {
-            return reviews.Remove(id);
+            if (reviews != null && reviews.ContainsKey(id))
+            {
+                return reviews.Remove(id);
+            }
+            return false;
         }
 
         public ReviewDTO GetActualReviewByMedia(int id)
         {
-            throw new NotImplementedException();
+            if (reviews.TryGetValue(id, out ReviewDTO review))
+            {
+                return review;
+            }
+
+            return null;
         }
 
         public DataTable GetAllArchivedReview()
         {
-            throw new NotImplementedException();
+            return ConvertToDataTable(archiveReviews);
         }
 
         public DataTable GetAllReview()
@@ -53,43 +77,95 @@ namespace DALClassLibrary.DALs
 
         public List<string> GetAllReviewTitles()
         {
-            throw new NotImplementedException();
+            if (reviews == null)
+            {
+                return new List<string>(); // Return an empty list if reviews is null
+            }
+
+            List<string> titles = new List<string>();
+            foreach (var review in reviews.Values)
+            {
+                titles.Add(review.Title);
+            }
+            return titles;
         }
 
         public DataTable GetReviewById(int id)
         {
-            throw new NotImplementedException();
+            if (reviews.TryGetValue(id, out ReviewDTO review))
+            {
+                Dictionary<int, ReviewDTO> singleReviewDictionary = new Dictionary<int, ReviewDTO>
+            {
+                { review.Id, review }
+            };
+                return ConvertToDataTable(singleReviewDictionary);
+            }
+           
+            return new DataTable();
         }
 
         public DataTable GetReviewByMedia(int id)
         {
-            throw new NotImplementedException();
+            var reviewsByMedia = reviews.Values.Where(review => review.MediaID == id).ToList();
+
+            if (reviewsByMedia.Any())
+            {
+                return ConvertToDataTable(reviewsByMedia.ToDictionary(review => review.Id));
+            }
+            
+            return new DataTable();
         }
 
         public int GetReviewByTitle(string title)
         {
-            throw new NotImplementedException();
+            foreach (var review in reviews.Values)
+            {
+                if (review.Title == title)
+                {
+                    return review.Id;
+                }
+            }
+            
+            return -1;
         }
 
         public bool UpdateReview(ReviewDTO reviewDTO)
         {
-            throw new NotImplementedException();
+            if (reviews.ContainsKey(reviewDTO.Id))
+            {
+                reviews[reviewDTO.Id] = reviewDTO;
+                return true; 
+            }
+            return false;
         }
-        static DataTable ConvertToDataTable(Dictionary<int, ReviewDTO> dict)
-        {   
+        public DataTable ConvertToDataTable(Dictionary<int, ReviewDTO> dict)
+        {
+            if (dict == null)
+            {
+                return new DataTable();
+            }
             DataTable dataTable = new DataTable();
-            DataRow dr ;
+            dataTable.Columns.Add("Id", typeof(int));
+            dataTable.Columns.Add("Title", typeof(string));
+            dataTable.Columns.Add("Description", typeof(string));
+            dataTable.Columns.Add("Score", typeof(int));
+            dataTable.Columns.Add("UserID", typeof(int));
+            dataTable.Columns.Add("MediaID", typeof(int));
+
             foreach (var item in dict)
             {
-               dr = dataTable.NewRow();
-               dr["Id"] = item.Key;
-               dr["Title"] = item.Value;
-               dr["Description"] = item.Value;
-               dr["Score"] = item.Value;
-               dr["UserID"] = item.Value;
-               dr["MediaID"] = item.Value;
+                DataRow dr = dataTable.NewRow();
+                dr["Id"] = item.Key;
+                dr["Title"] = item.Value.Title;
+                dr["Description"] = item.Value.Description;
+                dr["Score"] = item.Value.Score;
+                dr["UserID"] = item.Value.UserID;
+                dr["MediaID"] = item.Value.MediaID;
+                dataTable.Rows.Add(dr);
             }
+
             return dataTable;
         }
+        
     }
 }
