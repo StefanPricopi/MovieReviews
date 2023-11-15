@@ -1,4 +1,5 @@
 ﻿using LogicLayerClassLibrary.Classes;
+using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using Microsoft.Data.SqlClient;
 using ModelLibrary.DTO;
@@ -58,7 +59,7 @@ namespace DALClassLibrary.DALs
                 {
                     connection.Open();
 
-                    string selectQuery1 = "SELECT ReviewID,Title, Score, Description,MediaID FROM DTO_Reviews";
+                    string selectQuery1 = "SELECT ReviewID,Title, Score, Description,MediaID,UserID FROM DTO_Reviews";
 
                     using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
                     {
@@ -207,6 +208,38 @@ namespace DALClassLibrary.DALs
 
             
             return null;
+        }
+        public List<ReviewDTO> DatagridToList(DataTable dataTable)
+        {
+            List<ReviewDTO> reviewList = new List<ReviewDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (row["ReviewID"] != DBNull.Value &&
+                    row["Title"] != DBNull.Value &&
+                    row["Score"] != DBNull.Value &&
+                    row["Description"] != DBNull.Value &&
+                    row["UserID"] != DBNull.Value &&
+                    row["MediaID"] != DBNull.Value)
+                {
+                    
+                        ReviewDTO reviewItem = new ReviewDTO
+                        {
+                            Id = Convert.ToInt32(row["ReviewID"]),
+                            Title= row["Title"].ToString(),
+                            Score =Convert.ToDecimal( row["Score"]),
+                            Description =row["Description"].ToString(),
+                            MediaID =Convert.ToInt32( row["MediaID"]),
+                            UserID = Convert.ToInt32(row["UserID"]),
+
+                        };
+
+                        reviewList.Add(reviewItem);
+                    
+                }
+            }
+
+            return reviewList;
         }
 
 

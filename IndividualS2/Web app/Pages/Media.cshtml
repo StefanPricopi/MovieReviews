@@ -4,13 +4,13 @@
 }
 <b>Media:</b>
 <div class="cards-grid">
-        @foreach (var media in Model.media)
+        @foreach (var mediaDTO in Model.media)
         {
 
-        <a href="/MediaDetails?id=@media.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
-            <h1>Title: @media.Title</h1>
-            <p>Actor: @media.Actor</p>
-            <p>Director: @media.Director</p>
+        <a href="/MediaDetails?id=@mediaDTO.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
+            <h1>Title: @mediaDTO.Title</h1>
+            <p>Actor: @mediaDTO.Actor</p>
+            <p>Director: @mediaDTO.Director</p>
         </a>
          
         }

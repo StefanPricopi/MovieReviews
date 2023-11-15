@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelLibrary.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
@@ -9,16 +10,29 @@ namespace LogicLayerClassLibrary.Classes
 {
     public class User
     {
+        int UserID { get; set; }
         public string Username {  get; set; }
-        public BinaryData PasswordHash { get; set; }
-        public BinaryData Salt {  get; set; }
+        public string PasswordHash { get; set; }
+        public string Salt {  get; set; }
         public int RoleID { get; set; }
-        public User(string username, BinaryData passwordHash, BinaryData salt, int roleID)
+        public User()
         {
+
+        }
+        public User(int userID,string username, string passwordHash, string salt, int roleID)
+        {
+            UserID = userID;
             Username = username;
             PasswordHash = passwordHash;
             Salt = salt;
             RoleID = roleID;
+        }
+        public User(UserDTO userDTO)
+        {
+            this.UserID = userDTO.UserId;
+            this.Username = userDTO.Username;
+            this.PasswordHash = userDTO.PasswordHash;           
+            this.Salt = userDTO.Salt;
         }
     }
 }

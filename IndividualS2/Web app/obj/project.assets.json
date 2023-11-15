@@ -712,26 +712,12 @@
           }
         }
       },
-      "DALClassLibrary/1.0.0": {
+      "LogicLayerClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
           "ModelLibrary": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DALClassLibrary.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DALClassLibrary.dll": {}
-        }
-      },
-      "LogicLayerClassLibrary/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "DALClassLibrary": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.1.1"
         },
         "compile": {
           "bin/placeholder/LogicLayerClassLibrary.dll": {}
@@ -2036,11 +2022,6 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "DALClassLibrary/1.0.0": {
-      "type": "project",
-      "path": "../DALClassLibrary/DALClassLibrary.csproj",
-      "msbuildProject": "../DALClassLibrary/DALClassLibrary.csproj"
     },
     "LogicLayerClassLibrary/1.0.0": {
       "type": "project",

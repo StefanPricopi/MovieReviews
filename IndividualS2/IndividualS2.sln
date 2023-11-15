@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DALClassLibrary", "DALClass
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLibrary", "ModelLibrary\ModelLibrary.csproj", "{146FD270-1D24-48E1-8F51-FAF8E1AF0326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSuite", "TestSuite\TestSuite.csproj", "{4C37C37F-C1FB-4239-9AC2-1D57DC4B7873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSuite", "TestSuite\TestSuite.csproj", "{4C37C37F-C1FB-4239-9AC2-1D57DC4B7873}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

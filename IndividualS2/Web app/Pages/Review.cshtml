@@ -10,12 +10,12 @@
 
     
         <div class="cards-grid">
-        @foreach (var review in Model.reviews)
+        @foreach (var reviewDTO in Model.reviews)
         {
 
-        <a href="/ReviewDetails?id=@review.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
-                    <h1>Title: @review.Title</h1>
-            <p>Score: @review.Score</p>
+        <a href="/ReviewDetails?id=@reviewDTO.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
+                    <h1>Title: @reviewDTO.Title</h1>
+            <p>Score: @reviewDTO.Score</p>
         </a>
          
         }

@@ -3,18 +3,21 @@ using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ModelLibrary.DTO;
 
 namespace Web_app.Pages
 {
     public class MediaDetailsModel : PageModel
     {
-        public Media media;
+       public MediaDTO mediaDTO;
+        
         public IActionResult OnGet(int id)
         {
             try
             {
                 MediaManager mediaManager = new MediaManager(new MediaDAL());
-                //media = mediaManager.GetMediaById(id);
+                MovieManager movieManager = new MovieManager(new MovieDAL());
+                mediaDTO=mediaManager.GetActualMediaByID(id);
                 return Page();
             }
             catch (Exception ex)

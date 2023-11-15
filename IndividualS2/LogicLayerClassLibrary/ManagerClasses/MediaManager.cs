@@ -31,6 +31,14 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return mediaManagerDAL.GetAllTitles();
         }
-       
+        public List<MediaDTO> DatagridToList(DataTable dataTable)
+        {
+            return mediaManagerDAL.DatagridToList(dataTable);
+        }
+        public MediaDTO GetActualMediaByID(int id)
+        {
+            return mediaManagerDAL.GetActualMediaByID(id);
+        }
+
     }
 }

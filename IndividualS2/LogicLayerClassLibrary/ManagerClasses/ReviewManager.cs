@@ -68,5 +68,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return reviewManagerDAL.GetAllArchivedReview();
         }
+        public List<ReviewDTO> DatagridToList(DataTable dataTable)
+        {
+            return reviewManagerDAL.DatagridToList(dataTable);
+        }
     }
 }

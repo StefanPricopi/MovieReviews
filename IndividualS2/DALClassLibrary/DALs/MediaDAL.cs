@@ -6,6 +6,7 @@ using Microsoft.VisualBasic;
 using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -14,10 +15,10 @@ using System.Transactions;
 
 namespace DALClassLibrary.DALs
 {
-    public class MediaDAL : Connection,IMediaManagerDAL
+    public class MediaDAL : Connection, IMediaManagerDAL
     {
-        
-        
+
+
 
         public List<string> GetAllTitles()
         {
@@ -47,7 +48,7 @@ namespace DALClassLibrary.DALs
                 return null;
             }
         }
-       
+
 
         public int GetMediaByTitle(string title)
         {
@@ -68,12 +69,89 @@ namespace DALClassLibrary.DALs
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return -1;
             }
-           
+
         }
-    
+        public MediaDTO GetActualMediaByID(int id)
+        {
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    string selectQuery1 = "SELECT MediaID, Title, Director,Actor, Description,Genre FROM DTO_Media WHERE MediaID=@MediaID";
+                    using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                    {
+                        // Add parameter for MediaID
+                        command1.Parameters.AddWithValue("@MediaID", id);
+
+                        using (SqlDataReader reader = command1.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                MediaDTO r = new MediaDTO();
+
+                                r.Id = Convert.ToInt32(reader["MediaID"]);
+                                r.Title = reader["Title"].ToString();
+                                r.Actor = reader["Actor"].ToString();
+                                r.Director = reader["Director"].ToString();
+                                r.Description = reader["Description"].ToString();
+
+                                if (Enum.TryParse(reader["Genre"].ToString(), out Genre genre))
+                                {
+                                    r.Genre = genre;
+                                }
+                                return r;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+            return null;
+        }
+        public List<MediaDTO> DatagridToList(DataTable dataTable)
+        {
+            List<MediaDTO> mediaList = new List<MediaDTO>();
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                if (row["MediaID"] != DBNull.Value &&
+                    row["Title"] != DBNull.Value &&
+                    row["Director"] != DBNull.Value &&
+                    row["Actor"] != DBNull.Value &&
+                    row["Description"] != DBNull.Value &&
+                    row["Genre"] != DBNull.Value)
+                {
+                    if (Enum.TryParse(row["Genre"].ToString(), out Genre parsedGenre))
+                    {
+                        MediaDTO mediaItem = new MediaDTO
+                        {
+                            Id = Convert.ToInt32(row["MediaID"]),
+                            Title = row["Title"].ToString(),
+                            Director = row["Director"].ToString(),
+                            Actor = row["Actor"].ToString(),
+                            Description = row["Description"].ToString(),
+                            Genre = parsedGenre
+                        };
+
+                        mediaList.Add(mediaItem);
+                    }                    
+                }
+            }
+
+            return mediaList;
+        }
     }
+                
 }
+    
+

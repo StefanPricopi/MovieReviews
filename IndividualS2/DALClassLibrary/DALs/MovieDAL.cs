@@ -145,5 +145,6 @@ namespace DALClassLibrary.DALs
             }
             return (rowsAffectedMedia > 0) && (rowsAffectedMovie > 0);
         }
+
     }
 }
