@@ -32,31 +32,31 @@ namespace Desktop_App.Forms.ReviewManagerForms
 
         private void btnEditReview_Click(object sender, EventArgs e)
         {
-            if (tbTitle.Text == "" || tbScore.Text == "" || rtbDescription.Text == "")
+            try
             {
-                throw new Exception();
-            }
-            ReviewDTO reviewDTO = new ReviewDTO();
+                ReviewDTO reviewDTO = new ReviewDTO();
 
-            if (dgvReview.SelectedRows.Count > 0)
-            {
-                reviewDTO.Title = tbTitle.Text;
-                reviewDTO.Score = Convert.ToDecimal(tbScore.Text);
-                reviewDTO.Description = rtbDescription.Text;
-                reviewDTO.MediaID = Convert.ToInt32(tbMediaID.Text);
-                int selectedID = Convert.ToInt32(dgvReview.SelectedRows[0].Cells[0].Value);
-                reviewDTO.Id = selectedID;
+                if (dgvReview.SelectedRows.Count > 0)
+                {
+                    reviewDTO.Title = tbTitle.Text;
+                    reviewDTO.Score = Convert.ToDecimal(tbScore.Text);
+                    reviewDTO.Description = rtbDescription.Text;
+                    reviewDTO.MediaID = Convert.ToInt32(tbMediaID.Text);
+                    int selectedID = Convert.ToInt32(dgvReview.SelectedRows[0].Cells[0].Value);
+                    reviewDTO.Id = selectedID;
 
+                }
+                if (reviewManager.UpdateReview(reviewDTO))
+                {
+                    MessageBox.Show("Success");
+                    this.Close();
+                }
             }
-            if (reviewManager.UpdateReview(reviewDTO))
-            {
-                MessageBox.Show("Success");
-                this.Close();
-            }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("fail");
             }
+            
         }
 
         private void dgvReview_SelectionChanged(object sender, EventArgs e)

@@ -35,35 +35,36 @@ namespace Desktop_App.Forms.MovieManagerForms
 
         private void btnEditMovie_Click(object sender, EventArgs e)
         {
-            if (tbDirector.Text == "" || tbTitle.Text == "" || tbActors.Text == "" || rtbDescription.Text == "")
+            try
             {
-                throw new Exception();
-            }
-            MediaDTO mediaDTO = new MediaDTO();
-            MovieDTO movieDTO = new MovieDTO();
+                MediaDTO mediaDTO = new MediaDTO();
+                MovieDTO movieDTO = new MovieDTO();
 
-            if (dgvMovieCollection.SelectedRows.Count > 0)
-            {
-                var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-                mediaDTO.Title = tbTitle.Text;
-                mediaDTO.Director = tbDirector.Text;
-                mediaDTO.Actor = tbActors.Text;
-                mediaDTO.Description = rtbDescription.Text;
-                mediaDTO.Genre = ele;
-                movieDTO.Duration = Convert.ToDecimal(tbDuration.Text);
-                movieDTO.Date = dtpReleaseDate.Value;
-                int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
-                mediaDTO.Id = selectedID;
+                if (dgvMovieCollection.SelectedRows.Count > 0)
+                {
+                    var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+                    mediaDTO.Title = tbTitle.Text;
+                    mediaDTO.Director = tbDirector.Text;
+                    mediaDTO.Actor = tbActors.Text;
+                    mediaDTO.Description = rtbDescription.Text;
+                    mediaDTO.Genre = ele;
+                    movieDTO.Duration = Convert.ToDecimal(tbDuration.Text);
+                    movieDTO.Date = dtpReleaseDate.Value;
+                    int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
+                    mediaDTO.Id = selectedID;
+                }
+                if (movieManager.UpdateMovie(mediaDTO, movieDTO))
+                {
+                    MessageBox.Show("Success");
+                    this.Close();
+                }
             }
-            if (movieManager.UpdateMovie(mediaDTO, movieDTO))
+            catch(Exception ex)
             {
-                MessageBox.Show("Success");
-                this.Close();
+                MessageBox.Show("please input values in the right format");
             }
-            else
-            {
-                MessageBox.Show("fail");
-            }
+          
+          
         }
 
         private void dgvMovieCollection_SelectionChanged(object sender, EventArgs e)

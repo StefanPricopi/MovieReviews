@@ -8,9 +8,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
 {
     public class UserManager 
     {
-        private readonly IUSERManagerDAL user;
+        private readonly IUserManagerDAL user;
         public UserManager() { }
-        public UserManager(IUSERManagerDAL user)
+        public UserManager(IUserManagerDAL user)
         {
             this.user = user ?? throw new ArgumentNullException(nameof(user));
         }
@@ -18,6 +18,18 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return user.AddUserAccount(userDTO);
         }
+        public User Login(string username, string password)
+        {
+            User currentUser = user.GetCurrentUserByUsername(username); // Call the method via IUser
+
+            if (username == currentUser.Username && currentUser.PasswordHash == password)
+            {
+                return currentUser;
+            }
+
+            return null;
+        }
+        
 
         public static string HashedPassword(string password)
         {

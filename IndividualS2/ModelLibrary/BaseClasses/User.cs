@@ -10,7 +10,7 @@ namespace LogicLayerClassLibrary.Classes
 {
     public class User
     {
-        int UserID { get; set; }
+        public int UserID { get; set; }
         public string Username {  get; set; }
         public string PasswordHash { get; set; }
         public string Salt {  get; set; }
@@ -19,7 +19,7 @@ namespace LogicLayerClassLibrary.Classes
         {
 
         }
-        public User(int userID,string username, string passwordHash, string salt, int roleID)
+        public User(int userID,string username, string passwordHash, string salt, int  roleID)
         {
             UserID = userID;
             Username = username;
@@ -33,6 +33,7 @@ namespace LogicLayerClassLibrary.Classes
             this.Username = userDTO.Username;
             this.PasswordHash = userDTO.PasswordHash;           
             this.Salt = userDTO.Salt;
+            this.RoleID = userDTO.RoleID;
         }
     }
 }

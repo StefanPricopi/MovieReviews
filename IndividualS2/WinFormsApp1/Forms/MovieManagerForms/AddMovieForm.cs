@@ -46,24 +46,10 @@ namespace Desktop_App.Forms
 
                 DateTime date = dtpReleaseDate.Value;
                 movieDTO.Date = date;
-
-                if (decimal.TryParse(tbDuration.Text, out decimal duration))
-                {
-                    movieDTO.Duration = duration;
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Invalid rating input. Please enter a valid decimal value.");
-                }
                 if (movieManager.AddMovie(mediaDTO, movieDTO))
                 {
                     MessageBox.Show("successful");
-                }
-                else
-                {
-                    MessageBox.Show("failed");
-                }
+                }               
             }
             
             catch (Exception ) 

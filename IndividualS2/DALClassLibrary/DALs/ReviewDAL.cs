@@ -197,17 +197,17 @@ namespace DALClassLibrary.DALs
 
                                 return r;
                             }
+                            else { throw new Exception("Invalid ID"); }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                
+                throw new Exception("Invalid ID");
             }
 
             
-            return null;
         }
         public List<ReviewDTO> DatagridToList(DataTable dataTable)
         {

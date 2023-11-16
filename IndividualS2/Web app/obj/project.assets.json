@@ -712,6 +712,21 @@
           }
         }
       },
+      "DALClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "LogicLayerClassLibrary": "1.0.0",
+          "Microsoft.Data.SqlClient": "5.1.1",
+          "ModelLibrary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DALClassLibrary.dll": {}
+        }
+      },
       "LogicLayerClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2023,6 +2038,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "DALClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../DALClassLibrary/DALClassLibrary.csproj",
+      "msbuildProject": "../DALClassLibrary/DALClassLibrary.csproj"
+    },
     "LogicLayerClassLibrary/1.0.0": {
       "type": "project",
       "path": "../LogicLayerClassLibrary/LogicLayerClassLibrary.csproj",
@@ -2036,8 +2056,10 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DALClassLibrary >= 1.0.0",
       "LogicLayerClassLibrary >= 1.0.0",
-      "Microsoft.Data.SqlClient >= 5.1.1"
+      "Microsoft.Data.SqlClient >= 5.1.1",
+      "ModelLibrary >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2072,8 +2094,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj"
+            },
             "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
               "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+            },
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
             }
           }
         }

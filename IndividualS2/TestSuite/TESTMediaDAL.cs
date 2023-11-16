@@ -4,6 +4,7 @@ using LogicLayerClassLibrary.Interfaces;
 using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,17 @@ namespace DALClassLibrary.DALs
             media = new Dictionary<int, MediaDTO>();
             
         }
+
+        public List<MediaDTO> DatagridToList(DataTable dt)
+        {
+            throw new NotImplementedException();
+        }
+
+        public MediaDTO GetActualMediaByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         [TestMethod]
         public List<string> GetAllTitles()
         {

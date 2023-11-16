@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.Interfaces
 {
-    public interface IUSERManagerDAL
+    public interface IUserManagerDAL
     {
         public bool AddUserAccount(UserDTO v);
         public bool UpdateUserAccount(UserDTO v);
-        
+        User Login(string email, string password);
         public User GetCurrentUserByUsername(string username);
         public UserDTO GetCurrentUserForVisitor(string username);
+        
     }
 }

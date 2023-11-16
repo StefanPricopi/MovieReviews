@@ -31,39 +31,40 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
 
         private void btnEditTvSeries_Click(object sender, EventArgs e)
         {
-            if (tbDirector.Text == "" || tbTitle.Text == "" || tbActors.Text == "" || rtbDescription.Text == "")
+            try
             {
-                throw new Exception();
-            }
-            MediaDTO mediaDTO = new MediaDTO();
-            TvSeriesDTO tvSeriesDTO = new TvSeriesDTO();
+                MediaDTO mediaDTO = new MediaDTO();
+                TvSeriesDTO tvSeriesDTO = new TvSeriesDTO();
 
-            if (dgvTvSeriesCollection.SelectedRows.Count > 0)
-            {
-                var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-                var stat = (Status)Enum.Parse(typeof(Status), cbStatus.Text);
-                mediaDTO.Title = tbTitle.Text;
-                mediaDTO.Director = tbDirector.Text;
-                mediaDTO.Actor = tbActors.Text;
-                mediaDTO.Description = rtbDescription.Text;
-                mediaDTO.Genre = ele;
-                tvSeriesDTO.NrOfSeasons = Convert.ToInt32(tbNumberOfSeasons.Text);
-                tvSeriesDTO.PilotDate = dtpPilotDate.Value;
-                tvSeriesDTO.LastEpisodeDate = dtpLastEpDate.Value;
-                tvSeriesDTO.Status = stat;
-                
-                int selectedID = Convert.ToInt32(dgvTvSeriesCollection.SelectedRows[0].Cells[0].Value);
-                mediaDTO.Id = selectedID;
+                if (dgvTvSeriesCollection.SelectedRows.Count > 0)
+                {
+                    var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
+                    var stat = (Status)Enum.Parse(typeof(Status), cbStatus.Text);
+                    mediaDTO.Title = tbTitle.Text;
+                    mediaDTO.Director = tbDirector.Text;
+                    mediaDTO.Actor = tbActors.Text;
+                    mediaDTO.Description = rtbDescription.Text;
+                    mediaDTO.Genre = ele;
+                    tvSeriesDTO.NrOfSeasons = Convert.ToInt32(tbNumberOfSeasons.Text);
+                    tvSeriesDTO.PilotDate = dtpPilotDate.Value;
+                    tvSeriesDTO.LastEpisodeDate = dtpLastEpDate.Value;
+                    tvSeriesDTO.Status = stat;
+
+                    int selectedID = Convert.ToInt32(dgvTvSeriesCollection.SelectedRows[0].Cells[0].Value);
+                    mediaDTO.Id = selectedID;
+                }
+                if (seriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
+                {
+                    MessageBox.Show("Success");
+                    this.Close();
+                }
             }
-            if (seriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
-            {
-                MessageBox.Show("Success");
-                this.Close();
-            }
-            else
+            catch(Exception ex)
             {
                 MessageBox.Show("fail");
             }
+            
+            
         }
 
         private void dgvTvSeriesCollection_SelectionChanged(object sender, EventArgs e)

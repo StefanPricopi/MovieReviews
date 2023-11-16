@@ -1,12 +1,39 @@
+
+using LogicLayerClassLibrary.Interfaces;
+using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ModelLibrary.DTO;
 
 namespace Web_app.Pages
 {
     public class RegisterModel : PageModel
     {
-        public void OnGet()
+        private readonly UserManager userManager;
+        private IUserManagerDAL userService;
+
+        public RegisterModel(IUserManagerDAL UserService, UserManager manager)
         {
+            userService = UserService;
+            userManager = manager;
+        }
+
+        [BindProperty]
+        public UserDTO User { get; set; }
+
+
+        public void OnPost()
+        {
+            if (User != null )
+            {
+               User.RoleID = 2;
+               if(userManager.AddCreateAccount(User))
+                {
+                    TempData["SuccessMessage"] = "Account created successfully!";
+                }
+               
+            }
+           
         }
     }
 }

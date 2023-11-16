@@ -8,11 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Logoutcshtml.cshtml.cs" />
+    <Compile Remove="Pages\Index1.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Logoutcshtml.cshtml" />
+    <Content Remove="Pages\Index1.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DALClassLibrary\DALClassLibrary.csproj" />
     <ProjectReference Include="..\LogicLayerClassLibrary\LogicLayerClassLibrary.csproj" />
+    <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,9 +6,21 @@ using ModelLibrary.DTO;
 
 namespace DALClassLibrary.DALs
 {
-    public class UserDAL:Connection, IUSERManagerDAL
+    public class UserDAL:Connection, IUserManagerDAL
     {
-        
+        public User Login(string username, string password)
+        {
+            User currentUser = GetCurrentUserByUsername(username);//all the method via IUser
+            var userhashedpass = UserManager.HashedPassword($"{password}{currentUser.Salt.Trim()}");
+
+            if (username == currentUser.Username && userhashedpass == currentUser.PasswordHash)
+            {
+                return currentUser;
+
+            }
+
+            return null;
+        }
         public bool AddUserAccount(UserDTO userDTO)
         {
             try
@@ -18,11 +30,12 @@ namespace DALClassLibrary.DALs
                 var hashedPW = UserManager.HashedPassword($"{userDTO.PasswordHash}{salt.Trim()}");
                 using (SqlConnection conn = InitializeConection())
                 {
-                    string sql = "INSERT INTO users (Username, Password, Salt) VALUES (@Username, @Password, , @Salt)";
+                    string sql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt,RoleID) VALUES (@Username, @PasswordHash,  @Salt,@RoleID)";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@Username", userDTO.Username);
-                    cmd.Parameters.AddWithValue("@Password", hashedPW);
+                    cmd.Parameters.AddWithValue("@PasswordHash", hashedPW);
                     cmd.Parameters.AddWithValue("@Salt", salt);
+                    cmd.Parameters.AddWithValue("@RoleID", userDTO.RoleID);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     return true;
@@ -30,7 +43,7 @@ namespace DALClassLibrary.DALs
             }
             catch (Exception ex)
             {
-                // Handle the exception (e.g., log the error)
+                
                 return false;
             }
         }
@@ -44,7 +57,7 @@ namespace DALClassLibrary.DALs
                 using (SqlConnection conn = InitializeConection())
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM users WHERE Username = @Username";
+                    string sql = "SELECT * FROM DTO_Users WHERE Username = @Username";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@Username", username);
 
@@ -55,10 +68,10 @@ namespace DALClassLibrary.DALs
                         var userDTO = new UserDTO
                         {
                             UserId = Convert.ToInt32(dr["UserID"]),
-                            Username = dr["Username"].ToString(),
-                            PasswordHash = dr["Password"].ToString(),
+                            Username = dr["Username"].ToString().Trim(),
+                            PasswordHash = dr["PasswordHash"].ToString(),
                             Salt = dr["Salt"].ToString(),
-
+                            RoleID =Convert.ToInt32( dr["RoleID"])
 
                         };
                         return new User(userDTO); // Create a User object from the UserDTO
@@ -67,10 +80,10 @@ namespace DALClassLibrary.DALs
             }
             catch (Exception ex)
             {
-                // Handle the exception (e.g., log the error)
+               
             }
 
-            return null; // Return null if no user with the specified email is found
+            return null; 
         }
 
         public UserDTO GetCurrentUserForVisitor(string username)
@@ -82,5 +95,7 @@ namespace DALClassLibrary.DALs
         {
             throw new NotImplementedException();
         }
+
+        
     }
 }

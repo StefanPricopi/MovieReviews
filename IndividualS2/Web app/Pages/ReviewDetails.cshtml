@@ -2,15 +2,20 @@
 @model Web_app.Pages.ReviewDetailsModel
 @{
 }
+@if(Model.review!=null)
+{
+    <div>
 
-<div>
-    <h1>Title:@Model.review.Title</h1>
-    <h2 class="Score">Score: @Model.review.Score</h2>
+        <h1>Title:@Model.review.Title</h1>
+        <h2 class="Score">Score: @Model.review.Score</h2>
 
-</div>
-<div class="details-container">
-    
-    <img src="/img/mockdetails.jpg" alt="mock-image">
-    <p class="Description">@Model.review.Description</p>
-</div>
+    </div>
+    <div class="details-container">
+
+        <img src="/img/mockdetails.jpg" alt="mock-image">
+        <p class="Description">@Model.review.Description</p>
+    </div>
+}
+
+
 

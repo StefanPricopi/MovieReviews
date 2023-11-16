@@ -24,20 +24,28 @@ namespace Desktop_App.Forms.ReviewManagerForms
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {
-            ReviewDTO reviewDTO = new ReviewDTO();
-            reviewDTO.Title = tbTitle.Text;
-            reviewDTO.Description = rtbDescription.Text;
-            reviewDTO.Score = Convert.ToInt32(tbScore.Text);
-            int id= mediaManager.GetMediaByTitle(cbMediaTitle.Text);
-            reviewDTO.MediaID = id;
-            if (reviewManager.AddReview(reviewDTO))
+            try
             {
-                MessageBox.Show("successful");
+                ReviewDTO reviewDTO = new ReviewDTO();
+                reviewDTO.Title = tbTitle.Text;
+                reviewDTO.Description = rtbDescription.Text;
+                reviewDTO.Score = Convert.ToInt32(tbScore.Text);
+                int id = mediaManager.GetMediaByTitle(cbMediaTitle.Text);
+                reviewDTO.MediaID = id;
+                if (reviewManager.AddReview(reviewDTO))
+                {
+                    MessageBox.Show("successful");
+                }
+                else
+                {
+                    MessageBox.Show("failed");
+                }
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show("failed");
             }
+           
         }
     }
 }

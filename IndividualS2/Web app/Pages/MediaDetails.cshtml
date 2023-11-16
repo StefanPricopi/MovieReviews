@@ -3,14 +3,17 @@
 @{
 }
 
-<div>
-    <h1>Title:@Model.mediaDTO.Title</h1>
-    <h2 class="Genre">Genre: @Model.mediaDTO.Genre Star:@Model.mediaDTO.Actor,Director: @Model.mediaDTO.Director</h2>
+@if(Model.mediaDTO!=null)
+{
+    <div>
+        <h1>Title:@Model.mediaDTO.Title</h1>
+        <h2 class="Genre">Genre: @Model.mediaDTO.Genre Star:@Model.mediaDTO.Actor,Director: @Model.mediaDTO.Director</h2>
 
-</div>
-<div class="details-container">
+    </div>
+    <div class="details-container">
 
-    <img src="/img/mockdetails.jpg" alt="mock-image">
-    <p> Description: @Model.mediaDTO.Description</p>
-    
-</div>
+        <img src="/img/mockdetails.jpg" alt="mock-image">
+        <p> Description: @Model.mediaDTO.Description</p>
+
+    </div>
+}

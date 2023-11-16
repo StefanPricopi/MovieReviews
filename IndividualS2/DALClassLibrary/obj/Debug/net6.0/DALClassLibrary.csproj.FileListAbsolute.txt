@@ -28,3 +28,5 @@ C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\DALClassLibrar
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\DALClassLibrary\obj\Debug\net6.0\refint\DALClassLibrary.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\DALClassLibrary\obj\Debug\net6.0\DALClassLibrary.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\DALClassLibrary\obj\Debug\net6.0\ref\DALClassLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\DALClassLibrary\bin\Debug\net6.0\LogicLayerClassLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\DALClassLibrary\bin\Debug\net6.0\LogicLayerClassLibrary.pdb

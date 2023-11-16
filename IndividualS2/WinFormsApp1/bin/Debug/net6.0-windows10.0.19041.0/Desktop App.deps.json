@@ -386,6 +386,7 @@
       },
       "DALClassLibrary/1.0.0": {
         "dependencies": {
+          "LogicLayerClassLibrary": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.1",
           "ModelLibrary": "1.0.0"
         },
@@ -395,8 +396,8 @@
       },
       "LogicLayerClassLibrary/1.0.0": {
         "dependencies": {
-          "DALClassLibrary": "1.0.0",
-          "Microsoft.Data.SqlClient": "5.1.1"
+          "Microsoft.Data.SqlClient": "5.1.1",
+          "ModelLibrary": "1.0.0"
         },
         "runtime": {
           "LogicLayerClassLibrary.dll": {}

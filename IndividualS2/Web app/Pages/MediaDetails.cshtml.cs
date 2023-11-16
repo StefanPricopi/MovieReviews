@@ -1,12 +1,14 @@
 using DALClassLibrary.DALs;
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ModelLibrary.DTO;
 
 namespace Web_app.Pages
 {
+    [Authorize]
     public class MediaDetailsModel : PageModel
     {
        public MediaDTO mediaDTO;
