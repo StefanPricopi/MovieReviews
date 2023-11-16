@@ -7,8 +7,8 @@
         @foreach (var mediaDTO in Model.media)
         {
 
-        <a href="/MediaDetails?id=@mediaDTO.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
-            <h1>Title: @mediaDTO.Title</h1>
+        <a href="/MediaDetails?id=@mediaDTO.Id" class="cards-grid-item" style="width:250px;background: url('../img/mock img.jpg') ">
+            <h1>@mediaDTO.Title</h1>
             <p>Actor: @mediaDTO.Actor</p>
             <p>Director: @mediaDTO.Director</p>
         </a>

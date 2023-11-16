@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/Web_app.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
+
 <body>
     <header>
        
@@ -41,6 +42,9 @@
                             <form method="post" class="form-inline" asp-page="/Logout">
                                 <button type="submit" class="btn btn-primary"><b>Logout</b></button>
                             </form>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/ProfilePage">Profile</a>
+                            </li>
                         }
                         @if (User.IsInRole("Manager"))
                         {

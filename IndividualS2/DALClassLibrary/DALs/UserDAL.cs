@@ -8,19 +8,7 @@ namespace DALClassLibrary.DALs
 {
     public class UserDAL:Connection, IUserManagerDAL
     {
-        public User Login(string username, string password)
-        {
-            User currentUser = GetCurrentUserByUsername(username);//all the method via IUser
-            var userhashedpass = UserManager.HashedPassword($"{password}{currentUser.Salt.Trim()}");
-
-            if (username == currentUser.Username && userhashedpass == currentUser.PasswordHash)
-            {
-                return currentUser;
-
-            }
-
-            return null;
-        }
+        
         public bool AddUserAccount(UserDTO userDTO)
         {
             try

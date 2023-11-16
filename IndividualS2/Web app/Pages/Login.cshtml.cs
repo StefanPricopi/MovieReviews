@@ -1,3 +1,4 @@
+using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Authentication;
@@ -25,6 +26,7 @@ namespace Web_app.Pages
         public async Task<IActionResult> OnPostAsync()
         {
             UserDTO userModel = new UserDTO();
+            User s = new User();
 
             bool ValidateLoginEmployeeCase()
             {
@@ -44,13 +46,15 @@ namespace Web_app.Pages
             {
                 if (ValidateLoginEmployeeCase())
                 {
-                    Console.WriteLine("Login successful.");
+                    s = userManager.GetCurrentUserByUsername(User.Username);
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, "user"),
                         new Claim(ClaimTypes.Role, "Manager"),
+                        new Claim("UserId", s.UserID.ToString()),
 
-                };
+                    };
+
                     var identity = new ClaimsIdentity(claims, "LoginCookieAuth");
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
@@ -61,10 +65,14 @@ namespace Web_app.Pages
                 else if (ValidateLoginVisitorCase())
                 {
                     Console.WriteLine("Login successful.");
+                    s = userManager.GetCurrentUserByUsername(User.Username);
+
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, "user"),
-                        
+                        new Claim("UserId", s.UserID.ToString()),
+
+
                     };
                     var identity = new ClaimsIdentity(claims, "LoginCookieAuth");
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);

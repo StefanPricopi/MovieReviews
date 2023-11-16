@@ -8,6 +8,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
 {
     public class UserManager 
     {
+
         private readonly IUserManagerDAL user;
         public UserManager() { }
         public UserManager(IUserManagerDAL user)
@@ -18,10 +19,15 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return user.AddUserAccount(userDTO);
         }
+        public User GetCurrentUserByUsername(string username)
+        {
+            return user.GetCurrentUserByUsername(username);
+        }
         public List<UserDTO> GetAllAccounts()
         {
             return user.GetAllAccounts();
         }
+       
         public User Login(string username, string password)
         {
             User currentUser = user.GetCurrentUserByUsername(username); // Call the method via IUser

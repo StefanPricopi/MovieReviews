@@ -6,18 +6,24 @@
 {
     <p>@Model.Message</p>
 }
+<div>
 <b>Reviews:</b>
+</div>
 
-    
+        
         <div class="cards-grid">
         @foreach (var reviewDTO in Model.reviews)
         {
-
-        <a href="/ReviewDetails?id=@reviewDTO.Id" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
+        <section data-parallax="scroll" data-image-src="">
+            <div class="tagline">
+                <a href="/ReviewDetails?id=@reviewDTO.Id" class="cards-grid-item" style="width=100%; background: url('../img/mock img.jpg') ">
                     <h1>Title: @reviewDTO.Title</h1>
-            <p>Score: @reviewDTO.Score</p>
-        </a>
-         
+                    <p>Score: @reviewDTO.Score</p>
+                </a>
+
+            </div>
+        </section>
+        
         }
    
         </div>
