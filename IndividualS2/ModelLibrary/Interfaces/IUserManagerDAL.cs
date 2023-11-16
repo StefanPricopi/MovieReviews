@@ -14,6 +14,7 @@ namespace LogicLayerClassLibrary.Interfaces
         public bool AddUserAccount(UserDTO v);
         public bool UpdateUserAccount(UserDTO v);
         User Login(string email, string password);
+        public List<UserDTO> GetAllAccounts();
         public User GetCurrentUserByUsername(string username);
         
     }

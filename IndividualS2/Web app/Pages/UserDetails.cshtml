@@ -1,0 +1,20 @@
+﻿@page
+@model Web_app.Pages.UserDetailsModel
+@{
+}
+@if (Model.userProfile != null)
+{
+    <div>
+
+        <h1>Id:@Model.userProfile.userID</h1>
+        
+
+    </div>
+    <div class="details-container">
+
+        
+        <p class="FirstName">FirstName: @Model.userProfile.firstName</p>
+        <p class="LastName">LastName: @Model.userProfile.lastName</p>
+        <p class="Email">Email: @Model.userProfile.email</p>
+    </div>
+}

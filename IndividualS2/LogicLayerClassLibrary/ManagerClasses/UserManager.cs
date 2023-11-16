@@ -18,6 +18,10 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return user.AddUserAccount(userDTO);
         }
+        public List<UserDTO> GetAllAccounts()
+        {
+            return user.GetAllAccounts();
+        }
         public User Login(string username, string password)
         {
             User currentUser = user.GetCurrentUserByUsername(username); // Call the method via IUser

@@ -2,3 +2,22 @@
 @model Web_app.Pages.ManagerPanelModel
 @{
 }
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+    <p>@Model.Message</p>
+}
+<b>Profiles:</b>
+
+
+<div class="cards-grid">
+    @foreach (var userDTO in Model.users)
+    {
+
+        <a href="/UserDetails?id=@userDTO.UserId" class="cards-grid-item" style="background: url('../img/mock img.jpg') ">
+            <h1>Username: @userDTO.Username</h1>
+            <p>UserID: @userDTO.UserId</p>
+        </a>
+
+    }
+
+</div>

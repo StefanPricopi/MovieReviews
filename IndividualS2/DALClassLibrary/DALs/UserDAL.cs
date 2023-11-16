@@ -86,7 +86,47 @@ namespace DALClassLibrary.DALs
             return null; 
         }
 
-        
+        public List<UserDTO> GetAllAccounts()
+        {
+            bool passed;
+            List<UserDTO> accounts = new List<UserDTO>();
+            try
+            {
+                using (SqlConnection conn = InitializeConection())
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM DTO_Users";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        var userDTO = new UserDTO
+                        {
+                            UserId = Convert.ToInt32(dr["UserID"]),
+                            Username = dr["Username"].ToString(),
+                        };
+                        accounts.Add(userDTO);
+                    }
+                    passed = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                passed = false;
+                // Handle the exception (e.g., log the error)
+            }
+
+            if (passed == true)
+            {
+                return accounts;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public bool UpdateUserAccount(UserDTO v)
         {
