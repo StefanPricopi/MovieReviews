@@ -42,6 +42,12 @@
                                 <button type="submit" class="btn btn-primary"><b>Logout</b></button>
                             </form>
                         }
+                        @if (User.IsInRole("Manager"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admin">ManagerPanel</a>
+                            </li>
+                        }
 
                     </ul>
                 </div>

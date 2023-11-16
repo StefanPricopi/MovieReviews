@@ -48,8 +48,9 @@ namespace Web_app.Pages
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, "user"),
-                        new Claim("Employee", "Manager")
-                    };
+                        new Claim(ClaimTypes.Role, "Manager"),
+
+                };
                     var identity = new ClaimsIdentity(claims, "LoginCookieAuth");
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 

@@ -15,7 +15,6 @@ namespace LogicLayerClassLibrary.Interfaces
         public bool UpdateUserAccount(UserDTO v);
         User Login(string email, string password);
         public User GetCurrentUserByUsername(string username);
-        public UserDTO GetCurrentUserForVisitor(string username);
         
     }
 }

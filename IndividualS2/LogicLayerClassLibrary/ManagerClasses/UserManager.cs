@@ -50,7 +50,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
 
                 var userhashedpass = HashedPassword($"{password}{Obj.Salt.Trim()}");
                 Console.WriteLine(Obj.Salt);
-                if (userhashedpass == Obj.PasswordHash)
+                if (userhashedpass == Obj.PasswordHash && Obj.RoleID == 1)
                 {
                     return true;
                 }
@@ -61,14 +61,14 @@ namespace LogicLayerClassLibrary.ManagerClasses
         public bool IsLoginValidVisitorCase(string username, string password)
         {
 
-            UserDTO Obj = user.GetCurrentUserForVisitor(username);
+            User Obj = user.GetCurrentUserByUsername(username);
             if (Obj != null)
             {
-                if (Obj.UserId != 0 & Obj.VisitorID != 0)
+                if (Obj.UserID != 0 )
                 {
                     var userhashedpass = HashedPassword($"{password}{Obj.Salt.Trim()}");
                     Console.WriteLine(Obj.Salt);
-                    if (userhashedpass == Obj.PasswordHash)
+                    if (userhashedpass == Obj.PasswordHash && Obj.RoleID == 2)
                     {
                         return true;
                     }

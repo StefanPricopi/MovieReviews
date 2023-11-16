@@ -86,10 +86,7 @@ namespace DALClassLibrary.DALs
             return null; 
         }
 
-        public UserDTO GetCurrentUserForVisitor(string username)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public bool UpdateUserAccount(UserDTO v)
         {
