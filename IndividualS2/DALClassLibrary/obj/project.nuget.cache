@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vZpU/KUfxRp/7GJGDebZDJWHs8a8MfIu6ShbZ2qSP53QnBoM+XShwHkNjaitJLZgFTCQ+uPvo2+XaAzZ6wGPvA==",
+  "dgSpecHash": "nzNUW91YbbQapWocuRkFbI+DqrI7uBUYT4XMPcA6MXqGV5aM0V6Fg/84MQiITFLbVxuN3Fw3xpvM3QO3WFA2sA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj",
+  "projectFilePath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alin1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
