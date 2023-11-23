@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using DALClassLibrary.DALs;
 using System.Windows.Forms;
 using System.Data;
+using ModelLibrary.DTO;
 
 namespace WinFormsApp1
 {
@@ -108,6 +109,10 @@ namespace WinFormsApp1
         private void btnViewAllMovies_Click(object sender, EventArgs e)
         {
             ViewAllMovies();
+            CommentDAL c = new CommentDAL();
+            
+            List<CommentDTO> commentDTOs = c.GetAllComments(8);
+            MessageBox.Show(commentDTOs.Count.ToString());
         }
         private void ViewAllReviews()
         {

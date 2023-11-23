@@ -4,6 +4,7 @@ using ModelLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,9 +21,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return commentManagerDAL.AddComment(commentDTO);
         }
-        public List<CommentDTO> GetComments()
+        public List<CommentDTO> GetComments(int id)
         {
-            return commentManagerDAL.GetAllComments();
+            return commentManagerDAL.GetAllComments(id);
         }
     }
 }

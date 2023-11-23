@@ -1,18 +1,12 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function AddComment() {
+     var reviewId = document.getElementById('reviewId').value;
+    var commentDescription = document.getElementById('commentText').value;
 
-// Write your JavaScript code.
-function addComment() {
-    var reviewId = document.getElementById('reviewId').value;
-    var commentText = document.getElementById('commentText').value;
-
-    // Prepare the data to be sent
     var data = {
         reviewId: reviewId,
-        commentDescription: commentText
+        commentDescription: commentDescription
     };
 
-    // Make a POST request to submit the comment
     fetch('/ReviewDetails/AddComment', {
         method: 'POST',
         headers: {
@@ -22,14 +16,40 @@ function addComment() {
     })
         .then(response => {
             if (response.ok) {
-                // Handle success (e.g., refresh comments)
-                refreshComments();
+                // Refresh comments after adding
+                RefreshComments();
             } else {
-                // Handle failure
                 console.error('Failed to add comment');
             }
         })
         .catch(error => {
             console.error('Error adding comment:', error);
+        });
+}
+
+function RefreshComments() {
+    var reviewId = document.getElementById('reviewId').value;
+
+    fetch(`/ReviewDetails/RefreshComments?reviewID=${reviewId}`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Failed to fetch comments');
+            }
+        })
+        .then(data => {
+            // Update comments in the UI
+            var commentsList = document.getElementById('commentsList');
+            commentsList.innerHTML = '';
+
+            data.forEach(comment => {
+                var commentDiv = document.createElement('div');
+                commentDiv.textContent = comment.CommentDescription;
+                commentsList.appendChild(commentDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error refreshing comments:', error);
         });
 }

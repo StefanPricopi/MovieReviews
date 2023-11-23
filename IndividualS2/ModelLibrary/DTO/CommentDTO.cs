@@ -8,8 +8,9 @@ namespace ModelLibrary.DTO
 {
     public class CommentDTO
     {
-        public int CommentID { get; private set; }
+        public int CommentID { get; }
         public int ReviewID { get;  set; }
+        public int UserID { get; set; }
         public string CommentDescription { get; set; }
         public CommentDTO() { }
     }

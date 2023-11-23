@@ -12,12 +12,14 @@ namespace ModelLibrary.BaseClasses
 
         public int CommentID { get; private set; }
         public int ReviewID { get;  set; }
+        public int UserID { get; set; }
         public string CommentDescription { get; set; }
         public Comment() { }
-        public Comment(int commentID, int reviewID, string commentDescription)
+        public Comment(int commentID, int reviewID,int userID, string commentDescription)
         {
             CommentID = commentID;
             ReviewID = reviewID;
+            UserID = userID;
             CommentDescription = commentDescription;
         }
         public Comment(CommentDTO commentDTO)
@@ -25,6 +27,7 @@ namespace ModelLibrary.BaseClasses
             CommentID = commentDTO.CommentID;
             ReviewID = commentDTO.ReviewID;
             CommentDescription = commentDTO.CommentDescription;
+            UserID = commentDTO.UserID;
         }
     }
 }

@@ -9,6 +9,7 @@ using ModelLibrary.DTO;
 
 namespace Web_app.Pages
 {
+    
     [Authorize]
     public class ReviewDetailsModel : PageModel
     {
@@ -18,6 +19,7 @@ namespace Web_app.Pages
         {
             this.commentManager = commentManager;
         }
+        
         public IActionResult OnGet(int id)
         {
             try
@@ -31,31 +33,43 @@ namespace Web_app.Pages
                 return Redirect($"/Review?message={ex.Message}.");
             }
         }
+
+
+
+        [HttpPost]
+        [Route("/ReviewDetails/AddComment")]
         public IActionResult OnPostAddComment([FromBody] CommentDTO commentModel)
         {
             try
             {
                 CommentDTO commentDTO = new CommentDTO
                 {
-                    ReviewID = commentModel.ReviewID,
+                    ReviewID = review.Id,
                     CommentDescription = commentModel.CommentDescription,
                 };
 
-                bool commentAdded = commentManager.AddComment(commentDTO);
 
-                if (commentAdded)
+
+                if (commentManager.AddComment(commentDTO));
                 {
                     return RedirectToPage("/ReviewDetails", new { id = review.Id });
                 }
-                else
-                {
-                    return RedirectToPage("/ReviewDetails", new { id = review.Id, message = "Failed to add comment." });
-                }
+               
             }
             catch (Exception ex)
             {
                 return RedirectToPage("/ReviewDetails", new { id = review.Id, message = ex.Message });
             }
         }
+
+        [HttpGet]
+        [Route("/ReviewDetails/RefreshComments")]
+        public IActionResult OnGetRefreshComments(int reviewID)
+        {
+
+            List<CommentDTO> comments = commentManager.GetComments(review.Id);
+            return new JsonResult(comments);
+        }
+
     }
 }

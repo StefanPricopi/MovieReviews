@@ -21,9 +21,11 @@ namespace DALClassLibrary.DALs
                 {
                     connection.Open();
 
-                    using (SqlCommand cmdReview = new SqlCommand("INSERT INTO [DTO_Comments] (ReviewID, CommentDescription) VALUES (@ReviewID, @CommentDescription); SELECT SCOPE_IDENTITY();", connection))
+                    using (SqlCommand cmdReview = new SqlCommand("INSERT INTO DTO_Comments (ReviewID,UserID, CommentDescription) VALUES (@ReviewID,@UserID @CommentDescription); SELECT SCOPE_IDENTITY();", connection))
                     {
                         cmdReview.Parameters.AddWithValue("@ReviewID", commentDTO.ReviewID);
+
+                        cmdReview.Parameters.AddWithValue("@UserID", commentDTO.UserID);
                         cmdReview.Parameters.AddWithValue("@CommentDescription", commentDTO.CommentDescription);
                         int insertedId = Convert.ToInt32(cmdReview.ExecuteScalar());
 
@@ -36,22 +38,28 @@ namespace DALClassLibrary.DALs
             }
             catch (Exception ex)
             {
-              
-            }        
+                // Log the exception for debugging
+                Console.WriteLine(ex.Message); // Replace with proper logging
+
+                // Return false or throw the exception for further handling
+                throw;
+            }
             return false;
         }
 
-        public List<CommentDTO> GetAllComments()
+        public List<CommentDTO> GetAllComments(int reviewID)
         {
             List<CommentDTO> comments = new List<CommentDTO>();
             using (SqlConnection connection = InitializeConection())
             {
                 connection.Open();
 
-                string selectQuery1 = "SELECT CommentDescription, ReviewID FROM DTO_Comments";
+                string selectQuery1 = "SELECT CommentDescription, ReviewID FROM DTO_Comments WHERE ReviewID=@ReviewID";
 
                 using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
                 {
+                    command1.Parameters.AddWithValue("@ReviewID", reviewID); // Set the parameter value
+
                     using (SqlDataReader reader = command1.ExecuteReader())
                     {
                         while (reader.Read())

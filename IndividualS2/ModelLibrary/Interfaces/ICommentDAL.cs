@@ -12,6 +12,6 @@ namespace ModelLibrary.Interfaces
     public interface ICommentDAL
     {
         public bool AddComment(CommentDTO commentDTO);
-        public List<CommentDTO> GetAllComments();
+        public List<CommentDTO> GetAllComments(int id);
     }
 }

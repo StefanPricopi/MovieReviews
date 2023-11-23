@@ -177,7 +177,7 @@ namespace DALClassLibrary.DALs
                     string selectQuery1 = "SELECT ReviewID, Title, Score, Description, MediaID, UserID FROM DTO_Reviews WHERE ReviewID=@ReviewID";
                     using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
                     {
-                        // Add parameter for MediaID
+                       
                         command1.Parameters.AddWithValue("@ReviewID", id);
 
                         using (SqlDataReader reader = command1.ExecuteReader())
