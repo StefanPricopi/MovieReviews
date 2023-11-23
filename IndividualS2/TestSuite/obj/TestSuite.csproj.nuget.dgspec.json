@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj": {}
+    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
         "projectName": "LogicLayerClassLibrary",
-        "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
               }
             }
           }
@@ -73,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
         "projectName": "ModelLibrary",
-        "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
+        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -138,14 +138,14 @@
         }
       }
     },
-    "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj": {
+    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj",
         "projectName": "TestSuite",
-        "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj",
+        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\TestSuite\\TestSuite.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\TestSuite\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\TestSuite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -166,11 +166,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
               },
-              "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
               }
             }
           }

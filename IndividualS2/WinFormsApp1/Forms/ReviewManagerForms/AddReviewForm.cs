@@ -16,7 +16,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
         {
             InitializeComponent();
             reviewManager = new ReviewManager(new ReviewDAL());
-            mediaManager = new MediaManager( new MediaDAL());
+            mediaManager = new MediaManager(new MediaDAL());
             cbMediaTitle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbMediaTitle.AutoCompleteSource = AutoCompleteSource.ListItems;
             cbMediaTitle.DataSource = mediaManager.GetAllTitles();
@@ -45,7 +45,16 @@ namespace Desktop_App.Forms.ReviewManagerForms
             {
                 MessageBox.Show("failed");
             }
-           
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CommentDTO cc = new CommentDTO();
+            cc.ReviewID = Convert.ToInt32(textBox1.Text);
+            cc.CommentDescription = textBox2.Text;
+            CommentDAL c = new CommentDAL();
+            c.AddComment(cc);
         }
     }
 }

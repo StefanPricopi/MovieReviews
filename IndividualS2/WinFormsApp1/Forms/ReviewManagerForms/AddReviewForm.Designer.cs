@@ -37,6 +37,9 @@
             btnAddReview = new Button();
             cbMediaTitle = new ComboBox();
             label2 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -115,11 +118,38 @@
             label2.TabIndex = 10;
             label2.Text = "Media Title";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(671, 66);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(125, 27);
+            textBox1.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(671, 119);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 12;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(856, 79);
+            button1.Name = "button1";
+            button1.Size = new Size(251, 49);
+            button1.TabIndex = 13;
+            button1.Text = "Add Review";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // AddReviewForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1272, 703);
+            Controls.Add(button1);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(cbMediaTitle);
             Controls.Add(btnAddReview);
@@ -146,5 +176,8 @@
         private Button btnAddReview;
         private ComboBox cbMediaTitle;
         private Label label2;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private Button button1;
     }
 }
