@@ -2,20 +2,26 @@
 @model Web_app.Pages.ProfilePageModel
 @{
 }
-@if (Model.userProfile != null)
-{
-    <div>
+<body>
 
-        <h1>Id:@Model.userProfile.userID</h1>
+    @if (Model.userProfile != null)
+    {
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="card-title">Welcome to your profile page</h1>
+                            <div class="details-container">
+                                <p class="card-text">First Name: @Model.userProfile.firstName</p>
+                                <p class="card-text">Last Name: @Model.userProfile.lastName</p>
+                                <p class="card-text">Email: @Model.userProfile.email</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
-
-    </div>
-    <div class="details-container">
-
-
-        <p class="FirstName">FirstName: @Model.userProfile.firstName</p>
-        <p class="LastName">LastName: @Model.userProfile.lastName</p>
-        <p class="Email">Email: @Model.userProfile.email</p>
-    </div>
-
-}
+</body>
