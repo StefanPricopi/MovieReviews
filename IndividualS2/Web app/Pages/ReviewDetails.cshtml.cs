@@ -35,40 +35,59 @@ namespace Web_app.Pages
         }
 
 
-
         [HttpPost]
         [Route("/ReviewDetails/AddComment")]
-        public IActionResult OnPostAddComment([FromBody] CommentDTO commentModel)
+        public IActionResult AddComment([FromBody] CommentDTO commentDTO)
         {
             try
             {
-                CommentDTO commentDTO = new CommentDTO
+                var userIdClaim = User.FindFirst("UserId");
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
                 {
-                    ReviewID = review.Id,
-                    CommentDescription = commentModel.CommentDescription,
-                };
+
+                    commentDTO.UserID = userId;
 
 
+                    bool addedToDB = commentManager.AddComment(commentDTO);
 
-                if (commentManager.AddComment(commentDTO));
-                {
-                    return RedirectToPage("/ReviewDetails", new { id = review.Id });
+                    if (addedToDB)
+                    {
+
+                        return new JsonResult(new { success = true, message = "Comment added successfully" });
+                    }
+                    else
+                    {
+
+                        return new JsonResult(new { success = false, message = "Failed to add comment to the database" });
+                    }
                 }
-               
+                else
+                {
+
+                    return new JsonResult(new { success = false, message = "UserID not found in claims" });
+                }
             }
             catch (Exception ex)
             {
-                return RedirectToPage("/ReviewDetails", new { id = review.Id, message = ex.Message });
+
+                return new JsonResult(new { success = false, message = ex.Message });
             }
         }
-
         [HttpGet]
-        [Route("/ReviewDetails/RefreshComments")]
-        public IActionResult OnGetRefreshComments(int reviewID)
+        public ActionResult RefreshComments(int reviewId)
         {
-
-            List<CommentDTO> comments = commentManager.GetComments(review.Id);
-            return new JsonResult(comments);
+            {
+                try
+                {
+                 
+                    List<CommentDTO> comments = commentManager.GetComments(reviewId);
+                    return new JsonResult(comments);
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, ex.Message);
+                }
+            }
         }
 
     }

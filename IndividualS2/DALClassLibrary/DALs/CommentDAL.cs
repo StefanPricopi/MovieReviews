@@ -24,7 +24,6 @@ namespace DALClassLibrary.DALs
                     using (SqlCommand cmdReview = new SqlCommand("INSERT INTO DTO_Comments (ReviewID,UserID, CommentDescription) VALUES (@ReviewID,@UserID @CommentDescription); SELECT SCOPE_IDENTITY();", connection))
                     {
                         cmdReview.Parameters.AddWithValue("@ReviewID", commentDTO.ReviewID);
-
                         cmdReview.Parameters.AddWithValue("@UserID", commentDTO.UserID);
                         cmdReview.Parameters.AddWithValue("@CommentDescription", commentDTO.CommentDescription);
                         int insertedId = Convert.ToInt32(cmdReview.ExecuteScalar());

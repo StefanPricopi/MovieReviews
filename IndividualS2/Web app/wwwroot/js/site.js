@@ -1,44 +1,41 @@
-﻿function AddComment() {
-     var reviewId = document.getElementById('reviewId').value;
-    var commentDescription = document.getElementById('commentText').value;
+﻿async function AddComment() {
+    try {
+        var reviewId = document.getElementById('reviewId').value;
+        var commentDescription = document.getElementById('commentText').value;
+        var data = {
+            reviewId: reviewId,
+            commentDescription: commentDescription,
+            
+        };
 
-    var data = {
-        reviewId: reviewId,
-        commentDescription: commentDescription
-    };
-
-    fetch('/ReviewDetails/OnGetAddComment', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => {
-            if (response.ok) {
-                // Refresh comments after adding
-                RefreshComments();
-            } else {
-                console.error('Failed to add comment');
-            }
-        })
-        .catch(error => {
-            console.error('Error adding comment:', error);
+        const response = await fetch('/ReviewDetails/AddComment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
+        console.log(response.status);
+        if (response.ok) {
+            // Refresh comments after adding
+            await RefreshComments();
+        } else {
+            console.error('Failed to add comment');
+        }
+    } catch (error) {
+        console.error('Error adding comment:', error);
+    }
 }
 
-function RefreshComments() {
-    var reviewId = document.getElementById('reviewId').value;
+async function RefreshComments() {
+    try {
+        var reviewId = document.getElementById('reviewId').value;
 
-    fetch(`/ReviewDetails/RefreshComments?reviewID=${reviewId}`)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Failed to fetch comments');
-            }
-        })
-        .then(data => {
+        const response = await fetch(`/ReviewDetails/RefreshComments?reviewID=${reviewId}`);
+
+        if (response.ok) {
+            const data = await response.json();
+
             // Update comments in the UI
             var commentsList = document.getElementById('commentsList');
             commentsList.innerHTML = '';
@@ -48,8 +45,11 @@ function RefreshComments() {
                 commentDiv.textContent = comment.CommentDescription;
                 commentsList.appendChild(commentDiv);
             });
-        })
-        .catch(error => {
-            console.error('Error refreshing comments:', error);
-        });
+        } else {
+            throw new Error('Failed to fetch comments');
+        }
+    } catch (error) {
+        console.error('Error refreshing comments:', error);
+    }
 }
+
