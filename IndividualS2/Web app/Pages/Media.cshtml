@@ -2,17 +2,20 @@
 @model Web_app.Pages.MediaModel
 @{
 }
-<b>Media:</b>
-<div class="cards-grid">
-        @foreach (var mediaDTO in Model.media)
-        {
+<div>
+    <b>Media:</b>
+</div>
 
-        <a href="/MediaDetails?id=@mediaDTO.Id" class="cards-grid-item" style="width:250px;background: url('../img/mock img.jpg') ">
-            <h1>@mediaDTO.Title</h1>
-            <p>Actor: @mediaDTO.Actor</p>
-            <p>Director: @mediaDTO.Director</p>
+<div class="cards-grid">
+    @foreach (var mediaDTO in Model.media)
+    {
+        <a href="/MediaDetails?id=@mediaDTO.Id" class="review-card text-decoration-none">
+            <div class="card-bg" style="background-image: url('../img/mock img.jpg');"></div>
+            <div class="card-content">
+                <h2>Title: @mediaDTO.Title</h2>
+                <p>Actor: @mediaDTO.Actor</p>
+                <p>Director: @mediaDTO.Director</p>
+            </div>
         </a>
-         
-        }
-   
+    }
 </div>
