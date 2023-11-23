@@ -30,7 +30,7 @@ namespace Desktop_App.Forms
             string username = tbUsername.Text;
             string password = tbPassword.Text;
 
-            User currentUser = userRepository.Login(username, password);
+            User currentUser = userManager.Login(username, password);
 
 
             if (currentUser != null)

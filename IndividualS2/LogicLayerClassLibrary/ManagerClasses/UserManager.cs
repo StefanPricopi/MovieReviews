@@ -31,8 +31,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         public User Login(string username, string password)
         {
             User currentUser = user.GetCurrentUserByUsername(username); // Call the method via IUser
+            var userhashedpass = HashedPassword($"{password}{currentUser.Salt.Trim()}");
 
-            if (username == currentUser.Username && currentUser.PasswordHash == password)
+            if (username == currentUser.Username && userhashedpass == currentUser.PasswordHash)
             {
                 return currentUser;
             }
