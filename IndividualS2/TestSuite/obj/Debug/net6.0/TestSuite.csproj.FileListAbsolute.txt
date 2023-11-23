@@ -137,8 +137,8 @@ C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\TestSuite\
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\TestSuite\obj\Debug\net6.0\TestSuite.genruntimeconfig.cache
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\TestSuite\obj\Debug\net6.0\ref\TestSuite.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\CoverletSourceRootsMapping
-C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\testhost.exe
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\testhost.dll
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\testhost.exe
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\TestSuite\bin\Debug\net6.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll

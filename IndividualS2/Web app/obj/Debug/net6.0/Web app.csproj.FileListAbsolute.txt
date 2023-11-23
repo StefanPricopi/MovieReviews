@@ -70,14 +70,13 @@ C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\ob
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.pdb
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.genruntimeconfig.cache
 C:\Users\alin1\OneDrive\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\ref\Web app.dll
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\appsettings.json
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.staticwebassets.runtime.json
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.exe
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.deps.json
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.runtimeconfig.json
-C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.dll
-C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Azure.Identity.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -141,4 +140,5 @@ C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\De
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\refint\Web app.dll
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.genruntimeconfig.cache
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\ref\Web app.dll

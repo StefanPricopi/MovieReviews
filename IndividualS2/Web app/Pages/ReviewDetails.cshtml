@@ -18,16 +18,58 @@
 
     <div class="comment-section">
         <h3>Add a Comment</h3>
-        <form id="commentForm">
-            <input type="hidden" id="reviewId" value="@Model.review.Id" />
-            <textarea id="commentText" placeholder="Write your comment here"></textarea>
-            <button type="button" onclick="AddComment()">Submit Comment</button>
-        </form>
+        <div class="container border" style="padding:20px">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="comment.ReviewID"></label>
+            </div>
+            <div class="col-5">
+                <input type="hidden" asp-for="comment.ReviewID" class="form-control" />
+
+            </div>
+            <span class="text-danger" asp-validation-for="comment.ReviewID"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="comment.CommentDescription"></label>
+            </div>
+            <div class="col-5">
+                <input type="text" asp-for="comment.CommentDescription" class="form-control" />
+                <span class="text-danger" asp-validation-for="comment.CommentDescription"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <input type="submit" class="btn-primary" value="Comment" />
+            </div>
+            <div class="col-5">
+            </div>
+        </div>
+    </form>
+</div>
         <div id="commentsList">
-            <!-- Existing comments will be displayed here -->
+            @foreach (var commentDTO in Model.comments)
+            {
+                <div class="container mt-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="details-container">
+                                        <p class="card-text">User: @commentDTO.UserID</p>
+                                        <p class="card-text"> @commentDTO.CommentDescription</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
-    <script src=".../wwwroot/js/site.js"></script>
+
 }
 
 
