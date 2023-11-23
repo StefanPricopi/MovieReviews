@@ -70,6 +70,7 @@ namespace Web_app.Pages
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, "user"),
+                        new Claim(ClaimTypes.Role, "Visitor"),
                         new Claim("UserId", s.UserID.ToString()),
 
 

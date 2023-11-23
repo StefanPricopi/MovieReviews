@@ -148,3 +148,43 @@ p {
     display: block;
     font-weight: bold;
 }
+.comment-section {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+/* Style for the comment form */
+#commentForm {
+    margin-bottom: 20px;
+}
+
+#commentText {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Allows vertical resizing */
+}
+
+    #commentText:focus {
+        outline: none;
+        border-color: #0073e6; /* Example color when focused */
+    }
+
+button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    button:hover {
+        background-color: #005bab;
+    }

@@ -1,4 +1,5 @@
 using DALClassLibrary.DALs;
+using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,21 +8,24 @@ using ModelLibrary.DTO;
 
 namespace Web_app.Pages
 {
-    [Authorize(Roles = "Manager")]
+    [Authorize(Policy = "MustBeManager")]
     public class ManagerPanelModel : PageModel
     {
-        public List<UserDTO> users;
-        public string Message;
+        private readonly UserManager userManager;
+
+        public ManagerPanelModel(IUserManagerDAL userManagerDAL)
+        {
+            userManager = new UserManager(userManagerDAL);
+        }
+
+        public List<UserDTO> Users { get; private set; }
+
         public void OnGet(string? message)
         {
-            UserManager userManager = new UserManager(new UserDAL());
-            users = userManager.GetAllAccounts();
-
-            if (message != null)
-            {
-                Message = message;
-            }
+            Users = userManager.GetAllAccounts();
         }
+
+
     }
 }
 

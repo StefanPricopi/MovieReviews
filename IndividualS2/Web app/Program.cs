@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using ModelLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -23,12 +24,18 @@ builder.Services.AddAuthentication(options =>
 {
     options.Cookie.Name = "LoginCookieAuth";
     options.LoginPath = "/login";
+    options.AccessDeniedPath = "/Index";
 });
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("MustBeManager",
-        policy => policy.RequireClaim("Manager", "Visitor"));
+    options.AddPolicy("MustBeManager", policy =>
+       policy.RequireRole("Manager"));
+
+    options.AddPolicy("MustBeVisitor", policy =>
+        policy.RequireRole("Visitor"));
 });
+builder.Services.AddScoped<ICommentDAL, CommentDAL>(); // Register CommentDAL as ICommentDAL
+builder.Services.AddScoped<CommentManager>(); // Register CommentManager
 
 var app = builder.Build();
 
