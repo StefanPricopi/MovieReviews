@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W4IHRQHWo9KE+JMyxFHGznKQprbPZU2otIC1LbD9f5maR9XfK01PLXPiVRkDXW9WQcY4RF0IQ7WF6Oib0L5eqw==",
+  "dgSpecHash": "9Y8vlY/ZEfaOc6aj8E59KRKQhZbCkLqO6OTbIORAWrO9THGhGJW9by7Q04hIRHVA+pRoEtx1ngJfnbdbTVbJtA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+  "projectFilePath": "C:\\Users\\alin1\\Desktop\\individual\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alin1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

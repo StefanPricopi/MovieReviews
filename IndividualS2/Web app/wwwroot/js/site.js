@@ -7,7 +7,7 @@
         commentDescription: commentDescription
     };
 
-    fetch('/ReviewDetails/AddComment', {
+    fetch('/ReviewDetails/OnGetAddComment', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
