@@ -78,5 +78,38 @@ namespace DALClassLibrary.DALs
 
             return comments;
         }
+
+        public List<CommentDTO> GetAllCommentsByUser(int userID)
+        {
+            List<CommentDTO> comments = new List<CommentDTO>();
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+
+                string selectQuery1 = "SELECT CommentDescription,UserID, ReviewID FROM DTO_Comments WHERE UserID=@UserID";
+
+                using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
+                {
+                    command1.Parameters.AddWithValue("@UserID", userID); // Set the parameter value
+
+                    using (SqlDataReader reader = command1.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CommentDTO comment = new CommentDTO
+                            {
+                                CommentDescription = reader["CommentDescription"].ToString(),
+                                ReviewID = Convert.ToInt32(reader["ReviewID"]),
+                                UserID = Convert.ToInt32(reader["UserID"])
+                            };
+
+                            comments.Add(comment);
+                        }
+                    }
+                }
+            }
+
+            return comments;
+        }
     }
 }
