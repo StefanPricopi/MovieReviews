@@ -35,6 +35,7 @@ namespace Desktop_App.Forms
         {
             try
             {
+                int duration;
                 MediaDTO mediaDTO = new MediaDTO();
                 MovieDTO movieDTO = new MovieDTO();
                 mediaDTO.Title = tbTitle.Text;
@@ -43,20 +44,28 @@ namespace Desktop_App.Forms
                 mediaDTO.Description = rtbDescription.Text;
                 Genre genre = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
                 mediaDTO.Genre = genre;
-
                 DateTime date = dtpReleaseDate.Value;
-                movieDTO.Date = date;
-                if (movieManager.AddMovie(mediaDTO, movieDTO))
+                if (int.TryParse(tbDuration.Text, out duration) && duration >= 0)
                 {
-                    MessageBox.Show("successful");
-                }               
+                    movieDTO.Duration = duration;
+                    movieDTO.Date = date;
+                    if (movieManager.AddMovie(mediaDTO, movieDTO))
+                    {
+                        MessageBox.Show("Successful");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid duration");
+                    return; 
+                }
             }
-            
-            catch (Exception ) 
+            catch (Exception)
             {
-                MessageBox.Show("Invalid input. Please add values ");
+                MessageBox.Show("Invalid input. Please add values");
             }
-            
+
+
         }
     }
 }

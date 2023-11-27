@@ -42,29 +42,37 @@ namespace Desktop_App.Forms.MovieManagerForms
 
                 if (dgvMovieCollection.SelectedRows.Count > 0)
                 {
+                    int duration;
                     var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
                     mediaDTO.Title = tbTitle.Text;
                     mediaDTO.Director = tbDirector.Text;
                     mediaDTO.Actor = tbActors.Text;
                     mediaDTO.Description = rtbDescription.Text;
                     mediaDTO.Genre = ele;
-                    movieDTO.Duration = Convert.ToDecimal(tbDuration.Text);
-                    movieDTO.Date = dtpReleaseDate.Value;
-                    int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
-                    mediaDTO.Id = selectedID;
-                }
-                if (movieManager.UpdateMovie(mediaDTO, movieDTO))
-                {
-                    MessageBox.Show("Success");
-                    this.Close();
+                    if (int.TryParse(tbDuration.Text, out duration) && duration >= 0)
+                    {
+                        movieDTO.Duration = duration;
+                        movieDTO.Date = dtpReleaseDate.Value;
+                        int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
+                        mediaDTO.Id = selectedID;
+
+                        if (movieManager.UpdateMovie(mediaDTO, movieDTO))
+                        {
+                            MessageBox.Show("Success");
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid duration");
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("please input values in the right format");
+                MessageBox.Show("Please input values in the right format");
             }
-          
-          
+
         }
 
         private void dgvMovieCollection_SelectionChanged(object sender, EventArgs e)
