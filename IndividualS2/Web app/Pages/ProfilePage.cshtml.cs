@@ -2,6 +2,7 @@ using DALClassLibrary.DALs;
 using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using ModelLibrary.BaseClasses;
 using ModelLibrary.DTO;
 using System.Security.Claims;
 
@@ -10,7 +11,8 @@ namespace Web_app.Pages
     public class ProfilePageModel : PageModel
     {
         public UserProfileDTO userProfile;
-
+        public CommentManager commentManager = new CommentManager(new CommentDAL());
+        public List<CommentDTO> comments = new List<CommentDTO>();
         public IActionResult OnGet()
         {
             try
@@ -37,7 +39,7 @@ namespace Web_app.Pages
                 return Redirect($"/Index?message={ex.Message}");
             }
         }
-
+       
     }
 }
 

@@ -2,30 +2,37 @@ using DALClassLibrary.DALs;
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Identity.Client;
 using ModelLibrary.DTO;
+
 
 
 namespace Web_app.Pages
 {
-    
+
     [Authorize]
     public class ReviewDetailsModel : PageModel
     {
         public ReviewDTO review;
+        public List<CommentDTO> comments;
+        [BindProperty]
+        public CommentDTO comment { get; set; }
         private readonly CommentManager commentManager;
         public ReviewDetailsModel(CommentManager commentManager)
         {
             this.commentManager = commentManager;
         }
-        
+
         public IActionResult OnGet(int id)
         {
             try
             {
                 ReviewManager reviewManager = new ReviewManager(new ReviewDAL());
                 review = reviewManager.GetActualReviewByMedia(id);
+                comments = commentManager.GetComments(id);
                 return Page();
             }
             catch (Exception ex)
@@ -36,40 +43,49 @@ namespace Web_app.Pages
 
 
 
-        [HttpPost]
-        [Route("/ReviewDetails/AddComment")]
-        public IActionResult OnPostAddComment([FromBody] CommentDTO commentModel)
+        public IActionResult OnPost()
         {
             try
             {
-                CommentDTO commentDTO = new CommentDTO
+                var userIdClaim = User.FindFirst("UserId");
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
                 {
-                    ReviewID = review.Id,
-                    CommentDescription = commentModel.CommentDescription,
-                };
+                    comment.UserID = userId;
+                    if (Request.Query.TryGetValue("id", out var id))
+                    {
+                        if (int.TryParse(id, out int parsedId))
+                        {
+                            comment.ReviewID = parsedId;
 
-
-
-                if (commentManager.AddComment(commentDTO));
-                {
-                    return RedirectToPage("/ReviewDetails", new { id = review.Id });
+                            if (comment != null && commentManager.AddComment(comment))
+                            {
+                                TempData["SuccessMessage"] = "Comment created successfully!";
+                                return RedirectToPage("/ReviewDetails");
+                            }
+                        }
+                        else
+                        {
+                            return Page();
+                        }
+                    }
+                    else
+                    {
+                        return Page();
+                    }
                 }
-               
+                else
+                {
+                    return Page(); 
+                }
             }
             catch (Exception ex)
             {
-                return RedirectToPage("/ReviewDetails", new { id = review.Id, message = ex.Message });
+                Console.WriteLine(ex.Message); 
+
+                return Redirect($"/Review?message={ex.Message}.");
             }
+
+            return Page(); 
         }
-
-        [HttpGet]
-        [Route("/ReviewDetails/RefreshComments")]
-        public IActionResult OnGetRefreshComments(int reviewID)
-        {
-
-            List<CommentDTO> comments = commentManager.GetComments(review.Id);
-            return new JsonResult(comments);
-        }
-
     }
 }

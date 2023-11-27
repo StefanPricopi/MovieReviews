@@ -25,5 +25,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return commentManagerDAL.GetAllComments(id);
         }
+        public List<CommentDTO> GetAllCommentsByUser(int userID)
+        {
+            return commentManagerDAL.GetAllCommentsByUser(userID);
+        }
     }
 }

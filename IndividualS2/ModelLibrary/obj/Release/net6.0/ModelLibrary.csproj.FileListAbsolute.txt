@@ -1,0 +1,12 @@
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\bin\Release\net6.0\ModelLibrary.deps.json
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\bin\Release\net6.0\ModelLibrary.dll
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\bin\Release\net6.0\ModelLibrary.pdb
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.csproj.AssemblyReference.cache
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.AssemblyInfoInputs.cache
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.AssemblyInfo.cs
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.csproj.CoreCompileInputs.cache
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.dll
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\refint\ModelLibrary.dll
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ModelLibrary.pdb
+C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\ModelLibrary\obj\Release\net6.0\ref\ModelLibrary.dll

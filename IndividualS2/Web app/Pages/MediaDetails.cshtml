@@ -1,19 +1,34 @@
 ﻿@page
 @model Web_app.Pages.MediaDetailsModel
-@{
-}
 
-@if(Model.mediaDTO!=null)
+@if (Model.mediaDTO != null)
 {
     <div>
-        <h1>Title:@Model.mediaDTO.Title</h1>
-        <h2 class="Genre">Genre: @Model.mediaDTO.Genre Star:@Model.mediaDTO.Actor,Director: @Model.mediaDTO.Director</h2>
+        <h1>Title: @Model.mediaDTO.Title</h1>
 
+        <div class="button-container">
+            <!-- Like button form -->
+            <form method="post">
+                <input type="hidden" name="mediaID" value="@Model.mediaDTO.Id" />
+                <input type="hidden" name="likeButton" value="Like" /> <!-- For distinguishing like action -->
+                <button id="likeButton" type="submit">
+                    <i class="fas fa-thumbs-up"></i>
+                </button>
+            </form>
+
+            <!-- Dislike button form -->
+            <form method="post">
+                <input type="hidden" name="mediaID" value="@Model.mediaDTO.Id" />
+                <input type="hidden" name="dislikeButton" value="Dislike" /> <!-- For distinguishing dislike action -->
+                <button id="dislikeButton" type="submit">
+                    <i class="fas fa-thumbs-down"></i>
+                </button>
+            </form>
+        </div>
     </div>
     <div class="details-container">
-
+        <!-- Description and other media details -->
         <img src="/img/mockdetails.jpg" alt="mock-image">
-        <p> Description: @Model.mediaDTO.Description</p>
-
+        <p>Description: @Model.mediaDTO.Description</p>
     </div>
 }
