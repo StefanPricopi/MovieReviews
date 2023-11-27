@@ -12,6 +12,7 @@ namespace Desktop_App.Forms.ReviewManagerForms
         private IReviewManagerDAL rev;
         private ReviewManager reviewManager;
         private MediaManager mediaManager;
+        
         public AddReviewForm()
         {
             InitializeComponent();
@@ -29,32 +30,47 @@ namespace Desktop_App.Forms.ReviewManagerForms
                 ReviewDTO reviewDTO = new ReviewDTO();
                 reviewDTO.Title = tbTitle.Text;
                 reviewDTO.Description = rtbDescription.Text;
-                reviewDTO.Score = Convert.ToInt32(tbScore.Text);
-                int id = mediaManager.GetMediaByTitle(cbMediaTitle.Text);
-                reviewDTO.MediaID = id;
-                if (reviewManager.AddReview(reviewDTO))
+
+               
+                decimal score;
+                if (decimal.TryParse(tbScore.Text, out score) && (score >= 0 && score <= 5))
                 {
-                    MessageBox.Show("successful");
+                    reviewDTO.Score = score;
+
+            
+                    if (cbMediaTitle.Items.Contains(cbMediaTitle.Text))
+                    {
+                        int id = mediaManager.GetMediaByTitle(cbMediaTitle.Text);
+                        reviewDTO.MediaID = id;
+
+                        if (reviewManager.AddReview(reviewDTO))
+                        {
+                            MessageBox.Show("Successful");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a valid media title from the list");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("failed");
+                    MessageBox.Show("Please enter a score between 0 and 5");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("failed");
+                MessageBox.Show("Failed: " + ex.Message);
             }
 
+
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CommentDTO cc = new CommentDTO();
-            cc.ReviewID = Convert.ToInt32(textBox1.Text);
-            cc.CommentDescription = textBox2.Text;
-            CommentDAL c = new CommentDAL();
-            c.AddComment(cc);
-        }
+
     }
 }

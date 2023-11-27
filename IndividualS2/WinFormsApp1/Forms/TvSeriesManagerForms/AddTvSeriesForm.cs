@@ -33,30 +33,66 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
                 mediaDTO.Director = tbDirector.Text;
                 mediaDTO.Actor = tbActors.Text;
                 mediaDTO.Description = rtbDescription.Text;
-                Genre genre = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-                mediaDTO.Genre = genre;
 
-                DateTime Pilotdate = dtpPilotDate.Value;
-                DateTime Enddate = dtpLastEpDate.Value;
-                tvseriesDTO.PilotDate = Pilotdate;
-                tvseriesDTO.LastEpisodeDate = Enddate;
-                Status status = (Status)Enum.Parse(typeof(Status), cbStatus.Text);
-                tvseriesDTO.Status = (Status)status;
-                tvseriesDTO.NrOfSeasons = Convert.ToInt32(tbNumberOfSeasons.Text);
-                if (tvSeriesManager.AddTvSeries(mediaDTO, tvseriesDTO))
+                
+                if (Enum.TryParse(typeof(Genre), cbGenre.Text, out object genre) && Enum.IsDefined(typeof(Genre), genre))
                 {
-                    MessageBox.Show("successful");
+                    mediaDTO.Genre = (Genre)genre;
+
+                    DateTime pilotDate = dtpPilotDate.Value;
+                    DateTime endDate = dtpLastEpDate.Value;
+
+                    if (endDate >= pilotDate) 
+                    {
+                        tvseriesDTO.PilotDate = pilotDate;
+                        tvseriesDTO.LastEpisodeDate = endDate;
+
+                       
+                        if (Enum.TryParse(typeof(Status), cbStatus.Text, out object status) && Enum.IsDefined(typeof(Status), status))
+                        {
+                            tvseriesDTO.Status = (Status)status;
+
+                            
+                            int numberOfSeasons;
+                            if (int.TryParse(tbNumberOfSeasons.Text, out numberOfSeasons) && numberOfSeasons > 0)
+                            {
+                                tvseriesDTO.NrOfSeasons = numberOfSeasons;
+
+                                if (tvSeriesManager.AddTvSeries(mediaDTO, tvseriesDTO))
+                                {
+                                    MessageBox.Show("Successful");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Failed");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Number of seasons must be a positive integer");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid status");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("End date cannot be before the start date");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("failed");
+                    MessageBox.Show("Invalid genre");
                 }
             }
-
             catch (Exception)
             {
-                MessageBox.Show("Invalid input. Please add values ");
+                MessageBox.Show("Invalid input. Please add values");
             }
+
+
         }
     }
 }

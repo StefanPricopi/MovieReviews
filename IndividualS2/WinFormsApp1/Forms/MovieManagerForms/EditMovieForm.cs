@@ -43,28 +43,36 @@ namespace Desktop_App.Forms.MovieManagerForms
                 if (dgvMovieCollection.SelectedRows.Count > 0)
                 {
                     int duration;
-                    var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-                    mediaDTO.Title = tbTitle.Text;
-                    mediaDTO.Director = tbDirector.Text;
-                    mediaDTO.Actor = tbActors.Text;
-                    mediaDTO.Description = rtbDescription.Text;
-                    mediaDTO.Genre = ele;
-                    if (int.TryParse(tbDuration.Text, out duration) && duration >= 0)
+                    Genre genre;
+                    if (Enum.TryParse(cbGenre.Text, out genre) && Enum.IsDefined(typeof(Genre), genre))
                     {
-                        movieDTO.Duration = duration;
-                        movieDTO.Date = dtpReleaseDate.Value;
-                        int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
-                        mediaDTO.Id = selectedID;
+                        mediaDTO.Title = tbTitle.Text;
+                        mediaDTO.Director = tbDirector.Text;
+                        mediaDTO.Actor = tbActors.Text;
+                        mediaDTO.Description = rtbDescription.Text;
+                        mediaDTO.Genre = genre;
 
-                        if (movieManager.UpdateMovie(mediaDTO, movieDTO))
+                        if (int.TryParse(tbDuration.Text, out duration) && duration >= 0)
                         {
-                            MessageBox.Show("Success");
-                            this.Close();
+                            movieDTO.Duration = duration;
+                            movieDTO.Date = dtpReleaseDate.Value;
+                            int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
+                            mediaDTO.Id = selectedID;
+
+                            if (movieManager.UpdateMovie(mediaDTO, movieDTO))
+                            {
+                                MessageBox.Show("Success");
+                                this.Close();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid duration");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Invalid duration");
+                        MessageBox.Show("Invalid genre");
                     }
                 }
             }
@@ -72,6 +80,7 @@ namespace Desktop_App.Forms.MovieManagerForms
             {
                 MessageBox.Show("Please input values in the right format");
             }
+
 
         }
 

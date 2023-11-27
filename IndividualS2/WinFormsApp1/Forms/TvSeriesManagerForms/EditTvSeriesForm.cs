@@ -38,33 +38,76 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
 
                 if (dgvTvSeriesCollection.SelectedRows.Count > 0)
                 {
-                    var ele = (Genre)Enum.Parse(typeof(Genre), cbGenre.Text);
-                    var stat = (Status)Enum.Parse(typeof(Status), cbStatus.Text);
-                    mediaDTO.Title = tbTitle.Text;
-                    mediaDTO.Director = tbDirector.Text;
-                    mediaDTO.Actor = tbActors.Text;
-                    mediaDTO.Description = rtbDescription.Text;
-                    mediaDTO.Genre = ele;
-                    tvSeriesDTO.NrOfSeasons = Convert.ToInt32(tbNumberOfSeasons.Text);
-                    tvSeriesDTO.PilotDate = dtpPilotDate.Value;
-                    tvSeriesDTO.LastEpisodeDate = dtpLastEpDate.Value;
-                    tvSeriesDTO.Status = stat;
+                    var ele = cbGenre.Text;
+                    var stat = cbStatus.Text;
 
-                    int selectedID = Convert.ToInt32(dgvTvSeriesCollection.SelectedRows[0].Cells[0].Value);
-                    mediaDTO.Id = selectedID;
-                }
-                if (seriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
-                {
-                    MessageBox.Show("Success");
-                    this.Close();
+                    if (Enum.TryParse(typeof(Genre), ele, out object genre) && Enum.IsDefined(typeof(Genre), genre))
+                    {
+                        mediaDTO.Genre = (Genre)genre;
+
+                        if (Enum.TryParse(typeof(Status), stat, out object status) && Enum.IsDefined(typeof(Status), status))
+                        {
+                            mediaDTO.Title = tbTitle.Text;
+                            mediaDTO.Director = tbDirector.Text;
+                            mediaDTO.Actor = tbActors.Text;
+                            mediaDTO.Description = rtbDescription.Text;
+                            tvSeriesDTO.Status = (Status)status;
+
+                            
+                            int numberOfSeasons;
+                            if (int.TryParse(tbNumberOfSeasons.Text, out numberOfSeasons) && numberOfSeasons > 0)
+                            {
+                                tvSeriesDTO.NrOfSeasons = numberOfSeasons;
+
+                                
+                                DateTime pilotDate = dtpPilotDate.Value;
+                                DateTime endDate = dtpLastEpDate.Value;
+
+                                if (endDate >= pilotDate)
+                                {
+                                    tvSeriesDTO.PilotDate = pilotDate;
+                                    tvSeriesDTO.LastEpisodeDate = endDate;
+
+                                    int selectedID = Convert.ToInt32(dgvTvSeriesCollection.SelectedRows[0].Cells[0].Value);
+                                    mediaDTO.Id = selectedID;
+
+                                    if (seriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
+                                    {
+                                        MessageBox.Show("Success");
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Failed");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("End date cannot be before the start date");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Number of seasons must be a positive integer");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid status");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid genre");
+                    }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("fail");
+                MessageBox.Show("Failed: " + ex.Message);
             }
-            
-            
+
+
         }
 
         private void dgvTvSeriesCollection_SelectionChanged(object sender, EventArgs e)
