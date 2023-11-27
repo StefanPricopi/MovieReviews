@@ -10,11 +10,11 @@ namespace ModelLibrary.Interfaces
 {
     public interface ILikeDislike
     {
-        public int AddLike(LikeDislikeDTO likeDTO, SqlTransaction transaction);
-        public int AddDislike(LikeDislikeDTO dislikeDTO, SqlTransaction transaction);
+        public int AddLike(LikeDislikeDTO likeDTO);
+        public int AddDislike(LikeDislikeDTO dislikeDTO);
         public bool CheckUserLiked(LikeDislikeDTO c);
-        public void RemoveLike(LikeDislikeDTO c, SqlTransaction transaction);
-        public void RemoveDislike(LikeDislikeDTO c, SqlTransaction transaction);
+        public void RemoveLike(LikeDislikeDTO c);
+        public void RemoveDislike(LikeDislikeDTO c);
         public void ToggleLikeDislike(LikeDislikeDTO c);
 
 

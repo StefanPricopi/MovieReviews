@@ -25,7 +25,6 @@ namespace Web_app.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            UserDTO userModel = new UserDTO();
             User s = new User();
 
             bool ValidateLoginEmployeeCase()
@@ -49,7 +48,7 @@ namespace Web_app.Pages
                     s = userManager.GetCurrentUserByUsername(User.Username);
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, "user"),
+                        new Claim(ClaimTypes.Name, s.Username),
                         new Claim(ClaimTypes.Role, "Manager"),
                         new Claim("UserId", s.UserID.ToString()),
 
@@ -69,7 +68,7 @@ namespace Web_app.Pages
 
                     var claims = new List<Claim>
                     {
-                        new Claim(ClaimTypes.Name, "user"),
+                        new Claim(ClaimTypes.Name, s.Username),
                         new Claim(ClaimTypes.Role, "Visitor"),
                         new Claim("UserId", s.UserID.ToString()),
 

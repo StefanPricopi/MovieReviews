@@ -16,25 +16,25 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             this.likeDislikeManager = likeDislike;
         }
-        public int AddLike(LikeDislikeDTO likeDTO, SqlTransaction transaction)
+        public int AddLike(LikeDislikeDTO likeDTO)
         {
-            return likeDislikeManager.AddLike(likeDTO, transaction);
+            return likeDislikeManager.AddLike(likeDTO);
         }
-        public int AddDislike(LikeDislikeDTO dislikeDTO, SqlTransaction transaction)
+        public int AddDislike(LikeDislikeDTO dislikeDTO)
         {
-            return likeDislikeManager.AddDislike(dislikeDTO, transaction);
+            return likeDislikeManager.AddDislike(dislikeDTO);
         }
         public bool CheckUserLiked(LikeDislikeDTO c)
         {
             return likeDislikeManager.CheckUserLiked(c);
         }
-        public void RemoveLike(LikeDislikeDTO c, SqlTransaction transaction)
+        public void RemoveLike(LikeDislikeDTO c)
         {
-             likeDislikeManager.RemoveLike(c, transaction);
+             likeDislikeManager.RemoveLike(c);
         }
-        public void RemoveDislike(LikeDislikeDTO c, SqlTransaction transaction)
+        public void RemoveDislike(LikeDislikeDTO c)
         {
-             likeDislikeManager.RemoveDislike(c, transaction);
+             likeDislikeManager.RemoveDislike(c);
         }
         public void ToggleLikeDislike(LikeDislikeDTO c)
         {
