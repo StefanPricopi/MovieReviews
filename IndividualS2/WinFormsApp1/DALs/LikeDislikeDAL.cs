@@ -44,6 +44,49 @@ namespace DALClassLibrary.DALs
             }
             return -1;
         }
+        public LikeDislikeDTO GetLikeDislike(int id)
+        {
+            LikeDislikeDTO likeDTO;
+
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+                    string selectQuery = "SELECT UserID, MediaID, LikeStatus FROM DTO_LikesDislikes WHERE MediaID=@MediaID";
+
+                    using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                    {
+                        // Add parameter for MediaID
+                        command.Parameters.AddWithValue("@MediaID", id);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                likeDTO = new LikeDislikeDTO();
+
+                                likeDTO.UserID = Convert.ToInt32(reader["UserID"]);
+                                likeDTO.MediaID = Convert.ToInt32(reader["MediaID"]);
+                                likeDTO.LikeStatus = reader["LikeStatus"].ToString();
+
+                                return likeDTO;
+                            }
+                            else
+                            {
+                                throw new Exception("No like/dislike information found for the provided ID.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error fetching like/dislike information: " + ex.Message);
+            }
+
+        }
+
         public int AddDislike (LikeDislikeDTO dislikeDTO)
         {
             try

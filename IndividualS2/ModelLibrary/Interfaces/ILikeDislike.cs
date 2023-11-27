@@ -16,6 +16,7 @@ namespace ModelLibrary.Interfaces
         public void RemoveLike(LikeDislikeDTO c);
         public void RemoveDislike(LikeDislikeDTO c);
         public void ToggleLikeDislike(LikeDislikeDTO c);
+        public LikeDislikeDTO GetLikeDislike(int id);
 
 
     }

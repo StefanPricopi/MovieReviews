@@ -40,5 +40,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
              likeDislikeManager.ToggleLikeDislike(c);
         }
+        public LikeDislikeDTO GetLikeDislike(int id)
+        {
+            return likeDislikeManager.GetLikeDislike(id);
+        }
     }
 }
