@@ -13,12 +13,17 @@ namespace DALClassLibrary.DALs
         {
             try
             {
-                
+                if (IsUsernameTaken(userDTO.Username))
+                {
+                   
+                    return false;
+                }
+
                 var salt = DateTime.Now.ToString();
                 var hashedPW = UserManager.HashedPassword($"{userDTO.PasswordHash}{salt.Trim()}");
                 using (SqlConnection conn = InitializeConection())
                 {
-                    string sql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt,RoleID) VALUES (@Username, @PasswordHash,  @Salt,@RoleID)";
+                    string sql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt, RoleID) VALUES (@Username, @PasswordHash, @Salt, @RoleID)";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@Username", userDTO.Username);
                     cmd.Parameters.AddWithValue("@PasswordHash", hashedPW);
@@ -31,8 +36,19 @@ namespace DALClassLibrary.DALs
             }
             catch (Exception ex)
             {
-                
                 return false;
+            }
+        }
+        private bool IsUsernameTaken(string username)
+        {
+            using (SqlConnection conn = InitializeConection())
+            {
+                string sql = "SELECT COUNT(*) FROM DTO_Users WHERE Username = @Username";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Username", username);
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
             }
         }
 
