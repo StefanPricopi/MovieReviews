@@ -204,7 +204,8 @@ namespace DALClassLibrary.DALs
             }
             catch (Exception ex)
             {
-                throw new Exception("Invalid ID");
+                MessageBox.Show("Please select a review");
+                return null;
             }
 
             
