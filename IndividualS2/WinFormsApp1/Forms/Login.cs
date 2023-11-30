@@ -30,19 +30,37 @@ namespace Desktop_App.Forms
             string username = tbUsername.Text;
             string password = tbPassword.Text;
 
-            User currentUser = userManager.Login(username, password);
-
-
-            if (currentUser != null)
+            try
             {
-                
-
-                if (currentUser.RoleID == 1)
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
-                    Form openfrom = new MainForm();
-                    openfrom.ShowDialog();
+                    MessageBox.Show("Please enter both username and password.");
+                    return;
+                }
+
+                User currentUser = userManager.Login(username, password);
+
+                if (currentUser != null)
+                {
+                    if (currentUser.RoleID == 1)
+                    {
+                        Form openForm = new MainForm();
+                        openForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid credentials");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid credentials");
                 }
             }
+            catch (Exception ex)
+            {
+            }
         }
+
     }
 }

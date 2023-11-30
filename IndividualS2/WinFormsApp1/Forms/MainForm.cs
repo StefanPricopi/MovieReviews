@@ -91,6 +91,15 @@ namespace WinFormsApp1
             var reviewTable = reviewManager.GetReviewByID(id);
             TrimDataTableStrings(reviewTable);
             dataGridViewReview.DataSource = reviewTable;
+            if (reviewTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No reviews were found for the selected criteria.");
+                ViewAllReviews();
+            }
+            else
+            {
+                dgvMovieCollection.DataSource = reviewTable;
+            }
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
@@ -109,10 +118,7 @@ namespace WinFormsApp1
         private void btnViewAllMovies_Click(object sender, EventArgs e)
         {
             ViewAllMovies();
-            CommentDAL c = new CommentDAL();
-            
-            List<CommentDTO> commentDTOs = c.GetAllComments(8);
-            MessageBox.Show(commentDTOs.Count.ToString());
+
         }
         private void ViewAllReviews()
         {
@@ -157,9 +163,18 @@ namespace WinFormsApp1
 
             var movieTable = movieManager.SearchMovies(id);
             TrimDataTableStrings(movieTable);
-            dgvMovieCollection.DataSource = movieTable;
 
+            if (movieTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No movies found for the selected criteria.");
+                ViewAllMovies();
+            }
+            else
+            {
+                dgvMovieCollection.DataSource = movieTable;
+            }
         }
+
 
         private void btnSearchTvSeries_Click(object sender, EventArgs e)
         {
@@ -168,6 +183,15 @@ namespace WinFormsApp1
             var movieTable = tvSeriesManager.SearchTvSeries(id);
             TrimDataTableStrings(movieTable);
             dgvTvSeriesCollection.DataSource = movieTable;
+            if (movieTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No tv-series found for the selected criteria.");
+                ViewAllTvSeries();
+            }
+            else
+            {
+                dgvMovieCollection.DataSource = movieTable;
+            }
         }
 
         private void btn_SearchReviewForAMedia_Click(object sender, EventArgs e)
@@ -176,6 +200,15 @@ namespace WinFormsApp1
             var reviewTable = reviewManager.GetReviewByMedia(id);
             TrimDataTableStrings(reviewTable);
             dataGridViewReview.DataSource = reviewTable;
+            if (reviewTable.Rows.Count == 0)
+            {
+                MessageBox.Show("No reviews found for the selected criteria.");
+                ViewAllReviews();
+            }
+            else
+            {
+                dgvMovieCollection.DataSource = reviewTable;
+            }
         }
 
         private void btnArchiveReview_Click(object sender, EventArgs e)

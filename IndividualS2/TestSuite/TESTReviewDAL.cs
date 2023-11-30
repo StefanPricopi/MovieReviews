@@ -14,12 +14,14 @@ namespace DALClassLibrary.DALs
     public class TESTReviewDAL : IReviewManagerDAL
     {
         public  Dictionary<int, ReviewDTO> reviews;
-        public  Dictionary<int, ReviewDTO> archiveReviews;
+        public  Dictionary<int, ReviewDTO> archiveReviews { get; set; }
+
         public TESTReviewDAL(Dictionary<int, ReviewDTO> reviewDictionary)
         {
             reviews = new Dictionary<int, ReviewDTO>();
             archiveReviews = new Dictionary<int, ReviewDTO>();
         }
+        
         public bool AddArchiveReview(ReviewDTO reviewDTO)
         {
             if (reviewDTO != null && reviewDTO.Id > 0)
@@ -56,6 +58,15 @@ namespace DALClassLibrary.DALs
         }
 
         public ReviewDTO GetActualReviewByMedia(int id)
+        {
+            if (reviews.TryGetValue(id, out ReviewDTO review))
+            {
+                return review;
+            }
+
+            return null;
+        }
+        public ReviewDTO GetActualReviewByID(int id)
         {
             if (reviews.TryGetValue(id, out ReviewDTO review))
             {

@@ -24,5 +24,6 @@ namespace LogicLayerClassLibrary.Interfaces
         public ReviewDTO GetActualReviewByMedia(int id);
         public DataTable GetAllArchivedReview();
         public List<ReviewDTO> DatagridToList(DataTable dataTable);
+        public ReviewDTO GetActualReviewByID(int id);
     }
 }

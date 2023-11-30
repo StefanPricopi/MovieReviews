@@ -72,5 +72,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return reviewManagerDAL.DatagridToList(dataTable);
         }
+        public ReviewDTO GetActualReviewByID(int id)
+        {
+            return reviewManagerDAL.GetActualReviewByID(id);
+        }
     }
 }
