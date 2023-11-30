@@ -183,12 +183,15 @@ namespace WinFormsApp1
             if (dataGridViewReview.SelectedCells.Count > 0)
             {
                 int id = Convert.ToInt32(dataGridViewReview.Rows[dataGridViewReview.SelectedCells[0].RowIndex].Cells[0].Value);
-
-                if (reviewManager.AddArchiveReview(reviewManager.GetActualReviewByMedia(id)))
+                if(reviewManager.GetActualReviewByMedia(id) != null)
                 {
-                    reviewManager.DeleteReview(id);
-                    MessageBox.Show("Archive was succesfull");
+                    if (reviewManager.AddArchiveReview(reviewManager.GetActualReviewByMedia(id)))
+                    {
+                        reviewManager.DeleteReview(id);
+                        MessageBox.Show("Archive was succesfull");
+                    }
                 }
+                
 
             }
             else MessageBox.Show("wrong input");

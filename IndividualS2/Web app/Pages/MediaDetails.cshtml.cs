@@ -14,7 +14,7 @@ namespace Web_app.Pages
         public MediaDTO mediaDTO;
         MediaManager mediaManager = new MediaManager(new MediaDAL());
         MovieManager movieManager = new MovieManager(new MovieDAL());
-        LikeDislikeManager likeDislikeManager = new LikeDislikeManager(new LikeDislikeDAL());
+        public LikeDislikeManager likeDislikeManager = new LikeDislikeManager(new LikeDislikeDAL());
         public IActionResult OnGet(int id)
         {
             try
@@ -27,7 +27,7 @@ namespace Web_app.Pages
                 return Redirect($"/Media?message={ex.Message}.");
             }
         }
-        public IActionResult OnPost(int userID)
+        public IActionResult OnPost()
         {
             if (int.TryParse(Request.Query["id"], out int mediaID))
             {

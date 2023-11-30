@@ -39,24 +39,49 @@ namespace Desktop_App.Forms.ReviewManagerForms
                 if (dgvReview.SelectedRows.Count > 0)
                 {
                     reviewDTO.Title = tbTitle.Text;
-                    reviewDTO.Score = Convert.ToDecimal(tbScore.Text);
-                    reviewDTO.Description = rtbDescription.Text;
-                    reviewDTO.MediaID = Convert.ToInt32(tbMediaID.Text);
-                    int selectedID = Convert.ToInt32(dgvReview.SelectedRows[0].Cells[0].Value);
-                    reviewDTO.Id = selectedID;
 
-                }
-                if (reviewManager.UpdateReview(reviewDTO))
-                {
-                    MessageBox.Show("Success");
-                    this.Close();
+                    
+                    decimal score;
+                    if (decimal.TryParse(tbScore.Text, out score) && (score >= 0 && score <= 5 || score == 3.5m))
+                    {
+                        reviewDTO.Score = score;
+                        reviewDTO.Description = rtbDescription.Text;
+
+                       
+                        int mediaID;
+                        if (int.TryParse(tbMediaID.Text, out mediaID))
+                        {
+                            reviewDTO.MediaID = mediaID;
+
+                            int selectedID = Convert.ToInt32(dgvReview.SelectedRows[0].Cells[0].Value);
+                            reviewDTO.Id = selectedID;
+
+                            if (reviewManager.UpdateReview(reviewDTO))
+                            {
+                                MessageBox.Show("Success");
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid Media ID");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a score between 0 and 5 ");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("fail");
+                MessageBox.Show("Failed: " + ex.Message);
             }
-            
+
         }
 
         private void dgvReview_SelectionChanged(object sender, EventArgs e)

@@ -24,16 +24,26 @@ namespace Web_app.Pages
 
         public void OnPost()
         {
-            if (User != null )
+            if (User != null)
             {
-               User.RoleID = 2;
-               if(userManager.AddCreateAccount(User))
+                User.RoleID = 2;
+                try
                 {
-                    TempData["SuccessMessage"] = "Account created successfully!";
+                    if (userManager.AddCreateAccount(User))
+                    {
+                        TempData["SuccessMessage"] = "Account created successfully!";
+                    }
+                    else
+                    {
+                        TempData["ErrorMessage"] = "Username already exists";
+                    }
                 }
-               
+                catch (Exception ex)
+                {
+                    TempData["ErrorMessage"] = ex.Message;
+                }
             }
-           
         }
+
     }
 }
