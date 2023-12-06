@@ -1,6 +1,7 @@
 ﻿using ModelLibrary.DTO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -11,7 +12,9 @@ namespace LogicLayerClassLibrary.Classes
     public class User
     {
         public int UserID { get; set; }
+        [Required]
         public string Username {  get; set; }
+        [Required]
         public string PasswordHash { get; set; }
         public string Salt {  get; set; }
         public int RoleID { get; set; }
