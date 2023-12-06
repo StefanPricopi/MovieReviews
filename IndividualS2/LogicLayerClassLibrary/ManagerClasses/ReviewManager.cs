@@ -3,6 +3,7 @@ using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -16,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    public  class ReviewManager
+    public  class ReviewManager : IReviewManager
     {
         private IReviewManagerDAL reviewManagerDAL;
         public static int ReviewId = 4;

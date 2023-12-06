@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.1.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
   </ItemGroup>
 
@@ -16,6 +17,7 @@
     <ProjectReference Include="..\DALClassLibrary\DALClassLibrary.csproj" />
     <ProjectReference Include="..\LogicLayerClassLibrary\LogicLayerClassLibrary.csproj" />
     <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
+    <ProjectReference Include="..\Service Layer\Service Layer.csproj" />
   </ItemGroup>
 
 </Project>

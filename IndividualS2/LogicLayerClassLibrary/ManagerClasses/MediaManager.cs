@@ -3,6 +3,7 @@ using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using Microsoft.VisualBasic;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -14,7 +15,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    public  class MediaManager
+    public  class MediaManager : IMediaManager
     {
         private IMediaManagerDAL mediaManagerDAL;
         

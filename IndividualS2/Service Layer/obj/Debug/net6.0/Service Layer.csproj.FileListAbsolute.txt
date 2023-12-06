@@ -1,0 +1,15 @@
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\bin\Debug\net6.0\Service Layer.deps.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\bin\Debug\net6.0\Service Layer.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\bin\Debug\net6.0\Service Layer.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\bin\Debug\net6.0\ModelLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\bin\Debug\net6.0\ModelLibrary.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.csproj.AssemblyReference.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.AssemblyInfoInputs.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.AssemblyInfo.cs
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.csproj.CoreCompileInputs.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.csproj.CopyComplete
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\refint\Service Layer.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\Service Layer.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Service Layer\obj\Debug\net6.0\ref\Service Layer.dll

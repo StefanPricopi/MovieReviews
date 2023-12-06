@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Desktop App/1.0.0": {
         "dependencies": {
+          "Autofac": "7.1.0",
           "DALClassLibrary": "1.0.0",
           "LogicLayerClassLibrary": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.1",
@@ -27,6 +28,17 @@
           "WinRT.Runtime.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.3.42921"
+          }
+        }
+      },
+      "Autofac/7.1.0": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.0.0"
           }
         }
       },
@@ -397,7 +409,8 @@
       "LogicLayerClassLibrary/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "ModelLibrary": "1.0.0"
+          "ModelLibrary": "1.0.0",
+          "Service Layer": "1.0.0"
         },
         "runtime": {
           "LogicLayerClassLibrary.dll": {}
@@ -409,6 +422,14 @@
         },
         "runtime": {
           "ModelLibrary.dll": {}
+        }
+      },
+      "Service Layer/1.0.0": {
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Service Layer.dll": {}
         }
       }
     }
@@ -423,6 +444,13 @@
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
+    },
+    "Autofac/7.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XCXmpxhOnuztTTRkzG+8B8KU8SR8WjBYwSntndjlsFR5lM3K/g43r9hUwewIPDBJwDrmZU3TjmNdH6s8IF3VFQ==",
+      "path": "autofac/7.1.0",
+      "hashPath": "autofac.7.1.0.nupkg.sha512"
     },
     "Azure.Core/1.25.0": {
       "type": "package",
@@ -722,6 +750,11 @@
       "sha512": ""
     },
     "ModelLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service Layer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

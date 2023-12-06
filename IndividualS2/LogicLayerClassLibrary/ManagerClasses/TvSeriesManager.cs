@@ -1,6 +1,7 @@
 ﻿using DALClassLibrary.Interfaces;
 using LogicLayerClassLibrary.Interfaces;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    public class TvSeriesManager
+    public class TvSeriesManager : ITvSeriesManager
     {
         private ITvSeriesManagerDAL tvSeriesManagerDAL;
         

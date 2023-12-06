@@ -412,6 +412,14 @@
         "runtime": {
           "ModelLibrary.dll": {}
         }
+      },
+      "Service Layer/1.0.0": {
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Service Layer.dll": {}
+        }
       }
     }
   },
@@ -702,6 +710,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "ModelLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service Layer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

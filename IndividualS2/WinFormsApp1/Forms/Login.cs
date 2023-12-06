@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,24 @@ namespace Desktop_App.Forms
     public partial class Login : Form
     {
         private readonly UserManager userManager;
-        public Login()
-        {
-            InitializeComponent();
+        private readonly IReviewManager reviewManager;
+        private readonly IMediaManager mediaManager;
+        private readonly ITvSeriesManager tvSeriesManager;
+        private readonly IMovieManager movieManager;
+
+        public Login(IReviewManager reviewManager,
+            IMediaManager mediaManager,
+            ITvSeriesManager tvSeriesManager,
+            IMovieManager movieManager)
+        {          
+            InitializeComponent(); 
+
+            this.reviewManager = reviewManager;
+            this.mediaManager = mediaManager;
+            this.tvSeriesManager = tvSeriesManager;
+            this.movieManager = movieManager;
             userManager = new UserManager(new UserDAL());
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -44,8 +59,8 @@ namespace Desktop_App.Forms
                 {
                     if (currentUser.RoleID == 1)
                     {
-                        Form openForm = new MainForm();
-                        openForm.ShowDialog();
+                        var mainForm = new MainForm(reviewManager, mediaManager, tvSeriesManager, movieManager);
+                        mainForm.ShowDialog();
                     }
                     else
                     {

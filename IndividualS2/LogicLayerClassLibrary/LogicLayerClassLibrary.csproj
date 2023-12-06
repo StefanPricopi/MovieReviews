@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
+    <ProjectReference Include="..\Service Layer\Service Layer.csproj" />
   </ItemGroup>
 
 </Project>

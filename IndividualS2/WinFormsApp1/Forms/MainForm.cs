@@ -11,22 +11,35 @@ using DALClassLibrary.DALs;
 using System.Windows.Forms;
 using System.Data;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 
 namespace WinFormsApp1
 {
     public partial class MainForm : Form
     {
-        private ReviewManager reviewManager;
-        private MediaManager mediaManager;
-        private MovieManager movieManager;
-        private TvSeriesManager tvSeriesManager;
-        public MainForm()
+        private readonly IReviewManager reviewManager;
+        private readonly IMediaManager mediaManager;
+        private readonly ITvSeriesManager tvSeriesManager;
+        private readonly IMovieManager movieManager;
+
+        public MainForm(
+            IReviewManager reviewManager,
+            IMediaManager mediaManager,
+            ITvSeriesManager tvSeriesManager,
+            IMovieManager movieManager)
         {
             InitializeComponent();
-            reviewManager = new ReviewManager(new ReviewDAL());
-            mediaManager = new MediaManager(new MediaDAL());
-            tvSeriesManager = new TvSeriesManager(new TvSeriesDAL());
-            movieManager = new MovieManager(new MovieDAL());
+
+            this.reviewManager = reviewManager;
+            this.mediaManager = mediaManager;
+            this.tvSeriesManager = tvSeriesManager;
+            this.movieManager = movieManager;
+
+            InitializeUI();
+        }
+
+        private void InitializeUI()
+        {
             ViewAllReviews();
             ViewAllMovies();
             ViewAllTvSeries();
@@ -50,6 +63,9 @@ namespace WinFormsApp1
             cb_MediaTitleReviews.DataSource = mediaManager.GetAllTitles();
             cb_MediaTitleReviews.DisplayMember = "Title";
         }
+    
+
+    
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
             using (AddTvSeriesForm f3 = new AddTvSeriesForm())

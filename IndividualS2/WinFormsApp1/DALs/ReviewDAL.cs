@@ -353,5 +353,10 @@ namespace DALClassLibrary.DALs
                 return false;
             }
         }
+
+        public ReviewDTO GetActualReviewByID(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
