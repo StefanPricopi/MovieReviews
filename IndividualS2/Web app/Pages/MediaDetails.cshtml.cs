@@ -11,15 +11,25 @@ namespace Web_app.Pages
     [Authorize]
     public class MediaDetailsModel : PageModel
     {
-        public MediaDTO mediaDTO;
-        MediaManager mediaManager = new MediaManager(new MediaDAL());
-        MovieManager movieManager = new MovieManager(new MovieDAL());
-        public LikeDislikeManager likeDislikeManager = new LikeDislikeManager(new LikeDislikeDAL());
+        private readonly MediaManager mediaManager;
+     
+        private readonly LikeDislikeManager likeDislikeManager;
+
+        public MediaDTO MediaDTO { get; private set; }
+
+        public MediaDetailsModel(
+            MediaManager mediaManager,
+            LikeDislikeManager likeDislikeManager)
+        {
+            this.mediaManager = mediaManager;
+            this.likeDislikeManager = likeDislikeManager;
+        }
+
         public IActionResult OnGet(int id)
         {
             try
             {
-                mediaDTO = mediaManager.GetActualMediaByID(id);
+                MediaDTO = mediaManager.GetActualMediaByID(id);
                 return Page();
             }
             catch (Exception ex)

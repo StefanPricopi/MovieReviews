@@ -1,24 +1,33 @@
 using DALClassLibrary.DALs;
-using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ModelLibrary.DTO;
+using System.Collections.Generic;
 
 namespace Web_app.Pages
 {
     [Authorize]
     public class MediaModel : PageModel
     {
+        private readonly MediaManager mediaManager;
+        private readonly MovieManager movieManager;
+
         public List<MediaDTO> media;
         public string Message;
+
+        // Constructor with dependency injection
+        public MediaModel(MediaManager mediaManager, MovieManager movieManager)
+        {
+            this.mediaManager = mediaManager;
+            this.movieManager = movieManager;
+        }
+
         public void OnGet(string? message)
         {
-            MediaManager mediaManager = new MediaManager(new MediaDAL());
-            MovieManager movieManager = new MovieManager(new MovieDAL());
-            media=mediaManager.DatagridToList(movieManager.GetAllMovies());
-            
+            media = mediaManager.DatagridToList(movieManager.GetAllMovies());
+
             if (message != null)
             {
                 Message = message;

@@ -25,6 +25,7 @@
     <ProjectReference Include="..\DALClassLibrary\DALClassLibrary.csproj" />
     <ProjectReference Include="..\LogicLayerClassLibrary\LogicLayerClassLibrary.csproj" />
     <ProjectReference Include="..\ModelLibrary\ModelLibrary.csproj" />
+    <ProjectReference Include="..\Service Layer\Service Layer.csproj" />
   </ItemGroup>
 
 </Project>

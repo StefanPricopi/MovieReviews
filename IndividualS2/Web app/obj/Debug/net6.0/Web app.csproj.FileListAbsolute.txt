@@ -142,3 +142,77 @@ C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\De
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.pdb
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.genruntimeconfig.cache
 C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\ref\Web app.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\appsettings.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.staticwebassets.runtime.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.exe
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.deps.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.runtimeconfig.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Web app.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\DALClassLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\LogicLayerClassLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\ModelLibrary.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Service Layer.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\DALClassLibrary.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\LogicLayerClassLibrary.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\ModelLibrary.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Service Layer.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.csproj.AssemblyReference.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.AssemblyInfoInputs.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.AssemblyInfo.cs
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.csproj.CoreCompileInputs.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.RazorAssemblyInfo.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.RazorAssemblyInfo.cs
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets\msbuild.Web app.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets\msbuild.build.Web app.props
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Web app.props
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Web app.props
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\scopedcss\bundle\Web app.styles.css
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\scopedcss\projectbundle\Web app.bundle.scp.css
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.csproj.CopyComplete
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\refint\Web app.dll
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.pdb
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\Web app.genruntimeconfig.cache
+C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\Web app\obj\Debug\net6.0\ref\Web app.dll

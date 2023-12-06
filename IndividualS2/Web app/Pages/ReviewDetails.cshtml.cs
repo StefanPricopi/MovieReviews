@@ -20,7 +20,9 @@ namespace Web_app.Pages
         public List<CommentDTO> comments;
         [BindProperty]
         public CommentDTO comment { get; set; }
+
         private readonly CommentManager commentManager;
+
         public ReviewDetailsModel(CommentManager commentManager)
         {
             this.commentManager = commentManager;

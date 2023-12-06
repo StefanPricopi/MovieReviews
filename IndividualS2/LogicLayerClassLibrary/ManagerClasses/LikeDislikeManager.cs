@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using ModelLibrary.DTO;
 using ModelLibrary.Interfaces;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    public class LikeDislikeManager
+    public class LikeDislikeManager : ILikeDislikeManager
     {
         private ILikeDislike likeDislikeManager;
         public LikeDislikeManager(ILikeDislike likeDislike) 

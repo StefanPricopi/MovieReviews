@@ -1,12 +1,13 @@
 ﻿using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace LogicLayerClassLibrary.ManagerClasses
 {
-    public class UserManager 
+    public class UserManager : IUserManager
     {
 
         private readonly IUserManagerDAL user;

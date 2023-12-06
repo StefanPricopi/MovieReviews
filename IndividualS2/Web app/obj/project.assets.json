@@ -2078,7 +2078,8 @@
       "DALClassLibrary >= 1.0.0",
       "LogicLayerClassLibrary >= 1.0.0",
       "Microsoft.Data.SqlClient >= 5.1.1",
-      "ModelLibrary >= 1.0.0"
+      "ModelLibrary >= 1.0.0",
+      "Service Layer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2121,6 +2122,9 @@
             },
             "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
               "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+            },
+            "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
+              "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj"
             }
           }
         }
