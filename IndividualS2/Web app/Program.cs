@@ -15,6 +15,7 @@ using System.Collections.Generic;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+
 // Register Logic Layer interfaces and their implementations
 builder.Services.AddScoped<ICommentManager, CommentManager>();
 builder.Services.AddScoped<ILikeDislikeManager, LikeDislikeManager>();
@@ -30,12 +31,15 @@ builder.Services.AddScoped<ICommentDAL, CommentDAL>();
 builder.Services.AddScoped<ILikeDislike, LikeDislikeDAL>();
 builder.Services.AddScoped<IMediaManagerDAL, MediaDAL>();
 builder.Services.AddScoped<IMovieManagerDAL, MovieDAL>();
-builder.Services.AddScoped<IReviewManagerDAL, ReviewDAL>();
+builder.Services.AddScoped<IReviewManagerDALcrud, ReviewDAL>();
 builder.Services.AddScoped<ITvSeriesManagerDAL, TvSeriesDAL>();
 builder.Services.AddScoped<IUserManagerDAL, UserDAL>();
 builder.Services.AddScoped<IUserProfileDAL, UserProfileDAL>();
-//Register Manager classess
-builder.Services.AddScoped<CommentManager>(); 
+builder.Services.AddScoped<IReviewDisplay, ReviewDAL>();
+builder.Services.AddScoped<IReviewUtility, ReviewDAL>();
+
+// Register Manager classes
+builder.Services.AddScoped<CommentManager>();
 builder.Services.AddScoped<LikeDislikeManager>();
 builder.Services.AddScoped<MediaManager>();
 builder.Services.AddScoped<MovieManager>();
@@ -43,6 +47,7 @@ builder.Services.AddScoped<TvSeriesManager>();
 builder.Services.AddScoped<ReviewManager>();
 builder.Services.AddScoped<UserManager>();
 builder.Services.AddScoped<UserProfileManager>();
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = "LoginCookieAuth";

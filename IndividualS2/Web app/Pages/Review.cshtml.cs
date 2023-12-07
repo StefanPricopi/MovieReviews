@@ -5,28 +5,30 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using System.Collections.Generic;
 
 namespace Web_app.Pages
 {
+
     [Authorize]
     public class ReviewModel : PageModel
     {
-        private readonly MediaManager mediaManager;
-        private readonly ReviewManager reviewManager;
+        private readonly IReviewDisplay reviewDisplay;
+        private readonly IReviewUtility reviewUtility;
 
         public List<ReviewDTO> reviews;
         public string Message;
 
-        public ReviewModel(MediaManager mediaManager, ReviewManager reviewManager)
+        public ReviewModel(IReviewDisplay reviewDisplay, IReviewUtility reviewUtility)
         {
-            this.mediaManager = mediaManager;
-            this.reviewManager = reviewManager;
+            this.reviewDisplay = reviewDisplay;
+            this.reviewUtility = reviewUtility;
         }
 
         public void OnGet(string? message)
         {
-            reviews = reviewManager.DatagridToList(reviewManager.GetAllReview());
+            reviews = reviewUtility.DatagridToList(reviewDisplay.GetAllReview());
 
             if (message != null)
             {

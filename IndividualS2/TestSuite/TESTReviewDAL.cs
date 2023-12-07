@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DALClassLibrary.DALs
 {
-    public class TESTReviewDAL : IReviewManagerDAL
+    public class TESTReviewDAL : IReviewManagerDALcrud
     {
         public  Dictionary<int, ReviewDTO> reviews;
         public  Dictionary<int, ReviewDTO> archiveReviews { get; set; }

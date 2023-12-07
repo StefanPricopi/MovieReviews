@@ -13,6 +13,7 @@ using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using WinFormsApp1;
 
 namespace Desktop_App.Forms.ReviewManagerForms
@@ -21,14 +22,15 @@ namespace Desktop_App.Forms.ReviewManagerForms
     {
         private int id;
         ReviewManager reviewManager;
-        public EditReviewForm()
+        MediaManager mediaManager;
+        public EditReviewForm(IReviewManager reviewManager)
         {
             InitializeComponent();
-            reviewManager = new ReviewManager(new ReviewDAL());
             var reviewTable = reviewManager.GetAllReview();
             MainForm.TrimDataTableStrings(reviewTable);
             dgvReview.DataSource = reviewTable;
         }
+
 
         private void btnEditReview_Click(object sender, EventArgs e)
         {

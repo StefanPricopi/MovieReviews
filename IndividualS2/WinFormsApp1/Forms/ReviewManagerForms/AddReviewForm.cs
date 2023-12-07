@@ -3,26 +3,31 @@ using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
+using Service_Layer.Interfaces_PL_to_LL;
 using WinFormsApp1;
 
 namespace Desktop_App.Forms.ReviewManagerForms
 {
     public partial class AddReviewForm : Form
     {
-        private IReviewManagerDAL rev;
         private ReviewManager reviewManager;
         private MediaManager mediaManager;
-        
-        public AddReviewForm()
+
+        public AddReviewForm(IReviewManager reviewManager, IMediaManager mediaManager)
         {
             InitializeComponent();
-            reviewManager = new ReviewManager(new ReviewDAL());
-            mediaManager = new MediaManager(new MediaDAL());
+            this.reviewManager = (ReviewManager)reviewManager;
+            this.mediaManager = (MediaManager)mediaManager;
+
             cbMediaTitle.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cbMediaTitle.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbMediaTitle.DataSource = mediaManager.GetAllTitles();
+            cbMediaTitle.DataSource = this.mediaManager.GetAllTitles();
             cbMediaTitle.DisplayMember = "Title";
         }
+
+
+
         private void btnAddReview_Click(object sender, EventArgs e)
         {
             try

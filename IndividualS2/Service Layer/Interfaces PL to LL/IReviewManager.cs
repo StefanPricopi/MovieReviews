@@ -30,6 +30,6 @@ namespace Service_Layer.Interfaces_PL_to_LL
         public ReviewDTO GetActualReviewByMedia(int id);
         public DataTable GetAllArchivedReview();
         public List<ReviewDTO> DatagridToList(DataTable dataTable);
-        public ReviewDTO GetActualReviewByID(int id);
+        
     }
 }

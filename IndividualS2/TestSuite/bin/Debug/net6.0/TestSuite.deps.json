@@ -810,7 +810,8 @@
       "LogicLayerClassLibrary/1.0.0": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "ModelLibrary": "1.0.0"
+          "ModelLibrary": "1.0.0",
+          "Service Layer": "1.0.0"
         },
         "runtime": {
           "LogicLayerClassLibrary.dll": {}
@@ -822,6 +823,14 @@
         },
         "runtime": {
           "ModelLibrary.dll": {}
+        }
+      },
+      "Service Layer/1.0.0": {
+        "dependencies": {
+          "ModelLibrary": "1.0.0"
+        },
+        "runtime": {
+          "Service Layer.dll": {}
         }
       },
       "Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions/14.0.0.0": {
@@ -1287,6 +1296,11 @@
       "sha512": ""
     },
     "ModelLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service Layer/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

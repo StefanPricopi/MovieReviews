@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Identity.Client;
 using ModelLibrary.DTO;
-
-
+using ModelLibrary.Interfaces;
+using Service_Layer.Interfaces_PL_to_LL;
 
 namespace Web_app.Pages
 {
@@ -21,10 +21,12 @@ namespace Web_app.Pages
         [BindProperty]
         public CommentDTO comment { get; set; }
 
-        private readonly CommentManager commentManager;
+        private readonly IReviewDisplay reviewDisplay;
+        private readonly ICommentManager commentManager; 
 
-        public ReviewDetailsModel(CommentManager commentManager)
+        public ReviewDetailsModel(IReviewDisplay reviewDisplay, ICommentManager commentManager)
         {
+            this.reviewDisplay = reviewDisplay;
             this.commentManager = commentManager;
         }
 
@@ -32,8 +34,7 @@ namespace Web_app.Pages
         {
             try
             {
-                ReviewManager reviewManager = new ReviewManager(new ReviewDAL());
-                review = reviewManager.GetActualReviewByMedia(id);
+                review = reviewDisplay.GetActualReviewByMedia(id);
                 comments = commentManager.GetComments(id);
                 return Page();
             }
@@ -42,8 +43,6 @@ namespace Web_app.Pages
                 return Redirect($"/Review?message={ex.Message}.");
             }
         }
-
-
 
         public IActionResult OnPost()
         {
@@ -77,17 +76,16 @@ namespace Web_app.Pages
                 }
                 else
                 {
-                    return Page(); 
+                    return Page();
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message); 
-
+                Console.WriteLine(ex.Message);
                 return Redirect($"/Review?message={ex.Message}.");
             }
 
-            return Page(); 
+            return Page();
         }
     }
 }

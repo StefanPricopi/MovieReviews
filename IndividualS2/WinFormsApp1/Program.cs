@@ -4,6 +4,7 @@ using DALClassLibrary.Interfaces;
 using Desktop_App.Forms;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
+using ModelLibrary.Interfaces;
 using Service_Layer.Interfaces_PL_to_LL;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -20,7 +21,6 @@ namespace WinFormsApp1
             ApplicationConfiguration.Initialize();
 
             var builder = new ContainerBuilder();
-            builder.RegisterType<ReviewDAL>().As<IReviewManagerDAL>();
             builder.RegisterType<MediaDAL>().As<IMediaManagerDAL>();
             builder.RegisterType<MovieDAL>().As<IMovieManagerDAL>();
             builder.RegisterType<TvSeriesDAL>().As<ITvSeriesManagerDAL>();
@@ -28,6 +28,11 @@ namespace WinFormsApp1
             builder.RegisterType<MediaManager>().As<IMediaManager>();
             builder.RegisterType<TvSeriesManager>().As<ITvSeriesManager>();
             builder.RegisterType<MovieManager>().As<IMovieManager>();
+            builder.RegisterType<ReviewDAL>()
+                .As<IReviewManagerDALcrud>()
+                .As<IReviewDisplay>()
+                .As<IReviewUtility>();
+
 
             Container = builder.Build();
 

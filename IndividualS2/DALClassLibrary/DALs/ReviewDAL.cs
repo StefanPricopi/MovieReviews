@@ -3,6 +3,7 @@ using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using Microsoft.Data.SqlClient;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +14,7 @@ using static System.Formats.Asn1.AsnWriter;
 
 namespace DALClassLibrary.DALs
 {
-    public class ReviewDAL : Connection, IReviewManagerDAL
+    public class ReviewDAL : Connection, IReviewManagerDALcrud,IReviewDisplay,IReviewUtility
     {
         MediaDAL m = new MediaDAL();
         public bool AddReview(ReviewDTO reviewDTO)
@@ -35,7 +36,7 @@ namespace DALClassLibrary.DALs
                         cmdReview.Parameters.AddWithValue("@Description", reviewDTO.Description);
                         cmdReview.Parameters.AddWithValue("@MediaID", reviewDTO.MediaID);
                         cmdReview.Parameters.AddWithValue("@UserID", user);
-                        cmdReview.ExecuteNonQuery(); // Insert employee record
+                        cmdReview.ExecuteNonQuery(); 
                         return true;
 
                     }
@@ -352,10 +353,6 @@ namespace DALClassLibrary.DALs
                 return false;
             }
         }
-
-        public ReviewDTO GetActualReviewByID(int id)
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }

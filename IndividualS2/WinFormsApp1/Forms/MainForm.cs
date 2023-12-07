@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using System.Data;
 using ModelLibrary.DTO;
 using Service_Layer.Interfaces_PL_to_LL;
+using LogicLayerClassLibrary.Interfaces;
+using ModelLibrary.Interfaces;
 
 namespace WinFormsApp1
 {
@@ -83,14 +85,19 @@ namespace WinFormsApp1
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {
-            using (AddReviewForm f3 = new AddReviewForm())
+           
+
+            using (AddReviewForm f3 = new AddReviewForm(reviewManager, mediaManager))
             {
                 var result = f3.ShowDialog();
             }
         }
+
+
+
         private void btnUpdateReview_Click(object sender, EventArgs e)
         {
-            using (EditReviewForm f3 = new EditReviewForm())
+            using (EditReviewForm f3 = new EditReviewForm(reviewManager))
             {
                 var result = f3.ShowDialog();
             }

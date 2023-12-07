@@ -3,6 +3,7 @@ using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,27 @@ namespace LogicLayerClassLibrary.ManagerClasses
 {
     public  class ReviewManager : IReviewManager
     {
-        private IReviewManagerDAL reviewManagerDAL;
-        public static int ReviewId = 4;
-        public ReviewManager(IReviewManagerDAL reviewManager)
+        private IReviewManagerDALcrud reviewManagerDAL;
+        private IReviewDisplay reviewDisplay;
+        private IReviewUtility reviewUtility;
+      
+
+        public ReviewManager(
+            IReviewManagerDALcrud reviewManager,
+            IReviewDisplay display,
+            IReviewUtility utility)
         {
             reviewManagerDAL = reviewManager;
+            reviewDisplay = display;
+            reviewUtility = utility;
         }
+        public ReviewManager(IReviewManagerDALcrud reviewManager)
+        {
+
+        }
+
+       
+
         public bool AddReview(ReviewDTO reviewDTO)
         {
            return reviewManagerDAL.AddReview(reviewDTO);
@@ -35,23 +51,23 @@ namespace LogicLayerClassLibrary.ManagerClasses
         }
         public DataTable GetAllReview()
         {
-            return reviewManagerDAL.GetAllReview();
+            return reviewDisplay.GetAllReview();
         }
         public int GetReviewByTitle(string title)
         {
-            return  reviewManagerDAL.GetReviewByTitle(title);
+            return  reviewDisplay.GetReviewByTitle(title);
         }
         public List<string> GetAllReviewTitles()
         {
-            return reviewManagerDAL.GetAllReviewTitles();
+            return reviewUtility.GetAllReviewTitles();
         }
         public DataTable GetReviewByID(int id)
         {
-            return reviewManagerDAL.GetReviewById(id);
+            return reviewDisplay.GetReviewById(id);
         }
         public DataTable GetReviewByMedia(int id)
         {
-            return reviewManagerDAL.GetReviewByMedia(id);
+            return reviewDisplay.GetReviewByMedia(id);
         }
         public bool AddArchiveReview(ReviewDTO reviewDTO)
         {
@@ -63,7 +79,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
         }
         public ReviewDTO GetActualReviewByMedia(int id)
         {
-            return reviewManagerDAL.GetActualReviewByMedia(id);
+            return reviewDisplay.GetActualReviewByMedia(id);
         }
         public DataTable GetAllArchivedReview()
         {
@@ -71,11 +87,8 @@ namespace LogicLayerClassLibrary.ManagerClasses
         }
         public List<ReviewDTO> DatagridToList(DataTable dataTable)
         {
-            return reviewManagerDAL.DatagridToList(dataTable);
+            return reviewUtility.DatagridToList(dataTable);
         }
-        public ReviewDTO GetActualReviewByID(int id)
-        {
-            return reviewManagerDAL.GetActualReviewByID(id);
-        }
+      
     }
 }
