@@ -1,6 +1,7 @@
 ﻿using DALClassLibrary.Interfaces;
 using LogicLayerClassLibrary.Interfaces;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace LogicLayerClassLibrary.ManagerClasses
     public class MovieManager : IMovieManager
     {
         private IMovieManagerDAL movieManagerDAL;
-        public MovieManager(IMovieManagerDAL movieManagerDAL)
+        private IMovieDisplay movieDisplay;
+        public MovieManager(IMovieManagerDAL movieManagerDAL,IMovieDisplay movieDisplay)
         {
             this.movieManagerDAL = movieManagerDAL;
+            this.movieDisplay = movieDisplay;
 
         }
         public bool AddMovie(MediaDTO mediaDTO, MovieDTO movieDTO)
@@ -33,7 +36,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
         }
         public DataTable GetAllMovies()
         {
-            return movieManagerDAL.GetAllMovies();
+            return movieDisplay.GetAllMovies();
         }
 
     }

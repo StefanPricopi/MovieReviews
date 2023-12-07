@@ -70,7 +70,7 @@ namespace WinFormsApp1
     
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
-            using (AddTvSeriesForm f3 = new AddTvSeriesForm())
+            using (AddTvSeriesForm f3 = new AddTvSeriesForm(tvSeriesManager))
             {
                 var result = f3.ShowDialog();
             }
@@ -78,7 +78,7 @@ namespace WinFormsApp1
 
         private void btnUpdateTvSeries_Click(object sender, EventArgs e)
         {
-            using (EditTvSeriesForm f3 = new EditTvSeriesForm())
+            using (EditTvSeriesForm f3 = new EditTvSeriesForm(tvSeriesManager,mediaManager))
             {
                 var result = f3.ShowDialog();
             }
@@ -133,7 +133,7 @@ namespace WinFormsApp1
         }
         private void btnUpdateMovie_Click(object sender, EventArgs e)
         {
-            using (EditMovieForm f3 = new EditMovieForm())
+            using (EditMovieForm f3 = new EditMovieForm(movieManager))
             {
                 var result = f3.ShowDialog();
             }

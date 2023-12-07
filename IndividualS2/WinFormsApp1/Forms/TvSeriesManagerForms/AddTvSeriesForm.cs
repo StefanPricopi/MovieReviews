@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,13 +17,13 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
 {
     public partial class AddTvSeriesForm : Form
     {
-        private TvSeriesManager tvSeriesManager;
-        public AddTvSeriesForm()
+        private readonly ITvSeriesManager tvSeriesManager;
+
+        public AddTvSeriesForm(ITvSeriesManager tvSeriesManager)
         {
             InitializeComponent();
-            tvSeriesManager = new TvSeriesManager(new TvSeriesDAL());
+            this.tvSeriesManager = tvSeriesManager;
         }
-
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
             try

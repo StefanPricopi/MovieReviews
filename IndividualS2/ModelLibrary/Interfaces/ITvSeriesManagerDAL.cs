@@ -10,9 +10,7 @@ namespace DALClassLibrary.Interfaces
 {
     public interface ITvSeriesManagerDAL
     {
-        public DataTable GetAllTvSeries();
-
-        public DataTable SearchTvSeries(int id);
+      
         public bool AddTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvseriesDTO);
         public bool UpdateTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvSeriesDTO);
     }

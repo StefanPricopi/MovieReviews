@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Interfaces;
 using Microsoft.Data.SqlClient;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DALClassLibrary.DALs
 {
-    public class MovieDAL : Connection,IMovieManagerDAL
+    public class MovieDAL : Connection,IMovieManagerDAL,IMovieDisplay
     {
         public bool AddMovie(MediaDTO mediaDTO, MovieDTO movieDTO)
         {

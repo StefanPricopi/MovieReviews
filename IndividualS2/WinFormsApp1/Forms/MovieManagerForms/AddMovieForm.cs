@@ -27,8 +27,7 @@ namespace Desktop_App.Forms
         {
             InitializeComponent();
             mediaManager = new MediaManager(new MediaDAL());
-            movieManager = new MovieManager(new MovieDAL());
-
+            this.movieManager = (MovieManager)movieManager;
         }
 
         private void btnAddMovie_Click(object sender, EventArgs e)

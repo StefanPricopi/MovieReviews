@@ -22,8 +22,6 @@ namespace WinFormsApp1
 
             var builder = new ContainerBuilder();
             builder.RegisterType<MediaDAL>().As<IMediaManagerDAL>();
-            builder.RegisterType<MovieDAL>().As<IMovieManagerDAL>();
-            builder.RegisterType<TvSeriesDAL>().As<ITvSeriesManagerDAL>();
             builder.RegisterType<ReviewManager>().As<IReviewManager>();
             builder.RegisterType<MediaManager>().As<IMediaManager>();
             builder.RegisterType<TvSeriesManager>().As<ITvSeriesManager>();
@@ -32,6 +30,14 @@ namespace WinFormsApp1
                 .As<IReviewManagerDALcrud>()
                 .As<IReviewDisplay>()
                 .As<IReviewUtility>();
+            builder.RegisterType<MovieDAL>()
+                .As<IMovieManagerDAL>()
+                .As<IMovieDisplay>(); 
+
+            builder.RegisterType<TvSeriesDAL>()
+                .As<ITvSeriesManagerDAL>()
+                .As<ITvSeriesDisplay>(); 
+
 
 
             Container = builder.Build();

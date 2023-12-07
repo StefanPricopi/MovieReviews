@@ -13,6 +13,6 @@ namespace DALClassLibrary.Interfaces
         public bool AddMovie(MediaDTO mediaDTO, MovieDTO movieDTO);
         public bool UpdateMovie(MediaDTO mediaDTO, MovieDTO movieDTO);
         public DataTable SearchMovies(int id);
-        public DataTable GetAllMovies();
+        
     }
 }

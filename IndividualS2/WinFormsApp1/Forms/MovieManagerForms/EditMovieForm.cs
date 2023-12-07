@@ -4,6 +4,7 @@ using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,18 +20,17 @@ namespace Desktop_App.Forms.MovieManagerForms
 {
     public partial class EditMovieForm : Form
     {
-        MediaManager mediaManager;
-        MovieManager movieManager;
-        public EditMovieForm()
+        private readonly  IMovieManager _movieManager;
+
+        public EditMovieForm(IMovieManager movieManager)
         {
             InitializeComponent();
-            mediaManager = new MediaManager(new MediaDAL());
-            movieManager = new MovieManager(new MovieDAL());
+            this._movieManager = movieManager;
+
             var mediaTable = movieManager.GetAllMovies();
             MainForm.TrimDataTableStrings(mediaTable);
 
             dgvMovieCollection.DataSource = mediaTable;
-
         }
 
         private void btnEditMovie_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Desktop_App.Forms.MovieManagerForms
                             int selectedID = Convert.ToInt32(dgvMovieCollection.SelectedRows[0].Cells[0].Value);
                             mediaDTO.Id = selectedID;
 
-                            if (movieManager.UpdateMovie(mediaDTO, movieDTO))
+                            if (_movieManager.UpdateMovie(mediaDTO, movieDTO))
                             {
                                 MessageBox.Show("Success");
                                 this.Close();

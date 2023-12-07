@@ -2,6 +2,7 @@
 using LogicLayerClassLibrary.Enums;
 using LogicLayerClassLibrary.ManagerClasses;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,14 +18,16 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
 {
     public partial class EditTvSeriesForm : Form
     {
-        private TvSeriesManager seriesManager;
-        private MediaManager mediaManager;
-        public EditTvSeriesForm()
+        private readonly ITvSeriesManager tvSeriesManager;
+        private readonly IMediaManager mediaManager;
+
+        public EditTvSeriesForm(ITvSeriesManager tvSeriesManager, IMediaManager mediaManager)
         {
             InitializeComponent();
-            seriesManager = new TvSeriesManager(new TvSeriesDAL());
-            mediaManager = new MediaManager(new MediaDAL());
-            var mediaTable = seriesManager.GetAllTvSeries();
+            this.tvSeriesManager = tvSeriesManager;
+            this.mediaManager = mediaManager;
+
+            var mediaTable = tvSeriesManager.GetAllTvSeries();
             MainForm.TrimDataTableStrings(mediaTable);
             dgvTvSeriesCollection.DataSource = mediaTable;
         }
@@ -71,7 +74,7 @@ namespace Desktop_App.Forms.TvSeriesManagerForms
                                     int selectedID = Convert.ToInt32(dgvTvSeriesCollection.SelectedRows[0].Cells[0].Value);
                                     mediaDTO.Id = selectedID;
 
-                                    if (seriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
+                                    if (tvSeriesManager.UpdateTvSeries(mediaDTO, tvSeriesDTO))
                                     {
                                         MessageBox.Show("Success");
                                         this.Close();

@@ -37,6 +37,9 @@ builder.Services.AddScoped<IUserManagerDAL, UserDAL>();
 builder.Services.AddScoped<IUserProfileDAL, UserProfileDAL>();
 builder.Services.AddScoped<IReviewDisplay, ReviewDAL>();
 builder.Services.AddScoped<IReviewUtility, ReviewDAL>();
+builder.Services.AddScoped<IMovieDisplay, MovieDAL>();
+builder.Services.AddScoped<ITvSeriesDisplay, TvSeriesDAL>();
+
 
 // Register Manager classes
 builder.Services.AddScoped<CommentManager>();

@@ -1,6 +1,7 @@
 ﻿using DALClassLibrary.Interfaces;
 using LogicLayerClassLibrary.Interfaces;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace LogicLayerClassLibrary.ManagerClasses
     public class TvSeriesManager : ITvSeriesManager
     {
         private ITvSeriesManagerDAL tvSeriesManagerDAL;
+        private ITvSeriesDisplay tvSeriesDisplay;
         
-        public TvSeriesManager(ITvSeriesManagerDAL tvSeriesManagerDAL)
+        public TvSeriesManager(ITvSeriesManagerDAL tvSeriesManagerDAL,ITvSeriesDisplay tvSeriesDisplay)
         {
             this.tvSeriesManagerDAL = tvSeriesManagerDAL;
+            this.tvSeriesDisplay = tvSeriesDisplay;
 
         }
         public bool AddTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvSeriesDTO)
@@ -30,11 +33,11 @@ namespace LogicLayerClassLibrary.ManagerClasses
         }
         public DataTable GetAllTvSeries()
         {
-            return tvSeriesManagerDAL.GetAllTvSeries();
+            return tvSeriesDisplay.GetAllTvSeries();
         }
         public DataTable SearchTvSeries(int id)
         {
-            return tvSeriesManagerDAL.SearchTvSeries(id);
+            return tvSeriesDisplay.SearchTvSeries(id);
         }
     }
 }

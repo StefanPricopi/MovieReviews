@@ -1,6 +1,7 @@
 ﻿using DALClassLibrary.Interfaces;
 using Microsoft.Data.SqlClient;
 using ModelLibrary.DTO;
+using ModelLibrary.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DALClassLibrary.DALs
 {
-    public class TvSeriesDAL:Connection,ITvSeriesManagerDAL
+    public class TvSeriesDAL:Connection,ITvSeriesManagerDAL,ITvSeriesDisplay
     {
         public bool AddTvSeries(MediaDTO mediaDTO, TvSeriesDTO tvseriesDTO)
         {
