@@ -126,7 +126,7 @@ namespace WinFormsApp1
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
-            using (AddMovieForm f3 = new AddMovieForm())
+            using (AddMovieForm f3 = new AddMovieForm(movieManager,mediaManager))
             {
                 var result = f3.ShowDialog();
             }

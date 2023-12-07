@@ -15,15 +15,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ModelLibrary.DTO;
+using Service_Layer.Interfaces_PL_to_LL;
 
 namespace Desktop_App.Forms
 {
     public partial class AddMovieForm : Form
     {
-        private MediaManager mediaManager;
-        private MovieManager movieManager;
+        private IMediaManager mediaManager;
+        private IMovieManager movieManager;
 
-        public AddMovieForm()
+        public AddMovieForm(IMovieManager movieManager,IMediaManager mediaManager)
         {
             InitializeComponent();
             mediaManager = new MediaManager(new MediaDAL());
