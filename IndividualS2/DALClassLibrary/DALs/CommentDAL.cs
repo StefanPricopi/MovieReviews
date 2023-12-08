@@ -36,12 +36,8 @@ namespace DALClassLibrary.DALs
                 }
             }
             catch (Exception ex)
-            {
-                // Log the exception for debugging
-                Console.WriteLine(ex.Message); // Replace with proper logging
-
-                // Return false or throw the exception for further handling
-                throw;
+            {                
+                Console.WriteLine(ex.Message);        
             }
             return false;
         }
