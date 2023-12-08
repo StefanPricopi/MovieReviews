@@ -40,6 +40,10 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return mediaManagerDAL.GetActualMediaByID(id);
         }
+        public List<MediaDTO> RecommendationsAlgo(int id)
+        {
+            return mediaManagerDAL.RecommendationsAlgo(id);
+        }
 
 
     }

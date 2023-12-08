@@ -17,5 +17,6 @@ namespace LogicLayerClassLibrary.Interfaces
         public int GetMediaByTitle(string title);
         public List<MediaDTO> DatagridToList(DataTable dt);
         public MediaDTO GetActualMediaByID(int id);
+        public List<MediaDTO> RecommendationsAlgo(int id);
     }
 }
