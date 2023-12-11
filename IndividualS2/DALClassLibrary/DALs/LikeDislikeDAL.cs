@@ -171,11 +171,9 @@ namespace DALClassLibrary.DALs
                     }
                     else
                     {
-                        RemoveDislike(c);
-                        if (!CheckUserLiked(c)) 
-                        {
-                            AddDislike(c);
-                        }
+                       RemoveDislike(c);
+                       AddLike(c);
+                        
                     }
 
                  

@@ -16,5 +16,6 @@ namespace Service_Layer.Interfaces_PL_to_LL
         public List<string> GetAllTitles();
         public List<MediaDTO> DatagridToList(DataTable dataTable);
         public MediaDTO GetActualMediaByID(int id);
+        public List<MediaDTO> RecommendationsAlgo(int id);
     }
 }

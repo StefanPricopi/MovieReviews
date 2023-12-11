@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelLibrary", "ModelLibrar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSuite", "TestSuite\TestSuite.csproj", "{4C37C37F-C1FB-4239-9AC2-1D57DC4B7873}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service Layer", "Service Layer\Service Layer.csproj", "{DBAB9060-1FEA-4E5F-8D46-B577EFBA1A1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service Layer", "Service Layer\Service Layer.csproj", "{DBAB9060-1FEA-4E5F-8D46-B577EFBA1A1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
