@@ -65,9 +65,9 @@ namespace WinFormsApp1
             cb_MediaTitleReviews.DataSource = mediaManager.GetAllTitles();
             cb_MediaTitleReviews.DisplayMember = "Title";
         }
-    
 
-    
+
+
         private void btnAddTvSeries_Click(object sender, EventArgs e)
         {
             using (AddTvSeriesForm f3 = new AddTvSeriesForm(tvSeriesManager))
@@ -78,14 +78,14 @@ namespace WinFormsApp1
 
         private void btnUpdateTvSeries_Click(object sender, EventArgs e)
         {
-            using (EditTvSeriesForm f3 = new EditTvSeriesForm(tvSeriesManager,mediaManager))
+            using (EditTvSeriesForm f3 = new EditTvSeriesForm(tvSeriesManager, mediaManager))
             {
                 var result = f3.ShowDialog();
             }
         }
         private void btnAddReview_Click(object sender, EventArgs e)
         {
-           
+
 
             using (AddReviewForm f3 = new AddReviewForm(reviewManager, mediaManager))
             {
@@ -126,7 +126,7 @@ namespace WinFormsApp1
         }
         private void btnAddMovie_Click_1(object sender, EventArgs e)
         {
-            using (AddMovieForm f3 = new AddMovieForm(movieManager,mediaManager))
+            using (AddMovieForm f3 = new AddMovieForm(movieManager, mediaManager))
             {
                 var result = f3.ShowDialog();
             }
@@ -239,7 +239,7 @@ namespace WinFormsApp1
             if (dataGridViewReview.SelectedCells.Count > 0)
             {
                 int id = Convert.ToInt32(dataGridViewReview.Rows[dataGridViewReview.SelectedCells[0].RowIndex].Cells[0].Value);
-                if(reviewManager.GetActualReviewByMedia(id) != null)
+                if (reviewManager.GetActualReviewByMedia(id) != null)
                 {
                     if (reviewManager.AddArchiveReview(reviewManager.GetActualReviewByMedia(id)))
                     {
@@ -247,7 +247,7 @@ namespace WinFormsApp1
                         MessageBox.Show("Archive was succesfull");
                     }
                 }
-                
+
 
             }
             else MessageBox.Show("wrong input");

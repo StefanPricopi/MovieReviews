@@ -16,6 +16,28 @@
                                 <p class="card-text">First Name: @Model.userProfile.firstName</p>
                                 <p class="card-text">Last Name: @Model.userProfile.lastName</p>
                                 <p class="card-text">Email: @Model.userProfile.email</p>
+                                <form method="post" action="UpdatePreferences">
+                                    <label>
+                                        <input type="checkbox" name="MinuteNewsletterPreference" value="minute">
+                                        Receive minute newsletters
+                                    </label>
+                                    <br />
+                                    <label>
+                                        <input type="checkbox" name="DailyNewsletterPreference" value="day">
+                                        Receive daily newsletters
+                                    </label>
+                                    <br />
+                                    <label>
+                                        <input type="checkbox" name="WeeklyNewsletterPreference" value="week">
+                                        Receive weekly newsletters
+                                    </label>
+                                    <br />
+                                    <input type="submit" value="Save Preferences">
+                                </form>
+                                <form asp-controller="ProfilePage" asp-action="SendNewsletters" method="post">
+                                    <input type="hidden" name="userPreferenceId" value="@Model.userProfile.userID" />
+                                    <button type="submit">Send Newsletters</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -23,5 +45,6 @@
             </div>
         </div>
     }
+
 
 </body>

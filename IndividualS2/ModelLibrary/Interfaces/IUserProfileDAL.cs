@@ -10,5 +10,6 @@ namespace ModelLibrary.Interfaces
     public interface IUserProfileDAL
     {
         public UserProfileDTO GetActualProfileByID(int id);
+        public List<string> GetUserNewsletterPreferences(int userId);
     }
 }

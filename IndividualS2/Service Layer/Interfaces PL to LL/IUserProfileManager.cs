@@ -11,5 +11,6 @@ namespace Service_Layer.Interfaces_PL_to_LL
     public interface IUserProfileManager
     {
         public UserProfileDTO GetActualProfileByID(int id);
+        public List<string> GetUserNewsletterPreferences(int userId);
     }
 }
