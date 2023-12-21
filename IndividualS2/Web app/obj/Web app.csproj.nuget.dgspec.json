@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj": {}
+    "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
+    "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj",
         "projectName": "DALClassLibrary",
-        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj",
+        "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
               },
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+    "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
         "projectName": "LogicLayerClassLibrary",
-        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
+        "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -108,11 +108,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
               },
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj"
               }
             }
           }
@@ -156,14 +156,14 @@
         }
       }
     },
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+    "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
         "projectName": "ModelLibrary",
-        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
+        "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -225,14 +225,14 @@
         }
       }
     },
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
+    "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj",
         "projectName": "Service Layer",
-        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj",
+        "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -253,8 +253,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
               }
             }
           }
@@ -294,14 +294,14 @@
         }
       }
     },
-    "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj": {
+    "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj",
+        "projectUniqueName": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj",
         "projectName": "Web app",
-        "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj",
+        "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\Web app.csproj",
         "packagesPath": "C:\\Users\\alin1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Web app\\obj\\",
+        "outputPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Web app\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -322,17 +322,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\DALClassLibrary\\DALClassLibrary.csproj"
               },
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\LogicLayerClassLibrary\\LogicLayerClassLibrary.csproj"
               },
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\ModelLibrary\\ModelLibrary.csproj"
               },
-              "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
-                "projectPath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj"
+              "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj": {
+                "projectPath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\Service Layer\\Service Layer.csproj"
               }
             }
           }

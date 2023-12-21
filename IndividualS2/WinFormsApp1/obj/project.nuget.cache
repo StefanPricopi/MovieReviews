@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lsHqgB2RnLk5xmOO30VdD75idpmEy/YAByH6sxrCXtZyZkP4hqXoSEGdHAEAGgMGOEiKm2cOZHywumlUvmXtLw==",
+  "dgSpecHash": "h6InNAejMJmtcUw26U5bhryxzSWpz7ZuzbQ+aSQGV5h7e7cwTi4Bp62Ol+q2se+7PTGal3txrixMpxosqt11Bw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alin1\\OneDrive\\Desktop\\indiv 2.0\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
+  "projectFilePath": "C:\\Users\\alin1\\Desktop\\indiv\\s2-cb01-individual\\IndividualS2\\WinFormsApp1\\Desktop App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alin1\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
     "C:\\Users\\alin1\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
