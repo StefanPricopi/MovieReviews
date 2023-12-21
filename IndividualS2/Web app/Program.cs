@@ -1,115 +1,123 @@
 using DALClassLibrary.DALs;
 using DALClassLibrary.Interfaces;
-using LogicLayerClassLibrary.Classes;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using ModelLibrary.Interfaces;
 using ModelLibrary.NewsletterStrategy;
 using Service_Layer.Interfaces_PL_to_LL;
-using System;
-using System.Collections.Generic;
 
-var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
-
-// Register Logic Layer interfaces and their implementations
-builder.Services.AddScoped<ICommentManager, CommentManager>();
-builder.Services.AddScoped<ILikeDislikeManager, LikeDislikeManager>();
-builder.Services.AddScoped<IMediaManager, MediaManager>();
-builder.Services.AddScoped<IMovieManager, MovieManager>();
-builder.Services.AddScoped<ITvSeriesManager, TvSeriesManager>();
-builder.Services.AddScoped<IReviewManager, ReviewManager>();
-builder.Services.AddScoped<IUserManager, UserManager>();
-builder.Services.AddScoped<IUserProfileManager, UserProfileManager>();
-builder.Services.AddScoped<MinuteNewsletter>();
-builder.Services.AddScoped<DailyNewsletter>();
-builder.Services.AddScoped<WeeklyNewsletter>();
-
-builder.Services.AddScoped<CompositeNewsletterStrategy>(provider =>
+public class Program
 {
-    var strategies = new List<INewsletterStrategy>
+    public static void Main(string[] args)
     {
-        provider.GetRequiredService<MinuteNewsletter>(),
-        provider.GetRequiredService<DailyNewsletter>(),
-        provider.GetRequiredService<WeeklyNewsletter>()
-        // Add more strategies as needed
-    };
+        var host = CreateHostBuilder(args).Build();
+        host.Run();
+    }
 
-    return new CompositeNewsletterStrategy(strategies);
-});
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.ConfigureServices((hostContext, services) =>
+                {
+                    services.AddRazorPages();
 
-builder.Services.AddScoped<NewsletterBackgroundService>();
+                    // LL
+                    services.AddScoped<ICommentManager, CommentManager>();
+                    services.AddScoped<ILikeDislikeManager, LikeDislikeManager>();
+                    services.AddScoped<IMediaManager, MediaManager>();
+                    services.AddScoped<IMovieManager, MovieManager>();
+                    services.AddScoped<ITvSeriesManager, TvSeriesManager>();
+                    services.AddScoped<IReviewManager, ReviewManager>();
+                    services.AddScoped<IUserManager, UserManager>();
+                    services.AddScoped<IUserProfileManager, UserProfileManager>();
+                    services.AddScoped<MinuteNewsletter>();
+                    services.AddScoped<DailyNewsletter>();
+                    services.AddScoped<WeeklyNewsletter>();
+                    //managers
+                    services.AddScoped<CommentManager>();
+                    services.AddScoped<LikeDislikeManager>();
+                    services.AddScoped<MediaManager>();
+                    services.AddScoped<MovieManager>();
+                    services.AddScoped<TvSeriesManager>();
+                    services.AddScoped<ReviewManager>();
+                    services.AddScoped<UserManager>();
+                    services.AddScoped<UserProfileManager>();
+                    services.AddScoped<NewsletterManager>();
 
-// Register Data Access Layer interfaces and their implementations
-builder.Services.AddScoped<ICommentDAL, CommentDAL>();
-builder.Services.AddScoped<ILikeDislike, LikeDislikeDAL>();
-builder.Services.AddScoped<IMediaManagerDAL, MediaDAL>();
-builder.Services.AddScoped<IMovieManagerDAL, MovieDAL>();
-builder.Services.AddScoped<IReviewManagerDALcrud, ReviewDAL>();
-builder.Services.AddScoped<ITvSeriesManagerDAL, TvSeriesDAL>();
-builder.Services.AddScoped<IUserManagerDAL, UserDAL>();
-builder.Services.AddScoped<IUserProfileDAL, UserProfileDAL>();
-builder.Services.AddScoped<IReviewDisplay, ReviewDAL>();
-builder.Services.AddScoped<IReviewUtility, ReviewDAL>();
-builder.Services.AddScoped<IMovieDisplay, MovieDAL>();
-builder.Services.AddScoped<ITvSeriesDisplay, TvSeriesDAL>();
+                    //DAL
+                    services.AddScoped<ICommentDAL, CommentDAL>();
+                    services.AddScoped<ILikeDislike, LikeDislikeDAL>();
+                    services.AddScoped<IMediaManagerDAL, MediaDAL>();
+                    services.AddScoped<IMovieManagerDAL, MovieDAL>();
+                    services.AddScoped<IReviewManagerDALcrud, ReviewDAL>();
+                    services.AddScoped<ITvSeriesManagerDAL, TvSeriesDAL>();
+                    services.AddScoped<IUserManagerDAL, UserDAL>();
+                    services.AddScoped<IUserProfileDAL, UserProfileDAL>();
+                    services.AddScoped<IReviewDisplay, ReviewDAL>();
+                    services.AddScoped<IReviewUtility, ReviewDAL>();
+                    services.AddScoped<IMovieDisplay, MovieDAL>();
+                    services.AddScoped<ITvSeriesDisplay, TvSeriesDAL>();
+                    services.AddScoped<MinuteNewsletter>();
+                    services.AddScoped<DailyNewsletter>();
+                    services.AddScoped<WeeklyNewsletter>();
 
 
-// Register Manager classes
-builder.Services.AddScoped<CommentManager>();
-builder.Services.AddScoped<LikeDislikeManager>();
-builder.Services.AddScoped<MediaManager>();
-builder.Services.AddScoped<MovieManager>();
-builder.Services.AddScoped<TvSeriesManager>();
-builder.Services.AddScoped<ReviewManager>();
-builder.Services.AddScoped<UserManager>();
-builder.Services.AddScoped<UserProfileManager>();
+                    services.AddScoped<CompositeNewsletterStrategy>(provider =>
+                    {
+                        var strategies = new List<INewsletterStrategy>
+                    {
+                        provider.GetRequiredService<MinuteNewsletter>(),
+                        provider.GetRequiredService<DailyNewsletter>(),
+                        provider.GetRequiredService<WeeklyNewsletter>()
+                    };
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = "LoginCookieAuth";
-    options.DefaultChallengeScheme = "LoginCookieAuth";
-})
-.AddCookie("LoginCookieAuth", options =>
-{
-    options.Cookie.Name = "LoginCookieAuth";
-    options.LoginPath = "/login";
-    options.AccessDeniedPath = "/Index";
-});
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("MustBeManager", policy =>
-       policy.RequireRole("Manager"));
+                        return new CompositeNewsletterStrategy(strategies);
+                    });
 
-    options.AddPolicy("MustBeVisitor", policy =>
-        policy.RequireRole("Visitor"));
-});
-builder.Services.AddScoped<ICommentDAL, CommentDAL>();
-builder.Services.AddScoped<CommentManager>();
+                    services.AddHostedService<NewsletterBackgroundService>();
 
-var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    app.UseHsts();
+                    services.AddAuthentication(options =>
+                    {
+                        options.DefaultAuthenticateScheme = "LoginCookieAuth";
+                        options.DefaultChallengeScheme = "LoginCookieAuth";
+                    })
+                    .AddCookie("LoginCookieAuth", options =>
+                    {
+                        options.Cookie.Name = "LoginCookieAuth";
+                        options.LoginPath = "/login";
+                        options.AccessDeniedPath = "/Index";
+                    });
+
+                    services.AddAuthorization(options =>
+                    {
+                        options.AddPolicy("MustBeManager", policy =>
+                            policy.RequireRole("Manager"));
+
+                        options.AddPolicy("MustBeVisitor", policy =>
+                            policy.RequireRole("Visitor"));
+                    });
+                })
+                .Configure(app =>
+                {
+                    // Configure middleware, routing, etc.
+                    app.UseHttpsRedirection();
+                    app.UseStaticFiles();
+                    app.UseRouting();
+                    app.UseAuthentication();
+                    app.UseAuthorization();
+
+
+                    app.UseEndpoints(endpoints =>
+                    {
+                        endpoints.MapRazorPages();
+                    });
+                });
+            });
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapRazorPages();
-});
-
-app.Run();

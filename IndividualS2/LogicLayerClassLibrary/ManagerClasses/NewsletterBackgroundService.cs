@@ -1,19 +1,19 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 public class NewsletterBackgroundService : BackgroundService
 {
-    private readonly CompositeNewsletterStrategy _compositeNewsletterStrategy;
-    private readonly int _intervalMinutes = 1; // Interval for sending newsletters in minutes
+    private readonly IServiceProvider _serviceProvider;
     private System.Timers.Timer _timer;
 
-    public NewsletterBackgroundService(CompositeNewsletterStrategy compositeNewsletterStrategy)
+    public NewsletterBackgroundService(IServiceProvider serviceProvider)
     {
-        _compositeNewsletterStrategy = compositeNewsletterStrategy;
+        _serviceProvider = serviceProvider;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _timer = new System.Timers.Timer(TimeSpan.FromMinutes(_intervalMinutes).TotalMilliseconds);
+        _timer = new System.Timers.Timer(TimeSpan.FromMinutes(1).TotalMilliseconds);
         _timer.Elapsed += async (sender, e) => await SendNewsletterAsync();
         _timer.Start();
 
@@ -25,13 +25,16 @@ public class NewsletterBackgroundService : BackgroundService
 
     private async Task SendNewsletterAsync()
     {
-        _compositeNewsletterStrategy.SendNewsletter();
-        Console.WriteLine("Newsletter sent.");
+        using (var scope = _serviceProvider.CreateScope())
+        {
+            var compositeNewsletterStrategy = scope.ServiceProvider.GetRequiredService<CompositeNewsletterStrategy>();
+            compositeNewsletterStrategy.SendNewsletter();
+            
+        }
     }
 
     public override async Task StopAsync(CancellationToken stoppingToken)
     {
-        // Stop the timer when the service is stopped
         _timer?.Stop();
         await base.StopAsync(stoppingToken);
     }

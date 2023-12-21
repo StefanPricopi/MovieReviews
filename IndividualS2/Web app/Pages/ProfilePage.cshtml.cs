@@ -22,10 +22,9 @@ namespace Web_app.Pages
         public UserProfileDTO userProfile;
         public List<CommentDTO> comments = new List<CommentDTO>();
 
-        public ProfilePageModel(INewsletterStrategy newsletterStrategy, UserProfileManager userProfileManager, NewsletterManager newsletterManager, CommentManager commentManager)
+        public ProfilePageModel( UserProfileManager userProfileManager, NewsletterManager newsletterManager, CommentManager commentManager)
         {
             this.newsletterManager = newsletterManager;
-            this._newsletterStrategy = newsletterStrategy;
             this.userProfileManager = userProfileManager;
             this.commentManager = commentManager;
         }
