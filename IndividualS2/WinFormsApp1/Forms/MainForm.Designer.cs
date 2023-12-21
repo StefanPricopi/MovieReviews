@@ -49,6 +49,7 @@
             btnUpdateTvSeries = new Button();
             btnAddTvSeries = new Button();
             tpReviewManager = new TabPage();
+            BtnViewArchivedReview = new Button();
             btnArchiveReview = new Button();
             btn_SearchReviewForAMedia = new Button();
             MediaTitleReviews = new Label();
@@ -63,7 +64,7 @@
             btnAddReview = new Button();
             reviewBindingSource = new BindingSource(components);
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            BtnViewArchivedReview = new Button();
+            tabPage1 = new TabPage();
             tCMain.SuspendLayout();
             tpMovieManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovieCollection).BeginInit();
@@ -79,6 +80,7 @@
             tCMain.Controls.Add(tpMovieManager);
             tCMain.Controls.Add(tpTvSeriesManager);
             tCMain.Controls.Add(tpReviewManager);
+            tCMain.Controls.Add(tabPage1);
             tCMain.Location = new Point(11, 3);
             tCMain.Name = "tCMain";
             tCMain.SelectedIndex = 0;
@@ -296,6 +298,16 @@
             tpReviewManager.Text = "ReviewManager";
             tpReviewManager.UseVisualStyleBackColor = true;
             // 
+            // BtnViewArchivedReview
+            // 
+            BtnViewArchivedReview.Location = new Point(70, 622);
+            BtnViewArchivedReview.Name = "BtnViewArchivedReview";
+            BtnViewArchivedReview.Size = new Size(135, 42);
+            BtnViewArchivedReview.TabIndex = 30;
+            BtnViewArchivedReview.Text = "View Archived reviews";
+            BtnViewArchivedReview.UseVisualStyleBackColor = true;
+            BtnViewArchivedReview.Click += BtnViewArchivedReview_Click;
+            // 
             // btnArchiveReview
             // 
             btnArchiveReview.Location = new Point(70, 552);
@@ -419,15 +431,14 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // BtnViewArchivedReview
+            // tabPage1
             // 
-            BtnViewArchivedReview.Location = new Point(70, 622);
-            BtnViewArchivedReview.Name = "BtnViewArchivedReview";
-            BtnViewArchivedReview.Size = new Size(135, 42);
-            BtnViewArchivedReview.TabIndex = 30;
-            BtnViewArchivedReview.Text = "View Archived reviews";
-            BtnViewArchivedReview.UseVisualStyleBackColor = true;
-            BtnViewArchivedReview.Click += BtnViewArchivedReview_Click;
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new Size(1490, 698);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "Statistics";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -488,5 +499,6 @@
         private ComboBox cbTitleReview;
         private Button btnArchiveReview;
         private Button BtnViewArchivedReview;
+        private TabPage tabPage1;
     }
 }

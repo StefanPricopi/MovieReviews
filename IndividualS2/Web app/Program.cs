@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using ModelLibrary.Interfaces;
+using ModelLibrary.NewsletterStrategy;
 using Service_Layer.Interfaces_PL_to_LL;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,24 @@ builder.Services.AddScoped<ITvSeriesManager, TvSeriesManager>();
 builder.Services.AddScoped<IReviewManager, ReviewManager>();
 builder.Services.AddScoped<IUserManager, UserManager>();
 builder.Services.AddScoped<IUserProfileManager, UserProfileManager>();
+builder.Services.AddScoped<MinuteNewsletter>();
+builder.Services.AddScoped<DailyNewsletter>();
+builder.Services.AddScoped<WeeklyNewsletter>();
+
+builder.Services.AddScoped<CompositeNewsletterStrategy>(provider =>
+{
+    var strategies = new List<INewsletterStrategy>
+    {
+        provider.GetRequiredService<MinuteNewsletter>(),
+        provider.GetRequiredService<DailyNewsletter>(),
+        provider.GetRequiredService<WeeklyNewsletter>()
+        // Add more strategies as needed
+    };
+
+    return new CompositeNewsletterStrategy(strategies);
+});
+
+builder.Services.AddScoped<NewsletterBackgroundService>();
 
 // Register Data Access Layer interfaces and their implementations
 builder.Services.AddScoped<ICommentDAL, CommentDAL>();

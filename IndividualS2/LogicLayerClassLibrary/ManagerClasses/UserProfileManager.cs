@@ -22,5 +22,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return userProfile.GetActualProfileByID(id);
         }
+        public List<string> GetUserNewsletterPreferences(int userId)
+        {
+            return userProfile.GetUserNewsletterPreferences(userId);
+        }
     }
 }

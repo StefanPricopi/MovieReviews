@@ -59,6 +59,7 @@ namespace Web_app.Pages
 
                     await HttpContext.SignInAsync("LoginCookieAuth", claimsPrincipal);
 
+
                     return RedirectToPage("/Review");
                 }
                 else if (ValidateLoginVisitorCase())

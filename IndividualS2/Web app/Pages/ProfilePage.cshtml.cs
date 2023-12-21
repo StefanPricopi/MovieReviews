@@ -7,6 +7,8 @@ using ModelLibrary.DTO;
 using System.Security.Claims;
 using System;
 using System.Collections.Generic;
+using ModelLibrary.Interfaces;
+using ModelLibrary.NewsletterStrategy;
 
 namespace Web_app.Pages
 {
@@ -14,12 +16,16 @@ namespace Web_app.Pages
     {
         private readonly UserProfileManager userProfileManager;
         private readonly CommentManager commentManager;
+        private readonly NewsletterManager newsletterManager;
+        private readonly INewsletterStrategy _newsletterStrategy;
 
         public UserProfileDTO userProfile;
         public List<CommentDTO> comments = new List<CommentDTO>();
 
-        public ProfilePageModel(UserProfileManager userProfileManager, CommentManager commentManager)
+        public ProfilePageModel(INewsletterStrategy newsletterStrategy, UserProfileManager userProfileManager, NewsletterManager newsletterManager, CommentManager commentManager)
         {
+            this.newsletterManager = newsletterManager;
+            this._newsletterStrategy = newsletterStrategy;
             this.userProfileManager = userProfileManager;
             this.commentManager = commentManager;
         }
@@ -35,6 +41,8 @@ namespace Web_app.Pages
                     if (int.TryParse(userIdValue, out int userId))
                     {
                         userProfile = userProfileManager.GetActualProfileByID(userId);
+
+
                         if (userProfile != null)
                         {
                             return Page();
@@ -48,5 +56,6 @@ namespace Web_app.Pages
                 return Redirect($"/Index?message={ex.Message}");
             }
         }
+        
     }
 }

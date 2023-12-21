@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DALClassLibrary.DALs
 {
-    public class UserProfileDAL:Connection,IUserProfileDAL
+    public class UserProfileDAL : Connection, IUserProfileDAL
     {
         public UserProfileDTO GetActualProfileByID(int id)
         {
@@ -51,5 +51,45 @@ namespace DALClassLibrary.DALs
                 throw new Exception("Invalid ID");
             }
         }
+        public List<string> GetUserNewsletterPreferences(int userId)
+        {
+            List<string> preferences = new List<string>();
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string query = "SELECT prefers_60s, prefers_daily, prefers_weekly FROM DTO_UserProfile WHERE UserID = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Check boolean columns for user preferences
+                            if ((bool)reader["prefers_60s"])
+                            {
+                                preferences.Add("60s");
+                            }
+
+                            if ((bool)reader["prefers_daily"])
+                            {
+                                preferences.Add("daily");
+                            }
+
+                            if ((bool)reader["prefers_weekly"])
+                            {
+                                preferences.Add("weekly");
+                            }
+                        }
+                    }
+                }
+            }
+
+            return preferences;
+        }
+
+
     }
 }
