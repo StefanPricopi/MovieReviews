@@ -16,4 +16,8 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\8.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\8.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\alin1\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>
+    <PkgLiveCharts_WinForms Condition=" '$(PkgLiveCharts_WinForms)' == '' ">C:\Users\alin1\.nuget\packages\livecharts.winforms\0.9.7.1</PkgLiveCharts_WinForms>
+  </PropertyGroup>
 </Project>

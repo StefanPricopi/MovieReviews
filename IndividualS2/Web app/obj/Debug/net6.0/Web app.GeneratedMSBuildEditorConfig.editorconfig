@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/alin1/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Chart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alin1/Desktop/indiv/s2-cb01-individual/IndividualS2/Web app/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

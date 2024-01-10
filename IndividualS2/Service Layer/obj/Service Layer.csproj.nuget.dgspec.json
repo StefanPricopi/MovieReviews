@@ -44,6 +44,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
+            "LiveCharts.Wpf": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.1, )"
@@ -51,6 +63,10 @@
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Syncfusion.Pdf.WinForms": {
+              "target": "Package",
+              "version": "[24.1.45, )"
             }
           },
           "imports": [
@@ -117,9 +133,25 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "LiveCharts": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "LiveCharts.WinForms": {
+              "target": "Package",
+              "version": "[0.9.7.1, )"
+            },
+            "LiveCharts.Wpf": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
             "Microsoft.Extensions.Hosting": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Syncfusion.Pdf.WinForms": {
+              "target": "Package",
+              "version": "[24.1.45, )"
             }
           },
           "imports": [

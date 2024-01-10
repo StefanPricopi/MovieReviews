@@ -45,5 +45,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return likeDislikeManager.GetLikeDislike(id);
         }
+        public List<Tuple<int, int, string>> Top5MostLiked()
+        {
+            return likeDislikeManager.Top5MostLiked();
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace ModelLibrary.Interfaces
         public void RemoveDislike(LikeDislikeDTO c);
         public void ToggleLikeDislike(LikeDislikeDTO c);
         public LikeDislikeDTO GetLikeDislike(int id);
+        public List<Tuple<int, int, string>> Top5MostLiked();
 
 
     }

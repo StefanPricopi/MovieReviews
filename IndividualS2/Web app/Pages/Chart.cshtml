@@ -1,0 +1,46 @@
+﻿@page
+@model Web_app.Pages.ChartModel
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+
+    <canvas id="Top5LikedMedia" style="width:100%;max-width:600px"></canvas>
+
+    <script>
+        // Directly use the Razor model property in JavaScript
+        var labels = [];
+        var data = [];
+
+        @foreach (var item in Model.Top5LikedMedia)
+        {
+            <text>
+                labels.push(`@Html.Raw(item.Item3)`);
+            data.push(@item.Item2);
+            </text>
+        }
+
+                var colors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("Top5LikedMedia", {
+            type: "pie",
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: colors
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Top 5 Most Liked Media"
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

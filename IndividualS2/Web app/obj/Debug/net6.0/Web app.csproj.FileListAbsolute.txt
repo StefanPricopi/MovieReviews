@@ -358,3 +358,9 @@ C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\n
 C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
 C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
 C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\LiveCharts.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\LiveCharts.WinForms.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\LiveCharts.Wpf.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Syncfusion.Compression.Base.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Syncfusion.Licensing.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Debug\net6.0\Syncfusion.Pdf.Base.dll

@@ -227,13 +227,64 @@ namespace DALClassLibrary.DALs
             }
             catch (Exception ex)
             {
-                // Handle exceptions, log, or return null/throw a specific exception based on your needs
+                
                 throw new Exception("Error fetching like/dislike information: " + ex.Message);
             }
+         }
+        public List<Tuple<int, int, string>> Top5MostLiked()
+        {
+            List<Tuple<int, int, string>> result = new List<Tuple<int, int, string>>();
+
+            using (SqlConnection connection = InitializeConection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    string sql = @"
+                SELECT TOP 5
+                    LD.MediaID,
+                    COUNT(*) AS LikeCount,
+                    MT.Title
+                FROM
+                    DTO_LikesDislikes LD
+                    JOIN DTO_Media MT ON LD.MediaID = MT.MediaID
+                WHERE
+                    LD.LikeStatus = 'Like'
+                GROUP BY
+                    LD.MediaID, MT.Title
+                ORDER BY
+                    LikeCount DESC;";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                int mediaID = (int)reader["MediaID"];
+                                int likeCount = (int)reader["LikeCount"];
+                                string title = reader["Title"].ToString();
+
+                                result.Add(new Tuple<int, int, string>(mediaID, likeCount, title));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error retrieving top 5 most liked: " + ex.Message);
+                }
             }
 
+            return result;
         }
+
+
+
     }
+
+}
 
 
 
