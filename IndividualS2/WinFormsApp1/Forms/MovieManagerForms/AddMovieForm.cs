@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ModelLibrary.DTO;
 using Service_Layer.Interfaces_PL_to_LL;
+using ModelLibrary.Exceptions;
 
 namespace Desktop_App.Forms
 {
@@ -62,15 +63,17 @@ namespace Desktop_App.Forms
                     }
                     else
                     {
-                        MessageBox.Show("Invalid duration");
-                        return;
+                        throw new MediaException("Invalid duration");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Invalid genre");
-                    return;
+                    throw new MediaException("Invalid genre");
                 }
+            }
+            catch (MediaException ex)
+            {
+                MessageBox.Show($"Invalid Media: {ex.Message}");
             }
             catch (Exception)
             {

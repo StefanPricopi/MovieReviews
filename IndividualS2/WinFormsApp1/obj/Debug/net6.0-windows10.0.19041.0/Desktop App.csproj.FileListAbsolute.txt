@@ -190,3 +190,103 @@ C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\WinFor
 C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.pdb
 C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.genruntimeconfig.cache
 C:\Users\alin1\OneDrive\Desktop\indiv 2.0\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\ref\Desktop App.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.exe
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.deps.json
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.runtimeconfig.json
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Desktop App.pdb
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Autofac.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Azure.Core.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Azure.Identity.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.CommandLine.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Diagnostics.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Hosting.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.Console.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.Debug.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.EventLog.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Logging.EventSource.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Options.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Extensions.Primitives.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Identity.Client.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.SqlServer.Server.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Web.WebView2.Core.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Configuration.ConfigurationManager.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Diagnostics.EventLog.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Memory.Data.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Runtime.Caching.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Text.Encodings.Web.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\System.Text.Json.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win\lib\net6.0\System.Diagnostics.EventLog.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Microsoft.Windows.SDK.NET.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\WinRT.Runtime.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\DALClassLibrary.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\LogicLayerClassLibrary.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\ModelLibrary.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Service Layer.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\DALClassLibrary.pdb
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\LogicLayerClassLibrary.pdb
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\ModelLibrary.pdb
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\bin\Debug\net6.0-windows10.0.19041.0\Service Layer.pdb
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.csproj.AssemblyReference.cache
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.Login.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\WinFormsApp1.MainForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.AddMovieForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.MovieManagerForms.EditMovieForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.ReviewManagerForms.AddReviewForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.ReviewManagerForms.EditReviewForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.TvSeriesManagerForms.AddTvSeriesForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop_App.Forms.TvSeriesManagerForms.EditTvSeriesForm.resources
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.csproj.GenerateResource.cache
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.AssemblyInfoInputs.cache
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.AssemblyInfo.cs
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.csproj.CoreCompileInputs.cache
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.csproj.CopyComplete
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\refint\Desktop App.dll
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.pdb
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\Desktop App.genruntimeconfig.cache
+C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\WinFormsApp1\obj\Debug\net6.0-windows10.0.19041.0\ref\Desktop App.dll
