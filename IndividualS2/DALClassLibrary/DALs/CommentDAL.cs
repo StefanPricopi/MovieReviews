@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using LogicLayerClassLibrary.Classes;
+using Microsoft.Data.SqlClient;
 using ModelLibrary.BaseClasses;
 using ModelLibrary.DTO;
 using ModelLibrary.Interfaces;
@@ -82,7 +83,7 @@ namespace DALClassLibrary.DALs
             {
                 connection.Open();
 
-                string selectQuery1 = "SELECT CommentDescription,UserID, ReviewID FROM DTO_Comments WHERE UserID=@UserID";
+                string selectQuery1 = "SELECT CommentID,CommentDescription,UserID, ReviewID FROM DTO_Comments WHERE UserID=@UserID";
 
                 using (SqlCommand command1 = new SqlCommand(selectQuery1, connection))
                 {
@@ -96,6 +97,7 @@ namespace DALClassLibrary.DALs
                             {
                                 CommentDescription = reader["CommentDescription"].ToString(),
                                 ReviewID = Convert.ToInt32(reader["ReviewID"]),
+                                CommentID =Convert.ToInt32(reader["CommentID"]),
                                 UserID = Convert.ToInt32(reader["UserID"])
                             };
 
@@ -106,6 +108,32 @@ namespace DALClassLibrary.DALs
             }
 
             return comments;
+        }
+        public bool DeleteComment(int commentId)
+        {
+            try
+            {
+                using (SqlConnection connection = InitializeConection())
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmdDelete = new SqlCommand("DELETE FROM DTO_Comments WHERE CommentID = @CommentID", connection))
+                    {
+                        cmdDelete.Parameters.AddWithValue("@CommentID", commentId);
+                        int rowsAffected = cmdDelete.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return false;
         }
     }
 }

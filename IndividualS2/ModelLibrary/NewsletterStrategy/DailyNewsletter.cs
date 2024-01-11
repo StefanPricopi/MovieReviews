@@ -33,7 +33,7 @@ namespace ModelLibrary.NewsletterStrategy
                 var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential(senderEmail, "yzkpi sovm jfyr ssyz"), // Use your Gmail password here
+                    Credentials = new NetworkCredential(senderEmail, "yzkpi sovm jfyr ssyz"), 
                     EnableSsl = true,
                 };
                 smtpClient.Send(mail);

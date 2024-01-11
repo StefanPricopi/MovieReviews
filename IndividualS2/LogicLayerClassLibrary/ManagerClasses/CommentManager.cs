@@ -30,5 +30,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return commentManagerDAL.GetAllCommentsByUser(userID);
         }
+        public bool DeleteComment(int commentId)
+        {
+            return commentManagerDAL.DeleteComment(commentId);
+        }
     }
 }

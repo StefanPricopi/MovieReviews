@@ -14,5 +14,6 @@ namespace ModelLibrary.Interfaces
         public bool AddComment(CommentDTO commentDTO);
         public List<CommentDTO> GetAllComments(int id);
         public List<CommentDTO> GetAllCommentsByUser(int userID);
+        public bool DeleteComment(int commentId);
     }
 }

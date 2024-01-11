@@ -35,5 +35,17 @@ namespace Web_app.Pages
                 return Redirect($"/ManagerPanel?message={ex.Message}.");
             }
         }
+        public IActionResult OnPostDeleteComment(int commentId)
+        {   
+            try
+            {
+                commentManager.DeleteComment(commentId);
+                return RedirectToPage("/UserDetails");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToPage("/Error"); 
+            }
+        }
     }
 }
