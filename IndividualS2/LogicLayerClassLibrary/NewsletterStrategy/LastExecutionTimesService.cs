@@ -24,37 +24,13 @@ namespace LogicLayerClassLibrary.NewsletterStrategy
             var newTimer = new System.Timers.Timer(strategy.Interval.TotalMilliseconds);
             newTimer.Elapsed += elapsedEventHandler;
             newTimer.Start();
-
             _strategyTimers[strategy] = newTimer;
-
-            // Add an entry for the strategy in the _strategyInfo dictionary
             _strategyInfo[strategy] = (DateTime.UtcNow, newTimer);
-
-            // Log timer creation
             Console.WriteLine($"Timer created for {strategy.StrategyIdentifier}");
-
             return newTimer;
         }
 
-        // If you have a method to dispose or stop timers, you can log it there
-        public void DisposeTimer(INewsletterStrategy strategy)
-        {
-            if (_strategyTimers.TryGetValue(strategy, out var timer))
-            {
-                // Stop the timer
-                timer.Stop();
-
-                // Dispose the timer (if applicable)
-                timer.Dispose();
-
-                // Log timer disposal
-                Console.WriteLine($"Timer disposed for {strategy.StrategyIdentifier}");
-            }
-            else
-            {
-                Console.WriteLine($"Timer not found for {strategy.StrategyIdentifier}");
-            }
-        }
+       
 
         public DateTime GetLastExecutionTime(INewsletterStrategy strategy)
         {
@@ -65,14 +41,13 @@ namespace LogicLayerClassLibrary.NewsletterStrategy
             }
 
             Console.WriteLine($"GetLastExecutionTime for {strategy.StrategyIdentifier}: No last execution time found");
-            return default(DateTime); // or throw an exception if you prefer
+            return default(DateTime); 
         }
 
         public void UpdateLastExecutionTime(INewsletterStrategy strategy, DateTime lastExecutionTime)
         {
             if (_strategyInfo.TryGetValue(strategy, out var info))
             {
-                // Update both the last execution time and the timer
                 _strategyInfo[strategy] = (lastExecutionTime, info.Timer);
             }
             else
@@ -90,7 +65,7 @@ namespace LogicLayerClassLibrary.NewsletterStrategy
             _strategyInfo[strategy] = (_strategyInfo[strategy].LastExecutionTime, timer);
         }
 
-        // Optionally, you may want a method to get the timer for a strategy if needed
+        
         public System.Timers.Timer GetTimer(INewsletterStrategy strategy)
         {
             return _strategyInfo[strategy].Timer;

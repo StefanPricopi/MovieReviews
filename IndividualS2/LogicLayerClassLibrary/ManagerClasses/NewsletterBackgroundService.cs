@@ -24,7 +24,7 @@ public class NewsletterBackgroundService : BackgroundService
 
             foreach (var strategy in compositeNewsletterStrategy._strategies)
             {
-                // Use LastExecutionTimesService to manage timers
+                
                 var timer = _lastExecutionTimesService.GetOrAddTimer(strategy, async (sender, e) => await SendNewsletterAsync(strategy));
             }
 
@@ -46,7 +46,6 @@ public class NewsletterBackgroundService : BackgroundService
 
     public override async Task StopAsync(CancellationToken stoppingToken)
     {
-        // The timers are managed by LastExecutionTimesService, no need to stop/dispose them here
         await base.StopAsync(stoppingToken);
     }
 }
