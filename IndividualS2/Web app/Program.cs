@@ -70,15 +70,17 @@ public class Program
 
                     services.AddScoped<CompositeNewsletterStrategy>(provider =>
                     {
+                        var userProfileManager = provider.GetRequiredService<UserProfileManager>();
                         var strategies = new List<INewsletterStrategy>
-                    {
-                        provider.GetRequiredService<MinuteNewsletter>(),
-                        provider.GetRequiredService<DailyNewsletter>(),
-                        provider.GetRequiredService<WeeklyNewsletter>()
-                    };
+                        {
+                            provider.GetRequiredService<MinuteNewsletter>(),
+                            provider.GetRequiredService<DailyNewsletter>(),
+                            provider.GetRequiredService<WeeklyNewsletter>()
+                        };
 
-                        return new CompositeNewsletterStrategy(strategies);
+                        return new CompositeNewsletterStrategy(strategies, userProfileManager);
                     });
+
 
                     services.AddHostedService<NewsletterBackgroundService>();
 

@@ -6,11 +6,14 @@ using System.Net.Mail;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using LogicLayerClassLibrary.Classes;
 
 namespace ModelLibrary.NewsletterStrategy
 {
+
     public class MinuteNewsletter : INewsletterStrategy
     {
+        public string StrategyIdentifier => "60s";
         public void SendNewsletter()
         {
            
@@ -31,7 +34,7 @@ namespace ModelLibrary.NewsletterStrategy
                     Credentials = new NetworkCredential(senderEmail, "yzkpi sovm jfyr ssyz"), 
                     EnableSsl = true,
                 };
-                smtpClient.Send(mail);
+                //smtpClient.Send(mail);
                 Console.WriteLine("minute newsletter sent");
             }
             catch (Exception ex)

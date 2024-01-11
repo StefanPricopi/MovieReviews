@@ -8,14 +8,16 @@ using System;
 using System.Threading;
 using System.Net;
 using System.Net.Mail;
+using LogicLayerClassLibrary.Classes;
 
 namespace ModelLibrary.NewsletterStrategy
 {
-    public class WeeklyNewsletter : INewsletterStrategy
+    public class DailyNewsletter : INewsletterStrategy
     {
-        public WeeklyNewsletter()
-        {
-
+        public string StrategyIdentifier => "daily";
+        public DailyNewsletter()
+        { 
+            
         }
         public void SendNewsletter()
         {
@@ -23,8 +25,8 @@ namespace ModelLibrary.NewsletterStrategy
             {
                 string senderEmail = "alin13032001asd@gmail.com";
                 string receiverEmail = "pricopi.stefan.alin@gmail.com";
-                string subject = "New weekly Newsletter Subject";
-                string messageBody = "This is your weekly update";
+                string subject = "New daily Newsletter Subject";
+                string messageBody = "This is your daily update";
 
                 MailMessage mail = new MailMessage(senderEmail, receiverEmail);
                 mail.Subject = subject;
@@ -36,15 +38,15 @@ namespace ModelLibrary.NewsletterStrategy
                     Credentials = new NetworkCredential(senderEmail, "yzkpi sovm jfyr ssyz"), 
                     EnableSsl = true,
                 };
-                smtpClient.Send(mail);
-                Console.WriteLine("weekly newsletter sent");
+                //smtpClient.Send(mail);
+                Console.WriteLine("daily newsletter sent");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
         }
-    
     }
-
 }
+
+
