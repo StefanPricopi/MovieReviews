@@ -14,6 +14,20 @@ namespace ModelLibrary.NewsletterStrategy
     public class MinuteNewsletter : INewsletterStrategy
     {
         public string StrategyIdentifier => "60s";
+        public TimeSpan Interval => TimeSpan.FromSeconds(60);
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            var other = (MinuteNewsletter)obj;
+            return Interval == other.Interval && StrategyIdentifier == other.StrategyIdentifier;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Interval, StrategyIdentifier);
+        }
         public void SendNewsletter()
         {
            

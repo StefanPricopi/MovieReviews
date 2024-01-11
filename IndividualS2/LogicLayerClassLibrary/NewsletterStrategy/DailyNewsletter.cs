@@ -15,6 +15,20 @@ namespace ModelLibrary.NewsletterStrategy
     public class DailyNewsletter : INewsletterStrategy
     {
         public string StrategyIdentifier => "daily";
+        public TimeSpan Interval => TimeSpan.FromDays(1);
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+
+            var other = (DailyNewsletter)obj;
+            return Interval == other.Interval && StrategyIdentifier == other.StrategyIdentifier;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Interval, StrategyIdentifier);
+        }
         public DailyNewsletter()
         { 
             

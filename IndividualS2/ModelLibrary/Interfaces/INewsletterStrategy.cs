@@ -10,6 +10,7 @@ namespace ModelLibrary.Interfaces
     public interface INewsletterStrategy
     {
         string StrategyIdentifier { get; }
+        TimeSpan Interval { get; }
         void SendNewsletter();
     }
 }

@@ -2,6 +2,7 @@ using DALClassLibrary.DALs;
 using DALClassLibrary.Interfaces;
 using LogicLayerClassLibrary.Interfaces;
 using LogicLayerClassLibrary.ManagerClasses;
+using LogicLayerClassLibrary.NewsletterStrategy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -49,7 +50,7 @@ public class Program
                     services.AddScoped<UserManager>();
                     services.AddScoped<UserProfileManager>();
                     services.AddScoped<NewsletterManager>();
-
+                    
                     //DAL
                     services.AddScoped<ICommentDAL, CommentDAL>();
                     services.AddScoped<ILikeDislike, LikeDislikeDAL>();
@@ -67,18 +68,19 @@ public class Program
                     services.AddScoped<DailyNewsletter>();
                     services.AddScoped<WeeklyNewsletter>();
 
-
+                    services.AddSingleton<ILastExecutionTimesService, LastExecutionTimesService>();
                     services.AddScoped<CompositeNewsletterStrategy>(provider =>
                     {
                         var userProfileManager = provider.GetRequiredService<UserProfileManager>();
+                        var lastExecutionTimesService = provider.GetRequiredService<ILastExecutionTimesService>();
                         var strategies = new List<INewsletterStrategy>
-                        {
-                            provider.GetRequiredService<MinuteNewsletter>(),
-                            provider.GetRequiredService<DailyNewsletter>(),
-                            provider.GetRequiredService<WeeklyNewsletter>()
-                        };
+                    {
+                        provider.GetRequiredService<MinuteNewsletter>(),
+                        provider.GetRequiredService<DailyNewsletter>(),
+                        provider.GetRequiredService<WeeklyNewsletter>()
+                    };
 
-                        return new CompositeNewsletterStrategy(strategies, userProfileManager);
+                        return new CompositeNewsletterStrategy(strategies, userProfileManager, lastExecutionTimesService);
                     });
 
 
