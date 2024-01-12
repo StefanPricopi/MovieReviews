@@ -65,7 +65,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
 
                 var userhashedpass = HashedPassword($"{password}{Obj.Salt.Trim()}");
                 Console.WriteLine(Obj.Salt);
-                if (userhashedpass == Obj.PasswordHash && Obj.RoleID == 1)
+                if (userhashedpass == Obj.PasswordHash && Obj.RoleID == 1&& Obj.Status=="active")
                 {
                     return true;
                 }
@@ -83,7 +83,7 @@ namespace LogicLayerClassLibrary.ManagerClasses
                 {
                     var userhashedpass = HashedPassword($"{password}{Obj.Salt.Trim()}");
                     Console.WriteLine(Obj.Salt);
-                    if (userhashedpass == Obj.PasswordHash && Obj.RoleID == 2)
+                    if (userhashedpass == Obj.PasswordHash && Obj.RoleID == 2 && Obj.Status == "active")
                     {
                         return true;
                     }
@@ -94,8 +94,12 @@ namespace LogicLayerClassLibrary.ManagerClasses
             else { return false; }
         }
 
-        
+        public void UpdateUserStatus(int userId)
+        {
+            this.user.UpdateUserStatus(userId);
+        }
 
-        
+
+
     }
 }

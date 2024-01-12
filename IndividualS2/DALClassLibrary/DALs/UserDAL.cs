@@ -25,12 +25,13 @@ namespace DALClassLibrary.DALs
                     try
                     {
                         // Insert into DTO_Users table
-                        string userSql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt, RoleID) VALUES (@Username, @PasswordHash, @Salt, @RoleID); SELECT SCOPE_IDENTITY();";
+                        string userSql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt, RoleID,Status) VALUES (@Username, @PasswordHash, @Salt, @RoleID,@Status); SELECT SCOPE_IDENTITY();";
                         SqlCommand userCmd = new SqlCommand(userSql, conn, transaction);
                         userCmd.Parameters.AddWithValue("@Username", userDTO.Username);
                         userCmd.Parameters.AddWithValue("@PasswordHash", hashedPW);
                         userCmd.Parameters.AddWithValue("@Salt", salt);
                         userCmd.Parameters.AddWithValue("@RoleID", userDTO.RoleID);
+                        userCmd.Parameters.AddWithValue("@Status", userDTO.Status);
 
                         // ExecuteScalar to get the generated identity value
                         int userId = Convert.ToInt32(userCmd.ExecuteScalar());
@@ -87,7 +88,8 @@ namespace DALClassLibrary.DALs
                             Username = dr["Username"].ToString().Trim(),
                             PasswordHash = dr["PasswordHash"].ToString(),
                             Salt = dr["Salt"].ToString(),
-                            RoleID =Convert.ToInt32( dr["RoleID"])
+                            RoleID = Convert.ToInt32(dr["RoleID"]),
+                            Status = dr["Status"].ToString()
 
                         };
                         return new User(userDTO); // Create a User object from the UserDTO
@@ -149,6 +151,25 @@ namespace DALClassLibrary.DALs
             throw new NotImplementedException();
         }
 
-        
+        public void UpdateUserStatus(int userId)
+        {
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string query = @"
+            UPDATE DTO_Users
+            SET Status = @Status
+            WHERE UserID = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@Status", "inactive");
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
     }
 }

@@ -27,6 +27,7 @@ namespace Web_app.Pages
             if (User != null)
             {
                 User.RoleID = 2;
+                User.Status = "active";
                 try
                 {
                     if (userManager.AddCreateAccount(User))

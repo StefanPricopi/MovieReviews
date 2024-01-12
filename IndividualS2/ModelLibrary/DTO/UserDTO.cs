@@ -18,6 +18,7 @@ namespace ModelLibrary.DTO
         public int RoleID { get; set; }
         public int VisitorID { get; set; }
         public int EmployeeID { get; set; }
+        public string Status { get; set; }
         public UserDTO()
         {
             

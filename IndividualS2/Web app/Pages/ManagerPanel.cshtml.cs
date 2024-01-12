@@ -23,6 +23,17 @@ namespace Web_app.Pages
         public void OnGet(string? message)
         {
             Users = userManager.GetAllAccounts();
+            if (TempData.ContainsKey("SuccessMessage"))
+            {
+                ViewData["SuccessMessage"] = TempData["SuccessMessage"];
+            }
+        }
+        public IActionResult OnPostSetAccountInactive(int userId)
+        {
+            userManager.UpdateUserStatus(userId);
+            TempData["SuccessMessage"] = "Account has been suspended";
+
+            return RedirectToPage("/ManagerPanel");
         }
 
 
