@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\alin1\Desktop\individual\s2-cb01-individual\IndividualS2\Web app\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2023-11-24T14:26:45.6525825Z;True|2023-11-24T15:21:00.5586495+01:00;</History>
+    <_PublishTargetUrl>C:\Users\alin1\Desktop\indiv\s2-cb01-individual\IndividualS2\Web app\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2024-01-12T02:11:12.6483095Z;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
