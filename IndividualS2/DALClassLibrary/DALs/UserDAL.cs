@@ -13,21 +13,49 @@ namespace DALClassLibrary.DALs
         {
             try
             {
-                
+
                 var salt = DateTime.Now.ToString();
                 var hashedPW = UserManager.HashedPassword($"{userDTO.PasswordHash}{salt.Trim()}");
+
                 using (SqlConnection conn = InitializeConection())
                 {
-                    string sql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt,RoleID) VALUES (@Username, @PasswordHash,  @Salt,@RoleID)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@Username", userDTO.Username);
-                    cmd.Parameters.AddWithValue("@PasswordHash", hashedPW);
-                    cmd.Parameters.AddWithValue("@Salt", salt);
-                    cmd.Parameters.AddWithValue("@RoleID", userDTO.RoleID);
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    return true;
+                    SqlTransaction transaction = conn.BeginTransaction();
+
+                    try
+                    {
+                        // Insert into DTO_Users table
+                        string userSql = "INSERT INTO DTO_Users (Username, PasswordHash, Salt, RoleID) VALUES (@Username, @PasswordHash, @Salt, @RoleID); SELECT SCOPE_IDENTITY();";
+                        SqlCommand userCmd = new SqlCommand(userSql, conn, transaction);
+                        userCmd.Parameters.AddWithValue("@Username", userDTO.Username);
+                        userCmd.Parameters.AddWithValue("@PasswordHash", hashedPW);
+                        userCmd.Parameters.AddWithValue("@Salt", salt);
+                        userCmd.Parameters.AddWithValue("@RoleID", userDTO.RoleID);
+
+                        // ExecuteScalar to get the generated identity value
+                        int userId = Convert.ToInt32(userCmd.ExecuteScalar());
+
+                        // Insert into DTO_UserProfile table
+                        string profileSql = "INSERT INTO DTO_UserProfile (UserID, FirstName, LastName, Email, prefers_60s, prefers_daily, prefers_weekly) " +
+                                            "VALUES (@UserID, 'J', 'M', 'j.m@gmail.com', 0, 0, 0)";
+                        SqlCommand profileCmd = new SqlCommand(profileSql, conn, transaction);
+                        profileCmd.Parameters.AddWithValue("@UserID", userId);
+                        profileCmd.ExecuteNonQuery();
+
+                        // Commit the transaction
+                        transaction.Commit();
+
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Rollback the transaction in case of an exception
+                        transaction.Rollback();
+                        // Handle exception
+                        return false;
+                    }
                 }
+
             }
             catch (Exception ex)
             {

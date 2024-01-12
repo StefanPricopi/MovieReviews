@@ -52,4 +52,6 @@ async function RefreshComments() {
         console.error('Error refreshing comments:', error);
     }
 }
+console.log('mediaData:', @Html.Raw(Json.Serialize(Model.Top5LikedMedia)));
+
 
