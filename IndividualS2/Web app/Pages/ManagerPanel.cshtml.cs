@@ -1,10 +1,9 @@
-using DALClassLibrary.DALs;
 using LogicLayerClassLibrary.Interfaces;
-using LogicLayerClassLibrary.ManagerClasses;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc;
 using ModelLibrary.DTO;
+using LogicLayerClassLibrary.ManagerClasses;
 
 namespace Web_app.Pages
 {
@@ -23,20 +22,37 @@ namespace Web_app.Pages
         public void OnGet(string? message)
         {
             Users = userManager.GetAllAccounts();
-            if (TempData.ContainsKey("SuccessMessage"))
-            {
-                ViewData["SuccessMessage"] = TempData["SuccessMessage"];
-            }
         }
-        public IActionResult OnPostSetAccountInactive(int userId)
-        {
-            userManager.UpdateUserStatus(userId);
-            TempData["SuccessMessage"] = "Account has been suspended";
 
+        public string GetUserStatusColor(string status)
+        {
+            // Logging status for debugging
+            Console.WriteLine($"User Status: {status}");
+
+            // Null check added here
+            return status?.ToLower() == "active" ? "btn-danger" : "btn-success";
+        }
+
+        public string GetButtonLabel(string status)
+        {
+            // Logging status for debugging
+            Console.WriteLine($"User Status: {status}");
+
+            // Null check added here
+            return status?.ToLower() == "active" ? "Set Inactive" : "Set Active";
+        }
+
+        public IActionResult OnPostToggleAccountStatus(int userId, string currentStatus)
+        {
+            string newStatus = currentStatus.ToLower() == "active" ? "inactive" : "active";
+
+            // Toggle the account status
+            userManager.UpdateUserStatus(userId, newStatus);
+
+            // Redirect back to the ManagerPanel page or any other page
             return RedirectToPage("/ManagerPanel");
         }
-
-
     }
+
 }
 

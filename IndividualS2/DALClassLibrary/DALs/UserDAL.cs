@@ -124,6 +124,7 @@ namespace DALClassLibrary.DALs
                         {
                             UserId = Convert.ToInt32(dr["UserID"]),
                             Username = dr["Username"].ToString(),
+                            Status = dr["Status"].ToString()
                         };
                         accounts.Add(userDTO);
                     }
@@ -151,7 +152,7 @@ namespace DALClassLibrary.DALs
             throw new NotImplementedException();
         }
 
-        public void UpdateUserStatus(int userId)
+        public void UpdateUserStatus(int userId, string newStatus)
         {
             using (SqlConnection connection = InitializeConection())
             {
@@ -164,12 +165,13 @@ namespace DALClassLibrary.DALs
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@UserId", userId);
-                    command.Parameters.AddWithValue("@Status", "inactive");
+                    command.Parameters.AddWithValue("@Status", newStatus);
 
                     command.ExecuteNonQuery();
                 }
             }
         }
+
 
     }
 }

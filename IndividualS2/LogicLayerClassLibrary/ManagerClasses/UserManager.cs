@@ -94,9 +94,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
             else { return false; }
         }
 
-        public void UpdateUserStatus(int userId)
+        public void UpdateUserStatus(int userId,string status)
         {
-            this.user.UpdateUserStatus(userId);
+            this.user.UpdateUserStatus(userId,status);
         }
 
 

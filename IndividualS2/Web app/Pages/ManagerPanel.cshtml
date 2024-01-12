@@ -1,16 +1,5 @@
 ﻿@page
 @model Web_app.Pages.ManagerPanelModel
-@{
-}
-@if (ViewData["SuccessMessage"] != null)
-{
-    <div class="alert alert-success" role="alert">
-        @Html.Raw(ViewData["SuccessMessage"])
-    </div>
-}
-<div>
-    <b>Profiles:</b>
-</div>
 
 <div class="cards-grid">
     @foreach (var userDTO in Model.Users)
@@ -21,12 +10,19 @@
                 <h2>Username: @userDTO.Username</h2>
                 <p>UserID: @userDTO.UserId</p>
 
-                <!-- Add a button to set the account to inactive -->
-                <form method="post" asp-page-handler="SetAccountInactive" asp-route-userId="@userDTO.UserId" onsubmit="return confirm('Are you sure you want to set this account to inactive?');">
+                <!-- Add a button to toggle the account status -->
+                <form method="post" asp-page-handler="ToggleAccountStatus" asp-route-userId="@userDTO.UserId" asp-route-currentStatus="@userDTO.Status">
                     <input type="hidden" name="userId" value="@userDTO.UserId" />
-                    <button type="submit" class="btn btn-danger">Set Inactive</button>
+                    <button type="submit" class="btn @(Model.GetUserStatusColor(userDTO.Status))">@Model.GetButtonLabel(userDTO.Status)</button>
                 </form>
             </div>
         </a>
     }
 </div>
+
+@if (ViewData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @Html.Raw(ViewData["SuccessMessage"])
+    </div>
+}

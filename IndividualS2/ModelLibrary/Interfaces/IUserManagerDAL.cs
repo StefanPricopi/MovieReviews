@@ -16,7 +16,7 @@ namespace LogicLayerClassLibrary.Interfaces
         
         public List<UserDTO> GetAllAccounts();
         public User GetCurrentUserByUsername(string username);
-        public void UpdateUserStatus(int userId);
+        public void UpdateUserStatus(int userId,string status);
 
 
     }
