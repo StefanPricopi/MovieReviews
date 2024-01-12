@@ -3,7 +3,12 @@
 @{
 }
 <body>
-
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
     @if (Model.userProfile != null)
     {
         <div class="container mt-5">
@@ -16,25 +21,26 @@
                                 <p class="card-text">First Name: @Model.userProfile.firstName</p>
                                 <p class="card-text">Last Name: @Model.userProfile.lastName</p>
                                 <p class="card-text">Email: @Model.userProfile.email</p>
-                                <form method="post" action="UpdatePreferences">
+                                <form method="post" asp-page-handler="UpdatePreferences">
+                                    <input type="hidden" asp-for="userProfile.userID" />
                                     <label>
-                                        <input type="checkbox" name="MinuteNewsletterPreference" value="minute">
+                                        <input type="checkbox" name="MinuteNewsletterPreference" value="1" checked="@Model.userProfile.MinuteNewsletterPreference">
                                         Receive minute newsletters
                                     </label>
                                     <br />
                                     <label>
-                                        <input type="checkbox" name="DailyNewsletterPreference" value="day">
+                                        <input type="checkbox" name="DailyNewsletterPreference" value="1" checked="@Model.userProfile.DailyNewsletterPreference">
                                         Receive daily newsletters
                                     </label>
                                     <br />
                                     <label>
-                                        <input type="checkbox" name="WeeklyNewsletterPreference" value="week">
+                                        <input type="checkbox" name="WeeklyNewsletterPreference" value="1" checked="@Model.userProfile.WeeklyNewsletterPreference">
                                         Receive weekly newsletters
                                     </label>
                                     <br />
-                                    <input type="submit" value="Save Preferences">
+                                    <input type="submit" value="Save Preferences" />
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>

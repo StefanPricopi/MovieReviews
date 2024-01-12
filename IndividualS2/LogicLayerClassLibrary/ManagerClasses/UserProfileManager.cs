@@ -26,5 +26,9 @@ namespace LogicLayerClassLibrary.ManagerClasses
         {
             return userProfile.GetUserNewsletterPreferences(userId);
         }
+        public void UpdateUserNewsletterPreferences(int userId, bool prefers60s, bool prefersDaily, bool prefersWeekly)
+        {
+            this.userProfile.UpdateUserNewsletterPreferences(userId, prefers60s, prefersDaily, prefersWeekly);
+        }
     }
 }

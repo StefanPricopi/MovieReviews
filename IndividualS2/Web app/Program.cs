@@ -49,7 +49,7 @@ public class Program
                     services.AddScoped<ReviewManager>();
                     services.AddScoped<UserManager>();
                     services.AddScoped<UserProfileManager>();
-                    services.AddScoped<NewsletterManager>();
+                 
                     
                     //DAL
                     services.AddScoped<ICommentDAL, CommentDAL>();

@@ -16,15 +16,13 @@ namespace Web_app.Pages
     {
         private readonly UserProfileManager userProfileManager;
         private readonly CommentManager commentManager;
-        private readonly NewsletterManager newsletterManager;
-        private readonly INewsletterStrategy _newsletterStrategy;
-
-        public UserProfileDTO userProfile;
+        [BindProperty]
+        public UserProfileDTO userProfile { get; set; }
         public List<CommentDTO> comments = new List<CommentDTO>();
 
-        public ProfilePageModel( UserProfileManager userProfileManager, NewsletterManager newsletterManager, CommentManager commentManager)
+        public ProfilePageModel( UserProfileManager userProfileManager,  CommentManager commentManager)
         {
-            this.newsletterManager = newsletterManager;
+            ;
             this.userProfileManager = userProfileManager;
             this.commentManager = commentManager;
         }
@@ -55,6 +53,29 @@ namespace Web_app.Pages
                 return Redirect($"/Index?message={ex.Message}");
             }
         }
-        
+        public IActionResult OnPostUpdatePreferences()
+        {
+            try
+            {
+                userProfile.MinuteNewsletterPreference = Request.Form["MinuteNewsletterPreference"] == "1";
+                userProfile.DailyNewsletterPreference = Request.Form["DailyNewsletterPreference"] == "1";
+                userProfile.WeeklyNewsletterPreference = Request.Form["WeeklyNewsletterPreference"] == "1";
+
+              
+                userProfileManager.UpdateUserNewsletterPreferences(userProfile.userID,
+                    userProfile.MinuteNewsletterPreference,
+                    userProfile.DailyNewsletterPreference,
+                    userProfile.WeeklyNewsletterPreference);
+
+                TempData["SuccessMessage"] = "Preferences updated successfully.";
+
+                return RedirectToPage("/ProfilePage");
+            }
+            catch (Exception ex)
+            {
+                return Redirect($"/Index?message={ex.Message}");
+            }
+        }
+
     }
 }

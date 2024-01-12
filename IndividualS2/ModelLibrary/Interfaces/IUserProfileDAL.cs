@@ -11,5 +11,6 @@ namespace ModelLibrary.Interfaces
     {
         public UserProfileDTO GetActualProfileByID(int id);
         public List<string> GetUserNewsletterPreferences(int userId);
+        public void UpdateUserNewsletterPreferences(int userId, bool prefers60s, bool prefersDaily, bool prefersWeekly);
     }
 }

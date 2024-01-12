@@ -89,6 +89,28 @@ namespace DALClassLibrary.DALs
 
             return preferences;
         }
+        public void UpdateUserNewsletterPreferences(int userId, bool prefers60s, bool prefersDaily, bool prefersWeekly)
+        {
+            using (SqlConnection connection = InitializeConection())
+            {
+                connection.Open();
+                string query = @"
+            UPDATE DTO_UserProfile
+            SET prefers_60s = @Prefers60s, prefers_daily = @PrefersDaily, prefers_weekly = @PrefersWeekly
+            WHERE UserID = @UserId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+                    command.Parameters.AddWithValue("@Prefers60s", prefers60s);
+                    command.Parameters.AddWithValue("@PrefersDaily", prefersDaily);
+                    command.Parameters.AddWithValue("@PrefersWeekly", prefersWeekly);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
 
 
     }
